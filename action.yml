@@ -1,5 +1,16 @@
 name: 'Synchronise repo access'
 description: 'Updates access permissions of repositories according to specified permissions'
+inputs:
+  org:
+    description: 'Name of organisation'
+    required: true
+  team:
+    description: 'Name of team'
+    required: true
+  accessFile:
+    description: 'Name of file with access config'
+    required: true
+    default: 'access.json'
 runs:
   using: 'node12'
   main: 'dist/index.js'

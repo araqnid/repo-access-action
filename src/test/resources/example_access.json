@@ -1,0 +1,58 @@
+[
+  {
+    "description": "NORMAL: Internal read only repositories",
+    "teams": {
+      "All": "pull"
+    },
+    "repos": [
+      "capinterface-github-repo-access",
+      "api-acuris-com-router",
+      "api-data-ionanalytics-com-router",
+      "corporates-elasticsearch",
+      "debtwire-sanitisation",
+      "design-system",
+      "developer-ionanalytics-com-router",
+      "infralogic-auto-pipeline-lambda",
+      "infralogic-email-notifications-lambda",
+      "infralogic-eventstore-postgresql",
+      "infralogic-frontend-router",
+      "infralogic-openapi-to-typescript",
+      "infralogic-transaction-alert-ingestion-lambda",
+      "inframation-equities-pipeline-subscriber",
+      "inframation-transactions-elasticsearch",
+      "inframation-transactions-elasticsearch-ingestion-lambda",
+      "inframation-transactions-feed-lambda",
+      "interface-capability",
+      "iona-chassis-docsite",
+      "lti-api-lambda",
+      "poc-streaming-long-polling",
+      "shared-component-page-layout",
+      "spac-elasticsearch",
+      "spac-frontend-router",
+      "spac-manager",
+      "spac-shared-components",
+      "streaming-api-backfill",
+      "streaming-api-indexer-lambda",
+      "streaming-api-lambda",
+      "streaming-api-poller",
+      "streaming-api-service",
+      "user-event-service"
+    ]
+  },
+  {
+    "description": "SHARED: Internally open repositories - read and write",
+    "teams": {
+      "All": "push"
+    },
+    "repos": [
+      "acuris-eventstore-api",
+      "acuris-eventstore-postgresql",
+      "acuris-eventstore-s3"
+    ]
+  },
+  {
+    "description": "SENSITIVE: Repos containing sensitive information which should not be shared - ideally this should be empty",
+    "teams": {},
+    "repos": []
+  }
+]

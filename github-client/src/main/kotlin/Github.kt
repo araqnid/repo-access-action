@@ -130,11 +130,20 @@ class Github(private val backend: GithubBackend, private val defaultPageSize: In
     fun getOrgRepos(orgName: String, pageSize: Int = defaultPageSize): Flow<Repository> =
         fetchCollection(serializer(), "/orgs/$orgName/repos", pageSize)
 
+    fun getOrgRepos(org: Organization, pageSize: Int = defaultPageSize): Flow<Repository> =
+        getOrgRepos(org.name, pageSize)
+
     fun getOrgTeams(orgName: String, pageSize: Int = defaultPageSize): Flow<Team> =
         fetchCollection(serializer(), "/orgs/$orgName/teams", pageSize)
 
+    fun getOrgTeams(org: Organization, pageSize: Int = defaultPageSize): Flow<Team> =
+        getOrgTeams(org.name, pageSize)
+
     fun getOrgTeamRepos(orgName: String, teamSlug: String, pageSize: Int = defaultPageSize): Flow<Repository> =
         fetchCollection(serializer(), "/orgs/$orgName/teams/$teamSlug/repos", pageSize)
+
+    fun getOrgTeamRepos(org: Organization, team: Team, pageSize: Int = defaultPageSize): Flow<Repository> =
+        getOrgTeamRepos(org.name, team.slug, pageSize)
 
     fun getRepoTeams(ownerName: String, repoName: String, pageSize: Int = defaultPageSize): Flow<Team> =
         fetchCollection(serializer(), "/repos/$ownerName/$repoName/teams", pageSize)

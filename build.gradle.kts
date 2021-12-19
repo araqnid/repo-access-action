@@ -1,6 +1,6 @@
 plugins {
     kotlin("js") version "1.6.10"
-    kotlin("plugin.serialization") version "1.6.10" apply false
+    kotlin("plugin.serialization") version "1.6.10"
     id("package-github-action")
 }
 
@@ -26,6 +26,8 @@ dependencies {
     implementation(project(":github-client"))
     implementation(project(":actions-toolkit"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation(platform("org.jetbrains.kotlinx:kotlinx-serialization-bom:1.3.1"))
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.3.1")
 
     testImplementation(kotlin("test-js"))
     testImplementation("org.araqnid.kotlin.assert-that:assert-that:0.1.1")
