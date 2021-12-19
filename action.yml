@@ -1,0 +1,5 @@
+name: 'Synchronise repo access'
+description: 'Updates access permissions of repositories according to specified permissions'
+runs:
+  using: 'node12'
+  main: 'dist/index.js'
