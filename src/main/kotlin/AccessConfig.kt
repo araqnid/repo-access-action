@@ -52,19 +52,15 @@ private val accessTypeNames = mapOf(
 fun String.toAccessType() = accessTypeNames[this] ?: throw IllegalArgumentException("Unknown access type: $this")
 
 fun invertAccessConfig(accessConfig: AccessConfig): Map<String, RepoAccessConfig> {
-    val seenRepos = mutableSetOf<String>()
-
-    for (level in accessConfig) {
-        for (repo in level.repos) {
-            if (!seenRepos.add(repo)) {
-                kotlin.error("Repo \"$repo\" listed twice")
-            }
-        }
-    }
-
     return buildMap {
+        val seenRepos = mutableSetOf<String>()
+
         for (level in accessConfig) {
             for (repo in level.repos) {
+                if (!seenRepos.add(repo)) {
+                    kotlin.error("Repo \"$repo\" listed twice")
+                }
+
                 put(repo, RepoAccessConfig(teams = level.teams.mapValues { (team, accessTypeString) ->
                     accessTypeNames[accessTypeString]
                         ?: kotlin.error("Unrecognised access type \"$accessTypeString\" for \"$team\" in \"${level.description}\"")

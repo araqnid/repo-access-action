@@ -29528,25 +29528,6 @@ exports.debug = debug; // for test
     return tmp;
   }
   function invertAccessConfig(accessConfig) {
-    var tmp$ret$0;
-    $l$block: {
-      tmp$ret$0 = LinkedHashSet_init_$Create$();
-      break $l$block;
-    }
-    var seenRepos = tmp$ret$0;
-    var tmp0_iterator = accessConfig.iterator_0_k$();
-    while (tmp0_iterator.hasNext_0_k$()) {
-      var level = tmp0_iterator.next_0_k$();
-      var tmp1_iterator = level._repos.iterator_0_k$();
-      while (tmp1_iterator.hasNext_0_k$()) {
-        var repo = tmp1_iterator.next_0_k$();
-        if (!seenRepos.add_2bq_k$(repo)) {
-          {
-            var tmp0_error_0 = '' + 'Repo "' + repo + '" listed twice';
-            throw IllegalStateException_init_$Create$(toString_1(tmp0_error_0));
-          }
-        }}
-    }
     var tmp$ret$10;
     $l$block_9: {
       {
@@ -29559,27 +29540,38 @@ exports.debug = debug; // for test
           {
           }
           {
-            var tmp0_iterator_3 = accessConfig.iterator_0_k$();
-            while (tmp0_iterator_3.hasNext_0_k$()) {
-              var level_4 = tmp0_iterator_3.next_0_k$();
-              var tmp1_iterator_5 = level_4._repos.iterator_0_k$();
-              while (tmp1_iterator_5.hasNext_0_k$()) {
-                var repo_6 = tmp1_iterator_5.next_0_k$();
-                var tmp$ret$7;
+            var tmp$ret$0;
+            $l$block: {
+              tmp$ret$0 = LinkedHashSet_init_$Create$();
+              break $l$block;
+            }
+            var seenRepos_3 = tmp$ret$0;
+            var tmp0_iterator_4 = accessConfig.iterator_0_k$();
+            while (tmp0_iterator_4.hasNext_0_k$()) {
+              var level_5 = tmp0_iterator_4.next_0_k$();
+              var tmp1_iterator_6 = level_5._repos.iterator_0_k$();
+              while (tmp1_iterator_6.hasNext_0_k$()) {
+                var repo_7 = tmp1_iterator_6.next_0_k$();
+                if (!seenRepos_3.add_2bq_k$(repo_7)) {
+                  {
+                    var tmp0_error_0_8 = '' + 'Repo "' + repo_7 + '" listed twice';
+                    throw IllegalStateException_init_$Create$(toString_1(tmp0_error_0_8));
+                  }
+                }var tmp$ret$7;
                 $l$block_6: {
-                  var tmp0_mapValues_0_7 = level_4._teams;
+                  var tmp1_mapValues_0_9 = level_5._teams;
                   var tmp$ret$6;
                   $l$block_5: {
-                    var tmp1_mapValuesTo_0_1_8 = LinkedHashMap_init_$Create$_1(mapCapacity(tmp0_mapValues_0_7._get_size__0_k$()));
+                    var tmp1_mapValuesTo_0_1_10 = LinkedHashMap_init_$Create$_1(mapCapacity(tmp1_mapValues_0_9._get_size__0_k$()));
                     var tmp$ret$5;
                     $l$block_4: {
-                      var tmp0_associateByTo_0_2_9 = tmp0_mapValues_0_7._get_entries__0_k$();
-                      var tmp0_iterator_1_3_10 = tmp0_associateByTo_0_2_9.iterator_0_k$();
-                      while (tmp0_iterator_1_3_10.hasNext_0_k$()) {
-                        var element_2_4_11 = tmp0_iterator_1_3_10.next_0_k$();
+                      var tmp0_associateByTo_0_2_11 = tmp1_mapValues_0_9._get_entries__0_k$();
+                      var tmp0_iterator_1_3_12 = tmp0_associateByTo_0_2_11.iterator_0_k$();
+                      while (tmp0_iterator_1_3_12.hasNext_0_k$()) {
+                        var element_2_4_13 = tmp0_iterator_1_3_12.next_0_k$();
                         var tmp$ret$1;
                         $l$block_0: {
-                          tmp$ret$1 = element_2_4_11._get_key__0_k$();
+                          tmp$ret$1 = element_2_4_13._get_key__0_k$();
                           break $l$block_0;
                         }
                         var tmp = tmp$ret$1;
@@ -29587,31 +29579,31 @@ exports.debug = debug; // for test
                         $l$block_3: {
                           var tmp$ret$2;
                           $l$block_1: {
-                            tmp$ret$2 = element_2_4_11._get_key__0_k$();
+                            tmp$ret$2 = element_2_4_13._get_key__0_k$();
                             break $l$block_1;
                           }
-                          var team_6_12 = tmp$ret$2;
+                          var team_6_14 = tmp$ret$2;
                           var tmp$ret$3;
                           $l$block_2: {
-                            tmp$ret$3 = element_2_4_11._get_value__0_k$();
+                            tmp$ret$3 = element_2_4_13._get_value__0_k$();
                             break $l$block_2;
                           }
-                          var accessTypeString_7_13 = tmp$ret$3;
-                          var tmp0_elvis_lhs_8_14 = accessTypeNames.get_2bw_k$(accessTypeString_7_13);
+                          var accessTypeString_7_15 = tmp$ret$3;
+                          var tmp0_elvis_lhs_8_16 = accessTypeNames.get_2bw_k$(accessTypeString_7_15);
                           var tmp_0;
-                          if (tmp0_elvis_lhs_8_14 == null) {
-                            var tmp0_error_0_9_15 = '' + 'Unrecognised access type "' + accessTypeString_7_13 + '" for "' + team_6_12 + '" in "' + level_4._description + '"';
-                            throw IllegalStateException_init_$Create$(toString_1(tmp0_error_0_9_15));
+                          if (tmp0_elvis_lhs_8_16 == null) {
+                            var tmp0_error_0_9_17 = '' + 'Unrecognised access type "' + accessTypeString_7_15 + '" for "' + team_6_14 + '" in "' + level_5._description + '"';
+                            throw IllegalStateException_init_$Create$(toString_1(tmp0_error_0_9_17));
                           } else {
-                            tmp_0 = tmp0_elvis_lhs_8_14;
+                            tmp_0 = tmp0_elvis_lhs_8_16;
                           }
                           tmp$ret$4 = tmp_0;
                           break $l$block_3;
                         }
-                        tmp1_mapValuesTo_0_1_8.put_1q9pf_k$(tmp, tmp$ret$4);
+                        tmp1_mapValuesTo_0_1_10.put_1q9pf_k$(tmp, tmp$ret$4);
                         Unit_getInstance();
                       }
-                      tmp$ret$5 = tmp1_mapValuesTo_0_1_8;
+                      tmp$ret$5 = tmp1_mapValuesTo_0_1_10;
                       break $l$block_4;
                     }
                     tmp$ret$6 = tmp$ret$5;
@@ -29620,7 +29612,7 @@ exports.debug = debug; // for test
                   tmp$ret$7 = tmp$ret$6;
                   break $l$block_6;
                 }
-                tmp0_apply_0_1.put_1q9pf_k$(repo_6, new RepoAccessConfig(tmp$ret$7));
+                tmp0_apply_0_1.put_1q9pf_k$(repo_7, new RepoAccessConfig(tmp$ret$7));
                 Unit_getInstance();
               }
             }
