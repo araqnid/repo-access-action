@@ -48,7 +48,7 @@ fun main() {
                     debug(repo, "accessConfig=$repoAccessConfig")
                     try {
                         val repoTeams = github.getRepoTeams(repo).toList()
-                        for (command in syncRepoAccess(repo, repoTeams, mainTeam, repoAccessConfig)) {
+                        for (command in syncRepoAccess(teams, repo, repoTeams, mainTeam, repoAccessConfig)) {
                             when (command) {
                                 is RepoCommand.RemoveTeam ->
                                     warning(repo, command.team, "TODO: Revoking team access from repo")
@@ -84,6 +84,7 @@ private sealed interface RepoCommand {
 }
 
 private fun syncRepoAccess(
+    orgTeams: Collection<Github.Team>,
     repo: Github.Repository,
     repoTeams: Collection<Github.Team>,
     mainTeam: Github.Team,
@@ -93,7 +94,7 @@ private fun syncRepoAccess(
         val currentPermissionByTeam = repoTeams.filterNot { it.slug == mainTeam.slug }
             .associate { team -> team.slug to team.permission.toAccessType() }
         for ((teamName, currentAccess, wantedAccess) in mergeMaps(currentPermissionByTeam, repoAccessConfig)) {
-            val team = repoTeams.single { it.slug == teamName }
+            val team = orgTeams.single { it.slug == teamName }
 
             when {
                 wantedAccess == AccessType.ADMIN ->

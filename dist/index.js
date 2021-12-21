@@ -29897,8 +29897,8 @@ exports.debug = debug; // for test
     kind: 'interface',
     interfaces: []
   };
-  function syncRepoAccess(repo, repoTeams, mainTeam, repoAccessConfig) {
-    return sequence(_no_name_provided_$factory_87(repoTeams, mainTeam, repoAccessConfig, repo, null));
+  function syncRepoAccess(orgTeams, repo, repoTeams, mainTeam, repoAccessConfig) {
+    return sequence(_no_name_provided_$factory_87(repoTeams, mainTeam, repoAccessConfig, orgTeams, repo, null));
   }
   function $emit_2_8_4_4COROUTINE$2(_this_, value, resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
@@ -30172,7 +30172,7 @@ exports.debug = debug; // for test
             continue $sm;
           case 3:
             var repoTeams_9 = suspendResult;
-            var tmp0_iterator_10 = syncRepoAccess(this._value_16, repoTeams_9, this.__this__11._$mainTeam, this._repoAccessConfig_82).iterator_0_k$();
+            var tmp0_iterator_10 = syncRepoAccess(this.__this__11._$teams, this._value_16, repoTeams_9, this.__this__11._$mainTeam, this._repoAccessConfig_82).iterator_0_k$();
             while (tmp0_iterator_10.hasNext_0_k$()) {
               var command_11 = tmp0_iterator_10.next_0_k$();
               var tmp1_subject_12 = command_11;
@@ -30269,10 +30269,11 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: [Flow]
   };
-  function _no_name_provided__1_6($seenRepos, $resolvedAccessConfig, $github, $mainTeam, $errorsSeen) {
+  function _no_name_provided__1_6($seenRepos, $resolvedAccessConfig, $github, $teams, $mainTeam, $errorsSeen) {
     this._$seenRepos = $seenRepos;
     this._$resolvedAccessConfig = $resolvedAccessConfig;
     this._$github = $github;
+    this._$teams = $teams;
     this._$mainTeam = $mainTeam;
     this._$errorsSeen = $errorsSeen;
   }
@@ -30456,7 +30457,7 @@ exports.debug = debug; // for test
             var tmp2_filterNot_0 = new _no_name_provided__1_1_1(tmp1_filter_0);
             tmp_11._tmp3_collect_08 = new _no_name_provided__1_1_1_0(tmp2_filterNot_0);
             this._state_1 = 3;
-            suspendResult = this._tmp3_collect_08.collect_l0hod5_k$(new _no_name_provided__1_6(this._seenRepos6, this._resolvedAccessConfig5, this._github, this._mainTeam2, this._errorsSeen7), this);
+            suspendResult = this._tmp3_collect_08.collect_l0hod5_k$(new _no_name_provided__1_6(this._seenRepos6, this._resolvedAccessConfig5, this._github, this._teams1, this._mainTeam2, this._errorsSeen7), this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
             }
@@ -30564,10 +30565,11 @@ exports.debug = debug; // for test
     interfaces: [],
     suspendArity: [1]
   };
-  function _no_name_provided__98($repoTeams, $mainTeam, $repoAccessConfig, $repo, resultContinuation) {
+  function _no_name_provided__98($repoTeams, $mainTeam, $repoAccessConfig, $orgTeams, $repo, resultContinuation) {
     this._$repoTeams = $repoTeams;
     this._$mainTeam_0 = $mainTeam;
     this._$repoAccessConfig = $repoAccessConfig;
+    this._$orgTeams = $orgTeams;
     this._$repo = $repo;
     CoroutineImpl_0.call(this, resultContinuation);
   }
@@ -30630,7 +30632,7 @@ exports.debug = debug; // for test
             var tmp_3 = this;
             this._single_19 = null;
             this._found_210 = false;
-            var tmp0_iterator_3 = this._$repoTeams.iterator_0_k$();
+            var tmp0_iterator_3 = this._$orgTeams.iterator_0_k$();
             while (tmp0_iterator_3.hasNext_0_k$()) {
               var element_4 = tmp0_iterator_3.next_0_k$();
               if (element_4._slug === this._teamName6) {
@@ -30698,7 +30700,7 @@ exports.debug = debug; // for test
      while (true);
   };
   _no_name_provided__98.prototype.create_bll82m_k$ = function ($this$sequence, completion) {
-    var i = new _no_name_provided__98(this._$repoTeams, this._$mainTeam_0, this._$repoAccessConfig, this._$repo, completion);
+    var i = new _no_name_provided__98(this._$repoTeams, this._$mainTeam_0, this._$repoAccessConfig, this._$orgTeams, this._$repo, completion);
     i._$this$sequence = $this$sequence;
     return i;
   };
@@ -30715,8 +30717,8 @@ exports.debug = debug; // for test
     l.$arity = 1;
     return l;
   }
-  function _no_name_provided_$factory_87($repoTeams, $mainTeam, $repoAccessConfig, $repo, resultContinuation) {
-    var i = new _no_name_provided__98($repoTeams, $mainTeam, $repoAccessConfig, $repo, resultContinuation);
+  function _no_name_provided_$factory_87($repoTeams, $mainTeam, $repoAccessConfig, $orgTeams, $repo, resultContinuation) {
+    var i = new _no_name_provided__98($repoTeams, $mainTeam, $repoAccessConfig, $orgTeams, $repo, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_ypbpdl_k$(p1, $cont);
     };
