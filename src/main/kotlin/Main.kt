@@ -30,6 +30,11 @@ fun main() {
             }
 
             val seenRepos = mutableSetOf<String>()
+            var errorsSeen = 0
+            fun contributeError(vararg parts: Any) {
+                ++errorsSeen
+                error(*parts)
+            }
             github.getOrgTeamRepos(org, mainTeam)
                 .filter { it.permissions.admin }
                 .filterNot { it.isArchived }
@@ -37,7 +42,7 @@ fun main() {
                     seenRepos += repo.name
                     val repoAccessConfig = resolvedAccessConfig[repo.name]
                     if (repoAccessConfig == null) {
-                        warning(repo, "Team has admin access to repo, but there is no config for it")
+                        contributeError(repo, "Team has admin access to repo, but there is no config for it")
                         return@collect
                     }
                     val repoTeams = github.getRepoTeams(repo).toList()
@@ -53,12 +58,16 @@ fun main() {
 
             for (configuredRepoName in accessConfig.keys) {
                 if (configuredRepoName !in seenRepos) {
-                    warning(
+                    contributeError(
                         org,
                         mainTeam,
                         "Config mentions repo \"$configuredRepoName\", but team does not have admin access"
                     )
                 }
+            }
+
+            if (errorsSeen > 0) {
+                kotlin.error("Encountered $errorsSeen error(s), see above")
             }
         }
     }

@@ -1563,7 +1563,7 @@ exports.debug = debug; // for test
   var info_1 = $module$_actions_core.info;
   var notice_0 = $module$_actions_core.notice;
   var warning_1 = $module$_actions_core.warning;
-  var error_2 = $module$_actions_core.error;
+  var error_3 = $module$_actions_core.error;
   var setFailed_0 = $module$_actions_core.setFailed;
   var getInput_1 = $module$_actions_core.getInput;
   'use strict';
@@ -28496,11 +28496,11 @@ exports.debug = debug; // for test
     kind: 'interface',
     interfaces: []
   };
-  function GithubException(path, statusCode, error_3) {
-    RuntimeException_init_$Init$_0(!(error_3._documentationUrl == null) ? '' + path + ': [HTTP ' + statusCode + '] ' + error_3._message_0 + ' (' + error_3._documentationUrl + ')' : '' + path + ': [HTTP ' + statusCode + '] ' + error_3._message_0, this);
+  function GithubException(path, statusCode, error_4) {
+    RuntimeException_init_$Init$_0(!(error_4._documentationUrl == null) ? '' + path + ': [HTTP ' + statusCode + '] ' + error_4._message_0 + ' (' + error_4._documentationUrl + ')' : '' + path + ': [HTTP ' + statusCode + '] ' + error_4._message_0, this);
     this._path_0 = path;
     this._statusCode = statusCode;
-    this._error = error_3;
+    this._error = error_4;
     captureStack(this, GithubException);
   }
   GithubException.$metadata$ = {
@@ -29773,6 +29773,9 @@ exports.debug = debug; // for test
   function warning(parts) {
     warning_1(composeMessage(parts));
   }
+  function error_1(parts) {
+    error_3(composeMessage(parts));
+  }
   function _no_name_provided__95() {
   }
   _no_name_provided__95.prototype.invoke_ha5g5e_k$ = function (it) {
@@ -30144,7 +30147,7 @@ exports.debug = debug; // for test
             Unit_getInstance();
             this._repoAccessConfig_82 = this.__this__11._$resolvedAccessConfig.get_2bw_k$(this._value_16._name_4);
             if (this._repoAccessConfig_82 == null) {
-              warning([this._value_16, 'Team has admin access to repo, but there is no config for it']);
+              invoke$contributeError(this.__this__11._$errorsSeen, [this._value_16, 'Team has admin access to repo, but there is no config for it']);
               this._tmp$ret$00_1 = Unit_getInstance();
               this._state_1 = 4;
               continue $sm;
@@ -30201,6 +30204,12 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
+  function invoke$contributeError(errorsSeen, parts) {
+    errorsSeen._v = errorsSeen._v + 1 | 0;
+    errorsSeen._v;
+    Unit_getInstance();
+    error_1(parts.slice());
+  }
   function _no_name_provided__1_1_1($tmp1_filter_0) {
     this._$tmp1_filter_0 = $tmp1_filter_0;
   }
@@ -30235,11 +30244,12 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: [Flow]
   };
-  function _no_name_provided__1_6($seenRepos, $resolvedAccessConfig, $github, $mainTeam) {
+  function _no_name_provided__1_6($seenRepos, $resolvedAccessConfig, $github, $mainTeam, $errorsSeen) {
     this._$seenRepos = $seenRepos;
     this._$resolvedAccessConfig = $resolvedAccessConfig;
     this._$github = $github;
     this._$mainTeam = $mainTeam;
+    this._$errorsSeen = $errorsSeen;
   }
   _no_name_provided__1_6.prototype.emit_2_velxtx_k$ = function (value, $cont) {
     var tmp = new $emit_2COROUTINE$5(this, value, $cont);
@@ -30415,12 +30425,13 @@ exports.debug = debug; // for test
             tmp_4._resolvedAccessConfig5 = this._tmp1_mapValuesTo_0_13;
             var tmp_10 = this;
             tmp_10._seenRepos6 = LinkedHashSet_init_$Create$();
+            this._errorsSeen7 = {_v: 0};
             var tmp_11 = this;
             var tmp1_filter_0 = this._github.getOrgTeamRepos$default_9275h3_k$(this._org0, this._mainTeam2, 0, 4, null);
             var tmp2_filterNot_0 = new _no_name_provided__1_1_1(tmp1_filter_0);
-            tmp_11._tmp3_collect_07 = new _no_name_provided__1_1_1_0(tmp2_filterNot_0);
+            tmp_11._tmp3_collect_08 = new _no_name_provided__1_1_1_0(tmp2_filterNot_0);
             this._state_1 = 3;
-            suspendResult = this._tmp3_collect_07.collect_l0hod5_k$(new _no_name_provided__1_6(this._seenRepos6, this._resolvedAccessConfig5, this._github, this._mainTeam2), this);
+            suspendResult = this._tmp3_collect_08.collect_l0hod5_k$(new _no_name_provided__1_6(this._seenRepos6, this._resolvedAccessConfig5, this._github, this._mainTeam2, this._errorsSeen7), this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
             }
@@ -30430,9 +30441,13 @@ exports.debug = debug; // for test
             while (tmp2_iterator.hasNext_0_k$()) {
               var configuredRepoName = tmp2_iterator.next_0_k$();
               if (!this._seenRepos6.contains_2bq_k$(configuredRepoName)) {
-                warning([this._org0, this._mainTeam2, '' + 'Config mentions repo "' + configuredRepoName + '", but team does not have admin access']);
+                invoke$contributeError(this._errorsSeen7, [this._org0, this._mainTeam2, '' + 'Config mentions repo "' + configuredRepoName + '", but team does not have admin access']);
               }}
 
+            if (this._errorsSeen7._v > 0) {
+              var tmp4_error_0 = '' + 'Encountered ' + this._errorsSeen7._v + ' error(s), see above';
+              throw IllegalStateException_init_$Create$(toString_1(tmp4_error_0));
+            }
             return Unit_getInstance();
           case 4:
             throw this._exception_0;
