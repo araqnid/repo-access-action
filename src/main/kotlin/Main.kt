@@ -45,14 +45,19 @@ fun main() {
                         contributeError(repo, "Team has admin access to repo, but there is no config for it")
                         return@collect
                     }
-                    val repoTeams = github.getRepoTeams(repo).toList()
-                    for (command in syncRepoAccess(repo, repoTeams, mainTeam, repoAccessConfig)) {
-                        when (command) {
-                            is RepoCommand.RemoveTeam ->
-                                warning(repo, command.team, "TODO: Revoking team access from repo")
-                            is RepoCommand.SetTeamPermission ->
-                                warning(repo, command.team, "TODO: Setting access to ${command.accessType}")
+                    debug(repo, "accessConfig=$repoAccessConfig")
+                    try {
+                        val repoTeams = github.getRepoTeams(repo).toList()
+                        for (command in syncRepoAccess(repo, repoTeams, mainTeam, repoAccessConfig)) {
+                            when (command) {
+                                is RepoCommand.RemoveTeam ->
+                                    warning(repo, command.team, "TODO: Revoking team access from repo")
+                                is RepoCommand.SetTeamPermission ->
+                                    warning(repo, command.team, "TODO: Setting access to ${command.accessType}")
+                            }
                         }
+                    } catch (ex: Throwable) {
+                        contributeError(repo, ex.toString())
                     }
                 }
 

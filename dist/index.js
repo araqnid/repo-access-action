@@ -1559,7 +1559,7 @@ exports.debug = debug; // for test
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 (function (_, Process, Https, Http, Process_0, Filesystem, $module$_actions_core) {
-  var debug_0 = $module$_actions_core.debug;
+  var debug_1 = $module$_actions_core.debug;
   var info_1 = $module$_actions_core.info;
   var notice_0 = $module$_actions_core.notice;
   var warning_1 = $module$_actions_core.warning;
@@ -29767,6 +29767,9 @@ exports.debug = debug; // for test
   function composeMessage(parts) {
     return joinToString$default(parts, ': ', null, null, 0, null, _no_name_provided_$factory_85(), 30, null);
   }
+  function debug(parts) {
+    debug_1(composeMessage(parts));
+  }
   function info(parts) {
     info_1(composeMessage(parts));
   }
@@ -30137,7 +30140,7 @@ exports.debug = debug; // for test
         var tmp = this._state_1;
         switch (tmp) {
           case 0:
-            this._exceptionState = 5;
+            this._exceptionState = 7;
             this._state_1 = 1;
             continue $sm;
           case 1:
@@ -30149,7 +30152,7 @@ exports.debug = debug; // for test
             if (this._repoAccessConfig_82 == null) {
               invoke$contributeError(this.__this__11._$errorsSeen, [this._value_16, 'Team has admin access to repo, but there is no config for it']);
               this._tmp$ret$00_1 = Unit_getInstance();
-              this._state_1 = 4;
+              this._state_1 = 6;
               continue $sm;
             } else {
               this._state_1 = 2;
@@ -30158,6 +30161,8 @@ exports.debug = debug; // for test
 
             break;
           case 2:
+            debug([this._value_16, '' + 'accessConfig=' + this._repoAccessConfig_82]);
+            this._exceptionState = 4;
             this._state_1 = 3;
             var tmp_1 = this.__this__11._$github.getRepoTeams$default_1efauv_k$(this._value_16, 0, 2, null);
             suspendResult = toList$default(tmp_1, null, 1, null, this);
@@ -30181,16 +30186,36 @@ exports.debug = debug; // for test
               }
             }
 
-            if (false) {}
-            this._state_1 = 4;
+            this._exceptionState = 7;
+            this._state_1 = 5;
             continue $sm;
           case 4:
-            return Unit_getInstance();
+            this._exceptionState = 7;
+            var tmp_2 = this._exception_0;
+            if (tmp_2 instanceof Error) {
+              var ex_13 = this._exception_0;
+              invoke$contributeError(this.__this__11._$errorsSeen, [this._value_16, ex_13.toString()]);
+              this._state_1 = 5;
+              continue $sm;
+            } else {
+              {
+                throw this._exception_0;
+              }
+            }
+
+            break;
           case 5:
+            this._exceptionState = 7;
+            if (false) {}
+            this._state_1 = 6;
+            continue $sm;
+          case 6:
+            return Unit_getInstance();
+          case 7:
             throw this._exception_0;
         }
       } catch ($p) {
-        if (this._exceptionState === 5) {
+        if (this._exceptionState === 7) {
           throw $p;
         } else {
           this._state_1 = this._exceptionState;
