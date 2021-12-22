@@ -3,8 +3,7 @@
 package action
 
 import kotlinx.coroutines.DelicateCoroutinesApi
-import kotlinx.coroutines.GlobalScope
-import kotlinx.coroutines.promise
+import kotlinx.coroutines.test.runTest
 import org.araqnid.kotlin.assertthat.assertThat
 import org.araqnid.kotlin.assertthat.containsSubstring
 import org.araqnid.kotlin.assertthat.equalTo
@@ -16,7 +15,7 @@ private const val EXAMPLE_FILE_NAME = "../../../../src/test/resources/example_ac
 
 class AccessConfigTest {
     @Test
-    fun reads_example_file() = GlobalScope.promise {
+    fun reads_example_file() = runTest {
         val accessConfig = readAccessConfigFile(EXAMPLE_FILE_NAME)
         val invertedAccessConfig = invertAccessConfig(accessConfig)
         assertThat(

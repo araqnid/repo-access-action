@@ -20,7 +20,9 @@ dependencies {
     api(kotlin("stdlib-js"))
     implementation(npm("@actions/core", "latest"))
     implementation(npm("@actions/cache", "latest"))
-    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+    implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.6.0")
 
     testImplementation(kotlin("test-js"))
+    testImplementation("org.araqnid.kotlin.assert-that:assert-that:0.1.1")
+    testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test:1.6.0")
 }
