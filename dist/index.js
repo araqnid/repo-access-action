@@ -33057,6 +33057,9 @@ exports.debug = debug; // for test
   GithubMessages.prototype.info_xlqz3p_k$ = function (parts) {
     info_0(composeMessage(this, parts));
   };
+  GithubMessages.prototype.notice_xlqz3p_k$ = function (parts) {
+    notice_0(composeMessage(this, parts));
+  };
   GithubMessages.prototype.warning_xlqz3p_k$ = function (parts) {
     warning_0(composeMessage(this, parts));
   };
@@ -33350,7 +33353,7 @@ exports.debug = debug; // for test
             this._tmp1_subject5 = this._command4;
             var tmp_2 = this._tmp1_subject5;
             if (tmp_2 instanceof RemoveTeam) {
-              GithubMessages_getInstance().info_xlqz3p_k$([this._repo, this._command4._team, 'Removing permission']);
+              GithubMessages_getInstance().notice_xlqz3p_k$([this._repo, this._command4._team, 'Removing permission']);
               this._state_1 = 4;
               suspendResult = this._$github.deleteRepoTeamPermission_18s8ml_k$(this._$org, this._command4._team, this._repo, this);
               if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
@@ -33360,7 +33363,7 @@ exports.debug = debug; // for test
               {
                 var tmp_3 = this._tmp1_subject5;
                 if (tmp_3 instanceof SetTeamPermission) {
-                  GithubMessages_getInstance().info_xlqz3p_k$([this._repo, this._command4._team_0, '' + 'Updating permission to ' + this._command4._accessType]);
+                  GithubMessages_getInstance().notice_xlqz3p_k$([this._repo, this._command4._team_0, '' + 'Updating permission to ' + this._command4._accessType]);
                   this._state_1 = 3;
                   var tmp2_subject = this._command4._accessType;
                   var tmp_4;

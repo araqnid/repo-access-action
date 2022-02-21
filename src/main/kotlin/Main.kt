@@ -55,11 +55,11 @@ fun main() {
                         for (command in syncRepoAccess(teams, repo, repoTeams, mainTeam, repoAccessConfig)) {
                             when (command) {
                                 is RepoCommand.RemoveTeam -> {
-                                    GithubMessages.info(repo, command.team, "Removing permission")
+                                    GithubMessages.notice(repo, command.team, "Removing permission")
                                     github.deleteRepoTeamPermission(org, command.team, repo)
                                 }
                                 is RepoCommand.SetTeamPermission -> {
-                                    GithubMessages.info(repo, command.team, "Updating permission to ${command.accessType}")
+                                    GithubMessages.notice(repo, command.team, "Updating permission to ${command.accessType}")
                                     github.updateRepoTeamPermission(org, command.team, repo, when (command.accessType) {
                                         AccessType.PULL -> "pull"
                                         AccessType.PUSH -> "push"
