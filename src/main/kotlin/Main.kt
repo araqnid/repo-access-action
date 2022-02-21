@@ -36,10 +36,15 @@ fun main() {
             }
             github.getOrgTeamRepos(org, mainTeam)
                 .filter { it.permissions.admin }
-                .filterNot { it.isArchived }
                 .collect { repo ->
                     seenRepos += repo.name
                     val repoAccessConfig = resolvedAccessConfig[repo.name]
+                    if (repo.isArchived) {
+                        if (repoAccessConfig != null) {
+                            GithubMessages.warning(repo, "Archived repo is still configured")
+                        }
+                        return@collect
+                    }
                     if (repoAccessConfig == null) {
                         contributeError(repo, "Team has admin access to repo, but there is no config for it")
                         return@collect
