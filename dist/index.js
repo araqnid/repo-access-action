@@ -1757,6 +1757,8 @@ exports.debug = debug; // for test
   AbortFlowException.prototype.constructor = AbortFlowException;
   PolymorphicSerializer.prototype = Object.create(AbstractPolymorphicSerializer.prototype);
   PolymorphicSerializer.prototype.constructor = PolymorphicSerializer;
+  SealedClassSerializer.prototype = Object.create(AbstractPolymorphicSerializer.prototype);
+  SealedClassSerializer.prototype.constructor = SealedClassSerializer;
   SerializationException.prototype = Object.create(IllegalArgumentException.prototype);
   SerializationException.prototype.constructor = SerializationException;
   UnknownFieldException.prototype = Object.create(SerializationException.prototype);
@@ -1835,6 +1837,8 @@ exports.debug = debug; // for test
   HashMapSerializer.prototype.constructor = HashMapSerializer;
   ReferenceArraySerializer.prototype = Object.create(ListLikeSerializer.prototype);
   ReferenceArraySerializer.prototype.constructor = ReferenceArraySerializer;
+  InlineClassDescriptor.prototype = Object.create(PluginGeneratedSerialDescriptor.prototype);
+  InlineClassDescriptor.prototype.constructor = InlineClassDescriptor;
   CharArraySerializer_0.prototype = Object.create(PrimitiveArraySerializer.prototype);
   CharArraySerializer_0.prototype.constructor = CharArraySerializer_0;
   DoubleArraySerializer_0.prototype = Object.create(PrimitiveArraySerializer.prototype);
@@ -1893,18 +1897,26 @@ exports.debug = debug; // for test
   JsonLiteral.prototype.constructor = JsonLiteral;
   JsonArray.prototype = Object.create(JsonElement.prototype);
   JsonArray.prototype.constructor = JsonArray;
+  ComposerForUnsignedNumbers.prototype = Object.create(Composer.prototype);
+  ComposerForUnsignedNumbers.prototype.constructor = ComposerForUnsignedNumbers;
+  ComposerWithPrettyPrint.prototype = Object.create(Composer.prototype);
+  ComposerWithPrettyPrint.prototype.constructor = ComposerWithPrettyPrint;
   JsonException.prototype = Object.create(SerializationException.prototype);
   JsonException.prototype.constructor = JsonException;
   JsonEncodingException.prototype = Object.create(JsonException.prototype);
   JsonEncodingException.prototype.constructor = JsonEncodingException;
   JsonDecodingException.prototype = Object.create(JsonException.prototype);
   JsonDecodingException.prototype.constructor = JsonDecodingException;
-  _no_name_provided__78.prototype = Object.create(CoroutineImpl_0.prototype);
-  _no_name_provided__78.prototype.constructor = _no_name_provided__78;
+  _no_name_provided__79.prototype = Object.create(CoroutineImpl_0.prototype);
+  _no_name_provided__79.prototype.constructor = _no_name_provided__79;
   $readObjectCOROUTINE$0.prototype = Object.create(CoroutineImpl_0.prototype);
   $readObjectCOROUTINE$0.prototype.constructor = $readObjectCOROUTINE$0;
   StreamingJsonDecoder.prototype = Object.create(AbstractDecoder.prototype);
   StreamingJsonDecoder.prototype.constructor = StreamingJsonDecoder;
+  JsonDecoderForUnsignedTypes.prototype = Object.create(AbstractDecoder.prototype);
+  JsonDecoderForUnsignedTypes.prototype.constructor = JsonDecoderForUnsignedTypes;
+  StreamingJsonEncoder.prototype = Object.create(AbstractEncoder.prototype);
+  StreamingJsonEncoder.prototype.constructor = StreamingJsonEncoder;
   AbstractJsonTreeDecoder.prototype = Object.create(NamedValueDecoder.prototype);
   AbstractJsonTreeDecoder.prototype.constructor = AbstractJsonTreeDecoder;
   JsonTreeDecoder.prototype = Object.create(AbstractJsonTreeDecoder.prototype);
@@ -1917,44 +1929,50 @@ exports.debug = debug; // for test
   WriteMode.prototype.constructor = WriteMode;
   StringJsonLexer.prototype = Object.create(AbstractJsonLexer.prototype);
   StringJsonLexer.prototype.constructor = StringJsonLexer;
-  _no_name_provided__81.prototype = Object.create(CoroutineImpl_0.prototype);
-  _no_name_provided__81.prototype.constructor = _no_name_provided__81;
   _no_name_provided__82.prototype = Object.create(CoroutineImpl_0.prototype);
   _no_name_provided__82.prototype.constructor = _no_name_provided__82;
-  $fetchCOROUTINE$0.prototype = Object.create(CoroutineImpl_0.prototype);
-  $fetchCOROUTINE$0.prototype.constructor = $fetchCOROUTINE$0;
-  GithubException.prototype = Object.create(RuntimeException.prototype);
-  GithubException.prototype.constructor = GithubException;
   _no_name_provided__83.prototype = Object.create(CoroutineImpl_0.prototype);
   _no_name_provided__83.prototype.constructor = _no_name_provided__83;
-  $useGithubCOROUTINE$2.prototype = Object.create(CoroutineImpl_0.prototype);
-  $useGithubCOROUTINE$2.prototype.constructor = $useGithubCOROUTINE$2;
-  $requestForTextCOROUTINE$3.prototype = Object.create(CoroutineImpl_0.prototype);
-  $requestForTextCOROUTINE$3.prototype.constructor = $requestForTextCOROUTINE$3;
+  $fetchCOROUTINE$0.prototype = Object.create(CoroutineImpl_0.prototype);
+  $fetchCOROUTINE$0.prototype.constructor = $fetchCOROUTINE$0;
+  $deleteCOROUTINE$1.prototype = Object.create(CoroutineImpl_0.prototype);
+  $deleteCOROUTINE$1.prototype.constructor = $deleteCOROUTINE$1;
+  $putCOROUTINE$2.prototype = Object.create(CoroutineImpl_0.prototype);
+  $putCOROUTINE$2.prototype.constructor = $putCOROUTINE$2;
+  $updateRepoTeamPermissionCOROUTINE$3.prototype = Object.create(CoroutineImpl_0.prototype);
+  $updateRepoTeamPermissionCOROUTINE$3.prototype.constructor = $updateRepoTeamPermissionCOROUTINE$3;
+  GithubException.prototype = Object.create(RuntimeException.prototype);
+  GithubException.prototype.constructor = GithubException;
+  _no_name_provided__84.prototype = Object.create(CoroutineImpl_0.prototype);
+  _no_name_provided__84.prototype.constructor = _no_name_provided__84;
+  $useGithubCOROUTINE$4.prototype = Object.create(CoroutineImpl_0.prototype);
+  $useGithubCOROUTINE$4.prototype.constructor = $useGithubCOROUTINE$4;
+  $requestForTextCOROUTINE$5.prototype = Object.create(CoroutineImpl_0.prototype);
+  $requestForTextCOROUTINE$5.prototype.constructor = $requestForTextCOROUTINE$5;
   AccessType.prototype = Object.create(Enum.prototype);
   AccessType.prototype.constructor = AccessType;
   $readAccessConfigFileCOROUTINE$0.prototype = Object.create(CoroutineImpl_0.prototype);
   $readAccessConfigFileCOROUTINE$0.prototype.constructor = $readAccessConfigFileCOROUTINE$0;
-  _no_name_provided__97.prototype = Object.create(CoroutineImpl_0.prototype);
-  _no_name_provided__97.prototype.constructor = _no_name_provided__97;
-  $collect_2_2_2COROUTINE$1.prototype = Object.create(CoroutineImpl_0.prototype);
-  $collect_2_2_2COROUTINE$1.prototype.constructor = $collect_2_2_2COROUTINE$1;
   _no_name_provided__98.prototype = Object.create(CoroutineImpl_0.prototype);
   _no_name_provided__98.prototype.constructor = _no_name_provided__98;
-  $collect_2_2_2COROUTINE$2.prototype = Object.create(CoroutineImpl_0.prototype);
-  $collect_2_2_2COROUTINE$2.prototype.constructor = $collect_2_2_2COROUTINE$2;
+  $collect_2_2_2COROUTINE$1.prototype = Object.create(CoroutineImpl_0.prototype);
+  $collect_2_2_2COROUTINE$1.prototype.constructor = $collect_2_2_2COROUTINE$1;
   _no_name_provided__99.prototype = Object.create(CoroutineImpl_0.prototype);
   _no_name_provided__99.prototype.constructor = _no_name_provided__99;
+  $collect_2_2_2COROUTINE$2.prototype = Object.create(CoroutineImpl_0.prototype);
+  $collect_2_2_2COROUTINE$2.prototype.constructor = $collect_2_2_2COROUTINE$2;
   _no_name_provided__100.prototype = Object.create(CoroutineImpl_0.prototype);
   _no_name_provided__100.prototype.constructor = _no_name_provided__100;
   _no_name_provided__101.prototype = Object.create(CoroutineImpl_0.prototype);
   _no_name_provided__101.prototype.constructor = _no_name_provided__101;
   _no_name_provided__102.prototype = Object.create(CoroutineImpl_0.prototype);
   _no_name_provided__102.prototype.constructor = _no_name_provided__102;
+  _no_name_provided__103.prototype = Object.create(CoroutineImpl_0.prototype);
+  _no_name_provided__103.prototype.constructor = _no_name_provided__103;
   State.prototype = Object.create(Enum.prototype);
   State.prototype.constructor = State;
-  _no_name_provided__105.prototype = Object.create(CoroutineImpl_0.prototype);
-  _no_name_provided__105.prototype.constructor = _no_name_provided__105;
+  _no_name_provided__106.prototype = Object.create(CoroutineImpl_0.prototype);
+  _no_name_provided__106.prototype.constructor = _no_name_provided__106;
   function toList(_this_) {
     var tmp0_subject = _this_.length;
     switch (tmp0_subject) {
@@ -2055,8 +2073,30 @@ exports.debug = debug; // for test
     Unit_getInstance();
     return buffer;
   }
+  function toSet(_this_) {
+    var tmp0_subject = _this_.length;
+    switch (tmp0_subject) {
+      case 0:
+        return emptySet();
+      case 1:
+        return setOf_0(_this_[0]);
+      default:return toCollection(_this_, LinkedHashSet_init_$Create$_1(mapCapacity(_this_.length)));
+    }
+  }
   function contains(_this_, element) {
     return indexOf(_this_, element) >= 0;
+  }
+  function toCollection(_this_, destination) {
+    var indexedObject = _this_;
+    var inductionVariable = 0;
+    var last_0 = indexedObject.length;
+    while (inductionVariable < last_0) {
+      var item = indexedObject[inductionVariable];
+      inductionVariable = inductionVariable + 1 | 0;
+      destination.add_2bq_k$(item);
+      Unit_getInstance();
+    }
+    return destination;
   }
   function single(_this_) {
     var tmp0_subject = _this_.length;
@@ -2091,7 +2131,7 @@ exports.debug = debug; // for test
     };
   }
   function toHashSet(_this_) {
-    return toCollection(_this_, HashSet_init_$Create$_1(mapCapacity(collectionSizeOrDefault(_this_, 12))));
+    return toCollection_0(_this_, HashSet_init_$Create$_1(mapCapacity(collectionSizeOrDefault(_this_, 12))));
   }
   function toBooleanArray(_this_) {
     var result = booleanArray(_this_._get_size__0_k$());
@@ -2123,7 +2163,7 @@ exports.debug = debug; // for test
       transform = null;
     return joinToString_0(_this_, separator, prefix, postfix, limit, truncated, transform);
   }
-  function toCollection(_this_, destination) {
+  function toCollection_0(_this_, destination) {
     var tmp0_iterator = _this_.iterator_0_k$();
     while (tmp0_iterator.hasNext_0_k$()) {
       var item = tmp0_iterator.next_0_k$();
@@ -2243,7 +2283,7 @@ exports.debug = debug; // for test
       return toMutableList_1(_this_);
     else {
     }
-    return toCollection(_this_, ArrayList_init_$Create$());
+    return toCollection_0(_this_, ArrayList_init_$Create$());
   }
   function toMutableList_1(_this_) {
     return ArrayList_init_$Create$_1(_this_);
@@ -2358,19 +2398,19 @@ exports.debug = debug; // for test
     }return titlecaseChar(_this_).toString();
   }
   function until(_this_, to_0) {
-    if (to_0 <= IntCompanionObject_getInstance()._MIN_VALUE_1)
-      return Companion_getInstance_5()._EMPTY;
+    if (to_0 <= IntCompanionObject_getInstance()._MIN_VALUE_5)
+      return Companion_getInstance_9()._EMPTY;
     return numberRangeToNumber(_this_, to_0 - 1 | 0);
   }
   function coerceAtLeast(_this_, minimumValue) {
     return _this_ < minimumValue ? minimumValue : _this_;
   }
   function downTo(_this_, to_0) {
-    return Companion_getInstance_4().fromClosedRange_fcwjfj_k$(_this_, to_0, -1);
+    return Companion_getInstance_8().fromClosedRange_fcwjfj_k$(_this_, to_0, -1);
   }
   function step(_this_, step_0) {
     checkStepIsPositive(step_0 > 0, step_0);
-    return Companion_getInstance_4().fromClosedRange_fcwjfj_k$(_this_._first_1, _this_._last, _this_._step_0 > 0 ? step_0 : -step_0 | 0);
+    return Companion_getInstance_8().fromClosedRange_fcwjfj_k$(_this_._first_1, _this_._last, _this_._step_0 > 0 ? step_0 : -step_0 | 0);
   }
   function coerceAtMost(_this_, maximumValue) {
     return _this_ > maximumValue ? maximumValue : _this_;
@@ -2391,9 +2431,9 @@ exports.debug = debug; // for test
     return new TransformingSequence(_this_, transform);
   }
   function toMutableList_2(_this_) {
-    return toCollection_0(_this_, ArrayList_init_$Create$());
+    return toCollection_1(_this_, ArrayList_init_$Create$());
   }
-  function toCollection_0(_this_, destination) {
+  function toCollection_1(_this_, destination) {
     var tmp0_iterator = _this_.iterator_0_k$();
     while (tmp0_iterator.hasNext_0_k$()) {
       var item = tmp0_iterator.next_0_k$();
@@ -3037,8 +3077,8 @@ exports.debug = debug; // for test
   function arrayListOf(elements) {
     return elements.length === 0 ? ArrayList_init_$Create$() : ArrayList_init_$Create$_1(new ArrayAsCollection(elements, true));
   }
-  function ArrayAsCollection(values, isVarargs) {
-    this._values = values;
+  function ArrayAsCollection(values_0, isVarargs) {
+    this._values = values_0;
     this._isVarargs = isVarargs;
   }
   ArrayAsCollection.prototype._get_size__0_k$ = function () {
@@ -3607,6 +3647,9 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: [Sequence]
   };
+  function setOf(elements) {
+    return elements.length > 0 ? toSet(elements) : emptySet();
+  }
   function EmptySet() {
     EmptySet_instance = this;
     this._serialVersionUID_1 = new Long(1993859828, 793161749);
@@ -3671,6 +3714,9 @@ exports.debug = debug; // for test
   }
   function emptySet() {
     return EmptySet_getInstance();
+  }
+  function hashSetOf(elements) {
+    return toCollection(elements, HashSet_init_$Create$_1(mapCapacity(elements.length)));
   }
   function compareValues(a, b) {
     if (a === b)
@@ -4537,23 +4583,23 @@ exports.debug = debug; // for test
       start = 1;
       if (firstChar.equals(new Char(45))) {
         isNegative_0 = true;
-        Companion_getInstance_8();
+        Companion_getInstance_12();
         limit = new Long(0, -2147483648);
       } else if (firstChar.equals(new Char(43))) {
         isNegative_0 = false;
-        Companion_getInstance_8();
+        Companion_getInstance_12();
         limit = (new Long(-1, 2147483647)).unaryMinus_0_k$();
       } else
         return null;
     } else {
       start = 0;
       isNegative_0 = false;
-      Companion_getInstance_8();
+      Companion_getInstance_12();
       limit = (new Long(-1, 2147483647)).unaryMinus_0_k$();
     }
     var tmp$ret$0;
     $l$block: {
-      Companion_getInstance_8();
+      Companion_getInstance_12();
       var tmp0_div_0 = (new Long(-1, 2147483647)).unaryMinus_0_k$();
       tmp$ret$0 = tmp0_div_0.div_wiekkq_k$(new Long(36, 0));
       break $l$block;
@@ -4626,18 +4672,18 @@ exports.debug = debug; // for test
       start = 1;
       if (firstChar.equals(new Char(45))) {
         isNegative_0 = true;
-        limit = IntCompanionObject_getInstance()._MIN_VALUE_1;
+        limit = IntCompanionObject_getInstance()._MIN_VALUE_5;
       } else if (firstChar.equals(new Char(43))) {
         isNegative_0 = false;
-        limit = -IntCompanionObject_getInstance()._MAX_VALUE_1 | 0;
+        limit = -IntCompanionObject_getInstance()._MAX_VALUE_5 | 0;
       } else
         return null;
     } else {
       start = 0;
       isNegative_0 = false;
-      limit = -IntCompanionObject_getInstance()._MAX_VALUE_1 | 0;
+      limit = -IntCompanionObject_getInstance()._MAX_VALUE_5 | 0;
     }
-    var limitForMaxRadix = (-IntCompanionObject_getInstance()._MAX_VALUE_1 | 0) / 36 | 0;
+    var limitForMaxRadix = (-IntCompanionObject_getInstance()._MAX_VALUE_5 | 0) / 36 | 0;
     var limitBeforeMul = limitForMaxRadix;
     var result = 0;
     var inductionVariable = start;
@@ -5607,11 +5653,816 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: [Serializable]
   };
+  function _UByte___init__impl_(data) {
+    return data;
+  }
+  function _UByte___get_data__impl_(this_0) {
+    return this_0;
+  }
+  function Companion_5() {
+    Companion_instance_4 = this;
+    this._MIN_VALUE = _UByte___init__impl_(0);
+    this._MAX_VALUE = _UByte___init__impl_(-1);
+    this._SIZE_BYTES = 1;
+    this._SIZE_BITS = 8;
+  }
+  Companion_5.$metadata$ = {
+    simpleName: 'Companion',
+    kind: 'object',
+    interfaces: []
+  };
+  var Companion_instance_4;
+  function Companion_getInstance_4() {
+    if (Companion_instance_4 == null)
+      new Companion_5();
+    return Companion_instance_4;
+  }
+  function UByte__compareTo_impl(this_0, other) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _UByte___get_data__impl_(this_0) & 255;
+      break $l$block;
+    }
+    var tmp = tmp$ret$0;
+    var tmp$ret$1;
+    $l$block_0: {
+      tmp$ret$1 = _UByte___get_data__impl_(other) & 255;
+      break $l$block_0;
+    }
+    return compareTo(tmp, tmp$ret$1);
+  }
+  function UByte__compareTo_impl_0(this_0, other) {
+    var tmp = this_0._data;
+    return UByte__compareTo_impl(tmp, other instanceof UByte ? other._data : THROW_CCE());
+  }
+  function UByte__toString_impl(this_0) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _UByte___get_data__impl_(this_0) & 255;
+      break $l$block;
+    }
+    return tmp$ret$0.toString();
+  }
+  function UByte__hashCode_impl(this_0) {
+    return this_0;
+  }
+  function UByte__equals_impl(this_0, other) {
+    if (!(other instanceof UByte))
+      return false;
+    else {
+    }
+    var tmp0_other_with_cast = other instanceof UByte ? other._data : THROW_CCE();
+    if (!(this_0 === tmp0_other_with_cast))
+      return false;
+    return true;
+  }
+  function UByte(data) {
+    Companion_getInstance_4();
+    this._data = data;
+  }
+  UByte.prototype.compareTo_dj4lnz_k$ = function (other) {
+    return UByte__compareTo_impl(this._data, other);
+  };
+  UByte.prototype.compareTo_2c5_k$ = function (other) {
+    return UByte__compareTo_impl_0(this, other);
+  };
+  UByte.prototype.toString = function () {
+    return UByte__toString_impl(this._data);
+  };
+  UByte.prototype.hashCode = function () {
+    return UByte__hashCode_impl(this._data);
+  };
+  UByte.prototype.equals = function (other) {
+    return UByte__equals_impl(this._data, other);
+  };
+  UByte.$metadata$ = {
+    simpleName: 'UByte',
+    kind: 'class',
+    interfaces: [Comparable]
+  };
+  function _UInt___init__impl_(data) {
+    return data;
+  }
+  function _UInt___get_data__impl_(this_0) {
+    return this_0;
+  }
+  function Companion_6() {
+    Companion_instance_5 = this;
+    this._MIN_VALUE_0 = _UInt___init__impl_(0);
+    this._MAX_VALUE_0 = _UInt___init__impl_(-1);
+    this._SIZE_BYTES_0 = 4;
+    this._SIZE_BITS_0 = 32;
+  }
+  Companion_6.$metadata$ = {
+    simpleName: 'Companion',
+    kind: 'object',
+    interfaces: []
+  };
+  var Companion_instance_5;
+  function Companion_getInstance_5() {
+    if (Companion_instance_5 == null)
+      new Companion_6();
+    return Companion_instance_5;
+  }
+  function UInt__compareTo_impl(this_0, other) {
+    return uintCompare(_UInt___get_data__impl_(this_0), _UInt___get_data__impl_(other));
+  }
+  function UInt__compareTo_impl_0(this_0, other) {
+    var tmp = this_0._data_0;
+    return UInt__compareTo_impl(tmp, other instanceof UInt ? other._data_0 : THROW_CCE());
+  }
+  function UInt__toString_impl(this_0) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = toLong_0(_UInt___get_data__impl_(this_0)).and_wiekkq_k$(new Long(-1, 0));
+      break $l$block;
+    }
+    return tmp$ret$0.toString();
+  }
+  function UInt__hashCode_impl(this_0) {
+    return this_0;
+  }
+  function UInt__equals_impl(this_0, other) {
+    if (!(other instanceof UInt))
+      return false;
+    else {
+    }
+    var tmp0_other_with_cast = other instanceof UInt ? other._data_0 : THROW_CCE();
+    if (!(this_0 === tmp0_other_with_cast))
+      return false;
+    return true;
+  }
+  function UInt(data) {
+    Companion_getInstance_5();
+    this._data_0 = data;
+  }
+  UInt.prototype.compareTo_wijjag_k$ = function (other) {
+    return UInt__compareTo_impl(this._data_0, other);
+  };
+  UInt.prototype.compareTo_2c5_k$ = function (other) {
+    return UInt__compareTo_impl_0(this, other);
+  };
+  UInt.prototype.toString = function () {
+    return UInt__toString_impl(this._data_0);
+  };
+  UInt.prototype.hashCode = function () {
+    return UInt__hashCode_impl(this._data_0);
+  };
+  UInt.prototype.equals = function (other) {
+    return UInt__equals_impl(this._data_0, other);
+  };
+  UInt.$metadata$ = {
+    simpleName: 'UInt',
+    kind: 'class',
+    interfaces: [Comparable]
+  };
+  function _ULong___init__impl_(data) {
+    return data;
+  }
+  function _ULong___get_data__impl_(this_0) {
+    return this_0;
+  }
+  function Companion_7() {
+    Companion_instance_6 = this;
+    this._MIN_VALUE_1 = _ULong___init__impl_(new Long(0, 0));
+    this._MAX_VALUE_1 = _ULong___init__impl_(new Long(-1, -1));
+    this._SIZE_BYTES_1 = 8;
+    this._SIZE_BITS_1 = 64;
+  }
+  Companion_7.$metadata$ = {
+    simpleName: 'Companion',
+    kind: 'object',
+    interfaces: []
+  };
+  var Companion_instance_6;
+  function Companion_getInstance_6() {
+    if (Companion_instance_6 == null)
+      new Companion_7();
+    return Companion_instance_6;
+  }
+  function ULong__compareTo_impl(this_0, other) {
+    return ulongCompare(_ULong___get_data__impl_(this_0), _ULong___get_data__impl_(other));
+  }
+  function ULong__compareTo_impl_0(this_0, other) {
+    var tmp = this_0._data_1;
+    return ULong__compareTo_impl(tmp, other instanceof ULong ? other._data_1 : THROW_CCE());
+  }
+  function ULong__toString_impl(this_0) {
+    return ulongToString(_ULong___get_data__impl_(this_0));
+  }
+  function ULong__hashCode_impl(this_0) {
+    return this_0.hashCode();
+  }
+  function ULong__equals_impl(this_0, other) {
+    if (!(other instanceof ULong))
+      return false;
+    else {
+    }
+    var tmp0_other_with_cast = other instanceof ULong ? other._data_1 : THROW_CCE();
+    if (!this_0.equals(tmp0_other_with_cast))
+      return false;
+    return true;
+  }
+  function ULong(data) {
+    Companion_getInstance_6();
+    this._data_1 = data;
+  }
+  ULong.prototype.compareTo_djarz7_k$ = function (other) {
+    return ULong__compareTo_impl(this._data_1, other);
+  };
+  ULong.prototype.compareTo_2c5_k$ = function (other) {
+    return ULong__compareTo_impl_0(this, other);
+  };
+  ULong.prototype.toString = function () {
+    return ULong__toString_impl(this._data_1);
+  };
+  ULong.prototype.hashCode = function () {
+    return ULong__hashCode_impl(this._data_1);
+  };
+  ULong.prototype.equals = function (other) {
+    return ULong__equals_impl(this._data_1, other);
+  };
+  ULong.$metadata$ = {
+    simpleName: 'ULong',
+    kind: 'class',
+    interfaces: [Comparable]
+  };
   function _UShort___init__impl_(data) {
     return data;
   }
   function _UShort___get_data__impl_(this_0) {
     return this_0;
+  }
+  function Companion_8() {
+    Companion_instance_7 = this;
+    this._MIN_VALUE_2 = _UShort___init__impl_(0);
+    this._MAX_VALUE_2 = _UShort___init__impl_(-1);
+    this._SIZE_BYTES_2 = 2;
+    this._SIZE_BITS_2 = 16;
+  }
+  Companion_8.$metadata$ = {
+    simpleName: 'Companion',
+    kind: 'object',
+    interfaces: []
+  };
+  var Companion_instance_7;
+  function Companion_getInstance_7() {
+    if (Companion_instance_7 == null)
+      new Companion_8();
+    return Companion_instance_7;
+  }
+  function UShort__compareTo_impl(this_0, other) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _UShort___get_data__impl_(this_0) & 65535;
+      break $l$block;
+    }
+    var tmp = tmp$ret$0;
+    var tmp$ret$1;
+    $l$block_0: {
+      tmp$ret$1 = _UShort___get_data__impl_(other) & 65535;
+      break $l$block_0;
+    }
+    return compareTo(tmp, tmp$ret$1);
+  }
+  function UShort__compareTo_impl_0(this_0, other) {
+    var tmp = this_0._data_2;
+    return UShort__compareTo_impl(tmp, other instanceof UShort ? other._data_2 : THROW_CCE());
+  }
+  function UShort__toString_impl(this_0) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _UShort___get_data__impl_(this_0) & 65535;
+      break $l$block;
+    }
+    return tmp$ret$0.toString();
+  }
+  function UShort__hashCode_impl(this_0) {
+    return this_0;
+  }
+  function UShort__equals_impl(this_0, other) {
+    if (!(other instanceof UShort))
+      return false;
+    else {
+    }
+    var tmp0_other_with_cast = other instanceof UShort ? other._data_2 : THROW_CCE();
+    if (!(this_0 === tmp0_other_with_cast))
+      return false;
+    return true;
+  }
+  function UShort(data) {
+    Companion_getInstance_7();
+    this._data_2 = data;
+  }
+  UShort.prototype.compareTo_6go47f_k$ = function (other) {
+    return UShort__compareTo_impl(this._data_2, other);
+  };
+  UShort.prototype.compareTo_2c5_k$ = function (other) {
+    return UShort__compareTo_impl_0(this, other);
+  };
+  UShort.prototype.toString = function () {
+    return UShort__toString_impl(this._data_2);
+  };
+  UShort.prototype.hashCode = function () {
+    return UShort__hashCode_impl(this._data_2);
+  };
+  UShort.prototype.equals = function (other) {
+    return UShort__equals_impl(this._data_2, other);
+  };
+  UShort.$metadata$ = {
+    simpleName: 'UShort',
+    kind: 'class',
+    interfaces: [Comparable]
+  };
+  function toUInt(_this_) {
+    var tmp0_elvis_lhs = toUIntOrNull(_this_);
+    var tmp;
+    var tmp_0 = tmp0_elvis_lhs;
+    if ((tmp_0 == null ? null : new UInt(tmp_0)) == null) {
+      numberFormatError(_this_);
+    } else {
+      {
+        tmp = tmp0_elvis_lhs;
+      }
+    }
+    return tmp;
+  }
+  function toULong(_this_) {
+    var tmp0_elvis_lhs = toULongOrNull(_this_);
+    var tmp;
+    var tmp_0 = tmp0_elvis_lhs;
+    if ((tmp_0 == null ? null : new ULong(tmp_0)) == null) {
+      numberFormatError(_this_);
+    } else {
+      {
+        tmp = tmp0_elvis_lhs;
+      }
+    }
+    return tmp;
+  }
+  function toUByte(_this_) {
+    var tmp0_elvis_lhs = toUByteOrNull(_this_);
+    var tmp;
+    var tmp_0 = tmp0_elvis_lhs;
+    if ((tmp_0 == null ? null : new UByte(tmp_0)) == null) {
+      numberFormatError(_this_);
+    } else {
+      {
+        tmp = tmp0_elvis_lhs;
+      }
+    }
+    return tmp;
+  }
+  function toUShort(_this_) {
+    var tmp0_elvis_lhs = toUShortOrNull(_this_);
+    var tmp;
+    var tmp_0 = tmp0_elvis_lhs;
+    if ((tmp_0 == null ? null : new UShort(tmp_0)) == null) {
+      numberFormatError(_this_);
+    } else {
+      {
+        tmp = tmp0_elvis_lhs;
+      }
+    }
+    return tmp;
+  }
+  function toULongOrNull(_this_) {
+    return toULongOrNull_0(_this_, 10);
+  }
+  function toUIntOrNull(_this_) {
+    return toUIntOrNull_0(_this_, 10);
+  }
+  function toUByteOrNull(_this_) {
+    return toUByteOrNull_0(_this_, 10);
+  }
+  function toUShortOrNull(_this_) {
+    return toUShortOrNull_0(_this_, 10);
+  }
+  function toULongOrNull_0(_this_, radix) {
+    checkRadix(radix);
+    Unit_getInstance();
+    var length = _this_.length;
+    if (length === 0)
+      return null;
+    Companion_getInstance_6();
+    var limit = _ULong___init__impl_(new Long(-1, -1));
+    var start;
+    var firstChar = charSequenceGet(_this_, 0);
+    if (firstChar.compareTo_wi8o78_k$(new Char(48)) < 0) {
+      if (length === 1 ? true : !firstChar.equals(new Char(43)))
+        return null;
+      start = 1;
+    } else {
+      start = 0;
+    }
+    var limitForMaxRadix = _ULong___init__impl_(new Long(477218588, 119304647));
+    var limitBeforeMul = limitForMaxRadix;
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _ULong___init__impl_(toLong_0(radix));
+      break $l$block;
+    }
+    var uradix = tmp$ret$0;
+    var result = _ULong___init__impl_(new Long(0, 0));
+    var inductionVariable = start;
+    if (inductionVariable < length)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        var digit = digitOf(charSequenceGet(_this_, i), radix);
+        if (digit < 0)
+          return null;
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp0_compareTo_0 = result;
+          var tmp1_compareTo_0 = limitBeforeMul;
+          tmp$ret$1 = ulongCompare(_ULong___get_data__impl_(tmp0_compareTo_0), _ULong___get_data__impl_(tmp1_compareTo_0));
+          break $l$block_0;
+        }
+        if (tmp$ret$1 > 0) {
+          if (equals_1(new ULong(limitBeforeMul), new ULong(limitForMaxRadix))) {
+            var tmp$ret$2;
+            $l$block_1: {
+              tmp$ret$2 = ulongDivide(limit, uradix);
+              break $l$block_1;
+            }
+            limitBeforeMul = tmp$ret$2;
+            var tmp$ret$3;
+            $l$block_2: {
+              var tmp2_compareTo_0 = result;
+              var tmp3_compareTo_0 = limitBeforeMul;
+              tmp$ret$3 = ulongCompare(_ULong___get_data__impl_(tmp2_compareTo_0), _ULong___get_data__impl_(tmp3_compareTo_0));
+              break $l$block_2;
+            }
+            if (tmp$ret$3 > 0) {
+              return null;
+            } else {
+            }
+          } else {
+            return null;
+          }
+        } else {
+        }
+        var tmp$ret$4;
+        $l$block_3: {
+          var tmp4_times_0 = result;
+          tmp$ret$4 = _ULong___init__impl_(_ULong___get_data__impl_(tmp4_times_0).times_wiekkq_k$(_ULong___get_data__impl_(uradix)));
+          break $l$block_3;
+        }
+        result = tmp$ret$4;
+        var beforeAdding = result;
+        var tmp$ret$8;
+        $l$block_7: {
+          var tmp5_plus_0 = result;
+          var tmp$ret$5;
+          $l$block_4: {
+            tmp$ret$5 = _UInt___init__impl_(digit);
+            break $l$block_4;
+          }
+          var tmp6_plus_0 = tmp$ret$5;
+          var tmp$ret$7;
+          $l$block_6: {
+            var tmp$ret$6;
+            $l$block_5: {
+              tmp$ret$6 = _ULong___init__impl_(toLong_0(_UInt___get_data__impl_(tmp6_plus_0)).and_wiekkq_k$(new Long(-1, 0)));
+              break $l$block_5;
+            }
+            var tmp0_plus_0_1 = tmp$ret$6;
+            tmp$ret$7 = _ULong___init__impl_(_ULong___get_data__impl_(tmp5_plus_0).plus_wiekkq_k$(_ULong___get_data__impl_(tmp0_plus_0_1)));
+            break $l$block_6;
+          }
+          tmp$ret$8 = tmp$ret$7;
+          break $l$block_7;
+        }
+        result = tmp$ret$8;
+        var tmp$ret$9;
+        $l$block_8: {
+          var tmp7_compareTo_0 = result;
+          tmp$ret$9 = ulongCompare(_ULong___get_data__impl_(tmp7_compareTo_0), _ULong___get_data__impl_(beforeAdding));
+          break $l$block_8;
+        }
+        if (tmp$ret$9 < 0)
+          return null;
+        else {
+        }
+      }
+       while (inductionVariable < length);
+    return result;
+  }
+  function toUIntOrNull_0(_this_, radix) {
+    checkRadix(radix);
+    Unit_getInstance();
+    var length = _this_.length;
+    if (length === 0)
+      return null;
+    Companion_getInstance_5();
+    var limit = _UInt___init__impl_(-1);
+    var start;
+    var firstChar = charSequenceGet(_this_, 0);
+    if (firstChar.compareTo_wi8o78_k$(new Char(48)) < 0) {
+      if (length === 1 ? true : !firstChar.equals(new Char(43)))
+        return null;
+      start = 1;
+    } else {
+      start = 0;
+    }
+    var limitForMaxRadix = _UInt___init__impl_(119304647);
+    var limitBeforeMul = limitForMaxRadix;
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _UInt___init__impl_(radix);
+      break $l$block;
+    }
+    var uradix = tmp$ret$0;
+    var result = _UInt___init__impl_(0);
+    var inductionVariable = start;
+    if (inductionVariable < length)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        var digit = digitOf(charSequenceGet(_this_, i), radix);
+        if (digit < 0)
+          return null;
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp0_compareTo_0 = result;
+          var tmp1_compareTo_0 = limitBeforeMul;
+          tmp$ret$1 = uintCompare(_UInt___get_data__impl_(tmp0_compareTo_0), _UInt___get_data__impl_(tmp1_compareTo_0));
+          break $l$block_0;
+        }
+        if (tmp$ret$1 > 0) {
+          if (equals_1(new UInt(limitBeforeMul), new UInt(limitForMaxRadix))) {
+            var tmp$ret$2;
+            $l$block_1: {
+              tmp$ret$2 = uintDivide(limit, uradix);
+              break $l$block_1;
+            }
+            limitBeforeMul = tmp$ret$2;
+            var tmp$ret$3;
+            $l$block_2: {
+              var tmp2_compareTo_0 = result;
+              var tmp3_compareTo_0 = limitBeforeMul;
+              tmp$ret$3 = uintCompare(_UInt___get_data__impl_(tmp2_compareTo_0), _UInt___get_data__impl_(tmp3_compareTo_0));
+              break $l$block_2;
+            }
+            if (tmp$ret$3 > 0) {
+              return null;
+            } else {
+            }
+          } else {
+            return null;
+          }
+        } else {
+        }
+        var tmp$ret$4;
+        $l$block_3: {
+          var tmp4_times_0 = result;
+          tmp$ret$4 = _UInt___init__impl_(imul(_UInt___get_data__impl_(tmp4_times_0), _UInt___get_data__impl_(uradix)));
+          break $l$block_3;
+        }
+        result = tmp$ret$4;
+        var beforeAdding = result;
+        var tmp$ret$6;
+        $l$block_5: {
+          var tmp5_plus_0 = result;
+          var tmp$ret$5;
+          $l$block_4: {
+            tmp$ret$5 = _UInt___init__impl_(digit);
+            break $l$block_4;
+          }
+          var tmp6_plus_0 = tmp$ret$5;
+          tmp$ret$6 = _UInt___init__impl_(_UInt___get_data__impl_(tmp5_plus_0) + _UInt___get_data__impl_(tmp6_plus_0) | 0);
+          break $l$block_5;
+        }
+        result = tmp$ret$6;
+        var tmp$ret$7;
+        $l$block_6: {
+          var tmp7_compareTo_0 = result;
+          tmp$ret$7 = uintCompare(_UInt___get_data__impl_(tmp7_compareTo_0), _UInt___get_data__impl_(beforeAdding));
+          break $l$block_6;
+        }
+        if (tmp$ret$7 < 0)
+          return null;
+        else {
+        }
+      }
+       while (inductionVariable < length);
+    return result;
+  }
+  function toUByteOrNull_0(_this_, radix) {
+    var tmp0_elvis_lhs = toUIntOrNull_0(_this_, radix);
+    var tmp;
+    var tmp_0 = tmp0_elvis_lhs;
+    if ((tmp_0 == null ? null : new UInt(tmp_0)) == null) {
+      return null;
+    } else {
+      {
+        tmp = tmp0_elvis_lhs;
+      }
+    }
+    var int = tmp;
+    var tmp$ret$2;
+    $l$block_1: {
+      Companion_getInstance_4();
+      var tmp0_compareTo_0 = _UByte___init__impl_(-1);
+      var tmp$ret$1;
+      $l$block_0: {
+        var tmp$ret$0;
+        $l$block: {
+          tmp$ret$0 = _UInt___init__impl_(_UByte___get_data__impl_(tmp0_compareTo_0) & 255);
+          break $l$block;
+        }
+        var tmp0_compareTo_0_1 = tmp$ret$0;
+        tmp$ret$1 = uintCompare(_UInt___get_data__impl_(int), _UInt___get_data__impl_(tmp0_compareTo_0_1));
+        break $l$block_0;
+      }
+      tmp$ret$2 = tmp$ret$1;
+      break $l$block_1;
+    }
+    if (tmp$ret$2 > 0)
+      return null;
+    else {
+    }
+    var tmp$ret$4;
+    $l$block_3: {
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0_toUByte_0_1 = _UInt___get_data__impl_(int);
+        tmp$ret$3 = _UByte___init__impl_(toByte(tmp0_toUByte_0_1));
+        break $l$block_2;
+      }
+      tmp$ret$4 = tmp$ret$3;
+      break $l$block_3;
+    }
+    return tmp$ret$4;
+  }
+  function toUShortOrNull_0(_this_, radix) {
+    var tmp0_elvis_lhs = toUIntOrNull_0(_this_, radix);
+    var tmp;
+    var tmp_0 = tmp0_elvis_lhs;
+    if ((tmp_0 == null ? null : new UInt(tmp_0)) == null) {
+      return null;
+    } else {
+      {
+        tmp = tmp0_elvis_lhs;
+      }
+    }
+    var int = tmp;
+    var tmp$ret$2;
+    $l$block_1: {
+      Companion_getInstance_7();
+      var tmp0_compareTo_0 = _UShort___init__impl_(-1);
+      var tmp$ret$1;
+      $l$block_0: {
+        var tmp$ret$0;
+        $l$block: {
+          tmp$ret$0 = _UInt___init__impl_(_UShort___get_data__impl_(tmp0_compareTo_0) & 65535);
+          break $l$block;
+        }
+        var tmp0_compareTo_0_1 = tmp$ret$0;
+        tmp$ret$1 = uintCompare(_UInt___get_data__impl_(int), _UInt___get_data__impl_(tmp0_compareTo_0_1));
+        break $l$block_0;
+      }
+      tmp$ret$2 = tmp$ret$1;
+      break $l$block_1;
+    }
+    if (tmp$ret$2 > 0)
+      return null;
+    else {
+    }
+    var tmp$ret$4;
+    $l$block_3: {
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0_toUShort_0_1 = _UInt___get_data__impl_(int);
+        tmp$ret$3 = _UShort___init__impl_(toShort(tmp0_toUShort_0_1));
+        break $l$block_2;
+      }
+      tmp$ret$4 = tmp$ret$3;
+      break $l$block_3;
+    }
+    return tmp$ret$4;
+  }
+  function uintCompare(v1, v2) {
+    return compareTo(v1 ^ IntCompanionObject_getInstance()._MIN_VALUE_5, v2 ^ IntCompanionObject_getInstance()._MIN_VALUE_5);
+  }
+  function uintDivide(v1, v2) {
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp$ret$0;
+      $l$block: {
+        tmp$ret$0 = toLong_0(_UInt___get_data__impl_(v1)).and_wiekkq_k$(new Long(-1, 0));
+        break $l$block;
+      }
+      var tmp = tmp$ret$0;
+      var tmp$ret$1;
+      $l$block_0: {
+        tmp$ret$1 = toLong_0(_UInt___get_data__impl_(v2)).and_wiekkq_k$(new Long(-1, 0));
+        break $l$block_0;
+      }
+      var tmp0_toUInt_0 = tmp.div_wiekkq_k$(tmp$ret$1);
+      tmp$ret$2 = _UInt___init__impl_(tmp0_toUInt_0.toInt_0_k$());
+      break $l$block_1;
+    }
+    return tmp$ret$2;
+  }
+  function ulongCompare(v1, v2) {
+    Companion_getInstance_12();
+    var tmp = v1.xor_wiekkq_k$(new Long(0, -2147483648));
+    Companion_getInstance_12();
+    return tmp.compareTo_wiekkq_k$(v2.xor_wiekkq_k$(new Long(0, -2147483648)));
+  }
+  function ulongDivide(v1, v2) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _ULong___get_data__impl_(v1);
+      break $l$block;
+    }
+    var dividend = tmp$ret$0;
+    var tmp$ret$1;
+    $l$block_0: {
+      tmp$ret$1 = _ULong___get_data__impl_(v2);
+      break $l$block_0;
+    }
+    var divisor = tmp$ret$1;
+    if (divisor.compareTo_wiekkq_k$(new Long(0, 0)) < 0) {
+      var tmp;
+      var tmp$ret$2;
+      $l$block_1: {
+        tmp$ret$2 = ulongCompare(_ULong___get_data__impl_(v1), _ULong___get_data__impl_(v2));
+        break $l$block_1;
+      }
+      if (tmp$ret$2 < 0) {
+        tmp = _ULong___init__impl_(new Long(0, 0));
+      } else {
+        {
+          tmp = _ULong___init__impl_(new Long(1, 0));
+        }
+      }
+      return tmp;
+    }if (dividend.compareTo_wiekkq_k$(new Long(0, 0)) >= 0) {
+      return _ULong___init__impl_(dividend.div_wiekkq_k$(divisor));
+    }var quotient = dividend.ushr_ha5a7z_k$(1).div_wiekkq_k$(divisor).shl_ha5a7z_k$(1);
+    var rem = dividend.minus_wiekkq_k$(quotient.times_wiekkq_k$(divisor));
+    var tmp$ret$4;
+    $l$block_3: {
+      var tmp_0;
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0_compareTo_0 = _ULong___init__impl_(rem);
+        var tmp1_compareTo_0 = _ULong___init__impl_(divisor);
+        tmp$ret$3 = ulongCompare(_ULong___get_data__impl_(tmp0_compareTo_0), _ULong___get_data__impl_(tmp1_compareTo_0));
+        break $l$block_2;
+      }
+      if (tmp$ret$3 >= 0) {
+        tmp_0 = 1;
+      } else {
+        {
+          tmp_0 = 0;
+        }
+      }
+      var tmp2_plus_0 = tmp_0;
+      tmp$ret$4 = quotient.plus_wiekkq_k$(toLong_0(tmp2_plus_0));
+      break $l$block_3;
+    }
+    return _ULong___init__impl_(tmp$ret$4);
+  }
+  function ulongToString(v) {
+    return ulongToString_0(v, 10);
+  }
+  function ulongToString_0(v, base) {
+    if (v.compareTo_wiekkq_k$(new Long(0, 0)) >= 0)
+      return toString_2(v, base);
+    var tmp$ret$0;
+    $l$block: {
+      var tmp0_div_0 = v.ushr_ha5a7z_k$(1);
+      tmp$ret$0 = tmp0_div_0.div_wiekkq_k$(toLong_0(base));
+      break $l$block;
+    }
+    var quotient = tmp$ret$0.shl_ha5a7z_k$(1);
+    var tmp$ret$1;
+    $l$block_0: {
+      var tmp1_times_0 = quotient;
+      tmp$ret$1 = tmp1_times_0.times_wiekkq_k$(toLong_0(base));
+      break $l$block_0;
+    }
+    var rem = v.minus_wiekkq_k$(tmp$ret$1);
+    if (rem.compareTo_wiekkq_k$(toLong_0(base)) >= 0) {
+      var tmp$ret$2;
+      $l$block_1: {
+        var tmp2_minus_0 = rem;
+        tmp$ret$2 = tmp2_minus_0.minus_wiekkq_k$(toLong_0(base));
+        break $l$block_1;
+      }
+      rem = tmp$ret$2;
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp3_plus_0 = quotient;
+        tmp$ret$3 = tmp3_plus_0.plus_wiekkq_k$(new Long(1, 0));
+        break $l$block_2;
+      }
+      quotient = tmp$ret$3;
+    }return toString_2(quotient, base) + toString_2(rem, base);
   }
   function Annotation() {
   }
@@ -5699,28 +6550,28 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
-  function Companion_5() {
-    Companion_instance_4 = this;
+  function Companion_9() {
+    Companion_instance_8 = this;
   }
-  Companion_5.prototype.fromClosedRange_fcwjfj_k$ = function (rangeStart, rangeEnd, step_0) {
+  Companion_9.prototype.fromClosedRange_fcwjfj_k$ = function (rangeStart, rangeEnd, step_0) {
     return new IntProgression(rangeStart, rangeEnd, step_0);
   };
-  Companion_5.$metadata$ = {
+  Companion_9.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_4;
-  function Companion_getInstance_4() {
-    if (Companion_instance_4 == null)
-      new Companion_5();
-    return Companion_instance_4;
+  var Companion_instance_8;
+  function Companion_getInstance_8() {
+    if (Companion_instance_8 == null)
+      new Companion_9();
+    return Companion_instance_8;
   }
   function IntProgression(start, endInclusive, step_0) {
-    Companion_getInstance_4();
+    Companion_getInstance_8();
     if (step_0 === 0)
       throw IllegalArgumentException_init_$Create$_0('Step must be non-zero.');
-    if (step_0 === IntCompanionObject_getInstance()._MIN_VALUE_1)
+    if (step_0 === IntCompanionObject_getInstance()._MIN_VALUE_5)
       throw IllegalArgumentException_init_$Create$_0('Step must be greater than Int.MIN_VALUE to avoid overflow on negation.');
     this._first_1 = start;
     this._last = getProgressionLastElement(start, endInclusive, step_0);
@@ -5767,23 +6618,23 @@ exports.debug = debug; // for test
     kind: 'interface',
     interfaces: []
   };
-  function Companion_6() {
-    Companion_instance_5 = this;
+  function Companion_10() {
+    Companion_instance_9 = this;
     this._EMPTY = new IntRange(1, 0);
   }
-  Companion_6.$metadata$ = {
+  Companion_10.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_5;
-  function Companion_getInstance_5() {
-    if (Companion_instance_5 == null)
-      new Companion_6();
-    return Companion_instance_5;
+  var Companion_instance_9;
+  function Companion_getInstance_9() {
+    if (Companion_instance_9 == null)
+      new Companion_10();
+    return Companion_instance_9;
   }
   function IntRange(start, endInclusive) {
-    Companion_getInstance_5();
+    Companion_getInstance_9();
     IntProgression.call(this, start, endInclusive, 1);
   }
   IntRange.prototype._get_start__0_k$ = function () {
@@ -5854,22 +6705,22 @@ exports.debug = debug; // for test
   }
   function ByteCompanionObject_0() {
     ByteCompanionObject_instance = this;
-    this._MIN_VALUE = -128;
-    this._MAX_VALUE = 127;
-    this._SIZE_BYTES = 1;
-    this._SIZE_BITS = 8;
+    this._MIN_VALUE_3 = -128;
+    this._MAX_VALUE_3 = 127;
+    this._SIZE_BYTES_3 = 1;
+    this._SIZE_BITS_3 = 8;
   }
   ByteCompanionObject_0.prototype._get_MIN_VALUE__0_k$ = function () {
-    return this._MIN_VALUE;
+    return this._MIN_VALUE_3;
   };
   ByteCompanionObject_0.prototype._get_MAX_VALUE__0_k$ = function () {
-    return this._MAX_VALUE;
+    return this._MAX_VALUE_3;
   };
   ByteCompanionObject_0.prototype._get_SIZE_BYTES__0_k$ = function () {
-    return this._SIZE_BYTES;
+    return this._SIZE_BYTES_3;
   };
   ByteCompanionObject_0.prototype._get_SIZE_BITS__0_k$ = function () {
-    return this._SIZE_BITS;
+    return this._SIZE_BITS_3;
   };
   ByteCompanionObject_0.$metadata$ = {
     simpleName: 'ByteCompanionObject',
@@ -5900,22 +6751,22 @@ exports.debug = debug; // for test
   }
   function ShortCompanionObject_0() {
     ShortCompanionObject_instance = this;
-    this._MIN_VALUE_0 = -32768;
-    this._MAX_VALUE_0 = 32767;
-    this._SIZE_BYTES_0 = 2;
-    this._SIZE_BITS_0 = 16;
+    this._MIN_VALUE_4 = -32768;
+    this._MAX_VALUE_4 = 32767;
+    this._SIZE_BYTES_4 = 2;
+    this._SIZE_BITS_4 = 16;
   }
   ShortCompanionObject_0.prototype._get_MIN_VALUE__0_k$ = function () {
-    return this._MIN_VALUE_0;
+    return this._MIN_VALUE_4;
   };
   ShortCompanionObject_0.prototype._get_MAX_VALUE__0_k$ = function () {
-    return this._MAX_VALUE_0;
+    return this._MAX_VALUE_4;
   };
   ShortCompanionObject_0.prototype._get_SIZE_BYTES__0_k$ = function () {
-    return this._SIZE_BYTES_0;
+    return this._SIZE_BYTES_4;
   };
   ShortCompanionObject_0.prototype._get_SIZE_BITS__0_k$ = function () {
-    return this._SIZE_BITS_0;
+    return this._SIZE_BITS_4;
   };
   ShortCompanionObject_0.$metadata$ = {
     simpleName: 'ShortCompanionObject',
@@ -5946,22 +6797,22 @@ exports.debug = debug; // for test
   }
   function IntCompanionObject_0() {
     IntCompanionObject_instance = this;
-    this._MIN_VALUE_1 = -2147483648;
-    this._MAX_VALUE_1 = 2147483647;
-    this._SIZE_BYTES_1 = 4;
-    this._SIZE_BITS_1 = 32;
+    this._MIN_VALUE_5 = -2147483648;
+    this._MAX_VALUE_5 = 2147483647;
+    this._SIZE_BYTES_5 = 4;
+    this._SIZE_BITS_5 = 32;
   }
   IntCompanionObject_0.prototype._get_MIN_VALUE__0_k$ = function () {
-    return this._MIN_VALUE_1;
+    return this._MIN_VALUE_5;
   };
   IntCompanionObject_0.prototype._get_MAX_VALUE__0_k$ = function () {
-    return this._MAX_VALUE_1;
+    return this._MAX_VALUE_5;
   };
   IntCompanionObject_0.prototype._get_SIZE_BYTES__0_k$ = function () {
-    return this._SIZE_BYTES_1;
+    return this._SIZE_BYTES_5;
   };
   IntCompanionObject_0.prototype._get_SIZE_BITS__0_k$ = function () {
-    return this._SIZE_BITS_1;
+    return this._SIZE_BITS_5;
   };
   IntCompanionObject_0.$metadata$ = {
     simpleName: 'IntCompanionObject',
@@ -5992,19 +6843,19 @@ exports.debug = debug; // for test
   }
   function FloatCompanionObject_0() {
     FloatCompanionObject_instance = this;
-    this._MIN_VALUE_2 = 1.4E-45;
-    this._MAX_VALUE_2 = 3.4028235E38;
+    this._MIN_VALUE_6 = 1.4E-45;
+    this._MAX_VALUE_6 = 3.4028235E38;
     this._POSITIVE_INFINITY = Infinity;
     this._NEGATIVE_INFINITY = -Infinity;
     this._NaN = NaN;
-    this._SIZE_BYTES_2 = 4;
-    this._SIZE_BITS_2 = 32;
+    this._SIZE_BYTES_6 = 4;
+    this._SIZE_BITS_6 = 32;
   }
   FloatCompanionObject_0.prototype._get_MIN_VALUE__0_k$ = function () {
-    return this._MIN_VALUE_2;
+    return this._MIN_VALUE_6;
   };
   FloatCompanionObject_0.prototype._get_MAX_VALUE__0_k$ = function () {
-    return this._MAX_VALUE_2;
+    return this._MAX_VALUE_6;
   };
   FloatCompanionObject_0.prototype._get_POSITIVE_INFINITY__0_k$ = function () {
     return this._POSITIVE_INFINITY;
@@ -6016,10 +6867,10 @@ exports.debug = debug; // for test
     return this._NaN;
   };
   FloatCompanionObject_0.prototype._get_SIZE_BYTES__0_k$ = function () {
-    return this._SIZE_BYTES_2;
+    return this._SIZE_BYTES_6;
   };
   FloatCompanionObject_0.prototype._get_SIZE_BITS__0_k$ = function () {
-    return this._SIZE_BITS_2;
+    return this._SIZE_BITS_6;
   };
   FloatCompanionObject_0.$metadata$ = {
     simpleName: 'FloatCompanionObject',
@@ -6062,19 +6913,19 @@ exports.debug = debug; // for test
   }
   function DoubleCompanionObject_0() {
     DoubleCompanionObject_instance = this;
-    this._MIN_VALUE_3 = 4.9E-324;
-    this._MAX_VALUE_3 = 1.7976931348623157E308;
+    this._MIN_VALUE_7 = 4.9E-324;
+    this._MAX_VALUE_7 = 1.7976931348623157E308;
     this._POSITIVE_INFINITY_0 = Infinity;
     this._NEGATIVE_INFINITY_0 = -Infinity;
     this._NaN_0 = NaN;
-    this._SIZE_BYTES_3 = 8;
-    this._SIZE_BITS_3 = 64;
+    this._SIZE_BYTES_7 = 8;
+    this._SIZE_BITS_7 = 64;
   }
   DoubleCompanionObject_0.prototype._get_MIN_VALUE__0_k$ = function () {
-    return this._MIN_VALUE_3;
+    return this._MIN_VALUE_7;
   };
   DoubleCompanionObject_0.prototype._get_MAX_VALUE__0_k$ = function () {
-    return this._MAX_VALUE_3;
+    return this._MAX_VALUE_7;
   };
   DoubleCompanionObject_0.prototype._get_POSITIVE_INFINITY__0_k$ = function () {
     return this._POSITIVE_INFINITY_0;
@@ -6086,10 +6937,10 @@ exports.debug = debug; // for test
     return this._NaN_0;
   };
   DoubleCompanionObject_0.prototype._get_SIZE_BYTES__0_k$ = function () {
-    return this._SIZE_BYTES_3;
+    return this._SIZE_BYTES_7;
   };
   DoubleCompanionObject_0.prototype._get_SIZE_BITS__0_k$ = function () {
-    return this._SIZE_BITS_3;
+    return this._SIZE_BITS_7;
   };
   DoubleCompanionObject_0.$metadata$ = {
     simpleName: 'DoubleCompanionObject',
@@ -6292,6 +7143,9 @@ exports.debug = debug; // for test
     if (index < 0) {
       throwIndexOverflow();
     }return index;
+  }
+  function setOf_0(element) {
+    return hashSetOf([element]);
   }
   function AbstractMutableCollection() {
     AbstractCollection.call(this);
@@ -7834,6 +8688,9 @@ exports.debug = debug; // for test
   PrimitiveKClassImpl.prototype._get_simpleName__0_k$ = function () {
     return this._givenSimpleName;
   };
+  PrimitiveKClassImpl.prototype.isInstance_wi7j7l_k$ = function (value) {
+    return this._isInstanceFunction(value);
+  };
   PrimitiveKClassImpl.$metadata$ = {
     simpleName: 'PrimitiveKClassImpl',
     kind: 'class',
@@ -7846,6 +8703,9 @@ exports.debug = debug; // for test
   }
   NothingKClassImpl.prototype._get_simpleName__0_k$ = function () {
     return this._simpleName;
+  };
+  NothingKClassImpl.prototype.isInstance_wi7j7l_k$ = function (value) {
+    return false;
   };
   NothingKClassImpl.prototype._get_jClass__0_k$ = function () {
     throw UnsupportedOperationException_init_$Create$_0("There's no native JS class for Nothing type");
@@ -7871,6 +8731,9 @@ exports.debug = debug; // for test
   }
   ErrorKClass.prototype._get_simpleName__0_k$ = function () {
     throw IllegalStateException_init_$Create$('Unknown simpleName for ErrorKClass');
+  };
+  ErrorKClass.prototype.isInstance_wi7j7l_k$ = function (value) {
+    throw IllegalStateException_init_$Create$("Can's check isInstance on ErrorKClass");
   };
   ErrorKClass.prototype.equals = function (other) {
     return other === this;
@@ -7902,6 +8765,9 @@ exports.debug = debug; // for test
   }
   SimpleKClassImpl.prototype._get_simpleName__0_k$ = function () {
     return this._simpleName_0;
+  };
+  SimpleKClassImpl.prototype.isInstance_wi7j7l_k$ = function (value) {
+    return jsIsType(value, this._get_jClass__0_k$());
   };
   SimpleKClassImpl.$metadata$ = {
     simpleName: 'SimpleKClassImpl',
@@ -9248,6 +10114,41 @@ exports.debug = debug; // for test
     }
     return tmp;
   }
+  function toDoubleOrNull(_this_) {
+    var tmp$ret$3;
+    $l$block_2: {
+      var tmp$ret$1;
+      $l$block_0: {
+        var tmp$ret$0;
+        $l$block: {
+          tmp$ret$0 = _this_;
+          break $l$block;
+        }
+        var tmp0_unsafeCast_0 = +tmp$ret$0;
+        tmp$ret$1 = tmp0_unsafeCast_0;
+        break $l$block_0;
+      }
+      var tmp1_takeIf_0 = tmp$ret$1;
+      {
+      }
+      var tmp;
+      var tmp$ret$2;
+      $l$block_1: {
+        tmp$ret$2 = !((isNaN_0(tmp1_takeIf_0) ? !isNaN_2(_this_) : false) ? true : tmp1_takeIf_0 === 0.0 ? isBlank(_this_) : false);
+        break $l$block_1;
+      }
+      if (tmp$ret$2) {
+        tmp = tmp1_takeIf_0;
+      } else {
+        {
+          tmp = null;
+        }
+      }
+      tmp$ret$3 = tmp;
+      break $l$block_2;
+    }
+    return tmp$ret$3;
+  }
   function isNaN_2(_this_) {
     var tmp$ret$1;
     $l$block_0: {
@@ -9361,32 +10262,32 @@ exports.debug = debug; // for test
   function regionMatches(_this_, thisOffset, other, otherOffset, length, ignoreCase) {
     return regionMatchesImpl(_this_, thisOffset, other, otherOffset, length, ignoreCase);
   }
-  function Companion_7() {
-    Companion_instance_6 = this;
-    this._MIN_VALUE_4 = new Char(0);
-    this._MAX_VALUE_4 = new Char(65535);
+  function Companion_11() {
+    Companion_instance_10 = this;
+    this._MIN_VALUE_8 = new Char(0);
+    this._MAX_VALUE_8 = new Char(65535);
     this._MIN_HIGH_SURROGATE = new Char(55296);
     this._MAX_HIGH_SURROGATE = new Char(56319);
     this._MIN_LOW_SURROGATE = new Char(56320);
     this._MAX_LOW_SURROGATE = new Char(57343);
     this._MIN_SURROGATE = new Char(55296);
     this._MAX_SURROGATE = new Char(57343);
-    this._SIZE_BYTES_4 = 2;
-    this._SIZE_BITS_4 = 16;
+    this._SIZE_BYTES_8 = 2;
+    this._SIZE_BITS_8 = 16;
   }
-  Companion_7.$metadata$ = {
+  Companion_11.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_6;
-  function Companion_getInstance_6() {
-    if (Companion_instance_6 == null)
-      new Companion_7();
-    return Companion_instance_6;
+  var Companion_instance_10;
+  function Companion_getInstance_10() {
+    if (Companion_instance_10 == null)
+      new Companion_11();
+    return Companion_instance_10;
   }
   function Char(code) {
-    Companion_getInstance_6();
+    Companion_getInstance_10();
     var tmp = this;
     var tmp$ret$0;
     $l$block: {
@@ -9517,25 +10418,28 @@ exports.debug = debug; // for test
     kind: 'interface',
     interfaces: [Iterable]
   };
-  function Companion_8() {
-    Companion_instance_7 = this;
+  function Companion_12() {
+    Companion_instance_11 = this;
   }
-  Companion_8.$metadata$ = {
+  Companion_12.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_7;
-  function Companion_getInstance_7() {
-    if (Companion_instance_7 == null)
-      new Companion_8();
-    return Companion_instance_7;
+  var Companion_instance_11;
+  function Companion_getInstance_11() {
+    if (Companion_instance_11 == null)
+      new Companion_12();
+    return Companion_instance_11;
   }
   function Enum(name, ordinal) {
-    Companion_getInstance_7();
+    Companion_getInstance_11();
     this._name = name;
     this._ordinal = ordinal;
   }
+  Enum.prototype._get_ordinal__0_k$ = function () {
+    return this._ordinal;
+  };
   Enum.prototype.compareTo_2bq_k$ = function (other) {
     return compareTo(this._ordinal, other._ordinal);
   };
@@ -9611,7 +10515,7 @@ exports.debug = debug; // for test
           var tmp_0;
           var tmp$ret$0;
           $l$block: {
-            Companion_getInstance_6();
+            Companion_getInstance_10();
             var tmp0__get_code__0_1 = new Char(0);
             tmp$ret$0 = tmp0__get_code__0_1.toInt_0_k$();
             break $l$block;
@@ -9622,7 +10526,7 @@ exports.debug = debug; // for test
             {
               var tmp$ret$1;
               $l$block_0: {
-                Companion_getInstance_6();
+                Companion_getInstance_10();
                 var tmp1__get_code__0_2 = new Char(65535);
                 tmp$ret$1 = tmp1__get_code__0_2.toInt_0_k$();
                 break $l$block_0;
@@ -9796,7 +10700,7 @@ exports.debug = debug; // for test
         var tmp_0;
         var tmp$ret$2;
         $l$block_1: {
-          Companion_getInstance_6();
+          Companion_getInstance_10();
           var tmp0__get_code__0_1 = new Char(0);
           tmp$ret$2 = tmp0__get_code__0_1.toInt_0_k$();
           break $l$block_1;
@@ -9807,7 +10711,7 @@ exports.debug = debug; // for test
           {
             var tmp$ret$3;
             $l$block_2: {
-              Companion_getInstance_6();
+              Companion_getInstance_10();
               var tmp1__get_code__0_2 = new Char(65535);
               tmp$ret$3 = tmp1__get_code__0_2.toInt_0_k$();
               break $l$block_2;
@@ -10283,26 +11187,26 @@ exports.debug = debug; // for test
       }
     }return result;
   }
-  function Companion_9() {
-    Companion_instance_8 = this;
-    this._MIN_VALUE_5 = new Long(0, -2147483648);
-    this._MAX_VALUE_5 = new Long(-1, 2147483647);
-    this._SIZE_BYTES_5 = 8;
-    this._SIZE_BITS_5 = 64;
+  function Companion_13() {
+    Companion_instance_12 = this;
+    this._MIN_VALUE_9 = new Long(0, -2147483648);
+    this._MAX_VALUE_9 = new Long(-1, 2147483647);
+    this._SIZE_BYTES_9 = 8;
+    this._SIZE_BITS_9 = 64;
   }
-  Companion_9.$metadata$ = {
+  Companion_13.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_8;
-  function Companion_getInstance_8() {
-    if (Companion_instance_8 == null)
-      new Companion_9();
-    return Companion_instance_8;
+  var Companion_instance_12;
+  function Companion_getInstance_12() {
+    if (Companion_instance_12 == null)
+      new Companion_13();
+    return Companion_instance_12;
   }
   function Long(low, high) {
-    Companion_getInstance_8();
+    Companion_getInstance_12();
     Number_0.call(this);
     this._low = low;
     this._high = high;
@@ -10337,8 +11241,17 @@ exports.debug = debug; // for test
   Long.prototype.shl_ha5a7z_k$ = function (bitCount) {
     return shiftLeft(this, bitCount);
   };
+  Long.prototype.ushr_ha5a7z_k$ = function (bitCount) {
+    return shiftRightUnsigned(this, bitCount);
+  };
+  Long.prototype.and_wiekkq_k$ = function (other) {
+    return new Long(this._low & other._low, this._high & other._high);
+  };
   Long.prototype.or_wiekkq_k$ = function (other) {
     return new Long(this._low | other._low, this._high | other._high);
+  };
+  Long.prototype.xor_wiekkq_k$ = function (other) {
+    return new Long(this._low ^ other._low, this._high ^ other._high);
   };
   Long.prototype.inv_0_k$ = function () {
     return new Long(~this._low, ~this._high);
@@ -10551,6 +11464,24 @@ exports.debug = debug; // for test
         return new Long(_this_._low >>> numBits_0 | _this_._high << (32 - numBits_0 | 0), _this_._high >> numBits_0);
       } else {
         return new Long(_this_._high >> (numBits_0 - 32 | 0), _this_._high >= 0 ? 0 : -1);
+      }
+    }
+  }
+  function shiftRightUnsigned(_this_, numBits) {
+    var numBits_0 = numBits & 63;
+    if (numBits_0 === 0) {
+      return _this_;
+    } else {
+      if (numBits_0 < 32) {
+        return new Long(_this_._low >>> numBits_0 | _this_._high << (32 - numBits_0 | 0), _this_._high >>> numBits_0);
+      } else {
+        var tmp;
+        if (numBits_0 === 32) {
+          tmp = new Long(_this_._high, 0);
+        } else {
+          tmp = new Long(_this_._high >>> (numBits_0 - 32 | 0), 0);
+        }
+        return tmp;
       }
     }
   }
@@ -11007,6 +11938,30 @@ exports.debug = debug; // for test
   }
   function isDoubleArray(a) {
     return jsInstanceOf(a, Float64Array);
+  }
+  function jsIsType(obj, jsClass) {
+    if (jsClass === Object) {
+      return isObject(obj);
+    }if ((obj == null ? true : jsClass == null) ? true : !(typeof obj === 'object') ? !(typeof obj === 'function') : false) {
+      return false;
+    }if (typeof jsClass === 'function' ? jsInstanceOf(obj, jsClass) : false) {
+      return true;
+    }var proto = jsGetPrototypeOf(jsClass);
+    var tmp0_safe_receiver = proto;
+    var constructor = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.constructor;
+    if (constructor != null ? jsIn('$metadata$', constructor) : false) {
+      var metadata = constructor.$metadata$;
+      if (metadata.kind === 'object') {
+        return obj === jsClass;
+      }}var klassMetadata = jsClass.$metadata$;
+    if (klassMetadata == null) {
+      return jsInstanceOf(obj, jsClass);
+    }if (klassMetadata.kind === 'interface' ? obj.constructor != null : false) {
+      return isInterfaceImpl(obj.constructor, jsClass);
+    }return false;
+  }
+  function jsGetPrototypeOf(jsClass) {
+    return Object.getPrototypeOf(jsClass);
   }
   function copyOf(_this_, newSize) {
     {
@@ -12086,6 +13041,9 @@ exports.debug = debug; // for test
       }
     }
     return tmp;
+  }
+  function toString_2(_this_, radix) {
+    return toStringImpl(_this_, checkRadix(radix));
   }
   function None() {
     None_instance = this;
@@ -15881,7 +16839,7 @@ exports.debug = debug; // for test
     var key = element._get_key__0_k$();
     var collectElement = this._$this_checkContext._collectContext.get_9uvjra_k$(key);
     if (!(key === Key_getInstance_2())) {
-      return !(element === collectElement) ? IntCompanionObject_getInstance()._MIN_VALUE_1 : count + 1 | 0;
+      return !(element === collectElement) ? IntCompanionObject_getInstance()._MIN_VALUE_5 : count + 1 | 0;
     }var collectJob = (collectElement == null ? true : isInterface(collectElement, Job)) ? collectElement : THROW_CCE();
     var emissionParentJob = transitiveCoroutineParent(isInterface(element, Job) ? element : THROW_CCE(), collectJob);
     if (!(emissionParentJob === collectJob)) {
@@ -16085,14 +17043,14 @@ exports.debug = debug; // for test
     return flow_0.collect_l0hod5_k$(_this_, $cont);
   }
   function toList_2(_this_, destination, $cont) {
-    return toCollection_1(_this_, destination, $cont);
+    return toCollection_2(_this_, destination, $cont);
   }
   function toList$default(_this_, destination, $mask0, $handler, $cont) {
     if (!(($mask0 & 1) === 0))
       destination = ArrayList_init_$Create$();
     return toList_2(_this_, destination, $cont);
   }
-  function toCollection_1(_this_, destination, $cont) {
+  function toCollection_2(_this_, destination, $cont) {
     var tmp = new $toCollectionCOROUTINE$10(_this_, destination, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
@@ -17705,11 +18663,21 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
-  function findPolymorphicSerializer(_this_, decoder, klassName) {
+  function findPolymorphicSerializer(_this_, encoder, value) {
+    var tmp0_elvis_lhs = _this_.findPolymorphicSerializerOrNull_ht9jsm_k$(encoder, value);
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      throwSubtypeNotRegistered(getKClassFromExpression_0(value), _this_._get_baseClass__0_k$());
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    return tmp;
+  }
+  function findPolymorphicSerializer_0(_this_, decoder, klassName) {
     var tmp0_elvis_lhs = _this_.findPolymorphicSerializerOrNull_7yolwc_k$(decoder, klassName);
     var tmp;
     if (tmp0_elvis_lhs == null) {
-      throwSubtypeNotRegistered(klassName, _this_._get_baseClass__0_k$());
+      throwSubtypeNotRegistered_0(klassName, _this_._get_baseClass__0_k$());
     } else {
       tmp = tmp0_elvis_lhs;
     }
@@ -17733,6 +18701,13 @@ exports.debug = debug; // for test
       return Unit_getInstance();
     };
   }
+  function SealedClassSerializer() {
+  }
+  SealedClassSerializer.$metadata$ = {
+    simpleName: 'SealedClassSerializer',
+    kind: 'class',
+    interfaces: []
+  };
   function StringFormat() {
   }
   StringFormat.$metadata$ = {
@@ -18055,6 +19030,18 @@ exports.debug = debug; // for test
   }
   function serializer_10(_this_) {
     return UnitSerializer_getInstance();
+  }
+  function serializer_11(_this_) {
+    return UIntSerializer_getInstance();
+  }
+  function serializer_12(_this_) {
+    return ULongSerializer_getInstance();
+  }
+  function serializer_13(_this_) {
+    return UByteSerializer_getInstance();
+  }
+  function serializer_14(_this_) {
+    return UShortSerializer_getInstance();
   }
   function MapEntrySerializer(keySerializer, valueSerializer) {
     return new MapEntrySerializer_0(keySerializer, valueSerializer);
@@ -18457,7 +19444,7 @@ exports.debug = debug; // for test
     var tmp0_elvis_lhs = this._name2Index.get_2bw_k$(name);
     var tmp;
     if (tmp0_elvis_lhs == null) {
-      Companion_getInstance_9();
+      Companion_getInstance_13();
       tmp = -3;
     } else {
       tmp = tmp0_elvis_lhs;
@@ -18978,6 +19965,9 @@ exports.debug = debug; // for test
     var tmp = this.decodeValue_0_k$();
     return typeof tmp === 'string' ? tmp : THROW_CCE();
   };
+  AbstractDecoder.prototype.decodeInline_6qhf5t_k$ = function (inlineDescriptor) {
+    return this;
+  };
   AbstractDecoder.prototype.decodeSerializableValue_qeg2y_k$ = function (deserializer, previousValue) {
     return this.decodeSerializableValue_f8566k_k$(deserializer);
   };
@@ -19025,6 +20015,101 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: [Decoder, CompositeDecoder]
   };
+  function AbstractEncoder() {
+  }
+  AbstractEncoder.prototype.beginStructure_6qhf5t_k$ = function (descriptor) {
+    return this;
+  };
+  AbstractEncoder.prototype.endStructure_g940c0_k$ = function (descriptor) {
+  };
+  AbstractEncoder.prototype.encodeElement_5vyt7k_k$ = function (descriptor, index) {
+    return true;
+  };
+  AbstractEncoder.prototype.encodeValue_wu1lm5_k$ = function (value) {
+    throw SerializationException_init_$Create$('' + 'Non-serializable ' + getKClassFromExpression_0(value) + ' is not supported by ' + getKClassFromExpression_0(this) + ' encoder');
+  };
+  AbstractEncoder.prototype.encodeNull_sv8swh_k$ = function () {
+    throw SerializationException_init_$Create$("'null' is not supported by default");
+  };
+  AbstractEncoder.prototype.encodeBoolean_rpwsgn_k$ = function (value) {
+    return this.encodeValue_wu1lm5_k$(value);
+  };
+  AbstractEncoder.prototype.encodeByte_hpsj51_k$ = function (value) {
+    return this.encodeValue_wu1lm5_k$(value);
+  };
+  AbstractEncoder.prototype.encodeShort_7gn77n_k$ = function (value) {
+    return this.encodeValue_wu1lm5_k$(value);
+  };
+  AbstractEncoder.prototype.encodeInt_majfzk_k$ = function (value) {
+    return this.encodeValue_wu1lm5_k$(value);
+  };
+  AbstractEncoder.prototype.encodeLong_kdfck9_k$ = function (value) {
+    return this.encodeValue_wu1lm5_k$(value);
+  };
+  AbstractEncoder.prototype.encodeFloat_cpozfn_k$ = function (value) {
+    return this.encodeValue_wu1lm5_k$(value);
+  };
+  AbstractEncoder.prototype.encodeDouble_okcceq_k$ = function (value) {
+    return this.encodeValue_wu1lm5_k$(value);
+  };
+  AbstractEncoder.prototype.encodeChar_9o0tv_k$ = function (value) {
+    return this.encodeValue_wu1lm5_k$(value);
+  };
+  AbstractEncoder.prototype.encodeString_a4enbm_k$ = function (value) {
+    return this.encodeValue_wu1lm5_k$(value);
+  };
+  AbstractEncoder.prototype.encodeInline_6qhf5t_k$ = function (inlineDescriptor) {
+    return this;
+  };
+  AbstractEncoder.prototype.encodeBooleanElement_9280p5_k$ = function (descriptor, index, value) {
+    if (this.encodeElement_5vyt7k_k$(descriptor, index))
+      this.encodeBoolean_rpwsgn_k$(value);
+  };
+  AbstractEncoder.prototype.encodeByteElement_loxigr_k$ = function (descriptor, index, value) {
+    if (this.encodeElement_5vyt7k_k$(descriptor, index))
+      this.encodeByte_hpsj51_k$(value);
+  };
+  AbstractEncoder.prototype.encodeShortElement_lm5ndv_k$ = function (descriptor, index, value) {
+    if (this.encodeElement_5vyt7k_k$(descriptor, index))
+      this.encodeShort_7gn77n_k$(value);
+  };
+  AbstractEncoder.prototype.encodeIntElement_wh7n80_k$ = function (descriptor, index, value) {
+    if (this.encodeElement_5vyt7k_k$(descriptor, index))
+      this.encodeInt_majfzk_k$(value);
+  };
+  AbstractEncoder.prototype.encodeLongElement_j1ap1j_k$ = function (descriptor, index, value) {
+    if (this.encodeElement_5vyt7k_k$(descriptor, index))
+      this.encodeLong_kdfck9_k$(value);
+  };
+  AbstractEncoder.prototype.encodeFloatElement_qv7flv_k$ = function (descriptor, index, value) {
+    if (this.encodeElement_5vyt7k_k$(descriptor, index))
+      this.encodeFloat_cpozfn_k$(value);
+  };
+  AbstractEncoder.prototype.encodeDoubleElement_xwk426_k$ = function (descriptor, index, value) {
+    if (this.encodeElement_5vyt7k_k$(descriptor, index))
+      this.encodeDouble_okcceq_k$(value);
+  };
+  AbstractEncoder.prototype.encodeCharElement_vw2177_k$ = function (descriptor, index, value) {
+    if (this.encodeElement_5vyt7k_k$(descriptor, index))
+      this.encodeChar_9o0tv_k$(value);
+  };
+  AbstractEncoder.prototype.encodeStringElement_mom8tu_k$ = function (descriptor, index, value) {
+    if (this.encodeElement_5vyt7k_k$(descriptor, index))
+      this.encodeString_a4enbm_k$(value);
+  };
+  AbstractEncoder.prototype.encodeSerializableElement_r6n13r_k$ = function (descriptor, index, serializer_15, value) {
+    if (this.encodeElement_5vyt7k_k$(descriptor, index))
+      this.encodeSerializableValue_79s409_k$(serializer_15, value);
+  };
+  AbstractEncoder.prototype.encodeNullableSerializableElement_6l2lkq_k$ = function (descriptor, index, serializer_15, value) {
+    if (this.encodeElement_5vyt7k_k$(descriptor, index))
+      this.encodeNullableSerializableValue_99f6e2_k$(serializer_15, value);
+  };
+  AbstractEncoder.$metadata$ = {
+    simpleName: 'AbstractEncoder',
+    kind: 'class',
+    interfaces: [Encoder, CompositeEncoder]
+  };
   function Decoder() {
   }
   Decoder.prototype.decodeSerializableValue_f8566k_k$ = function (deserializer) {
@@ -19035,21 +20120,21 @@ exports.debug = debug; // for test
     kind: 'interface',
     interfaces: []
   };
-  function Companion_10() {
-    Companion_instance_9 = this;
+  function Companion_14() {
+    Companion_instance_13 = this;
     this._DECODE_DONE = -1;
     this._UNKNOWN_NAME = -3;
   }
-  Companion_10.$metadata$ = {
+  Companion_14.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_9;
-  function Companion_getInstance_9() {
-    if (Companion_instance_9 == null)
-      new Companion_10();
-    return Companion_instance_9;
+  var Companion_instance_13;
+  function Companion_getInstance_13() {
+    if (Companion_instance_13 == null)
+      new Companion_14();
+    return Companion_instance_13;
   }
   function CompositeDecoder() {
   }
@@ -19069,14 +20154,83 @@ exports.debug = debug; // for test
     kind: 'interface',
     interfaces: []
   };
+  function Encoder() {
+  }
+  Encoder.prototype.encodeNotNullMark_sv8swh_k$ = function () {
+  };
+  Encoder.prototype.beginCollection_5vyt7k_k$ = function (descriptor, collectionSize) {
+    return this.beginStructure_6qhf5t_k$(descriptor);
+  };
+  Encoder.prototype.encodeSerializableValue_79s409_k$ = function (serializer_15, value) {
+    serializer_15.serialize_whawnb_k$(this, value);
+  };
+  Encoder.prototype.encodeNullableSerializableValue_99f6e2_k$ = function (serializer_15, value) {
+    var isNullabilitySupported = serializer_15._get_descriptor__0_k$()._get_isNullable__0_k$();
+    if (isNullabilitySupported) {
+      return this.encodeSerializableValue_79s409_k$(isInterface(serializer_15, SerializationStrategy) ? serializer_15 : THROW_CCE(), value);
+    }if (value == null) {
+      this.encodeNull_sv8swh_k$();
+    } else {
+      this.encodeNotNullMark_sv8swh_k$();
+      this.encodeSerializableValue_79s409_k$(serializer_15, value);
+    }
+  };
+  Encoder.$metadata$ = {
+    simpleName: 'Encoder',
+    kind: 'interface',
+    interfaces: []
+  };
+  function CompositeEncoder() {
+  }
+  CompositeEncoder.prototype.shouldEncodeElementDefault_5vyt7k_k$ = function (descriptor, index) {
+    return true;
+  };
+  CompositeEncoder.$metadata$ = {
+    simpleName: 'CompositeEncoder',
+    kind: 'interface',
+    interfaces: []
+  };
   function decodeSequentially($this, compositeDecoder) {
     var klassName = compositeDecoder.decodeStringElement_5vyt7k_k$($this._get_descriptor__0_k$(), 0);
-    var serializer_11 = findPolymorphicSerializer($this, compositeDecoder, klassName);
+    var serializer_15 = findPolymorphicSerializer_0($this, compositeDecoder, klassName);
     var tmp = $this._get_descriptor__0_k$();
-    return compositeDecoder.decodeSerializableElement$default_51un9o_k$(tmp, 1, serializer_11, null, 8, null);
+    return compositeDecoder.decodeSerializableElement$default_51un9o_k$(tmp, 1, serializer_15, null, 8, null);
   }
   function AbstractPolymorphicSerializer() {
   }
+  AbstractPolymorphicSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    var actualSerializer = findPolymorphicSerializer(this, encoder, value);
+    {
+      var tmp0_encodeStructure_0 = this._get_descriptor__0_k$();
+      var composite_1 = encoder.beginStructure_6qhf5t_k$(tmp0_encodeStructure_0);
+      var ex_2 = null;
+      try {
+        {
+          composite_1.encodeStringElement_mom8tu_k$(this._get_descriptor__0_k$(), 0, actualSerializer._get_descriptor__0_k$()._get_serialName__0_k$());
+          var tmp = this._get_descriptor__0_k$();
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = isInterface(actualSerializer, SerializationStrategy) ? actualSerializer : THROW_CCE();
+            break $l$block;
+          }
+          composite_1.encodeSerializableElement_r6n13r_k$(tmp, 1, tmp$ret$0, value);
+        }
+      } catch ($p) {
+        if ($p instanceof Error) {
+          ex_2 = $p;
+          throw $p;
+        } else {
+          {
+            throw $p;
+          }
+        }
+      }
+      finally {
+        if (ex_2 == null)
+          composite_1.endStructure_g940c0_k$(tmp0_encodeStructure_0);
+      }
+    }
+  };
   AbstractPolymorphicSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     var tmp$ret$5;
     $l$block_4: {
@@ -19092,7 +20246,7 @@ exports.debug = debug; // for test
             return decodeSequentially(this, composite_1);
           }mainLoop: while (true) {
             var index_7 = composite_1.decodeElementIndex_6qhf5t_k$(this._get_descriptor__0_k$());
-            Companion_getInstance_9();
+            Companion_getInstance_13();
             if (index_7 === -1) {
               break mainLoop;
             } else {
@@ -19119,7 +20273,7 @@ exports.debug = debug; // for test
                     }
                   }
                   klassName_5 = tmp$ret$1;
-                  var serializer_10_0 = findPolymorphicSerializer(this, composite_1, klassName_5);
+                  var serializer_10_0 = findPolymorphicSerializer_0(this, composite_1, klassName_5);
                   var tmp = this._get_descriptor__0_k$();
                   value_6 = composite_1.decodeSerializableElement$default_51un9o_k$(tmp, index_7, serializer_10_0, null, 8, null);
                 } else {
@@ -19175,12 +20329,19 @@ exports.debug = debug; // for test
   AbstractPolymorphicSerializer.prototype.findPolymorphicSerializerOrNull_7yolwc_k$ = function (decoder, klassName) {
     return decoder._get_serializersModule__0_k$().getPolymorphic_l8fcrr_k$(this._get_baseClass__0_k$(), klassName);
   };
+  AbstractPolymorphicSerializer.prototype.findPolymorphicSerializerOrNull_ht9jsm_k$ = function (encoder, value) {
+    return encoder._get_serializersModule__0_k$().getPolymorphic_8orz3i_k$(this._get_baseClass__0_k$(), value);
+  };
   AbstractPolymorphicSerializer.$metadata$ = {
     simpleName: 'AbstractPolymorphicSerializer',
     kind: 'class',
     interfaces: [KSerializer]
   };
-  function throwSubtypeNotRegistered(subClassName, baseClass) {
+  function throwSubtypeNotRegistered(subClass, baseClass) {
+    var tmp0_elvis_lhs = subClass._get_simpleName__0_k$();
+    throwSubtypeNotRegistered_0(tmp0_elvis_lhs == null ? '' + subClass : tmp0_elvis_lhs, baseClass);
+  }
+  function throwSubtypeNotRegistered_0(subClassName, baseClass) {
     var scope = '' + "in the scope of '" + baseClass._get_simpleName__0_k$() + "'";
     throw SerializationException_init_$Create$(subClassName == null ? '' + 'Class discriminator was missing and no default polymorphic serializers were registered ' + scope : '' + "Class '" + subClassName + "' is not registered for polymorphic serialization " + scope + '.\n' + "Mark the base class as 'sealed' or register the serializer explicitly.");
   }
@@ -19488,11 +20649,40 @@ exports.debug = debug; // for test
   PrimitiveArraySerializer.prototype.checkCapacity_t3wguy_k$ = function (_this__0, size_0) {
     return _this__0.ensureCapacity_majfzk_k$(size_0);
   };
+  PrimitiveArraySerializer.prototype.collectionIterator_pm07yg_k$ = function (_this__0) {
+    throw IllegalStateException_init_$Create$('This method lead to boxing and must not be used, use writeContents instead');
+  };
+  PrimitiveArraySerializer.prototype.collectionIterator_4qlka9_k$ = function (_this__0) {
+    return this.collectionIterator_pm07yg_k$((_this__0 == null ? true : isObject(_this__0)) ? _this__0 : THROW_CCE());
+  };
   PrimitiveArraySerializer.prototype.insert_u4zj9f_k$ = function (_this__0, index, element) {
     throw IllegalStateException_init_$Create$('This method lead to boxing and must not be used, use Builder.append instead');
   };
   PrimitiveArraySerializer.prototype.builder_0_k$ = function () {
     return this.toBuilder_4qlka9_k$(this.empty_0_k$());
+  };
+  PrimitiveArraySerializer.prototype.serialize_ri6ae6_k$ = function (encoder, value) {
+    var size_0 = this.collectionSize_4qlka9_k$(value);
+    {
+      var tmp0_encodeCollection_0 = this._descriptor;
+      var tmp$ret$0;
+      $l$block: {
+        var tmp0_with_0_1 = encoder.beginCollection_5vyt7k_k$(tmp0_encodeCollection_0, size_0);
+        {
+        }
+        {
+          this.writeContent_8rd7hi_k$(tmp0_with_0_1, value, size_0);
+        }
+        tmp$ret$0 = tmp0_with_0_1.endStructure_g940c0_k$(tmp0_encodeCollection_0);
+        break $l$block;
+      }
+    }
+  };
+  PrimitiveArraySerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_ri6ae6_k$(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
+  };
+  PrimitiveArraySerializer.prototype.serialize_y26io9_k$ = function (encoder, value) {
+    return this.serialize_ri6ae6_k$(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
   };
   PrimitiveArraySerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return this.merge_j0fkdd_k$(decoder, null);
@@ -19518,6 +20708,34 @@ exports.debug = debug; // for test
     AbstractCollectionSerializer.call(this);
     this._elementSerializer = elementSerializer;
   }
+  ListLikeSerializer.prototype.serialize_y26io9_k$ = function (encoder, value) {
+    var size_0 = this.collectionSize_4qlka9_k$(value);
+    {
+      var tmp0_encodeCollection_0 = this._get_descriptor__0_k$();
+      var tmp$ret$0;
+      $l$block: {
+        var tmp0_with_0_1 = encoder.beginCollection_5vyt7k_k$(tmp0_encodeCollection_0, size_0);
+        {
+        }
+        {
+          var iterator_3 = this.collectionIterator_4qlka9_k$(value);
+          var inductionVariable = 0;
+          if (inductionVariable < size_0)
+            do {
+              var index_5 = inductionVariable;
+              inductionVariable = inductionVariable + 1 | 0;
+              tmp0_with_0_1.encodeSerializableElement_r6n13r_k$(this._get_descriptor__0_k$(), index_5, this._elementSerializer, iterator_3.next_0_k$());
+            }
+             while (inductionVariable < size_0);
+        }
+        tmp$ret$0 = tmp0_with_0_1.endStructure_g940c0_k$(tmp0_encodeCollection_0);
+        break $l$block;
+      }
+    }
+  };
+  ListLikeSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_y26io9_k$(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
+  };
   ListLikeSerializer.prototype.readAll_nt2u9d_k$ = function (decoder, builder, startIndex, size_0) {
     {
       var tmp0_require_0 = size_0 >= 0;
@@ -19568,7 +20786,7 @@ exports.debug = debug; // for test
     } else {
       $l$break: while (true) {
         var index = compositeDecoder.decodeElementIndex_6qhf5t_k$(this._get_descriptor__0_k$());
-        Companion_getInstance_9();
+        Companion_getInstance_13();
         if (index === -1)
           break $l$break;
         else {
@@ -19599,6 +20817,23 @@ exports.debug = debug; // for test
   }
   LinkedHashMapSerializer.prototype._get_descriptor__0_k$ = function () {
     return this._descriptor_0;
+  };
+  LinkedHashMapSerializer.prototype.collectionSize_ot3j0e_k$ = function (_this__0) {
+    return _this__0._get_size__0_k$();
+  };
+  LinkedHashMapSerializer.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_ot3j0e_k$((!(_this__0 == null) ? isInterface(_this__0, Map_0) : false) ? _this__0 : THROW_CCE());
+  };
+  LinkedHashMapSerializer.prototype.collectionIterator_ot3j0e_k$ = function (_this__0) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _this__0._get_entries__0_k$().iterator_0_k$();
+      break $l$block;
+    }
+    return tmp$ret$0;
+  };
+  LinkedHashMapSerializer.prototype.collectionIterator_4qlka9_k$ = function (_this__0) {
+    return this.collectionIterator_ot3j0e_k$((!(_this__0 == null) ? isInterface(_this__0, Map_0) : false) ? _this__0 : THROW_CCE());
   };
   LinkedHashMapSerializer.prototype.builder_0_k$ = function () {
     return LinkedHashMap_init_$Create$();
@@ -19638,6 +20873,18 @@ exports.debug = debug; // for test
   }
   LinkedHashSetSerializer.prototype._get_descriptor__0_k$ = function () {
     return this._descriptor_1;
+  };
+  LinkedHashSetSerializer.prototype.collectionSize_2eudew_k$ = function (_this__0) {
+    return _this__0._get_size__0_k$();
+  };
+  LinkedHashSetSerializer.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_2eudew_k$((!(_this__0 == null) ? isInterface(_this__0, Set) : false) ? _this__0 : THROW_CCE());
+  };
+  LinkedHashSetSerializer.prototype.collectionIterator_2eudew_k$ = function (_this__0) {
+    return _this__0.iterator_0_k$();
+  };
+  LinkedHashSetSerializer.prototype.collectionIterator_4qlka9_k$ = function (_this__0) {
+    return this.collectionIterator_2eudew_k$((!(_this__0 == null) ? isInterface(_this__0, Set) : false) ? _this__0 : THROW_CCE());
   };
   LinkedHashSetSerializer.prototype.builder_0_k$ = function () {
     var tmp$ret$0;
@@ -19770,6 +21017,60 @@ exports.debug = debug; // for test
       Unit_getInstance();
     }
   };
+  MapLikeSerializer.prototype.serialize_y26io9_k$ = function (encoder, value) {
+    var size_0 = this.collectionSize_4qlka9_k$(value);
+    {
+      var tmp0_encodeCollection_0 = this._get_descriptor__0_k$();
+      var tmp$ret$3;
+      $l$block_2: {
+        var tmp0_with_0_1 = encoder.beginCollection_5vyt7k_k$(tmp0_encodeCollection_0, size_0);
+        {
+        }
+        {
+          var iterator_3 = this.collectionIterator_4qlka9_k$(value);
+          var index_4 = 0;
+          {
+            var tmp$ret$0;
+            $l$block: {
+              tmp$ret$0 = iterator_3;
+              break $l$block;
+            }
+            var tmp0_iterator_1_5 = tmp$ret$0;
+            while (tmp0_iterator_1_5.hasNext_0_k$()) {
+              var element_2_6 = tmp0_iterator_1_5.next_0_k$();
+              {
+                var tmp$ret$1;
+                $l$block_0: {
+                  tmp$ret$1 = element_2_6._get_key__0_k$();
+                  break $l$block_0;
+                }
+                var k_4_7 = tmp$ret$1;
+                var tmp$ret$2;
+                $l$block_1: {
+                  tmp$ret$2 = element_2_6._get_value__0_k$();
+                  break $l$block_1;
+                }
+                var v_5_8 = tmp$ret$2;
+                var tmp = this._get_descriptor__0_k$();
+                var tmp0_6_9 = index_4;
+                index_4 = tmp0_6_9 + 1 | 0;
+                tmp0_with_0_1.encodeSerializableElement_r6n13r_k$(tmp, tmp0_6_9, this._keySerializer, k_4_7);
+                var tmp_0 = this._get_descriptor__0_k$();
+                var tmp1_7_10 = index_4;
+                index_4 = tmp1_7_10 + 1 | 0;
+                tmp0_with_0_1.encodeSerializableElement_r6n13r_k$(tmp_0, tmp1_7_10, this._valueSerializer, v_5_8);
+              }
+            }
+          }
+        }
+        tmp$ret$3 = tmp0_with_0_1.endStructure_g940c0_k$(tmp0_encodeCollection_0);
+        break $l$block_2;
+      }
+    }
+  };
+  MapLikeSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_y26io9_k$(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
+  };
   MapLikeSerializer.$metadata$ = {
     simpleName: 'MapLikeSerializer',
     kind: 'class',
@@ -19781,6 +21082,18 @@ exports.debug = debug; // for test
   }
   ArrayListSerializer.prototype._get_descriptor__0_k$ = function () {
     return this._descriptor_2;
+  };
+  ArrayListSerializer.prototype.collectionSize_q205y6_k$ = function (_this__0) {
+    return _this__0._get_size__0_k$();
+  };
+  ArrayListSerializer.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_q205y6_k$((!(_this__0 == null) ? isInterface(_this__0, List) : false) ? _this__0 : THROW_CCE());
+  };
+  ArrayListSerializer.prototype.collectionIterator_q205y6_k$ = function (_this__0) {
+    return _this__0.iterator_0_k$();
+  };
+  ArrayListSerializer.prototype.collectionIterator_4qlka9_k$ = function (_this__0) {
+    return this.collectionIterator_q205y6_k$((!(_this__0 == null) ? isInterface(_this__0, List) : false) ? _this__0 : THROW_CCE());
   };
   ArrayListSerializer.prototype.builder_0_k$ = function () {
     var tmp$ret$0;
@@ -19834,6 +21147,18 @@ exports.debug = debug; // for test
   HashSetSerializer.prototype._get_descriptor__0_k$ = function () {
     return this._descriptor_3;
   };
+  HashSetSerializer.prototype.collectionSize_2eudew_k$ = function (_this__0) {
+    return _this__0._get_size__0_k$();
+  };
+  HashSetSerializer.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_2eudew_k$((!(_this__0 == null) ? isInterface(_this__0, Set) : false) ? _this__0 : THROW_CCE());
+  };
+  HashSetSerializer.prototype.collectionIterator_2eudew_k$ = function (_this__0) {
+    return _this__0.iterator_0_k$();
+  };
+  HashSetSerializer.prototype.collectionIterator_4qlka9_k$ = function (_this__0) {
+    return this.collectionIterator_2eudew_k$((!(_this__0 == null) ? isInterface(_this__0, Set) : false) ? _this__0 : THROW_CCE());
+  };
   HashSetSerializer.prototype.builder_0_k$ = function () {
     return HashSet_init_$Create$();
   };
@@ -19881,6 +21206,23 @@ exports.debug = debug; // for test
   HashMapSerializer.prototype._get_descriptor__0_k$ = function () {
     return this._descriptor_4;
   };
+  HashMapSerializer.prototype.collectionSize_ot3j0e_k$ = function (_this__0) {
+    return _this__0._get_size__0_k$();
+  };
+  HashMapSerializer.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_ot3j0e_k$((!(_this__0 == null) ? isInterface(_this__0, Map_0) : false) ? _this__0 : THROW_CCE());
+  };
+  HashMapSerializer.prototype.collectionIterator_ot3j0e_k$ = function (_this__0) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _this__0._get_entries__0_k$().iterator_0_k$();
+      break $l$block;
+    }
+    return tmp$ret$0;
+  };
+  HashMapSerializer.prototype.collectionIterator_4qlka9_k$ = function (_this__0) {
+    return this.collectionIterator_ot3j0e_k$((!(_this__0 == null) ? isInterface(_this__0, Map_0) : false) ? _this__0 : THROW_CCE());
+  };
   HashMapSerializer.prototype.builder_0_k$ = function () {
     return HashMap_init_$Create$();
   };
@@ -19920,6 +21262,18 @@ exports.debug = debug; // for test
   }
   ReferenceArraySerializer.prototype._get_descriptor__0_k$ = function () {
     return this._descriptor_5;
+  };
+  ReferenceArraySerializer.prototype.collectionSize_5q2i01_k$ = function (_this__0) {
+    return _this__0.length;
+  };
+  ReferenceArraySerializer.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_5q2i01_k$((!(_this__0 == null) ? isArray(_this__0) : false) ? _this__0 : THROW_CCE());
+  };
+  ReferenceArraySerializer.prototype.collectionIterator_5q2i01_k$ = function (_this__0) {
+    return arrayIterator(_this__0);
+  };
+  ReferenceArraySerializer.prototype.collectionIterator_4qlka9_k$ = function (_this__0) {
+    return this.collectionIterator_5q2i01_k$((!(_this__0 == null) ? isArray(_this__0) : false) ? _this__0 : THROW_CCE());
   };
   ReferenceArraySerializer.prototype.builder_0_k$ = function () {
     var tmp$ret$0;
@@ -19965,24 +21319,24 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
-  function Companion_11() {
-    Companion_instance_10 = this;
+  function Companion_15() {
+    Companion_instance_14 = this;
     this._EMPTY_HIGH_MARKS = longArray(0);
   }
-  Companion_11.$metadata$ = {
+  Companion_15.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_10;
-  function Companion_getInstance_10() {
-    if (Companion_instance_10 == null)
-      new Companion_11();
-    return Companion_instance_10;
+  var Companion_instance_14;
+  function Companion_getInstance_14() {
+    if (Companion_instance_14 == null)
+      new Companion_15();
+    return Companion_instance_14;
   }
   function prepareHighMarksArray($this, elementsCount) {
     var slotsCount = (elementsCount - 1 | 0) >>> 6;
-    Companion_getInstance_8();
+    Companion_getInstance_12();
     var elementsInLastSlot = elementsCount & (64 - 1 | 0);
     var highMarks = longArray(slotsCount);
     if (!(elementsInLastSlot === 0)) {
@@ -19991,7 +21345,7 @@ exports.debug = debug; // for test
   }
   function markHigh($this, index) {
     var slot = (index >>> 6) - 1 | 0;
-    Companion_getInstance_8();
+    Companion_getInstance_12();
     var offsetInSlot = index & (64 - 1 | 0);
     $this._highMarksArray[slot] = $this._highMarksArray[slot].or_wiekkq_k$((new Long(1, 0)).shl_ha5a7z_k$(offsetInSlot));
   }
@@ -20003,7 +21357,7 @@ exports.debug = debug; // for test
         var slot = inductionVariable;
         inductionVariable = inductionVariable + 1 | 0;
         var tmp = slot + 1 | 0;
-        Companion_getInstance_8();
+        Companion_getInstance_12();
         var slotOffset = imul(tmp, 64);
         var slotMarks = $this._highMarksArray[slot];
         while (!slotMarks.equals(new Long(-1, -1))) {
@@ -20017,19 +21371,19 @@ exports.debug = debug; // for test
         $this._highMarksArray[slot] = slotMarks;
       }
        while (inductionVariable <= last_0);
-    Companion_getInstance_9();
+    Companion_getInstance_13();
     return -1;
   }
   function ElementMarker(descriptor, readIfAbsent_0) {
-    Companion_getInstance_10();
+    Companion_getInstance_14();
     this._descriptor_6 = descriptor;
     this._readIfAbsent = readIfAbsent_0;
     var elementsCount = this._descriptor_6._get_elementsCount__0_k$();
-    Companion_getInstance_8();
+    Companion_getInstance_12();
     if (elementsCount <= 64) {
       var tmp = this;
       var tmp_0;
-      Companion_getInstance_8();
+      Companion_getInstance_12();
       if (elementsCount === 64) {
         tmp_0 = new Long(0, 0);
       } else {
@@ -20038,7 +21392,7 @@ exports.debug = debug; // for test
         }
       }
       tmp._lowerMarks = tmp_0;
-      this._highMarksArray = Companion_getInstance_10()._EMPTY_HIGH_MARKS;
+      this._highMarksArray = Companion_getInstance_14()._EMPTY_HIGH_MARKS;
     } else {
       {
         this._lowerMarks = new Long(0, 0);
@@ -20047,7 +21401,7 @@ exports.debug = debug; // for test
     }
   }
   ElementMarker.prototype.mark_majfzk_k$ = function (index) {
-    Companion_getInstance_8();
+    Companion_getInstance_12();
     if (index < 64) {
       this._lowerMarks = this._lowerMarks.or_wiekkq_k$((new Long(1, 0)).shl_ha5a7z_k$(index));
     } else {
@@ -20064,12 +21418,12 @@ exports.debug = debug; // for test
       if (this._readIfAbsent(this._descriptor_6, index)) {
         return index;
       }}
-    Companion_getInstance_8();
+    Companion_getInstance_12();
     if (elementsCount > 64) {
       return nextUnmarkedHighIndex(this);
     } else {
     }
-    Companion_getInstance_9();
+    Companion_getInstance_13();
     return -1;
   };
   ElementMarker.$metadata$ = {
@@ -20077,15 +21431,297 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
+  function InlinePrimitiveDescriptor(name, primitiveSerializer) {
+    return new InlineClassDescriptor(name, new _no_name_provided__55(primitiveSerializer));
+  }
+  function InlineClassDescriptor(name, generatedSerializer) {
+    PluginGeneratedSerialDescriptor.call(this, name, generatedSerializer, 1);
+    this._isInline = true;
+  }
+  InlineClassDescriptor.prototype._get_isInline__0_k$ = function () {
+    return this._isInline;
+  };
+  InlineClassDescriptor.prototype.hashCode = function () {
+    return imul(PluginGeneratedSerialDescriptor.prototype.hashCode.call(this), 31);
+  };
+  InlineClassDescriptor.prototype.equals = function (other) {
+    var tmp$ret$0;
+    $l$block_7: {
+      if (this === other) {
+        tmp$ret$0 = true;
+        break $l$block_7;
+      }if (!(other instanceof InlineClassDescriptor)) {
+        tmp$ret$0 = false;
+        break $l$block_7;
+      } else {
+      }
+      if (!(this._get_serialName__0_k$() === other._get_serialName__0_k$())) {
+        tmp$ret$0 = false;
+        break $l$block_7;
+      }var tmp$ret$1;
+      $l$block_2: {
+        var tmp0__anonymous__3 = other;
+        tmp$ret$1 = tmp0__anonymous__3._isInline ? contentEquals(this._get_typeParameterDescriptors__0_k$(), tmp0__anonymous__3._get_typeParameterDescriptors__0_k$()) : false;
+        break $l$block_2;
+      }
+      if (!tmp$ret$1) {
+        tmp$ret$0 = false;
+        break $l$block_7;
+      } else {
+      }
+      if (!(this._get_elementsCount__0_k$() === other._get_elementsCount__0_k$())) {
+        tmp$ret$0 = false;
+        break $l$block_7;
+      }var inductionVariable = 0;
+      var last_0 = this._get_elementsCount__0_k$();
+      if (inductionVariable < last_0)
+        do {
+          var index_2 = inductionVariable;
+          inductionVariable = inductionVariable + 1 | 0;
+          if (!(this.getElementDescriptor_ha5a7z_k$(index_2)._get_serialName__0_k$() === other.getElementDescriptor_ha5a7z_k$(index_2)._get_serialName__0_k$())) {
+            tmp$ret$0 = false;
+            break $l$block_7;
+          }if (!equals_1(this.getElementDescriptor_ha5a7z_k$(index_2)._get_kind__0_k$(), other.getElementDescriptor_ha5a7z_k$(index_2)._get_kind__0_k$())) {
+            tmp$ret$0 = false;
+            break $l$block_7;
+          }}
+         while (inductionVariable < last_0);
+      tmp$ret$0 = true;
+      break $l$block_7;
+    }
+    return tmp$ret$0;
+  };
+  InlineClassDescriptor.$metadata$ = {
+    simpleName: 'InlineClassDescriptor',
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__55($primitiveSerializer) {
+    this._$primitiveSerializer = $primitiveSerializer;
+  }
+  _no_name_provided__55.prototype.childSerializers_0_k$ = function () {
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp$ret$1;
+      $l$block_0: {
+        var tmp$ret$0;
+        $l$block: {
+          tmp$ret$0 = [this._$primitiveSerializer];
+          break $l$block;
+        }
+        tmp$ret$1 = tmp$ret$0;
+        break $l$block_0;
+      }
+      tmp$ret$2 = tmp$ret$1;
+      break $l$block_1;
+    }
+    return tmp$ret$2;
+  };
+  _no_name_provided__55.prototype._get_descriptor__0_k$ = function () {
+    throw IllegalStateException_init_$Create$('unsupported');
+  };
+  _no_name_provided__55.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    {
+      throw IllegalStateException_init_$Create$('unsupported');
+    }
+  };
+  _no_name_provided__55.prototype.deserialize_u9oizh_k$ = function (decoder) {
+    {
+      throw IllegalStateException_init_$Create$('unsupported');
+    }
+  };
+  _no_name_provided__55.$metadata$ = {
+    kind: 'class',
+    interfaces: [GeneratedSerializer]
+  };
+  function UIntSerializer() {
+    UIntSerializer_instance = this;
+    this._descriptor_7 = InlinePrimitiveDescriptor('kotlin.UInt', serializer_6(IntCompanionObject_getInstance()));
+  }
+  UIntSerializer.prototype._get_descriptor__0_k$ = function () {
+    return this._descriptor_7;
+  };
+  UIntSerializer.prototype.serialize_bqfh4k_k$ = function (encoder, value) {
+    var tmp = encoder.encodeInline_6qhf5t_k$(this._descriptor_7);
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _UInt___get_data__impl_(value);
+      break $l$block;
+    }
+    tmp.encodeInt_majfzk_k$(tmp$ret$0);
+  };
+  UIntSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_bqfh4k_k$(encoder, value instanceof UInt ? value._data_0 : THROW_CCE());
+  };
+  UIntSerializer.prototype.deserialize_c05pj2_k$ = function (decoder) {
+    var tmp$ret$0;
+    $l$block: {
+      var tmp0_toUInt_0 = decoder.decodeInline_6qhf5t_k$(this._descriptor_7).decodeInt_0_k$();
+      tmp$ret$0 = _UInt___init__impl_(tmp0_toUInt_0);
+      break $l$block;
+    }
+    return tmp$ret$0;
+  };
+  UIntSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
+    return new UInt(this.deserialize_c05pj2_k$(decoder));
+  };
+  UIntSerializer.$metadata$ = {
+    simpleName: 'UIntSerializer',
+    kind: 'object',
+    interfaces: [KSerializer]
+  };
+  var UIntSerializer_instance;
+  function UIntSerializer_getInstance() {
+    if (UIntSerializer_instance == null)
+      new UIntSerializer();
+    return UIntSerializer_instance;
+  }
+  function ULongSerializer() {
+    ULongSerializer_instance = this;
+    this._descriptor_8 = InlinePrimitiveDescriptor('kotlin.ULong', serializer_5(Companion_getInstance_12()));
+  }
+  ULongSerializer.prototype._get_descriptor__0_k$ = function () {
+    return this._descriptor_8;
+  };
+  ULongSerializer.prototype.serialize_v01nnh_k$ = function (encoder, value) {
+    var tmp = encoder.encodeInline_6qhf5t_k$(this._descriptor_8);
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _ULong___get_data__impl_(value);
+      break $l$block;
+    }
+    tmp.encodeLong_kdfck9_k$(tmp$ret$0);
+  };
+  ULongSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_v01nnh_k$(encoder, value instanceof ULong ? value._data_1 : THROW_CCE());
+  };
+  ULongSerializer.prototype.deserialize_gzarw7_k$ = function (decoder) {
+    var tmp$ret$0;
+    $l$block: {
+      var tmp0_toULong_0 = decoder.decodeInline_6qhf5t_k$(this._descriptor_8).decodeLong_0_k$();
+      tmp$ret$0 = _ULong___init__impl_(tmp0_toULong_0);
+      break $l$block;
+    }
+    return tmp$ret$0;
+  };
+  ULongSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
+    return new ULong(this.deserialize_gzarw7_k$(decoder));
+  };
+  ULongSerializer.$metadata$ = {
+    simpleName: 'ULongSerializer',
+    kind: 'object',
+    interfaces: [KSerializer]
+  };
+  var ULongSerializer_instance;
+  function ULongSerializer_getInstance() {
+    if (ULongSerializer_instance == null)
+      new ULongSerializer();
+    return ULongSerializer_instance;
+  }
+  function UByteSerializer() {
+    UByteSerializer_instance = this;
+    this._descriptor_9 = InlinePrimitiveDescriptor('kotlin.UByte', serializer_8(ByteCompanionObject_getInstance()));
+  }
+  UByteSerializer.prototype._get_descriptor__0_k$ = function () {
+    return this._descriptor_9;
+  };
+  UByteSerializer.prototype.serialize_sceu89_k$ = function (encoder, value) {
+    var tmp = encoder.encodeInline_6qhf5t_k$(this._descriptor_9);
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _UByte___get_data__impl_(value);
+      break $l$block;
+    }
+    tmp.encodeByte_hpsj51_k$(tmp$ret$0);
+  };
+  UByteSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_sceu89_k$(encoder, value instanceof UByte ? value._data : THROW_CCE());
+  };
+  UByteSerializer.prototype.deserialize_gzgy7f_k$ = function (decoder) {
+    var tmp$ret$0;
+    $l$block: {
+      var tmp0_toUByte_0 = decoder.decodeInline_6qhf5t_k$(this._descriptor_9).decodeByte_0_k$();
+      tmp$ret$0 = _UByte___init__impl_(tmp0_toUByte_0);
+      break $l$block;
+    }
+    return tmp$ret$0;
+  };
+  UByteSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
+    return new UByte(this.deserialize_gzgy7f_k$(decoder));
+  };
+  UByteSerializer.$metadata$ = {
+    simpleName: 'UByteSerializer',
+    kind: 'object',
+    interfaces: [KSerializer]
+  };
+  var UByteSerializer_instance;
+  function UByteSerializer_getInstance() {
+    if (UByteSerializer_instance == null)
+      new UByteSerializer();
+    return UByteSerializer_instance;
+  }
+  function UShortSerializer() {
+    UShortSerializer_instance = this;
+    this._descriptor_10 = InlinePrimitiveDescriptor('kotlin.UShort', serializer_7(ShortCompanionObject_getInstance()));
+  }
+  UShortSerializer.prototype._get_descriptor__0_k$ = function () {
+    return this._descriptor_10;
+  };
+  UShortSerializer.prototype.serialize_x4zxbb_k$ = function (encoder, value) {
+    var tmp = encoder.encodeInline_6qhf5t_k$(this._descriptor_10);
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _UShort___get_data__impl_(value);
+      break $l$block;
+    }
+    tmp.encodeShort_7gn77n_k$(tmp$ret$0);
+  };
+  UShortSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_x4zxbb_k$(encoder, value instanceof UShort ? value._data_2 : THROW_CCE());
+  };
+  UShortSerializer.prototype.deserialize_t2rik1_k$ = function (decoder) {
+    var tmp$ret$0;
+    $l$block: {
+      var tmp0_toUShort_0 = decoder.decodeInline_6qhf5t_k$(this._descriptor_10).decodeShort_0_k$();
+      tmp$ret$0 = _UShort___init__impl_(tmp0_toUShort_0);
+      break $l$block;
+    }
+    return tmp$ret$0;
+  };
+  UShortSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
+    return new UShort(this.deserialize_t2rik1_k$(decoder));
+  };
+  UShortSerializer.$metadata$ = {
+    simpleName: 'UShortSerializer',
+    kind: 'object',
+    interfaces: [KSerializer]
+  };
+  var UShortSerializer_instance;
+  function UShortSerializer_getInstance() {
+    if (UShortSerializer_instance == null)
+      new UShortSerializer();
+    return UShortSerializer_instance;
+  }
   function jsonCachedSerialNames(_this_) {
     return cachedSerialNames(_this_);
   }
-  function NullableSerializer(serializer_11) {
-    this._serializer = serializer_11;
-    this._descriptor_7 = new SerialDescriptorForNullable(this._serializer._get_descriptor__0_k$());
+  function NullableSerializer(serializer_15) {
+    this._serializer = serializer_15;
+    this._descriptor_11 = new SerialDescriptorForNullable(this._serializer._get_descriptor__0_k$());
   }
   NullableSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_7;
+    return this._descriptor_11;
+  };
+  NullableSerializer.prototype.serialize_9ed8ik_k$ = function (encoder, value) {
+    if (!(value == null)) {
+      encoder.encodeNotNullMark_sv8swh_k$();
+      encoder.encodeSerializableValue_79s409_k$(this._serializer, value);
+    } else {
+      encoder.encodeNull_sv8swh_k$();
+    }
+  };
+  NullableSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_9ed8ik_k$(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
   };
   NullableSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return decoder.decodeNotNullMark_0_k$() ? decoder.decodeSerializableValue_f8566k_k$(this._serializer) : decoder.decodeNull_0_k$();
@@ -20175,29 +21811,29 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: [SerialDescriptor, CachedNames]
   };
-  function _no_name_provided__55(this$0) {
+  function _no_name_provided__56(this$0) {
     this._this$0_14 = this$0;
   }
-  _no_name_provided__55.prototype.invoke_dot7f7_k$ = function ($this$buildSerialDescriptor) {
+  _no_name_provided__56.prototype.invoke_dot7f7_k$ = function ($this$buildSerialDescriptor) {
     $this$buildSerialDescriptor._annotations = this._this$0_14.__annotations_0;
   };
-  _no_name_provided__55.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__56.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dot7f7_k$(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__55.$metadata$ = {
+  _no_name_provided__56.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__56($serialName, this$0) {
+  function _no_name_provided__57($serialName, this$0) {
     this._$serialName = $serialName;
     this._this$0_15 = this$0;
   }
-  _no_name_provided__56.prototype.invoke_0_k$ = function () {
+  _no_name_provided__57.prototype.invoke_0_k$ = function () {
     var tmp = OBJECT_getInstance();
     return buildSerialDescriptor$default(this._$serialName, tmp, [], _no_name_provided_$factory_47(this._this$0_15), 4, null);
   };
-  _no_name_provided__56.$metadata$ = {
+  _no_name_provided__57.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -20217,6 +21853,9 @@ exports.debug = debug; // for test
     }
     return tmp$ret$0;
   };
+  ObjectSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    encoder.beginStructure_6qhf5t_k$(this._get_descriptor__0_k$()).endStructure_g940c0_k$(this._get_descriptor__0_k$());
+  };
   ObjectSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     decoder.beginStructure_6qhf5t_k$(this._get_descriptor__0_k$()).endStructure_g940c0_k$(this._get_descriptor__0_k$());
     return this._objectInstance;
@@ -20232,13 +21871,13 @@ exports.debug = debug; // for test
     }, null);
   }
   function _no_name_provided_$factory_46($serialName, this$0) {
-    var i = new _no_name_provided__56($serialName, this$0);
+    var i = new _no_name_provided__57($serialName, this$0);
     return function () {
       return i.invoke_0_k$();
     };
   }
   function _no_name_provided_$factory_47(this$0) {
-    var i = new _no_name_provided__55(this$0);
+    var i = new _no_name_provided__56(this$0);
     return function (p1) {
       i.invoke_dot7f7_k$(p1);
       return Unit_getInstance();
@@ -20482,22 +22121,22 @@ exports.debug = debug; // for test
        while (inductionVariable <= last_0);
     return indices;
   }
-  function _no_name_provided__57(this$0) {
+  function _no_name_provided__58(this$0) {
     this._this$0_16 = this$0;
   }
-  _no_name_provided__57.prototype.invoke_0_k$ = function () {
+  _no_name_provided__58.prototype.invoke_0_k$ = function () {
     var tmp0_safe_receiver = this._this$0_16._generatedSerializer;
     var tmp1_elvis_lhs = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.childSerializers_0_k$();
     return tmp1_elvis_lhs == null ? EMPTY_SERIALIZER_ARRAY : tmp1_elvis_lhs;
   };
-  _no_name_provided__57.$metadata$ = {
+  _no_name_provided__58.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__58(this$0) {
+  function _no_name_provided__59(this$0) {
     this._this$0_17 = this$0;
   }
-  _no_name_provided__58.prototype.invoke_0_k$ = function () {
+  _no_name_provided__59.prototype.invoke_0_k$ = function () {
     var tmp0_safe_receiver = this._this$0_17._generatedSerializer;
     var tmp1_safe_receiver = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.typeParametersSerializers_0_k$();
     var tmp;
@@ -20530,30 +22169,30 @@ exports.debug = debug; // for test
     }
     return compactArray(tmp);
   };
-  _no_name_provided__58.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__59(this$0) {
-    this._this$0_18 = this$0;
-  }
-  _no_name_provided__59.prototype.invoke_0_k$ = function () {
-    return hashCodeImpl(this._this$0_18, this._this$0_18._get_typeParameterDescriptors__0_k$());
-  };
   _no_name_provided__59.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function _no_name_provided__60(this$0) {
-    this._this$0_19 = this$0;
+    this._this$0_18 = this$0;
   }
-  _no_name_provided__60.prototype.invoke_ha5a7z_k$ = function (i) {
-    return this._this$0_19.getElementName_ha5a7z_k$(i) + ': ' + this._this$0_19.getElementDescriptor_ha5a7z_k$(i)._get_serialName__0_k$();
-  };
-  _no_name_provided__60.prototype.invoke_20e8_k$ = function (p1) {
-    return this.invoke_ha5a7z_k$((!(p1 == null) ? typeof p1 === 'number' : false) ? p1 : THROW_CCE());
+  _no_name_provided__60.prototype.invoke_0_k$ = function () {
+    return hashCodeImpl(this._this$0_18, this._this$0_18._get_typeParameterDescriptors__0_k$());
   };
   _no_name_provided__60.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__61(this$0) {
+    this._this$0_19 = this$0;
+  }
+  _no_name_provided__61.prototype.invoke_ha5a7z_k$ = function (i) {
+    return this._this$0_19.getElementName_ha5a7z_k$(i) + ': ' + this._this$0_19.getElementDescriptor_ha5a7z_k$(i)._get_serialName__0_k$();
+  };
+  _no_name_provided__61.prototype.invoke_20e8_k$ = function (p1) {
+    return this.invoke_ha5a7z_k$((!(p1 == null) ? typeof p1 === 'number' : false) ? p1 : THROW_CCE());
+  };
+  _no_name_provided__61.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -20654,7 +22293,7 @@ exports.debug = debug; // for test
     var tmp0_elvis_lhs = this._indices.get_2bw_k$(name);
     var tmp;
     if (tmp0_elvis_lhs == null) {
-      Companion_getInstance_9();
+      Companion_getInstance_13();
       tmp = -3;
     } else {
       tmp = tmp0_elvis_lhs;
@@ -20737,25 +22376,25 @@ exports.debug = debug; // for test
     }, null);
   }
   function _no_name_provided_$factory_48(this$0) {
-    var i = new _no_name_provided__57(this$0);
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_49(this$0) {
     var i = new _no_name_provided__58(this$0);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_50(this$0) {
+  function _no_name_provided_$factory_49(this$0) {
     var i = new _no_name_provided__59(this$0);
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_51(this$0) {
+  function _no_name_provided_$factory_50(this$0) {
     var i = new _no_name_provided__60(this$0);
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function _no_name_provided_$factory_51(this$0) {
+    var i = new _no_name_provided__61(this$0);
     return function (p1) {
       return i.invoke_ha5a7z_k$(p1);
     };
@@ -20798,8 +22437,14 @@ exports.debug = debug; // for test
   }
   function CharArraySerializer_0() {
     CharArraySerializer_instance = this;
-    PrimitiveArraySerializer.call(this, serializer_2(Companion_getInstance_6()));
+    PrimitiveArraySerializer.call(this, serializer_2(Companion_getInstance_10()));
   }
+  CharArraySerializer_0.prototype.collectionSize_injcdj_k$ = function (_this__0) {
+    return _this__0.length;
+  };
+  CharArraySerializer_0.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_injcdj_k$((!(_this__0 == null) ? isCharArray(_this__0) : false) ? _this__0 : THROW_CCE());
+  };
   CharArraySerializer_0.prototype.toBuilder_injcdj_k$ = function (_this__0) {
     return new CharArrayBuilder(_this__0);
   };
@@ -20814,6 +22459,19 @@ exports.debug = debug; // for test
   };
   CharArraySerializer_0.prototype.readElement_ie1hio_k$ = function (decoder, index, builder, checkIndex) {
     return this.readElement_pdwp7b_k$(decoder, index, builder instanceof CharArrayBuilder ? builder : THROW_CCE(), checkIndex);
+  };
+  CharArraySerializer_0.prototype.writeContent_faabt_k$ = function (encoder, content, size_0) {
+    var inductionVariable = 0;
+    if (inductionVariable < size_0)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        encoder.encodeCharElement_vw2177_k$(this._get_descriptor__0_k$(), i, content[i]);
+      }
+       while (inductionVariable < size_0);
+  };
+  CharArraySerializer_0.prototype.writeContent_8rd7hi_k$ = function (encoder, content, size_0) {
+    return this.writeContent_faabt_k$(encoder, (!(content == null) ? isCharArray(content) : false) ? content : THROW_CCE(), size_0);
   };
   CharArraySerializer_0.$metadata$ = {
     simpleName: 'CharArraySerializer',
@@ -20830,6 +22488,12 @@ exports.debug = debug; // for test
     DoubleArraySerializer_instance = this;
     PrimitiveArraySerializer.call(this, serializer_3(DoubleCompanionObject_getInstance()));
   }
+  DoubleArraySerializer_0.prototype.collectionSize_yiku9g_k$ = function (_this__0) {
+    return _this__0.length;
+  };
+  DoubleArraySerializer_0.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_yiku9g_k$((!(_this__0 == null) ? isDoubleArray(_this__0) : false) ? _this__0 : THROW_CCE());
+  };
   DoubleArraySerializer_0.prototype.toBuilder_yiku9g_k$ = function (_this__0) {
     return new DoubleArrayBuilder(_this__0);
   };
@@ -20844,6 +22508,19 @@ exports.debug = debug; // for test
   };
   DoubleArraySerializer_0.prototype.readElement_ie1hio_k$ = function (decoder, index, builder, checkIndex) {
     return this.readElement_ltxsn8_k$(decoder, index, builder instanceof DoubleArrayBuilder ? builder : THROW_CCE(), checkIndex);
+  };
+  DoubleArraySerializer_0.prototype.writeContent_djdhde_k$ = function (encoder, content, size_0) {
+    var inductionVariable = 0;
+    if (inductionVariable < size_0)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        encoder.encodeDoubleElement_xwk426_k$(this._get_descriptor__0_k$(), i, content[i]);
+      }
+       while (inductionVariable < size_0);
+  };
+  DoubleArraySerializer_0.prototype.writeContent_8rd7hi_k$ = function (encoder, content, size_0) {
+    return this.writeContent_djdhde_k$(encoder, (!(content == null) ? isDoubleArray(content) : false) ? content : THROW_CCE(), size_0);
   };
   DoubleArraySerializer_0.$metadata$ = {
     simpleName: 'DoubleArraySerializer',
@@ -20860,6 +22537,12 @@ exports.debug = debug; // for test
     FloatArraySerializer_instance = this;
     PrimitiveArraySerializer.call(this, serializer_4(FloatCompanionObject_getInstance()));
   }
+  FloatArraySerializer_0.prototype.collectionSize_cxfvfr_k$ = function (_this__0) {
+    return _this__0.length;
+  };
+  FloatArraySerializer_0.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_cxfvfr_k$((!(_this__0 == null) ? isFloatArray(_this__0) : false) ? _this__0 : THROW_CCE());
+  };
   FloatArraySerializer_0.prototype.toBuilder_cxfvfr_k$ = function (_this__0) {
     return new FloatArrayBuilder(_this__0);
   };
@@ -20875,6 +22558,19 @@ exports.debug = debug; // for test
   FloatArraySerializer_0.prototype.readElement_ie1hio_k$ = function (decoder, index, builder, checkIndex) {
     return this.readElement_8bcb0b_k$(decoder, index, builder instanceof FloatArrayBuilder ? builder : THROW_CCE(), checkIndex);
   };
+  FloatArraySerializer_0.prototype.writeContent_ocwo9_k$ = function (encoder, content, size_0) {
+    var inductionVariable = 0;
+    if (inductionVariable < size_0)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        encoder.encodeFloatElement_qv7flv_k$(this._get_descriptor__0_k$(), i, content[i]);
+      }
+       while (inductionVariable < size_0);
+  };
+  FloatArraySerializer_0.prototype.writeContent_8rd7hi_k$ = function (encoder, content, size_0) {
+    return this.writeContent_ocwo9_k$(encoder, (!(content == null) ? isFloatArray(content) : false) ? content : THROW_CCE(), size_0);
+  };
   FloatArraySerializer_0.$metadata$ = {
     simpleName: 'FloatArraySerializer',
     kind: 'object',
@@ -20888,8 +22584,14 @@ exports.debug = debug; // for test
   }
   function LongArraySerializer_0() {
     LongArraySerializer_instance = this;
-    PrimitiveArraySerializer.call(this, serializer_5(Companion_getInstance_8()));
+    PrimitiveArraySerializer.call(this, serializer_5(Companion_getInstance_12()));
   }
+  LongArraySerializer_0.prototype.collectionSize_52nsov_k$ = function (_this__0) {
+    return _this__0.length;
+  };
+  LongArraySerializer_0.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_52nsov_k$((!(_this__0 == null) ? isLongArray(_this__0) : false) ? _this__0 : THROW_CCE());
+  };
   LongArraySerializer_0.prototype.toBuilder_52nsov_k$ = function (_this__0) {
     return new LongArrayBuilder(_this__0);
   };
@@ -20904,6 +22606,19 @@ exports.debug = debug; // for test
   };
   LongArraySerializer_0.prototype.readElement_ie1hio_k$ = function (decoder, index, builder, checkIndex) {
     return this.readElement_2iivg1_k$(decoder, index, builder instanceof LongArrayBuilder ? builder : THROW_CCE(), checkIndex);
+  };
+  LongArraySerializer_0.prototype.writeContent_t56x7n_k$ = function (encoder, content, size_0) {
+    var inductionVariable = 0;
+    if (inductionVariable < size_0)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        encoder.encodeLongElement_j1ap1j_k$(this._get_descriptor__0_k$(), i, content[i]);
+      }
+       while (inductionVariable < size_0);
+  };
+  LongArraySerializer_0.prototype.writeContent_8rd7hi_k$ = function (encoder, content, size_0) {
+    return this.writeContent_t56x7n_k$(encoder, (!(content == null) ? isLongArray(content) : false) ? content : THROW_CCE(), size_0);
   };
   LongArraySerializer_0.$metadata$ = {
     simpleName: 'LongArraySerializer',
@@ -20920,6 +22635,12 @@ exports.debug = debug; // for test
     IntArraySerializer_instance = this;
     PrimitiveArraySerializer.call(this, serializer_6(IntCompanionObject_getInstance()));
   }
+  IntArraySerializer_0.prototype.collectionSize_fjgi92_k$ = function (_this__0) {
+    return _this__0.length;
+  };
+  IntArraySerializer_0.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_fjgi92_k$((!(_this__0 == null) ? isIntArray(_this__0) : false) ? _this__0 : THROW_CCE());
+  };
   IntArraySerializer_0.prototype.toBuilder_fjgi92_k$ = function (_this__0) {
     return new IntArrayBuilder(_this__0);
   };
@@ -20934,6 +22655,19 @@ exports.debug = debug; // for test
   };
   IntArraySerializer_0.prototype.readElement_ie1hio_k$ = function (decoder, index, builder, checkIndex) {
     return this.readElement_du9jki_k$(decoder, index, builder instanceof IntArrayBuilder ? builder : THROW_CCE(), checkIndex);
+  };
+  IntArraySerializer_0.prototype.writeContent_9be6ik_k$ = function (encoder, content, size_0) {
+    var inductionVariable = 0;
+    if (inductionVariable < size_0)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        encoder.encodeIntElement_wh7n80_k$(this._get_descriptor__0_k$(), i, content[i]);
+      }
+       while (inductionVariable < size_0);
+  };
+  IntArraySerializer_0.prototype.writeContent_8rd7hi_k$ = function (encoder, content, size_0) {
+    return this.writeContent_9be6ik_k$(encoder, (!(content == null) ? isIntArray(content) : false) ? content : THROW_CCE(), size_0);
   };
   IntArraySerializer_0.$metadata$ = {
     simpleName: 'IntArraySerializer',
@@ -20950,6 +22684,12 @@ exports.debug = debug; // for test
     ShortArraySerializer_instance = this;
     PrimitiveArraySerializer.call(this, serializer_7(ShortCompanionObject_getInstance()));
   }
+  ShortArraySerializer_0.prototype.collectionSize_tsb9bt_k$ = function (_this__0) {
+    return _this__0.length;
+  };
+  ShortArraySerializer_0.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_tsb9bt_k$((!(_this__0 == null) ? isShortArray(_this__0) : false) ? _this__0 : THROW_CCE());
+  };
   ShortArraySerializer_0.prototype.toBuilder_tsb9bt_k$ = function (_this__0) {
     return new ShortArrayBuilder(_this__0);
   };
@@ -20964,6 +22704,19 @@ exports.debug = debug; // for test
   };
   ShortArraySerializer_0.prototype.readElement_ie1hio_k$ = function (decoder, index, builder, checkIndex) {
     return this.readElement_hs5y5h_k$(decoder, index, builder instanceof ShortArrayBuilder ? builder : THROW_CCE(), checkIndex);
+  };
+  ShortArraySerializer_0.prototype.writeContent_hs3qtl_k$ = function (encoder, content, size_0) {
+    var inductionVariable = 0;
+    if (inductionVariable < size_0)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        encoder.encodeShortElement_lm5ndv_k$(this._get_descriptor__0_k$(), i, content[i]);
+      }
+       while (inductionVariable < size_0);
+  };
+  ShortArraySerializer_0.prototype.writeContent_8rd7hi_k$ = function (encoder, content, size_0) {
+    return this.writeContent_hs3qtl_k$(encoder, (!(content == null) ? isShortArray(content) : false) ? content : THROW_CCE(), size_0);
   };
   ShortArraySerializer_0.$metadata$ = {
     simpleName: 'ShortArraySerializer',
@@ -20980,6 +22733,12 @@ exports.debug = debug; // for test
     ByteArraySerializer_instance = this;
     PrimitiveArraySerializer.call(this, serializer_8(ByteCompanionObject_getInstance()));
   }
+  ByteArraySerializer_0.prototype.collectionSize_twz4l1_k$ = function (_this__0) {
+    return _this__0.length;
+  };
+  ByteArraySerializer_0.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_twz4l1_k$((!(_this__0 == null) ? isByteArray(_this__0) : false) ? _this__0 : THROW_CCE());
+  };
   ByteArraySerializer_0.prototype.toBuilder_twz4l1_k$ = function (_this__0) {
     return new ByteArrayBuilder(_this__0);
   };
@@ -20994,6 +22753,19 @@ exports.debug = debug; // for test
   };
   ByteArraySerializer_0.prototype.readElement_ie1hio_k$ = function (decoder, index, builder, checkIndex) {
     return this.readElement_eqkvvf_k$(decoder, index, builder instanceof ByteArrayBuilder ? builder : THROW_CCE(), checkIndex);
+  };
+  ByteArraySerializer_0.prototype.writeContent_yeeyhj_k$ = function (encoder, content, size_0) {
+    var inductionVariable = 0;
+    if (inductionVariable < size_0)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        encoder.encodeByteElement_loxigr_k$(this._get_descriptor__0_k$(), i, content[i]);
+      }
+       while (inductionVariable < size_0);
+  };
+  ByteArraySerializer_0.prototype.writeContent_8rd7hi_k$ = function (encoder, content, size_0) {
+    return this.writeContent_yeeyhj_k$(encoder, (!(content == null) ? isByteArray(content) : false) ? content : THROW_CCE(), size_0);
   };
   ByteArraySerializer_0.$metadata$ = {
     simpleName: 'ByteArraySerializer',
@@ -21010,6 +22782,12 @@ exports.debug = debug; // for test
     BooleanArraySerializer_instance = this;
     PrimitiveArraySerializer.call(this, serializer_9(BooleanCompanionObject_getInstance()));
   }
+  BooleanArraySerializer_0.prototype.collectionSize_ux5p2r_k$ = function (_this__0) {
+    return _this__0.length;
+  };
+  BooleanArraySerializer_0.prototype.collectionSize_4qlka9_k$ = function (_this__0) {
+    return this.collectionSize_ux5p2r_k$((!(_this__0 == null) ? isBooleanArray(_this__0) : false) ? _this__0 : THROW_CCE());
+  };
   BooleanArraySerializer_0.prototype.toBuilder_ux5p2r_k$ = function (_this__0) {
     return new BooleanArrayBuilder(_this__0);
   };
@@ -21024,6 +22802,19 @@ exports.debug = debug; // for test
   };
   BooleanArraySerializer_0.prototype.readElement_ie1hio_k$ = function (decoder, index, builder, checkIndex) {
     return this.readElement_cpc2ux_k$(decoder, index, builder instanceof BooleanArrayBuilder ? builder : THROW_CCE(), checkIndex);
+  };
+  BooleanArraySerializer_0.prototype.writeContent_k74uyd_k$ = function (encoder, content, size_0) {
+    var inductionVariable = 0;
+    if (inductionVariable < size_0)
+      do {
+        var i = inductionVariable;
+        inductionVariable = inductionVariable + 1 | 0;
+        encoder.encodeBooleanElement_9280p5_k$(this._get_descriptor__0_k$(), i, content[i]);
+      }
+       while (inductionVariable < size_0);
+  };
+  BooleanArraySerializer_0.prototype.writeContent_8rd7hi_k$ = function (encoder, content, size_0) {
+    return this.writeContent_k74uyd_k$(encoder, (!(content == null) ? isBooleanArray(content) : false) ? content : THROW_CCE(), size_0);
   };
   BooleanArraySerializer_0.$metadata$ = {
     simpleName: 'BooleanArraySerializer',
@@ -21271,10 +23062,16 @@ exports.debug = debug; // for test
   var BUILTIN_SERIALIZERS;
   function StringSerializer() {
     StringSerializer_instance = this;
-    this._descriptor_8 = new PrimitiveSerialDescriptor_0('kotlin.String', STRING_getInstance());
+    this._descriptor_12 = new PrimitiveSerialDescriptor_0('kotlin.String', STRING_getInstance());
   }
   StringSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_8;
+    return this._descriptor_12;
+  };
+  StringSerializer.prototype.serialize_bu4ntv_k$ = function (encoder, value) {
+    return encoder.encodeString_a4enbm_k$(value);
+  };
+  StringSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_bu4ntv_k$(encoder, (!(value == null) ? typeof value === 'string' : false) ? value : THROW_CCE());
   };
   StringSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return decoder.decodeString_0_k$();
@@ -21292,10 +23089,16 @@ exports.debug = debug; // for test
   }
   function CharSerializer() {
     CharSerializer_instance = this;
-    this._descriptor_9 = new PrimitiveSerialDescriptor_0('kotlin.Char', CHAR_getInstance());
+    this._descriptor_13 = new PrimitiveSerialDescriptor_0('kotlin.Char', CHAR_getInstance());
   }
   CharSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_9;
+    return this._descriptor_13;
+  };
+  CharSerializer.prototype.serialize_bb9p3s_k$ = function (encoder, value) {
+    return encoder.encodeChar_9o0tv_k$(value);
+  };
+  CharSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_bb9p3s_k$(encoder, value instanceof Char ? value : THROW_CCE());
   };
   CharSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return decoder.decodeChar_0_k$();
@@ -21313,10 +23116,16 @@ exports.debug = debug; // for test
   }
   function DoubleSerializer() {
     DoubleSerializer_instance = this;
-    this._descriptor_10 = new PrimitiveSerialDescriptor_0('kotlin.Double', DOUBLE_getInstance());
+    this._descriptor_14 = new PrimitiveSerialDescriptor_0('kotlin.Double', DOUBLE_getInstance());
   }
   DoubleSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_10;
+    return this._descriptor_14;
+  };
+  DoubleSerializer.prototype.serialize_2lt199_k$ = function (encoder, value) {
+    return encoder.encodeDouble_okcceq_k$(value);
+  };
+  DoubleSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_2lt199_k$(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
   };
   DoubleSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return decoder.decodeDouble_0_k$();
@@ -21334,10 +23143,16 @@ exports.debug = debug; // for test
   }
   function FloatSerializer() {
     FloatSerializer_instance = this;
-    this._descriptor_11 = new PrimitiveSerialDescriptor_0('kotlin.Float', FLOAT_getInstance());
+    this._descriptor_15 = new PrimitiveSerialDescriptor_0('kotlin.Float', FLOAT_getInstance());
   }
   FloatSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_11;
+    return this._descriptor_15;
+  };
+  FloatSerializer.prototype.serialize_gl61iw_k$ = function (encoder, value) {
+    return encoder.encodeFloat_cpozfn_k$(value);
+  };
+  FloatSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_gl61iw_k$(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
   };
   FloatSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return decoder.decodeFloat_0_k$();
@@ -21355,10 +23170,16 @@ exports.debug = debug; // for test
   }
   function LongSerializer() {
     LongSerializer_instance = this;
-    this._descriptor_12 = new PrimitiveSerialDescriptor_0('kotlin.Long', LONG_getInstance());
+    this._descriptor_16 = new PrimitiveSerialDescriptor_0('kotlin.Long', LONG_getInstance());
   }
   LongSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_12;
+    return this._descriptor_16;
+  };
+  LongSerializer.prototype.serialize_8shmmm_k$ = function (encoder, value) {
+    return encoder.encodeLong_kdfck9_k$(value);
+  };
+  LongSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_8shmmm_k$(encoder, value instanceof Long ? value : THROW_CCE());
   };
   LongSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return decoder.decodeLong_0_k$();
@@ -21376,10 +23197,16 @@ exports.debug = debug; // for test
   }
   function IntSerializer() {
     IntSerializer_instance = this;
-    this._descriptor_13 = new PrimitiveSerialDescriptor_0('kotlin.Int', INT_getInstance());
+    this._descriptor_17 = new PrimitiveSerialDescriptor_0('kotlin.Int', INT_getInstance());
   }
   IntSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_13;
+    return this._descriptor_17;
+  };
+  IntSerializer.prototype.serialize_ssjwrf_k$ = function (encoder, value) {
+    return encoder.encodeInt_majfzk_k$(value);
+  };
+  IntSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_ssjwrf_k$(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
   };
   IntSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return decoder.decodeInt_0_k$();
@@ -21397,10 +23224,16 @@ exports.debug = debug; // for test
   }
   function ShortSerializer() {
     ShortSerializer_instance = this;
-    this._descriptor_14 = new PrimitiveSerialDescriptor_0('kotlin.Short', SHORT_getInstance());
+    this._descriptor_18 = new PrimitiveSerialDescriptor_0('kotlin.Short', SHORT_getInstance());
   }
   ShortSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_14;
+    return this._descriptor_18;
+  };
+  ShortSerializer.prototype.serialize_bc49aw_k$ = function (encoder, value) {
+    return encoder.encodeShort_7gn77n_k$(value);
+  };
+  ShortSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_bc49aw_k$(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
   };
   ShortSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return decoder.decodeShort_0_k$();
@@ -21418,10 +23251,16 @@ exports.debug = debug; // for test
   }
   function ByteSerializer() {
     ByteSerializer_instance = this;
-    this._descriptor_15 = new PrimitiveSerialDescriptor_0('kotlin.Byte', BYTE_getInstance());
+    this._descriptor_19 = new PrimitiveSerialDescriptor_0('kotlin.Byte', BYTE_getInstance());
   }
   ByteSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_15;
+    return this._descriptor_19;
+  };
+  ByteSerializer.prototype.serialize_64ut7e_k$ = function (encoder, value) {
+    return encoder.encodeByte_hpsj51_k$(value);
+  };
+  ByteSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_64ut7e_k$(encoder, (!(value == null) ? typeof value === 'number' : false) ? value : THROW_CCE());
   };
   ByteSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return decoder.decodeByte_0_k$();
@@ -21439,10 +23278,16 @@ exports.debug = debug; // for test
   }
   function BooleanSerializer() {
     BooleanSerializer_instance = this;
-    this._descriptor_16 = new PrimitiveSerialDescriptor_0('kotlin.Boolean', BOOLEAN_getInstance());
+    this._descriptor_20 = new PrimitiveSerialDescriptor_0('kotlin.Boolean', BOOLEAN_getInstance());
   }
   BooleanSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_16;
+    return this._descriptor_20;
+  };
+  BooleanSerializer.prototype.serialize_dqpbh0_k$ = function (encoder, value) {
+    return encoder.encodeBoolean_rpwsgn_k$(value);
+  };
+  BooleanSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_dqpbh0_k$(encoder, (!(value == null) ? typeof value === 'boolean' : false) ? value : THROW_CCE());
   };
   BooleanSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return decoder.decodeBoolean_0_k$();
@@ -21471,6 +23316,12 @@ exports.debug = debug; // for test
   UnitSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     this.deserialize_c04y7o_k$(decoder);
     return Unit_getInstance();
+  };
+  UnitSerializer.prototype.serialize_juc65m_k$ = function (encoder, value) {
+    this._$$delegate_0.serialize_whawnb_k$(encoder, Unit_getInstance());
+  };
+  UnitSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_juc65m_k$(encoder, value instanceof Unit ? value : THROW_CCE());
   };
   UnitSerializer.$metadata$ = {
     simpleName: 'UnitSerializer',
@@ -21622,27 +23473,27 @@ exports.debug = debug; // for test
     }$this._flag = false;
     return r;
   }
-  function _no_name_provided__61(this$0, $deserializer, $previousValue) {
+  function _no_name_provided__62(this$0, $deserializer, $previousValue) {
     this._this$0_20 = this$0;
     this._$deserializer = $deserializer;
     this._$previousValue = $previousValue;
   }
-  _no_name_provided__61.prototype.invoke_0_k$ = function () {
+  _no_name_provided__62.prototype.invoke_0_k$ = function () {
     return this._this$0_20.decodeSerializableValue_qeg2y_k$(this._$deserializer, this._$previousValue);
   };
-  _no_name_provided__61.$metadata$ = {
+  _no_name_provided__62.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__62(this$0, $deserializer, $previousValue) {
+  function _no_name_provided__63(this$0, $deserializer, $previousValue) {
     this._this$0_21 = this$0;
     this._$deserializer_0 = $deserializer;
     this._$previousValue_0 = $previousValue;
   }
-  _no_name_provided__62.prototype.invoke_0_k$ = function () {
+  _no_name_provided__63.prototype.invoke_0_k$ = function () {
     return this._this$0_21.decodeNotNullMark_0_k$() ? this._this$0_21.decodeSerializableValue_qeg2y_k$(this._$deserializer_0, this._$previousValue_0) : this._this$0_21.decodeNull_0_k$();
   };
-  _no_name_provided__62.$metadata$ = {
+  _no_name_provided__63.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -21701,8 +23552,24 @@ exports.debug = debug; // for test
     var tmp = this.decodeTaggedValue_1qgfv_k$(tag);
     return typeof tmp === 'string' ? tmp : THROW_CCE();
   };
+  TaggedDecoder.prototype.decodeTaggedInline_322cgq_k$ = function (tag, inlineDescriptor) {
+    var tmp$ret$0;
+    $l$block: {
+      {
+      }
+      {
+        this.pushTag_22hlsm_k$(tag);
+      }
+      tmp$ret$0 = this;
+      break $l$block;
+    }
+    return tmp$ret$0;
+  };
   TaggedDecoder.prototype.decodeSerializableValue_qeg2y_k$ = function (deserializer, previousValue) {
     return this.decodeSerializableValue_f8566k_k$(deserializer);
+  };
+  TaggedDecoder.prototype.decodeInline_6qhf5t_k$ = function (inlineDescriptor) {
+    return this.decodeTaggedInline_322cgq_k$(this.popTag_0_k$(), inlineDescriptor);
   };
   TaggedDecoder.prototype.decodeNotNullMark_0_k$ = function () {
     var tmp0_elvis_lhs = this._get_currentTagOrNull__0_k$();
@@ -21803,13 +23670,13 @@ exports.debug = debug; // for test
     interfaces: [Decoder, CompositeDecoder]
   };
   function _no_name_provided_$factory_52(this$0, $deserializer, $previousValue) {
-    var i = new _no_name_provided__61(this$0, $deserializer, $previousValue);
+    var i = new _no_name_provided__62(this$0, $deserializer, $previousValue);
     return function () {
       return i.invoke_0_k$();
     };
   }
   function _no_name_provided_$factory_53(this$0, $deserializer, $previousValue) {
-    var i = new _no_name_provided__62(this$0, $deserializer, $previousValue);
+    var i = new _no_name_provided__63(this$0, $deserializer, $previousValue);
     return function () {
       return i.invoke_0_k$();
     };
@@ -21852,50 +23719,15 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: [Entry]
   };
-  function _no_name_provided__63($keySerializer, $valueSerializer) {
+  function _no_name_provided__64($keySerializer, $valueSerializer) {
     this._$keySerializer = $keySerializer;
     this._$valueSerializer = $valueSerializer;
   }
-  _no_name_provided__63.prototype.invoke_dot7f7_k$ = function ($this$buildSerialDescriptor) {
+  _no_name_provided__64.prototype.invoke_dot7f7_k$ = function ($this$buildSerialDescriptor) {
     var tmp = this._$keySerializer._get_descriptor__0_k$();
     $this$buildSerialDescriptor.element$default_kwz7dp_k$('key', tmp, null, false, 12, null);
     var tmp_0 = this._$valueSerializer._get_descriptor__0_k$();
     $this$buildSerialDescriptor.element$default_kwz7dp_k$('value', tmp_0, null, false, 12, null);
-  };
-  _no_name_provided__63.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_dot7f7_k$(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__63.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function MapEntrySerializer_0(keySerializer, valueSerializer) {
-    KeyValueSerializer.call(this, keySerializer, valueSerializer);
-    var tmp = this;
-    var tmp_0 = MAP_getInstance();
-    tmp._descriptor_17 = buildSerialDescriptor$default('kotlin.collections.Map.Entry', tmp_0, [], _no_name_provided_$factory_54(keySerializer, valueSerializer), 4, null);
-  }
-  MapEntrySerializer_0.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_17;
-  };
-  MapEntrySerializer_0.prototype.toResult_1q9pf_k$ = function (key, value) {
-    return new MapEntry(key, value);
-  };
-  MapEntrySerializer_0.$metadata$ = {
-    simpleName: 'MapEntrySerializer',
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__64($keySerializer, $valueSerializer) {
-    this._$keySerializer_0 = $keySerializer;
-    this._$valueSerializer_0 = $valueSerializer;
-  }
-  _no_name_provided__64.prototype.invoke_dot7f7_k$ = function ($this$buildClassSerialDescriptor) {
-    var tmp = this._$keySerializer_0._get_descriptor__0_k$();
-    $this$buildClassSerialDescriptor.element$default_kwz7dp_k$('first', tmp, null, false, 12, null);
-    var tmp_0 = this._$valueSerializer_0._get_descriptor__0_k$();
-    $this$buildClassSerialDescriptor.element$default_kwz7dp_k$('second', tmp_0, null, false, 12, null);
   };
   _no_name_provided__64.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dot7f7_k$(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
@@ -21905,13 +23737,72 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
+  function MapEntrySerializer_0(keySerializer, valueSerializer) {
+    KeyValueSerializer.call(this, keySerializer, valueSerializer);
+    var tmp = this;
+    var tmp_0 = MAP_getInstance();
+    tmp._descriptor_21 = buildSerialDescriptor$default('kotlin.collections.Map.Entry', tmp_0, [], _no_name_provided_$factory_54(keySerializer, valueSerializer), 4, null);
+  }
+  MapEntrySerializer_0.prototype._get_descriptor__0_k$ = function () {
+    return this._descriptor_21;
+  };
+  MapEntrySerializer_0.prototype._get_key__qkfq8o_k$ = function (_this__0) {
+    return _this__0._get_key__0_k$();
+  };
+  MapEntrySerializer_0.prototype._get_key__1r17l_k$ = function (_this__0) {
+    return this._get_key__qkfq8o_k$((!(_this__0 == null) ? isInterface(_this__0, Entry) : false) ? _this__0 : THROW_CCE());
+  };
+  MapEntrySerializer_0.prototype._get_value__qkfq8o_k$ = function (_this__0) {
+    return _this__0._get_value__0_k$();
+  };
+  MapEntrySerializer_0.prototype._get_value__1r17l_k$ = function (_this__0) {
+    return this._get_value__qkfq8o_k$((!(_this__0 == null) ? isInterface(_this__0, Entry) : false) ? _this__0 : THROW_CCE());
+  };
+  MapEntrySerializer_0.prototype.toResult_1q9pf_k$ = function (key, value) {
+    return new MapEntry(key, value);
+  };
+  MapEntrySerializer_0.$metadata$ = {
+    simpleName: 'MapEntrySerializer',
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__65($keySerializer, $valueSerializer) {
+    this._$keySerializer_0 = $keySerializer;
+    this._$valueSerializer_0 = $valueSerializer;
+  }
+  _no_name_provided__65.prototype.invoke_dot7f7_k$ = function ($this$buildClassSerialDescriptor) {
+    var tmp = this._$keySerializer_0._get_descriptor__0_k$();
+    $this$buildClassSerialDescriptor.element$default_kwz7dp_k$('first', tmp, null, false, 12, null);
+    var tmp_0 = this._$valueSerializer_0._get_descriptor__0_k$();
+    $this$buildClassSerialDescriptor.element$default_kwz7dp_k$('second', tmp_0, null, false, 12, null);
+  };
+  _no_name_provided__65.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_dot7f7_k$(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__65.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
   function PairSerializer_0(keySerializer, valueSerializer) {
     KeyValueSerializer.call(this, keySerializer, valueSerializer);
     var tmp = this;
-    tmp._descriptor_18 = buildClassSerialDescriptor$default('kotlin.Pair', [], _no_name_provided_$factory_55(keySerializer, valueSerializer), 2, null);
+    tmp._descriptor_22 = buildClassSerialDescriptor$default('kotlin.Pair', [], _no_name_provided_$factory_55(keySerializer, valueSerializer), 2, null);
   }
   PairSerializer_0.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_18;
+    return this._descriptor_22;
+  };
+  PairSerializer_0.prototype._get_key__s6wzch_k$ = function (_this__0) {
+    return _this__0._first;
+  };
+  PairSerializer_0.prototype._get_key__1r17l_k$ = function (_this__0) {
+    return this._get_key__s6wzch_k$(_this__0 instanceof Pair ? _this__0 : THROW_CCE());
+  };
+  PairSerializer_0.prototype._get_value__s6wzch_k$ = function (_this__0) {
+    return _this__0._second;
+  };
+  PairSerializer_0.prototype._get_value__1r17l_k$ = function (_this__0) {
+    return this._get_value__s6wzch_k$(_this__0 instanceof Pair ? _this__0 : THROW_CCE());
   };
   PairSerializer_0.prototype.toResult_1q9pf_k$ = function (key, value) {
     return to(key, value);
@@ -21922,10 +23813,10 @@ exports.debug = debug; // for test
     interfaces: []
   };
   function decodeSequentially_0($this, composite) {
-    var a = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_19, 0, $this._aSerializer, null, 8, null);
-    var b = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_19, 1, $this._bSerializer, null, 8, null);
-    var c = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_19, 2, $this._cSerializer, null, 8, null);
-    composite.endStructure_g940c0_k$($this._descriptor_19);
+    var a = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_23, 0, $this._aSerializer, null, 8, null);
+    var b = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_23, 1, $this._bSerializer, null, 8, null);
+    var c = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_23, 2, $this._cSerializer, null, 8, null);
+    composite.endStructure_g940c0_k$($this._descriptor_23);
     return new Triple(a, b, c);
   }
   function decodeStructure($this, composite) {
@@ -21933,19 +23824,19 @@ exports.debug = debug; // for test
     var b = NULL;
     var c = NULL;
     mainLoop: while (true) {
-      var index = composite.decodeElementIndex_6qhf5t_k$($this._descriptor_19);
-      Companion_getInstance_9();
+      var index = composite.decodeElementIndex_6qhf5t_k$($this._descriptor_23);
+      Companion_getInstance_13();
       if (index === -1) {
         break mainLoop;
       } else {
         if (index === 0) {
-          a = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_19, 0, $this._aSerializer, null, 8, null);
+          a = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_23, 0, $this._aSerializer, null, 8, null);
         } else {
           if (index === 1) {
-            b = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_19, 1, $this._bSerializer, null, 8, null);
+            b = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_23, 1, $this._bSerializer, null, 8, null);
           } else {
             if (index === 2) {
-              c = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_19, 2, $this._cSerializer, null, 8, null);
+              c = composite.decodeSerializableElement$default_51un9o_k$($this._descriptor_23, 2, $this._cSerializer, null, 8, null);
             } else {
               throw SerializationException_init_$Create$('' + 'Unexpected index ' + index);
             }
@@ -21953,7 +23844,7 @@ exports.debug = debug; // for test
         }
       }
     }
-    composite.endStructure_g940c0_k$($this._descriptor_19);
+    composite.endStructure_g940c0_k$($this._descriptor_23);
     if (a === NULL)
       throw SerializationException_init_$Create$("Element 'first' is missing");
     if (b === NULL)
@@ -21964,10 +23855,10 @@ exports.debug = debug; // for test
     var tmp_0 = (b == null ? true : isObject(b)) ? b : THROW_CCE();
     return new Triple(tmp, tmp_0, (c == null ? true : isObject(c)) ? c : THROW_CCE());
   }
-  function _no_name_provided__65(this$0) {
+  function _no_name_provided__66(this$0) {
     this._this$0_22 = this$0;
   }
-  _no_name_provided__65.prototype.invoke_dot7f7_k$ = function ($this$buildClassSerialDescriptor) {
+  _no_name_provided__66.prototype.invoke_dot7f7_k$ = function ($this$buildClassSerialDescriptor) {
     var tmp = this._this$0_22._aSerializer._get_descriptor__0_k$();
     $this$buildClassSerialDescriptor.element$default_kwz7dp_k$('first', tmp, null, false, 12, null);
     var tmp_0 = this._this$0_22._bSerializer._get_descriptor__0_k$();
@@ -21975,11 +23866,11 @@ exports.debug = debug; // for test
     var tmp_1 = this._this$0_22._cSerializer._get_descriptor__0_k$();
     $this$buildClassSerialDescriptor.element$default_kwz7dp_k$('third', tmp_1, null, false, 12, null);
   };
-  _no_name_provided__65.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__66.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dot7f7_k$(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__65.$metadata$ = {
+  _no_name_provided__66.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -21988,13 +23879,23 @@ exports.debug = debug; // for test
     this._bSerializer = bSerializer;
     this._cSerializer = cSerializer;
     var tmp = this;
-    tmp._descriptor_19 = buildClassSerialDescriptor$default('kotlin.Triple', [], _no_name_provided_$factory_56(this), 2, null);
+    tmp._descriptor_23 = buildClassSerialDescriptor$default('kotlin.Triple', [], _no_name_provided_$factory_56(this), 2, null);
   }
   TripleSerializer_0.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_19;
+    return this._descriptor_23;
+  };
+  TripleSerializer_0.prototype.serialize_uarso6_k$ = function (encoder, value) {
+    var structuredEncoder = encoder.beginStructure_6qhf5t_k$(this._descriptor_23);
+    structuredEncoder.encodeSerializableElement_r6n13r_k$(this._descriptor_23, 0, this._aSerializer, value._first_0);
+    structuredEncoder.encodeSerializableElement_r6n13r_k$(this._descriptor_23, 1, this._bSerializer, value._second_0);
+    structuredEncoder.encodeSerializableElement_r6n13r_k$(this._descriptor_23, 2, this._cSerializer, value._third);
+    structuredEncoder.endStructure_g940c0_k$(this._descriptor_23);
+  };
+  TripleSerializer_0.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_uarso6_k$(encoder, value instanceof Triple ? value : THROW_CCE());
   };
   TripleSerializer_0.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var composite = decoder.beginStructure_6qhf5t_k$(this._descriptor_19);
+    var composite = decoder.beginStructure_6qhf5t_k$(this._descriptor_23);
     if (composite.decodeSequentially_0_k$()) {
       return decodeSequentially_0(this, composite);
     }return decodeStructure(this, composite);
@@ -22008,6 +23909,15 @@ exports.debug = debug; // for test
     this._keySerializer_0 = keySerializer;
     this._valueSerializer_0 = valueSerializer;
   }
+  KeyValueSerializer.prototype.serialize_67n3k9_k$ = function (encoder, value) {
+    var structuredEncoder = encoder.beginStructure_6qhf5t_k$(this._get_descriptor__0_k$());
+    structuredEncoder.encodeSerializableElement_r6n13r_k$(this._get_descriptor__0_k$(), 0, this._keySerializer_0, this._get_key__1r17l_k$(value));
+    structuredEncoder.encodeSerializableElement_r6n13r_k$(this._get_descriptor__0_k$(), 1, this._valueSerializer_0, this._get_value__1r17l_k$(value));
+    structuredEncoder.endStructure_g940c0_k$(this._get_descriptor__0_k$());
+  };
+  KeyValueSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_67n3k9_k$(encoder, (value == null ? true : isObject(value)) ? value : THROW_CCE());
+  };
   KeyValueSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     var composite = decoder.beginStructure_6qhf5t_k$(this._get_descriptor__0_k$());
     if (composite.decodeSequentially_0_k$()) {
@@ -22020,7 +23930,7 @@ exports.debug = debug; // for test
     var value_0 = NULL;
     mainLoop: while (true) {
       var idx = composite.decodeElementIndex_6qhf5t_k$(this._get_descriptor__0_k$());
-      Companion_getInstance_9();
+      Companion_getInstance_13();
       if (idx === -1) {
         break mainLoop;
       } else {
@@ -22051,21 +23961,21 @@ exports.debug = debug; // for test
     interfaces: [KSerializer]
   };
   function _no_name_provided_$factory_54($keySerializer, $valueSerializer) {
-    var i = new _no_name_provided__63($keySerializer, $valueSerializer);
-    return function (p1) {
-      i.invoke_dot7f7_k$(p1);
-      return Unit_getInstance();
-    };
-  }
-  function _no_name_provided_$factory_55($keySerializer, $valueSerializer) {
     var i = new _no_name_provided__64($keySerializer, $valueSerializer);
     return function (p1) {
       i.invoke_dot7f7_k$(p1);
       return Unit_getInstance();
     };
   }
+  function _no_name_provided_$factory_55($keySerializer, $valueSerializer) {
+    var i = new _no_name_provided__65($keySerializer, $valueSerializer);
+    return function (p1) {
+      i.invoke_dot7f7_k$(p1);
+      return Unit_getInstance();
+    };
+  }
   function _no_name_provided_$factory_56(this$0) {
-    var i = new _no_name_provided__65(this$0);
+    var i = new _no_name_provided__66(this$0);
     return function (p1) {
       i.invoke_dot7f7_k$(p1);
       return Unit_getInstance();
@@ -22092,6 +24002,18 @@ exports.debug = debug; // for test
     this._polyBase2NamedSerializers = polyBase2NamedSerializers;
     this._polyBase2DefaultDeserializerProvider = polyBase2DefaultDeserializerProvider;
   }
+  SerialModuleImpl.prototype.getPolymorphic_8orz3i_k$ = function (baseClass, value) {
+    if (!isInstanceOf(value, baseClass))
+      return null;
+    var tmp0_safe_receiver = this._polyBase2Serializers.get_2bw_k$(baseClass);
+    var tmp = tmp0_safe_receiver == null ? null : tmp0_safe_receiver.get_2bw_k$(getKClassFromExpression_0(value));
+    var registered = (!(tmp == null) ? isInterface(tmp, SerializationStrategy) : false) ? tmp : null;
+    if (!(registered == null))
+      return registered;
+    var tmp_0 = this._polyBase2DefaultSerializerProvider.get_2bw_k$(baseClass);
+    var tmp1_safe_receiver = (!(tmp_0 == null) ? typeof tmp_0 === 'function' : false) ? tmp_0 : null;
+    return tmp1_safe_receiver == null ? null : tmp1_safe_receiver(value);
+  };
   SerialModuleImpl.prototype.getPolymorphic_l8fcrr_k$ = function (baseClass, serializedClassName) {
     var tmp0_safe_receiver = this._polyBase2NamedSerializers.get_2bw_k$(baseClass);
     var tmp;
@@ -22298,37 +24220,37 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__66($serializer_12) {
-    this._$serializer = $serializer_12;
+  function _no_name_provided__67($serializer_13) {
+    this._$serializer = $serializer_13;
   }
-  _no_name_provided__66.prototype.invoke_lkp9i7_k$ = function (it) {
+  _no_name_provided__67.prototype.invoke_lkp9i7_k$ = function (it) {
     return this._$serializer;
   };
-  _no_name_provided__66.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__67.prototype.invoke_20e8_k$ = function (p1) {
     return this.invoke_lkp9i7_k$((!(p1 == null) ? isInterface(p1, List) : false) ? p1 : THROW_CCE());
   };
-  _no_name_provided__66.$metadata$ = {
+  _no_name_provided__67.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function SerializersModuleCollector() {
   }
-  SerializersModuleCollector.prototype.contextual_4gjxmy_k$ = function (kClass, serializer_11) {
-    return this.contextual_2w6ks0_k$(kClass, _no_name_provided_$factory_57(serializer_11));
+  SerializersModuleCollector.prototype.contextual_4gjxmy_k$ = function (kClass, serializer_15) {
+    return this.contextual_2w6ks0_k$(kClass, _no_name_provided_$factory_57(serializer_15));
   };
   SerializersModuleCollector.$metadata$ = {
     simpleName: 'SerializersModuleCollector',
     kind: 'interface',
     interfaces: []
   };
-  function _no_name_provided_$factory_57($serializer_12) {
-    var i = new _no_name_provided__66($serializer_12);
+  function _no_name_provided_$factory_57($serializer_13) {
+    var i = new _no_name_provided__67($serializer_13);
     return function (p1) {
       return i.invoke_lkp9i7_k$(p1);
     };
   }
-  function SerializableWith(serializer_11) {
-    this._serializer_1 = serializer_11;
+  function SerializableWith(serializer_15) {
+    this._serializer_1 = serializer_15;
   }
   SerializableWith.prototype.equals = function (other) {
     if (!(other instanceof SerializableWith))
@@ -22352,6 +24274,9 @@ exports.debug = debug; // for test
     interfaces: [Annotation],
     associatedObjectKey: 0
   };
+  function isInstanceOf(_this_, kclass_0) {
+    return kclass_0.isInstance_wi7j7l_k$(_this_);
+  }
   function getChecked(_this_, index) {
     if (!(0 <= index ? index <= (_this_.length - 1 | 0) : false))
       throw IndexOutOfBoundsException_init_$Create$('' + 'Index ' + index + ' out of bounds ' + _get_indices_(_this_));
@@ -22466,6 +24391,23 @@ exports.debug = debug; // for test
   };
   Json_0.prototype._get_serializersModule__0_k$ = function () {
     return this._serializersModule;
+  };
+  Json_0.prototype.encodeToString_onvojc_k$ = function (serializer_15, value) {
+    var result = new JsonStringBuilder();
+    try {
+      var tmp = WriteMode_OBJ_getInstance();
+      var tmp$ret$0;
+      $l$block: {
+        var tmp0_arrayOfNulls_0 = values().length;
+        tmp$ret$0 = fillArrayVal(Array(tmp0_arrayOfNulls_0), null);
+        break $l$block;
+      }
+      var encoder = StreamingJsonEncoder_init_$Create$(result, this, tmp, tmp$ret$0);
+      encoder.encodeSerializableValue_79s409_k$(serializer_15, value);
+      return result.toString();
+    }finally {
+      result.release_sv8swh_k$();
+    }
   };
   Json_0.prototype.decodeFromString_ed5pl9_k$ = function (deserializer, string) {
     var lexer = new StringJsonLexer(string);
@@ -22665,22 +24607,22 @@ exports.debug = debug; // for test
     kind: 'interface',
     interfaces: [Decoder, CompositeDecoder]
   };
-  function Companion_12() {
-    Companion_instance_11 = this;
+  function Companion_16() {
+    Companion_instance_15 = this;
   }
-  Companion_12.$metadata$ = {
+  Companion_16.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_11;
-  function Companion_getInstance_11() {
-    if (Companion_instance_11 == null)
-      new Companion_12();
-    return Companion_instance_11;
+  var Companion_instance_15;
+  function Companion_getInstance_15() {
+    if (Companion_instance_15 == null)
+      new Companion_16();
+    return Companion_instance_15;
   }
   function JsonElement() {
-    Companion_getInstance_11();
+    Companion_getInstance_15();
   }
   JsonElement.$metadata$ = {
     simpleName: 'JsonElement',
@@ -22688,23 +24630,23 @@ exports.debug = debug; // for test
     interfaces: [],
     associatedObjects: {0: JsonElementSerializer_getInstance}
   };
-  function Companion_13() {
-    Companion_instance_12 = this;
+  function Companion_17() {
+    Companion_instance_16 = this;
   }
-  Companion_13.$metadata$ = {
+  Companion_17.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_12;
-  function Companion_getInstance_12() {
-    if (Companion_instance_12 == null)
-      new Companion_13();
-    return Companion_instance_12;
+  var Companion_instance_16;
+  function Companion_getInstance_16() {
+    if (Companion_instance_16 == null)
+      new Companion_17();
+    return Companion_instance_16;
   }
-  function _no_name_provided__67() {
+  function _no_name_provided__68() {
   }
-  _no_name_provided__67.prototype.invoke_2pr604_k$ = function (_name_for_destructuring_parameter_0_) {
+  _no_name_provided__68.prototype.invoke_2pr604_k$ = function (_name_for_destructuring_parameter_0_) {
     var tmp$ret$0;
     $l$block: {
       tmp$ret$0 = _name_for_destructuring_parameter_0_._get_key__0_k$();
@@ -22741,15 +24683,15 @@ exports.debug = debug; // for test
     }
     return tmp$ret$3;
   };
-  _no_name_provided__67.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__68.prototype.invoke_20e8_k$ = function (p1) {
     return this.invoke_2pr604_k$((!(p1 == null) ? isInterface(p1, Entry) : false) ? p1 : THROW_CCE());
   };
-  _no_name_provided__67.$metadata$ = {
+  _no_name_provided__68.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function JsonObject(content) {
-    Companion_getInstance_12();
+    Companion_getInstance_16();
     JsonElement.call(this);
     this._content = content;
   }
@@ -22801,12 +24743,12 @@ exports.debug = debug; // for test
     interfaces: [Map_0],
     associatedObjects: {0: JsonObjectSerializer_getInstance}
   };
-  function _no_name_provided__68() {
+  function _no_name_provided__69() {
   }
-  _no_name_provided__68.prototype.invoke_0_k$ = function () {
+  _no_name_provided__69.prototype.invoke_0_k$ = function () {
     return JsonNullSerializer_getInstance();
   };
-  _no_name_provided__68.$metadata$ = {
+  _no_name_provided__69.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -22839,22 +24781,22 @@ exports.debug = debug; // for test
       new JsonNull();
     return JsonNull_instance;
   }
-  function Companion_14() {
-    Companion_instance_13 = this;
+  function Companion_18() {
+    Companion_instance_17 = this;
   }
-  Companion_14.$metadata$ = {
+  Companion_18.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_13;
-  function Companion_getInstance_13() {
-    if (Companion_instance_13 == null)
-      new Companion_14();
-    return Companion_instance_13;
+  var Companion_instance_17;
+  function Companion_getInstance_17() {
+    if (Companion_instance_17 == null)
+      new Companion_18();
+    return Companion_instance_17;
   }
   function JsonPrimitive() {
-    Companion_getInstance_13();
+    Companion_getInstance_17();
     JsonElement.call(this);
   }
   JsonPrimitive.prototype.toString = function () {
@@ -22932,22 +24874,22 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
-  function Companion_15() {
-    Companion_instance_14 = this;
+  function Companion_19() {
+    Companion_instance_18 = this;
   }
-  Companion_15.$metadata$ = {
+  Companion_19.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_14;
-  function Companion_getInstance_14() {
-    if (Companion_instance_14 == null)
-      new Companion_15();
-    return Companion_instance_14;
+  var Companion_instance_18;
+  function Companion_getInstance_18() {
+    if (Companion_instance_18 == null)
+      new Companion_19();
+    return Companion_instance_18;
   }
   function JsonArray(content) {
-    Companion_getInstance_14();
+    Companion_getInstance_18();
     JsonElement.call(this);
     this._content_2 = content;
   }
@@ -23027,6 +24969,12 @@ exports.debug = debug; // for test
     }
     return tmp;
   }
+  function _get_longOrNull_(_this_) {
+    return toLongOrNull(_this_._get_content__0_k$());
+  }
+  function _get_doubleOrNull_(_this_) {
+    return toDoubleOrNull(_this_._get_content__0_k$());
+  }
   function _get_jsonPrimitive_(_this_) {
     var tmp0_elvis_lhs = _this_ instanceof JsonPrimitive ? _this_ : null;
     var tmp;
@@ -23041,30 +24989,21 @@ exports.debug = debug; // for test
     throw IllegalArgumentException_init_$Create$_0('' + 'Element ' + getKClassFromExpression_0(_this_) + ' is not a ' + element);
   }
   function _no_name_provided_$factory_58() {
-    var i = new _no_name_provided__67();
+    var i = new _no_name_provided__68();
     return function (p1) {
       return i.invoke_2pr604_k$(p1);
     };
   }
   function _no_name_provided_$factory_59() {
-    var i = new _no_name_provided__68();
+    var i = new _no_name_provided__69();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided__69() {
-  }
-  _no_name_provided__69.prototype.invoke_0_k$ = function () {
-    return JsonPrimitiveSerializer_getInstance()._descriptor_23;
-  };
-  _no_name_provided__69.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
   function _no_name_provided__70() {
   }
   _no_name_provided__70.prototype.invoke_0_k$ = function () {
-    return JsonNullSerializer_getInstance()._descriptor_24;
+    return JsonPrimitiveSerializer_getInstance()._descriptor_27;
   };
   _no_name_provided__70.$metadata$ = {
     kind: 'class',
@@ -23073,7 +25012,7 @@ exports.debug = debug; // for test
   function _no_name_provided__71() {
   }
   _no_name_provided__71.prototype.invoke_0_k$ = function () {
-    return JsonLiteralSerializer_getInstance()._descriptor_25;
+    return JsonNullSerializer_getInstance()._descriptor_28;
   };
   _no_name_provided__71.$metadata$ = {
     kind: 'class',
@@ -23082,7 +25021,7 @@ exports.debug = debug; // for test
   function _no_name_provided__72() {
   }
   _no_name_provided__72.prototype.invoke_0_k$ = function () {
-    return JsonObjectSerializer_getInstance()._descriptor_21;
+    return JsonLiteralSerializer_getInstance()._descriptor_29;
   };
   _no_name_provided__72.$metadata$ = {
     kind: 'class',
@@ -23091,7 +25030,7 @@ exports.debug = debug; // for test
   function _no_name_provided__73() {
   }
   _no_name_provided__73.prototype.invoke_0_k$ = function () {
-    return JsonArraySerializer_getInstance()._descriptor_22;
+    return JsonObjectSerializer_getInstance()._descriptor_25;
   };
   _no_name_provided__73.$metadata$ = {
     kind: 'class',
@@ -23099,7 +25038,16 @@ exports.debug = debug; // for test
   };
   function _no_name_provided__74() {
   }
-  _no_name_provided__74.prototype.invoke_dot7f7_k$ = function ($this$buildSerialDescriptor) {
+  _no_name_provided__74.prototype.invoke_0_k$ = function () {
+    return JsonArraySerializer_getInstance()._descriptor_26;
+  };
+  _no_name_provided__74.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__75() {
+  }
+  _no_name_provided__75.prototype.invoke_dot7f7_k$ = function ($this$buildSerialDescriptor) {
     var tmp = defer(_no_name_provided_$factory_61());
     $this$buildSerialDescriptor.element$default_kwz7dp_k$('JsonPrimitive', tmp, null, false, 12, null);
     var tmp_0 = defer(_no_name_provided_$factory_62());
@@ -23111,11 +25059,11 @@ exports.debug = debug; // for test
     var tmp_3 = defer(_no_name_provided_$factory_65());
     $this$buildSerialDescriptor.element$default_kwz7dp_k$('JsonArray', tmp_3, null, false, 12, null);
   };
-  _no_name_provided__74.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__75.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_dot7f7_k$(p1 instanceof ClassSerialDescriptorBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__74.$metadata$ = {
+  _no_name_provided__75.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -23123,10 +25071,29 @@ exports.debug = debug; // for test
     JsonElementSerializer_instance = this;
     var tmp = this;
     var tmp_0 = SEALED_getInstance();
-    tmp._descriptor_20 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonElement', tmp_0, [], _no_name_provided_$factory_60(), 4, null);
+    tmp._descriptor_24 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonElement', tmp_0, [], _no_name_provided_$factory_60(), 4, null);
   }
   JsonElementSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_20;
+    return this._descriptor_24;
+  };
+  JsonElementSerializer.prototype.serialize_510whw_k$ = function (encoder, value) {
+    verify(encoder);
+    var tmp0_subject = value;
+    if (tmp0_subject instanceof JsonPrimitive)
+      encoder.encodeSerializableValue_79s409_k$(JsonPrimitiveSerializer_getInstance(), value);
+    else {
+      if (tmp0_subject instanceof JsonObject)
+        encoder.encodeSerializableValue_79s409_k$(JsonObjectSerializer_getInstance(), value);
+      else {
+        if (tmp0_subject instanceof JsonArray)
+          encoder.encodeSerializableValue_79s409_k$(JsonArraySerializer_getInstance(), value);
+        else {
+        }
+      }
+    }
+  };
+  JsonElementSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_510whw_k$(encoder, value instanceof JsonElement ? value : THROW_CCE());
   };
   JsonElementSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     var input = asJsonDecoder(decoder);
@@ -23194,13 +25161,20 @@ exports.debug = debug; // for test
   }
   function JsonObjectSerializer() {
     JsonObjectSerializer_instance = this;
-    this._descriptor_21 = JsonObjectDescriptor_getInstance();
+    this._descriptor_25 = JsonObjectDescriptor_getInstance();
   }
   JsonObjectSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_21;
+    return this._descriptor_25;
+  };
+  JsonObjectSerializer.prototype.serialize_getlab_k$ = function (encoder, value) {
+    verify(encoder);
+    MapSerializer(serializer_1(StringCompanionObject_getInstance()), JsonElementSerializer_getInstance()).serialize_whawnb_k$(encoder, value);
+  };
+  JsonObjectSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_getlab_k$(encoder, value instanceof JsonObject ? value : THROW_CCE());
   };
   JsonObjectSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    verify(decoder);
+    verify_0(decoder);
     return new JsonObject(MapSerializer(serializer_1(StringCompanionObject_getInstance()), JsonElementSerializer_getInstance()).deserialize_u9oizh_k$(decoder));
   };
   JsonObjectSerializer.$metadata$ = {
@@ -23265,13 +25239,20 @@ exports.debug = debug; // for test
   }
   function JsonArraySerializer() {
     JsonArraySerializer_instance = this;
-    this._descriptor_22 = JsonArrayDescriptor_getInstance();
+    this._descriptor_26 = JsonArrayDescriptor_getInstance();
   }
   JsonArraySerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_22;
+    return this._descriptor_26;
+  };
+  JsonArraySerializer.prototype.serialize_un7gux_k$ = function (encoder, value) {
+    verify(encoder);
+    ListSerializer(JsonElementSerializer_getInstance()).serialize_whawnb_k$(encoder, value);
+  };
+  JsonArraySerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_un7gux_k$(encoder, value instanceof JsonArray ? value : THROW_CCE());
   };
   JsonArraySerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    verify(decoder);
+    verify_0(decoder);
     return new JsonArray(ListSerializer(JsonElementSerializer_getInstance()).deserialize_u9oizh_k$(decoder));
   };
   JsonArraySerializer.$metadata$ = {
@@ -23286,16 +25267,32 @@ exports.debug = debug; // for test
     return JsonArraySerializer_instance;
   }
   function defer(deferred) {
-    return new _no_name_provided__75(deferred);
+    return new _no_name_provided__76(deferred);
   }
   function JsonPrimitiveSerializer() {
     JsonPrimitiveSerializer_instance = this;
     var tmp = this;
     var tmp_0 = STRING_getInstance();
-    tmp._descriptor_23 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonPrimitive', tmp_0, [], null, 12, null);
+    tmp._descriptor_27 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonPrimitive', tmp_0, [], null, 12, null);
   }
   JsonPrimitiveSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_23;
+    return this._descriptor_27;
+  };
+  JsonPrimitiveSerializer.prototype.serialize_6dkron_k$ = function (encoder, value) {
+    verify(encoder);
+    var tmp;
+    if (value instanceof JsonNull) {
+      tmp = encoder.encodeSerializableValue_79s409_k$(JsonNullSerializer_getInstance(), JsonNull_getInstance());
+    } else {
+      {
+        var tmp_0 = JsonLiteralSerializer_getInstance();
+        tmp = encoder.encodeSerializableValue_79s409_k$(tmp_0, value instanceof JsonLiteral ? value : THROW_CCE());
+      }
+    }
+    return tmp;
+  };
+  JsonPrimitiveSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_6dkron_k$(encoder, value instanceof JsonPrimitive ? value : THROW_CCE());
   };
   JsonPrimitiveSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     var result = asJsonDecoder(decoder).decodeJsonElement_0_k$();
@@ -23320,13 +25317,20 @@ exports.debug = debug; // for test
     JsonNullSerializer_instance = this;
     var tmp = this;
     var tmp_0 = ENUM_getInstance();
-    tmp._descriptor_24 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonNull', tmp_0, [], null, 12, null);
+    tmp._descriptor_28 = buildSerialDescriptor$default('kotlinx.serialization.json.JsonNull', tmp_0, [], null, 12, null);
   }
   JsonNullSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_24;
+    return this._descriptor_28;
+  };
+  JsonNullSerializer.prototype.serialize_y5mozf_k$ = function (encoder, value) {
+    verify(encoder);
+    encoder.encodeNull_sv8swh_k$();
+  };
+  JsonNullSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_y5mozf_k$(encoder, value instanceof JsonNull ? value : THROW_CCE());
   };
   JsonNullSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    verify(decoder);
+    verify_0(decoder);
     if (decoder.decodeNotNullMark_0_k$()) {
       throw new JsonDecodingException("Expected 'null' literal");
     }decoder.decodeNull_0_k$();
@@ -23346,10 +25350,77 @@ exports.debug = debug; // for test
   }
   function JsonLiteralSerializer() {
     JsonLiteralSerializer_instance = this;
-    this._descriptor_25 = PrimitiveSerialDescriptor('kotlinx.serialization.json.JsonLiteral', STRING_getInstance());
+    this._descriptor_29 = PrimitiveSerialDescriptor('kotlinx.serialization.json.JsonLiteral', STRING_getInstance());
   }
   JsonLiteralSerializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_25;
+    return this._descriptor_29;
+  };
+  JsonLiteralSerializer.prototype.serialize_cmf1zl_k$ = function (encoder, value) {
+    verify(encoder);
+    if (value._isString) {
+      return encoder.encodeString_a4enbm_k$(value._content_1);
+    }var tmp0_safe_receiver = _get_longOrNull_(value);
+    if (tmp0_safe_receiver == null)
+      null;
+    else {
+      var tmp$ret$0;
+      {
+        {
+        }
+        return encoder.encodeLong_kdfck9_k$(tmp0_safe_receiver);
+      }
+    }
+    Unit_getInstance();
+    var tmp1_safe_receiver = toULongOrNull(value._content_1);
+    var tmp = tmp1_safe_receiver;
+    if ((tmp == null ? null : new ULong(tmp)) == null)
+      null;
+    else {
+      {
+        var tmp$ret$2;
+        {
+          {
+          }
+          var tmp_0 = encoder.encodeInline_6qhf5t_k$(serializer_12(Companion_getInstance_6())._get_descriptor__0_k$());
+          var tmp$ret$1;
+          $l$block: {
+            tmp$ret$1 = _ULong___get_data__impl_(tmp1_safe_receiver);
+            break $l$block;
+          }
+          tmp_0.encodeLong_kdfck9_k$(tmp$ret$1);
+          return Unit_getInstance();
+        }
+      }
+    }
+    Unit_getInstance();
+    var tmp2_safe_receiver = _get_doubleOrNull_(value);
+    if (tmp2_safe_receiver == null)
+      null;
+    else {
+      var tmp$ret$3;
+      {
+        {
+        }
+        return encoder.encodeDouble_okcceq_k$(tmp2_safe_receiver);
+      }
+    }
+    Unit_getInstance();
+    var tmp3_safe_receiver = _get_booleanOrNull_(value);
+    if (tmp3_safe_receiver == null)
+      null;
+    else {
+      var tmp$ret$4;
+      {
+        {
+        }
+        return encoder.encodeBoolean_rpwsgn_k$(tmp3_safe_receiver);
+      }
+    }
+    Unit_getInstance();
+    encoder.encodeString_a4enbm_k$(value._content_1);
+  };
+  JsonLiteralSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_cmf1zl_k$(encoder, value instanceof JsonLiteral ? value : THROW_CCE());
   };
   JsonLiteralSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     var result = asJsonDecoder(decoder).decodeJsonElement_0_k$();
@@ -23370,6 +25441,10 @@ exports.debug = debug; // for test
       new JsonLiteralSerializer();
     return JsonLiteralSerializer_instance;
   }
+  function verify(encoder) {
+    asJsonEncoder(encoder);
+    Unit_getInstance();
+  }
   function asJsonDecoder(_this_) {
     var tmp0_elvis_lhs = isInterface(_this_, JsonDecoder) ? _this_ : null;
     var tmp;
@@ -23380,9 +25455,19 @@ exports.debug = debug; // for test
     }
     return tmp;
   }
-  function verify(decoder) {
+  function verify_0(decoder) {
     asJsonDecoder(decoder);
     Unit_getInstance();
+  }
+  function asJsonEncoder(_this_) {
+    var tmp0_elvis_lhs = isInterface(_this_, JsonEncoder) ? _this_ : null;
+    var tmp;
+    if (tmp0_elvis_lhs == null) {
+      throw IllegalStateException_init_$Create$('This serializer can be used only with Json format.' + ('' + 'Expected Encoder to be JsonEncoder, got ' + getKClassFromExpression_0(_this_)));
+    } else {
+      tmp = tmp0_elvis_lhs;
+    }
+    return tmp;
   }
   function _get_original_($this) {
     var tmp$ret$0;
@@ -23393,35 +25478,35 @@ exports.debug = debug; // for test
     }
     return tmp$ret$0;
   }
-  function _no_name_provided__75($deferred) {
+  function _no_name_provided__76($deferred) {
     this._$deferred = $deferred;
     this._original$delegate = lazy_0(this._$deferred);
   }
-  _no_name_provided__75.prototype._get_serialName__0_k$ = function () {
+  _no_name_provided__76.prototype._get_serialName__0_k$ = function () {
     return _get_original_(this)._get_serialName__0_k$();
   };
-  _no_name_provided__75.prototype._get_kind__0_k$ = function () {
+  _no_name_provided__76.prototype._get_kind__0_k$ = function () {
     return _get_original_(this)._get_kind__0_k$();
   };
-  _no_name_provided__75.prototype._get_elementsCount__0_k$ = function () {
+  _no_name_provided__76.prototype._get_elementsCount__0_k$ = function () {
     return _get_original_(this)._get_elementsCount__0_k$();
   };
-  _no_name_provided__75.prototype.getElementName_ha5a7z_k$ = function (index) {
+  _no_name_provided__76.prototype.getElementName_ha5a7z_k$ = function (index) {
     return _get_original_(this).getElementName_ha5a7z_k$(index);
   };
-  _no_name_provided__75.prototype.getElementIndex_6wfw3l_k$ = function (name) {
+  _no_name_provided__76.prototype.getElementIndex_6wfw3l_k$ = function (name) {
     return _get_original_(this).getElementIndex_6wfw3l_k$(name);
   };
-  _no_name_provided__75.prototype.getElementAnnotations_ha5a7z_k$ = function (index) {
+  _no_name_provided__76.prototype.getElementAnnotations_ha5a7z_k$ = function (index) {
     return _get_original_(this).getElementAnnotations_ha5a7z_k$(index);
   };
-  _no_name_provided__75.prototype.getElementDescriptor_ha5a7z_k$ = function (index) {
+  _no_name_provided__76.prototype.getElementDescriptor_ha5a7z_k$ = function (index) {
     return _get_original_(this).getElementDescriptor_ha5a7z_k$(index);
   };
-  _no_name_provided__75.prototype.isElementOptional_ha5a7z_k$ = function (index) {
+  _no_name_provided__76.prototype.isElementOptional_ha5a7z_k$ = function (index) {
     return _get_original_(this).isElementOptional_ha5a7z_k$(index);
   };
-  _no_name_provided__75.$metadata$ = {
+  _no_name_provided__76.$metadata$ = {
     kind: 'class',
     interfaces: [SerialDescriptor]
   };
@@ -23431,60 +25516,209 @@ exports.debug = debug; // for test
     }, null);
   }
   function _no_name_provided_$factory_60() {
-    var i = new _no_name_provided__74();
+    var i = new _no_name_provided__75();
     return function (p1) {
       i.invoke_dot7f7_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_61() {
-    var i = new _no_name_provided__69();
-    return function () {
-      return i.invoke_0_k$();
-    };
-  }
-  function _no_name_provided_$factory_62() {
     var i = new _no_name_provided__70();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_63() {
+  function _no_name_provided_$factory_62() {
     var i = new _no_name_provided__71();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_64() {
+  function _no_name_provided_$factory_63() {
     var i = new _no_name_provided__72();
     return function () {
       return i.invoke_0_k$();
     };
   }
-  function _no_name_provided_$factory_65() {
+  function _no_name_provided_$factory_64() {
     var i = new _no_name_provided__73();
     return function () {
       return i.invoke_0_k$();
     };
   }
+  function _no_name_provided_$factory_65() {
+    var i = new _no_name_provided__74();
+    return function () {
+      return i.invoke_0_k$();
+    };
+  }
+  function JsonEncoder() {
+  }
+  JsonEncoder.$metadata$ = {
+    simpleName: 'JsonEncoder',
+    kind: 'interface',
+    interfaces: [Encoder, CompositeEncoder]
+  };
+  function Composer(sb) {
+    this._sb = sb;
+    this._writingFirst = true;
+  }
+  Composer.prototype._set_writingFirst__rpwsgn_k$ = function (_set___) {
+    this._writingFirst = _set___;
+  };
+  Composer.prototype.indent_sv8swh_k$ = function () {
+    this._writingFirst = true;
+  };
+  Composer.prototype.unIndent_sv8swh_k$ = function () {
+    return Unit_getInstance();
+  };
+  Composer.prototype.nextItem_sv8swh_k$ = function () {
+    this._writingFirst = false;
+  };
+  Composer.prototype.space_sv8swh_k$ = function () {
+    return Unit_getInstance();
+  };
+  Composer.prototype.print_9o0tv_k$ = function (v) {
+    return this._sb.append_9o0tv_k$(v);
+  };
+  Composer.prototype.print_a4enbm_k$ = function (v) {
+    return this._sb.append_a4enbm_k$(v);
+  };
+  Composer.prototype.print_cpozfn_k$ = function (v) {
+    return this._sb.append_a4enbm_k$(v.toString());
+  };
+  Composer.prototype.print_okcceq_k$ = function (v) {
+    return this._sb.append_a4enbm_k$(v.toString());
+  };
+  Composer.prototype.print_hpsj51_k$ = function (v) {
+    return this._sb.append_kdfck9_k$(toLong_0(v));
+  };
+  Composer.prototype.print_7gn77n_k$ = function (v) {
+    return this._sb.append_kdfck9_k$(toLong_0(v));
+  };
+  Composer.prototype.print_majfzk_k$ = function (v) {
+    return this._sb.append_kdfck9_k$(toLong_0(v));
+  };
+  Composer.prototype.print_kdfck9_k$ = function (v) {
+    return this._sb.append_kdfck9_k$(v);
+  };
+  Composer.prototype.print_rpwsgn_k$ = function (v) {
+    return this._sb.append_a4enbm_k$(v.toString());
+  };
+  Composer.prototype.printQuoted_a4enbm_k$ = function (value) {
+    return this._sb.appendQuoted_a4enbm_k$(value);
+  };
+  Composer.$metadata$ = {
+    simpleName: 'Composer',
+    kind: 'class',
+    interfaces: []
+  };
+  function Composer_0(sb, json) {
+    return json._configuration._prettyPrint_0 ? new ComposerWithPrettyPrint(sb, json) : new Composer(sb);
+  }
+  function ComposerForUnsignedNumbers(sb) {
+    Composer.call(this, sb);
+  }
+  ComposerForUnsignedNumbers.prototype.print_majfzk_k$ = function (v) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _UInt___init__impl_(v);
+      break $l$block;
+    }
+    return Composer.prototype.print_a4enbm_k$.call(this, UInt__toString_impl(tmp$ret$0));
+  };
+  ComposerForUnsignedNumbers.prototype.print_kdfck9_k$ = function (v) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _ULong___init__impl_(v);
+      break $l$block;
+    }
+    return Composer.prototype.print_a4enbm_k$.call(this, ULong__toString_impl(tmp$ret$0));
+  };
+  ComposerForUnsignedNumbers.prototype.print_hpsj51_k$ = function (v) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _UByte___init__impl_(v);
+      break $l$block;
+    }
+    return Composer.prototype.print_a4enbm_k$.call(this, UByte__toString_impl(tmp$ret$0));
+  };
+  ComposerForUnsignedNumbers.prototype.print_7gn77n_k$ = function (v) {
+    var tmp$ret$0;
+    $l$block: {
+      tmp$ret$0 = _UShort___init__impl_(v);
+      break $l$block;
+    }
+    return Composer.prototype.print_a4enbm_k$.call(this, UShort__toString_impl(tmp$ret$0));
+  };
+  ComposerForUnsignedNumbers.$metadata$ = {
+    simpleName: 'ComposerForUnsignedNumbers',
+    kind: 'class',
+    interfaces: []
+  };
+  function ComposerWithPrettyPrint(sb, json) {
+    Composer.call(this, sb);
+    this._json = json;
+    this._level = 0;
+  }
+  ComposerWithPrettyPrint.prototype.indent_sv8swh_k$ = function () {
+    this._set_writingFirst__rpwsgn_k$(true);
+    var tmp0_this = this;
+    var tmp1 = tmp0_this._level;
+    tmp0_this._level = tmp1 + 1 | 0;
+    Unit_getInstance();
+  };
+  ComposerWithPrettyPrint.prototype.unIndent_sv8swh_k$ = function () {
+    var tmp0_this = this;
+    var tmp1 = tmp0_this._level;
+    tmp0_this._level = tmp1 - 1 | 0;
+    Unit_getInstance();
+  };
+  ComposerWithPrettyPrint.prototype.nextItem_sv8swh_k$ = function () {
+    this._set_writingFirst__rpwsgn_k$(false);
+    this.print_a4enbm_k$('\n');
+    {
+      var tmp0_repeat_0 = this._level;
+      {
+      }
+      var inductionVariable = 0;
+      if (inductionVariable < tmp0_repeat_0)
+        do {
+          var index_2 = inductionVariable;
+          inductionVariable = inductionVariable + 1 | 0;
+          {
+            this.print_a4enbm_k$(this._json._configuration._prettyPrintIndent_0);
+          }
+        }
+         while (inductionVariable < tmp0_repeat_0);
+    }
+  };
+  ComposerWithPrettyPrint.prototype.space_sv8swh_k$ = function () {
+    this.print_9o0tv_k$(new Char(32));
+  };
+  ComposerWithPrettyPrint.$metadata$ = {
+    simpleName: 'ComposerWithPrettyPrint',
+    kind: 'class',
+    interfaces: []
+  };
   function readIfAbsent($this, descriptor, index) {
     $this._isUnmarkedNull = !descriptor.isElementOptional_ha5a7z_k$(index) ? descriptor.getElementDescriptor_ha5a7z_k$(index)._get_isNullable__0_k$() : false;
     return $this._isUnmarkedNull;
   }
-  function _no_name_provided__76($boundThis) {
+  function _no_name_provided__77($boundThis) {
     this._$boundThis = $boundThis;
   }
-  _no_name_provided__76.prototype.invoke_5vyt7k_k$ = function (p0, p1) {
+  _no_name_provided__77.prototype.invoke_5vyt7k_k$ = function (p0, p1) {
     return readIfAbsent(this._$boundThis, p0, p1);
   };
-  _no_name_provided__76.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__77.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, SerialDescriptor) : false) ? p1 : THROW_CCE();
     return this.invoke_5vyt7k_k$(tmp, (!(p2 == null) ? typeof p2 === 'number' : false) ? p2 : THROW_CCE());
   };
-  _no_name_provided__76.prototype._get_name__0_k$ = function () {
+  _no_name_provided__77.prototype._get_name__0_k$ = function () {
     return 'readIfAbsent';
   };
-  _no_name_provided__76.$metadata$ = {
+  _no_name_provided__77.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -23505,7 +25739,7 @@ exports.debug = debug; // for test
     interfaces: []
   };
   function _no_name_provided_$factory_66($boundThis) {
-    var i = new _no_name_provided__76($boundThis);
+    var i = new _no_name_provided__77($boundThis);
     var l = function (p1, p2) {
       return i.invoke_5vyt7k_k$(p1, p2);
     };
@@ -23521,6 +25755,10 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
+  function InvalidFloatingPointEncoded(value, output) {
+    var tmp = '' + 'Unexpected special floating-point value ' + value + '. By default, ' + 'non-finite floating point values are prohibited because they do not conform JSON specification. ' + "It is possible to deserialize them using 'JsonBuilder.allowSpecialFloatingPointValues = true'\n";
+    return new JsonEncodingException(tmp + ('' + 'Current output: ' + minify$default(output, 0, 1, null)));
+  }
   function InvalidKeyKindException(keyDescriptor) {
     return new JsonEncodingException('' + "Value of type '" + keyDescriptor._get_serialName__0_k$() + "' can't be used in JSON as a key in the map. " + ('' + "It should have either primitive or enum kind, but its kind is '" + keyDescriptor._get_kind__0_k$() + "'.\n") + "Use 'allowStructuredMapKeys = true' in 'Json {}' builder to convert such maps to [key1, value1, key2, value2,...] arrays.");
   }
@@ -23598,7 +25836,7 @@ exports.debug = debug; // for test
   var JsonAlternativeNamesKey;
   function getJsonNameIndex(_this_, json, name) {
     var index = _this_.getElementIndex_6wfw3l_k$(name);
-    Companion_getInstance_9();
+    Companion_getInstance_13();
     if (!(index === -3))
       return index;
     else {
@@ -23610,7 +25848,7 @@ exports.debug = debug; // for test
     var tmp0_elvis_lhs = alternativeNamesMap.get_2bw_k$(name);
     var tmp_0;
     if (tmp0_elvis_lhs == null) {
-      Companion_getInstance_9();
+      Companion_getInstance_13();
       tmp_0 = -3;
     } else {
       tmp_0 = tmp0_elvis_lhs;
@@ -23690,21 +25928,21 @@ exports.debug = debug; // for test
       Unit_getInstance();
     }
   }
-  function _no_name_provided__77($boundThis) {
+  function _no_name_provided__78($boundThis) {
     this._$boundThis_0 = $boundThis;
   }
-  _no_name_provided__77.prototype.invoke_0_k$ = function () {
+  _no_name_provided__78.prototype.invoke_0_k$ = function () {
     return buildAlternativeNamesMap(this._$boundThis_0);
   };
-  _no_name_provided__77.prototype._get_name__0_k$ = function () {
+  _no_name_provided__78.prototype._get_name__0_k$ = function () {
     return 'buildAlternativeNamesMap';
   };
-  _no_name_provided__77.$metadata$ = {
+  _no_name_provided__78.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
   function _no_name_provided_$factory_67($boundThis) {
-    var i = new _no_name_provided__77($boundThis);
+    var i = new _no_name_provided__78($boundThis);
     var l = function () {
       return i.invoke_0_k$();
     };
@@ -23814,21 +26052,21 @@ exports.debug = debug; // for test
   function readDeepRecursive($this) {
     return invoke(new DeepRecursiveFunction(_no_name_provided_$factory_68($this, null)), Unit_getInstance());
   }
-  function _no_name_provided__78(this$0, resultContinuation) {
+  function _no_name_provided__79(this$0, resultContinuation) {
     this._this$0_23 = this$0;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__78.prototype.invoke_jgqxoy_k$ = function ($this$$receiver, it, $cont) {
+  _no_name_provided__79.prototype.invoke_jgqxoy_k$ = function ($this$$receiver, it, $cont) {
     var tmp = this.create_yduxcq_k$($this$$receiver, it, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__78.prototype.invoke_osx4an_k$ = function (p1, p2, $cont) {
+  _no_name_provided__79.prototype.invoke_osx4an_k$ = function (p1, p2, $cont) {
     var tmp = p1 instanceof DeepRecursiveScope ? p1 : THROW_CCE();
     return this.invoke_jgqxoy_k$(tmp, p2 instanceof Unit ? p2 : THROW_CCE(), $cont);
   };
-  _no_name_provided__78.prototype.doResume_0_k$ = function () {
+  _no_name_provided__79.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -23889,13 +26127,13 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  _no_name_provided__78.prototype.create_yduxcq_k$ = function ($this$$receiver, it, completion) {
-    var i = new _no_name_provided__78(this._this$0_23, completion);
+  _no_name_provided__79.prototype.create_yduxcq_k$ = function ($this$$receiver, it, completion) {
+    var i = new _no_name_provided__79(this._this$0_23, completion);
     i._$this$$receiver = $this$$receiver;
     i._it = it;
     return i;
   };
-  _no_name_provided__78.$metadata$ = {
+  _no_name_provided__79.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [2]
@@ -24026,7 +26264,7 @@ exports.debug = debug; // for test
     interfaces: []
   };
   function _no_name_provided_$factory_68(this$0, resultContinuation) {
-    var i = new _no_name_provided__78(this$0, resultContinuation);
+    var i = new _no_name_provided__79(this$0, resultContinuation);
     var l = function (p1, p2, $cont) {
       return i.invoke_jgqxoy_k$(p1, p2, $cont);
     };
@@ -24084,11 +26322,41 @@ exports.debug = debug; // for test
     }
     return json._configuration._classDiscriminator_0;
   }
+  function validateIfSealed(serializer_15, actualSerializer, classDiscriminator_0) {
+    if (!(serializer_15 instanceof SealedClassSerializer))
+      return Unit_getInstance();
+    else {
+    }
+    if (jsonCachedSerialNames(actualSerializer._get_descriptor__0_k$()).contains_2bq_k$(classDiscriminator_0)) {
+      var baseName = serializer_15._get_descriptor__0_k$()._get_serialName__0_k$();
+      var actualName = actualSerializer._get_descriptor__0_k$()._get_serialName__0_k$();
+      {
+        var tmp0_error_0 = '' + "Sealed class '" + actualName + "' cannot be serialized as base class '" + baseName + "' because" + ('' + " it has property name that conflicts with JSON class discriminator '" + classDiscriminator_0 + "'. ") + 'You can either change class discriminator in JsonConfiguration, ' + 'rename property with @SerialName annotation or fall back to array polymorphism';
+        throw IllegalStateException_init_$Create$(toString_1(tmp0_error_0));
+      }
+    }}
+  function checkKind(kind) {
+    if (kind instanceof ENUM) {
+      throw IllegalStateException_init_$Create$("Enums cannot be serialized polymorphically with 'type' parameter. You can use 'JsonBuilder.useArrayPolymorphism' instead");
+    } else {
+    }
+    if (kind instanceof PrimitiveKind) {
+      throw IllegalStateException_init_$Create$("Primitives cannot be serialized polymorphically with 'type' parameter. You can use 'JsonBuilder.useArrayPolymorphism' instead");
+    } else {
+    }
+    if (kind instanceof PolymorphicKind) {
+      throw IllegalStateException_init_$Create$('Actual serializer for polymorphic cannot be polymorphic itself');
+    } else {
+    }
+  }
   function throwSerializerNotFound(type, jsonTree) {
     var suffix = type == null ? "missing class discriminator ('null')" : '' + "class discriminator '" + type + "'";
     throw JsonDecodingException_0(-1, '' + 'Polymorphic serializer was not found for ' + suffix, jsonTree.toString());
   }
-  function checkKind($this, descriptor, actualClass) {
+  function validateIfSealed$accessor$1ad0flx(serializer_15, actualSerializer, classDiscriminator_0) {
+    return validateIfSealed(serializer_15, actualSerializer, classDiscriminator_0);
+  }
+  function checkKind_0($this, descriptor, actualClass) {
     var kind = descriptor._get_kind__0_k$();
     var tmp;
     if (kind instanceof PolymorphicKind) {
@@ -24144,7 +26412,7 @@ exports.debug = debug; // for test
   };
   PolymorphismValidator.prototype.polymorphic_nsq4gh_k$ = function (baseClass, actualClass, actualSerializer) {
     var descriptor = actualSerializer._get_descriptor__0_k$();
-    checkKind(this, descriptor, actualClass);
+    checkKind_0(this, descriptor, actualClass);
     if (!this._useArrayPolymorphism_1) {
       checkDiscriminatorCollisions(this, descriptor, actualClass);
     }};
@@ -24233,7 +26501,7 @@ exports.debug = debug; // for test
   function skipLeftoverElements($this, descriptor) {
     $l$break: while (true) {
       var tmp = $this.decodeElementIndex_6qhf5t_k$(descriptor);
-      Companion_getInstance_9();
+      Companion_getInstance_13();
       if (!!(tmp === -1)) {
         break $l$break;
       }}
@@ -24283,7 +26551,7 @@ exports.debug = debug; // for test
     } else {
       if (hasComma) {
         $this._lexer_0.fail$default_6ncsww_k$("Expected '}', but had ',' instead", 0, 2, null);
-      }Companion_getInstance_9();
+      }Companion_getInstance_13();
       tmp = -1;
     }
     return tmp;
@@ -24291,7 +26559,7 @@ exports.debug = debug; // for test
   function coerceInputValue($this, descriptor, index) {
     var tmp$ret$1;
     $l$block_4: {
-      var tmp0_tryCoerceValue_0 = $this._json;
+      var tmp0_tryCoerceValue_0 = $this._json_0;
       var tmp1_tryCoerceValue_0 = descriptor.getElementDescriptor_ha5a7z_k$(index);
       var tmp;
       if (!tmp1_tryCoerceValue_0._get_isNullable__0_k$()) {
@@ -24325,7 +26593,7 @@ exports.debug = debug; // for test
         }
         var enumValue_2 = tmp_0;
         var enumIndex_4 = getJsonNameIndex(tmp1_tryCoerceValue_0, tmp0_tryCoerceValue_0, enumValue_2);
-        Companion_getInstance_9();
+        Companion_getInstance_13();
         if (enumIndex_4 === -3) {
           {
             $this._lexer_0.consumeString_0_k$();
@@ -24346,9 +26614,9 @@ exports.debug = debug; // for test
       hasComma = false;
       var key = decodeStringKey($this);
       $this._lexer_0.consumeNextToken_9o0tv_k$(new Char(58));
-      var index = getJsonNameIndex(descriptor, $this._json, key);
+      var index = getJsonNameIndex(descriptor, $this._json_0, key);
       var tmp;
-      Companion_getInstance_9();
+      Companion_getInstance_13();
       if (!(index === -3)) {
         var tmp_0;
         if ($this._configuration_0._coerceInputValues_0 ? coerceInputValue($this, descriptor, index) : false) {
@@ -24381,7 +26649,7 @@ exports.debug = debug; // for test
     var tmp2_elvis_lhs = tmp1_safe_receiver == null ? null : tmp1_safe_receiver.nextUnmarkedIndex_0_k$();
     var tmp_1;
     if (tmp2_elvis_lhs == null) {
-      Companion_getInstance_9();
+      Companion_getInstance_13();
       tmp_1 = -1;
     } else {
       tmp_1 = tmp2_elvis_lhs;
@@ -24408,7 +26676,7 @@ exports.debug = debug; // for test
     } else {
       if (hasComma) {
         $this._lexer_0.fail$default_6ncsww_k$('Unexpected trailing comma', 0, 2, null);
-      }Companion_getInstance_9();
+      }Companion_getInstance_13();
       tmp = -1;
     }
     return tmp;
@@ -24424,47 +26692,47 @@ exports.debug = debug; // for test
   }
   function StreamingJsonDecoder(json, mode, lexer, descriptor) {
     AbstractDecoder.call(this);
-    this._json = json;
+    this._json_0 = json;
     this._mode = mode;
     this._lexer_0 = lexer;
-    this._serializersModule_1 = this._json._get_serializersModule__0_k$();
+    this._serializersModule_1 = this._json_0._get_serializersModule__0_k$();
     this._currentIndex = -1;
-    this._configuration_0 = this._json._configuration;
+    this._configuration_0 = this._json_0._configuration;
     this._elementMarker = this._configuration_0._explicitNulls_0 ? null : new JsonElementMarker(descriptor);
   }
   StreamingJsonDecoder.prototype._get_json__0_k$ = function () {
-    return this._json;
+    return this._json_0;
   };
   StreamingJsonDecoder.prototype._get_serializersModule__0_k$ = function () {
     return this._serializersModule_1;
   };
   StreamingJsonDecoder.prototype.decodeJsonElement_0_k$ = function () {
-    return (new JsonTreeReader(this._json._configuration, this._lexer_0)).read_0_k$();
+    return (new JsonTreeReader(this._json_0._configuration, this._lexer_0)).read_0_k$();
   };
   StreamingJsonDecoder.prototype.decodeSerializableValue_f8566k_k$ = function (deserializer) {
     return decodeSerializableValuePolymorphic(this, deserializer);
   };
   StreamingJsonDecoder.prototype.beginStructure_6qhf5t_k$ = function (descriptor) {
-    var newMode = switchMode(this._json, descriptor);
+    var newMode = switchMode(this._json_0, descriptor);
     this._lexer_0.consumeNextToken_9o0tv_k$(newMode._begin);
     checkLeadingComma(this);
     var tmp0_subject = newMode;
     var tmp;
     if ((tmp0_subject.equals(WriteMode_LIST_getInstance()) ? true : tmp0_subject.equals(WriteMode_MAP_getInstance())) ? true : tmp0_subject.equals(WriteMode_POLY_OBJ_getInstance())) {
-      tmp = new StreamingJsonDecoder(this._json, newMode, this._lexer_0, descriptor);
+      tmp = new StreamingJsonDecoder(this._json_0, newMode, this._lexer_0, descriptor);
     } else {
       var tmp_0;
-      if (this._mode.equals(newMode) ? this._json._configuration._explicitNulls_0 : false) {
+      if (this._mode.equals(newMode) ? this._json_0._configuration._explicitNulls_0 : false) {
         tmp_0 = this;
       } else {
-        tmp_0 = new StreamingJsonDecoder(this._json, newMode, this._lexer_0, descriptor);
+        tmp_0 = new StreamingJsonDecoder(this._json_0, newMode, this._lexer_0, descriptor);
       }
       tmp = tmp_0;
     }
     return tmp;
   };
   StreamingJsonDecoder.prototype.endStructure_g940c0_k$ = function (descriptor) {
-    if (this._json._configuration._ignoreUnknownKeys_0 ? descriptor._get_elementsCount__0_k$() === 0 : false) {
+    if (this._json_0._configuration._ignoreUnknownKeys_0 ? descriptor._get_elementsCount__0_k$() === 0 : false) {
       skipLeftoverElements(this, descriptor);
     }this._lexer_0.consumeNextToken_9o0tv_k$(this._mode._end);
   };
@@ -24562,7 +26830,7 @@ exports.debug = debug; // for test
       }
     }
     var result = tmp$ret$4;
-    var specialFp = this._json._configuration._allowSpecialFloatingPointValues_0;
+    var specialFp = this._json_0._configuration._allowSpecialFloatingPointValues_0;
     if (specialFp ? true : isFinite(result))
       return result;
     throwInvalidFloatingPointDecoded(this._lexer_0, result);
@@ -24592,7 +26860,7 @@ exports.debug = debug; // for test
       }
     }
     var result = tmp$ret$1;
-    var specialFp = this._json._configuration._allowSpecialFloatingPointValues_0;
+    var specialFp = this._json_0._configuration._allowSpecialFloatingPointValues_0;
     if (specialFp ? true : isFinite_0(result))
       return result;
     throwInvalidFloatingPointDecoded(this._lexer_0, result);
@@ -24613,11 +26881,356 @@ exports.debug = debug; // for test
     }
     return tmp;
   };
+  StreamingJsonDecoder.prototype.decodeInline_6qhf5t_k$ = function (inlineDescriptor) {
+    return _get_isUnsignedNumber_(inlineDescriptor) ? new JsonDecoderForUnsignedTypes(this._lexer_0, this._json_0) : AbstractDecoder.prototype.decodeInline_6qhf5t_k$.call(this, inlineDescriptor);
+  };
   StreamingJsonDecoder.$metadata$ = {
     simpleName: 'StreamingJsonDecoder',
     kind: 'class',
     interfaces: [JsonDecoder]
   };
+  function JsonDecoderForUnsignedTypes(lexer, json) {
+    AbstractDecoder.call(this);
+    this._lexer_1 = lexer;
+    this._serializersModule_2 = json._get_serializersModule__0_k$();
+  }
+  JsonDecoderForUnsignedTypes.prototype._get_serializersModule__0_k$ = function () {
+    return this._serializersModule_2;
+  };
+  JsonDecoderForUnsignedTypes.prototype.decodeElementIndex_6qhf5t_k$ = function (descriptor) {
+    throw IllegalStateException_init_$Create$('unsupported');
+  };
+  JsonDecoderForUnsignedTypes.prototype.decodeInt_0_k$ = function () {
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp0_parseString_0 = this._lexer_1;
+      var input_1 = tmp0_parseString_0.consumeStringLenient_0_k$();
+      try {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            var tmp0_toInt_0_4 = toUInt(input_1);
+            tmp$ret$0 = _UInt___get_data__impl_(tmp0_toInt_0_4);
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      } catch ($p) {
+        if ($p instanceof IllegalArgumentException) {
+          var tmp = '' + "Failed to parse type 'UInt' for input '" + input_1 + "'";
+          tmp0_parseString_0.fail$default_6ncsww_k$(tmp, 0, 2, null);
+        } else {
+          {
+            throw $p;
+          }
+        }
+      }
+    }
+    return tmp$ret$2;
+  };
+  JsonDecoderForUnsignedTypes.prototype.decodeLong_0_k$ = function () {
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp0_parseString_0 = this._lexer_1;
+      var input_1 = tmp0_parseString_0.consumeStringLenient_0_k$();
+      try {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            var tmp0_toLong_0_4 = toULong(input_1);
+            tmp$ret$0 = _ULong___get_data__impl_(tmp0_toLong_0_4);
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      } catch ($p) {
+        if ($p instanceof IllegalArgumentException) {
+          var tmp = '' + "Failed to parse type 'ULong' for input '" + input_1 + "'";
+          tmp0_parseString_0.fail$default_6ncsww_k$(tmp, 0, 2, null);
+        } else {
+          {
+            throw $p;
+          }
+        }
+      }
+    }
+    return tmp$ret$2;
+  };
+  JsonDecoderForUnsignedTypes.prototype.decodeByte_0_k$ = function () {
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp0_parseString_0 = this._lexer_1;
+      var input_1 = tmp0_parseString_0.consumeStringLenient_0_k$();
+      try {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            var tmp0_toByte_0_4 = toUByte(input_1);
+            tmp$ret$0 = _UByte___get_data__impl_(tmp0_toByte_0_4);
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      } catch ($p) {
+        if ($p instanceof IllegalArgumentException) {
+          var tmp = '' + "Failed to parse type 'UByte' for input '" + input_1 + "'";
+          tmp0_parseString_0.fail$default_6ncsww_k$(tmp, 0, 2, null);
+        } else {
+          {
+            throw $p;
+          }
+        }
+      }
+    }
+    return tmp$ret$2;
+  };
+  JsonDecoderForUnsignedTypes.prototype.decodeShort_0_k$ = function () {
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp0_parseString_0 = this._lexer_1;
+      var input_1 = tmp0_parseString_0.consumeStringLenient_0_k$();
+      try {
+        var tmp$ret$1;
+        $l$block_0: {
+          var tmp$ret$0;
+          $l$block: {
+            var tmp0_toShort_0_4 = toUShort(input_1);
+            tmp$ret$0 = _UShort___get_data__impl_(tmp0_toShort_0_4);
+            break $l$block;
+          }
+          tmp$ret$1 = tmp$ret$0;
+          break $l$block_0;
+        }
+        tmp$ret$2 = tmp$ret$1;
+        break $l$block_1;
+      } catch ($p) {
+        if ($p instanceof IllegalArgumentException) {
+          var tmp = '' + "Failed to parse type 'UShort' for input '" + input_1 + "'";
+          tmp0_parseString_0.fail$default_6ncsww_k$(tmp, 0, 2, null);
+        } else {
+          {
+            throw $p;
+          }
+        }
+      }
+    }
+    return tmp$ret$2;
+  };
+  JsonDecoderForUnsignedTypes.$metadata$ = {
+    simpleName: 'JsonDecoderForUnsignedTypes',
+    kind: 'class',
+    interfaces: []
+  };
+  var unsignedNumberDescriptors;
+  function StreamingJsonEncoder_init_$Init$(output, json, mode, modeReuseCache, $this) {
+    StreamingJsonEncoder.call($this, Composer_0(output, json), json, mode, modeReuseCache);
+    return $this;
+  }
+  function StreamingJsonEncoder_init_$Create$(output, json, mode, modeReuseCache) {
+    return StreamingJsonEncoder_init_$Init$(output, json, mode, modeReuseCache, Object.create(StreamingJsonEncoder.prototype));
+  }
+  function encodeTypeInfo($this, descriptor) {
+    $this._composer.nextItem_sv8swh_k$();
+    $this.encodeString_a4enbm_k$(ensureNotNull($this._polymorphicDiscriminator));
+    $this._composer.print_9o0tv_k$(new Char(58));
+    $this._composer.space_sv8swh_k$();
+    $this.encodeString_a4enbm_k$(descriptor._get_serialName__0_k$());
+  }
+  function StreamingJsonEncoder(composer, json, mode, modeReuseCache) {
+    AbstractEncoder.call(this);
+    this._composer = composer;
+    this._json_1 = json;
+    this._mode_0 = mode;
+    this._modeReuseCache = modeReuseCache;
+    this._serializersModule_3 = this._json_1._get_serializersModule__0_k$();
+    this._configuration_1 = this._json_1._configuration;
+    this._forceQuoting = false;
+    this._polymorphicDiscriminator = null;
+    var i = this._mode_0._get_ordinal__0_k$();
+    if (!(this._modeReuseCache == null)) {
+      if (!(this._modeReuseCache[i] === null) ? true : !(this._modeReuseCache[i] === this))
+        this._modeReuseCache[i] = this;
+    }}
+  StreamingJsonEncoder.prototype._get_json__0_k$ = function () {
+    return this._json_1;
+  };
+  StreamingJsonEncoder.prototype._get_serializersModule__0_k$ = function () {
+    return this._serializersModule_3;
+  };
+  StreamingJsonEncoder.prototype.shouldEncodeElementDefault_5vyt7k_k$ = function (descriptor, index) {
+    return this._configuration_1._encodeDefaults_0;
+  };
+  StreamingJsonEncoder.prototype.encodeSerializableValue_79s409_k$ = function (serializer_15, value) {
+    var tmp$ret$0;
+    $l$block: {
+      var tmp;
+      if (!(serializer_15 instanceof AbstractPolymorphicSerializer)) {
+        tmp = true;
+      } else {
+        {
+          tmp = this._get_json__0_k$()._configuration._useArrayPolymorphism_0;
+        }
+      }
+      if (tmp) {
+        serializer_15.serialize_whawnb_k$(this, value);
+        tmp$ret$0 = Unit_getInstance();
+        break $l$block;
+      } else {
+      }
+      var casted_1 = serializer_15 instanceof AbstractPolymorphicSerializer ? serializer_15 : THROW_CCE();
+      var baseClassDiscriminator_2 = classDiscriminator(serializer_15._get_descriptor__0_k$(), this._get_json__0_k$());
+      var actualSerializer_3 = findPolymorphicSerializer(casted_1, this, isObject(value) ? value : THROW_CCE());
+      validateIfSealed$accessor$1ad0flx(casted_1, actualSerializer_3, baseClassDiscriminator_2);
+      checkKind(actualSerializer_3._get_descriptor__0_k$()._get_kind__0_k$());
+      {
+        this._polymorphicDiscriminator = baseClassDiscriminator_2;
+      }
+      actualSerializer_3.serialize_whawnb_k$(this, value);
+    }
+  };
+  StreamingJsonEncoder.prototype.beginStructure_6qhf5t_k$ = function (descriptor) {
+    var newMode = switchMode(this._json_1, descriptor);
+    if (!newMode._begin.equals(new Char(0))) {
+      this._composer.print_9o0tv_k$(newMode._begin);
+      this._composer.indent_sv8swh_k$();
+    }if (!(this._polymorphicDiscriminator == null)) {
+      encodeTypeInfo(this, descriptor);
+      this._polymorphicDiscriminator = null;
+    }if (this._mode_0.equals(newMode)) {
+      return this;
+    }var tmp0_safe_receiver = this._modeReuseCache;
+    var tmp1_elvis_lhs = tmp0_safe_receiver == null ? null : tmp0_safe_receiver[newMode._get_ordinal__0_k$()];
+    return tmp1_elvis_lhs == null ? new StreamingJsonEncoder(this._composer, this._json_1, newMode, this._modeReuseCache) : tmp1_elvis_lhs;
+  };
+  StreamingJsonEncoder.prototype.endStructure_g940c0_k$ = function (descriptor) {
+    if (!this._mode_0._end.equals(new Char(0))) {
+      this._composer.unIndent_sv8swh_k$();
+      this._composer.nextItem_sv8swh_k$();
+      this._composer.print_9o0tv_k$(this._mode_0._end);
+    }};
+  StreamingJsonEncoder.prototype.encodeElement_5vyt7k_k$ = function (descriptor, index) {
+    var tmp0_subject = this._mode_0;
+    if (tmp0_subject.equals(WriteMode_LIST_getInstance())) {
+      if (!this._composer._writingFirst)
+        this._composer.print_9o0tv_k$(new Char(44));
+      this._composer.nextItem_sv8swh_k$();
+    } else if (tmp0_subject.equals(WriteMode_MAP_getInstance())) {
+      if (!this._composer._writingFirst) {
+        var tmp = this;
+        var tmp_0;
+        if (index % 2 === 0) {
+          this._composer.print_9o0tv_k$(new Char(44));
+          this._composer.nextItem_sv8swh_k$();
+          tmp_0 = true;
+        } else {
+          this._composer.print_9o0tv_k$(new Char(58));
+          this._composer.space_sv8swh_k$();
+          tmp_0 = false;
+        }
+        tmp._forceQuoting = tmp_0;
+      } else {
+        this._forceQuoting = true;
+        this._composer.nextItem_sv8swh_k$();
+      }
+    } else if (tmp0_subject.equals(WriteMode_POLY_OBJ_getInstance())) {
+      if (index === 0)
+        this._forceQuoting = true;
+      if (index === 1) {
+        this._composer.print_9o0tv_k$(new Char(44));
+        this._composer.space_sv8swh_k$();
+        this._forceQuoting = false;
+      }} else {
+      if (!this._composer._writingFirst)
+        this._composer.print_9o0tv_k$(new Char(44));
+      this._composer.nextItem_sv8swh_k$();
+      this.encodeString_a4enbm_k$(descriptor.getElementName_ha5a7z_k$(index));
+      this._composer.print_9o0tv_k$(new Char(58));
+      this._composer.space_sv8swh_k$();
+    }
+    return true;
+  };
+  StreamingJsonEncoder.prototype.encodeNullableSerializableElement_6l2lkq_k$ = function (descriptor, index, serializer_15, value) {
+    if (!(value == null) ? true : this._configuration_1._explicitNulls_0) {
+      AbstractEncoder.prototype.encodeNullableSerializableElement_6l2lkq_k$.call(this, descriptor, index, serializer_15, value);
+    }};
+  StreamingJsonEncoder.prototype.encodeInline_6qhf5t_k$ = function (inlineDescriptor) {
+    return _get_isUnsignedNumber_(inlineDescriptor) ? new StreamingJsonEncoder(new ComposerForUnsignedNumbers(this._composer._sb), this._json_1, this._mode_0, null) : AbstractEncoder.prototype.encodeInline_6qhf5t_k$.call(this, inlineDescriptor);
+  };
+  StreamingJsonEncoder.prototype.encodeNull_sv8swh_k$ = function () {
+    this._composer.print_a4enbm_k$('null');
+  };
+  StreamingJsonEncoder.prototype.encodeBoolean_rpwsgn_k$ = function (value) {
+    if (this._forceQuoting)
+      this.encodeString_a4enbm_k$(value.toString());
+    else
+      this._composer.print_rpwsgn_k$(value);
+  };
+  StreamingJsonEncoder.prototype.encodeByte_hpsj51_k$ = function (value) {
+    if (this._forceQuoting)
+      this.encodeString_a4enbm_k$(value.toString());
+    else
+      this._composer.print_hpsj51_k$(value);
+  };
+  StreamingJsonEncoder.prototype.encodeShort_7gn77n_k$ = function (value) {
+    if (this._forceQuoting)
+      this.encodeString_a4enbm_k$(value.toString());
+    else
+      this._composer.print_7gn77n_k$(value);
+  };
+  StreamingJsonEncoder.prototype.encodeInt_majfzk_k$ = function (value) {
+    if (this._forceQuoting)
+      this.encodeString_a4enbm_k$(value.toString());
+    else
+      this._composer.print_majfzk_k$(value);
+  };
+  StreamingJsonEncoder.prototype.encodeLong_kdfck9_k$ = function (value) {
+    if (this._forceQuoting)
+      this.encodeString_a4enbm_k$(value.toString());
+    else
+      this._composer.print_kdfck9_k$(value);
+  };
+  StreamingJsonEncoder.prototype.encodeFloat_cpozfn_k$ = function (value) {
+    if (this._forceQuoting)
+      this.encodeString_a4enbm_k$(value.toString());
+    else
+      this._composer.print_cpozfn_k$(value);
+    if (!this._configuration_1._allowSpecialFloatingPointValues_0 ? !isFinite(value) : false) {
+      throw InvalidFloatingPointEncoded(value, this._composer._sb.toString());
+    }};
+  StreamingJsonEncoder.prototype.encodeDouble_okcceq_k$ = function (value) {
+    if (this._forceQuoting)
+      this.encodeString_a4enbm_k$(value.toString());
+    else
+      this._composer.print_okcceq_k$(value);
+    if (!this._configuration_1._allowSpecialFloatingPointValues_0 ? !isFinite_0(value) : false) {
+      throw InvalidFloatingPointEncoded(value, this._composer._sb.toString());
+    }};
+  StreamingJsonEncoder.prototype.encodeChar_9o0tv_k$ = function (value) {
+    this.encodeString_a4enbm_k$(value.toString());
+  };
+  StreamingJsonEncoder.prototype.encodeString_a4enbm_k$ = function (value) {
+    return this._composer.printQuoted_a4enbm_k$(value);
+  };
+  StreamingJsonEncoder.$metadata$ = {
+    simpleName: 'StreamingJsonEncoder',
+    kind: 'class',
+    interfaces: [JsonEncoder]
+  };
+  function _get_isUnsignedNumber_(_this_) {
+    return _this_._get_isInline__0_k$() ? unsignedNumberDescriptors.contains_2bq_k$(_this_) : false;
+  }
   var ESCAPE_STRINGS;
   function toHexChar(i) {
     var d = i & 15;
@@ -24783,12 +27396,12 @@ exports.debug = debug; // for test
   }
   function AbstractJsonTreeDecoder(json, value) {
     NamedValueDecoder.call(this);
-    this._json_0 = json;
+    this._json_2 = json;
     this._value_11 = value;
-    this._configuration_1 = this._get_json__0_k$()._configuration;
+    this._configuration_2 = this._get_json__0_k$()._configuration;
   }
   AbstractJsonTreeDecoder.prototype._get_json__0_k$ = function () {
-    return this._json_0;
+    return this._json_2;
   };
   AbstractJsonTreeDecoder.prototype._get_value__0_k$ = function () {
     return this._value_11;
@@ -24797,7 +27410,7 @@ exports.debug = debug; // for test
     return this._get_json__0_k$()._get_serializersModule__0_k$();
   };
   AbstractJsonTreeDecoder.prototype._get_configuration__0_k$ = function () {
-    return this._configuration_1;
+    return this._configuration_2;
   };
   AbstractJsonTreeDecoder.prototype.decodeJsonElement_0_k$ = function () {
     return currentObject(this);
@@ -24987,8 +27600,8 @@ exports.debug = debug; // for test
         $l$block: {
           var result_4 = _get_int_(tmp0_primitive_0);
           var tmp;
-          var containsLower = ByteCompanionObject_getInstance()._MIN_VALUE;
-          if (result_4 <= ByteCompanionObject_getInstance()._MAX_VALUE ? containsLower <= result_4 : false) {
+          var containsLower = ByteCompanionObject_getInstance()._MIN_VALUE_3;
+          if (result_4 <= ByteCompanionObject_getInstance()._MAX_VALUE_3 ? containsLower <= result_4 : false) {
             tmp = toByte(result_4);
           } else {
             {
@@ -25031,8 +27644,8 @@ exports.debug = debug; // for test
         $l$block: {
           var result_4 = _get_int_(tmp0_primitive_0);
           var tmp;
-          var containsLower = ShortCompanionObject_getInstance()._MIN_VALUE_0;
-          if (result_4 <= ShortCompanionObject_getInstance()._MAX_VALUE_0 ? containsLower <= result_4 : false) {
+          var containsLower = ShortCompanionObject_getInstance()._MIN_VALUE_4;
+          if (result_4 <= ShortCompanionObject_getInstance()._MAX_VALUE_4 ? containsLower <= result_4 : false) {
             tmp = toShort(result_4);
           } else {
             {
@@ -25259,6 +27872,12 @@ exports.debug = debug; // for test
   AbstractJsonTreeDecoder.prototype.decodeTaggedString_1qgfv_k$ = function (tag) {
     return this.decodeTaggedString_6wfw3l_k$((!(tag == null) ? typeof tag === 'string' : false) ? tag : THROW_CCE());
   };
+  AbstractJsonTreeDecoder.prototype.decodeTaggedInline_b4mn6q_k$ = function (tag, inlineDescriptor) {
+    return _get_isUnsignedNumber_(inlineDescriptor) ? new JsonDecoderForUnsignedTypes(new StringJsonLexer(this.getPrimitiveValue_6wfw3l_k$(tag)._get_content__0_k$()), this._get_json__0_k$()) : NamedValueDecoder.prototype.decodeTaggedInline_322cgq_k$.call(this, tag, inlineDescriptor);
+  };
+  AbstractJsonTreeDecoder.prototype.decodeTaggedInline_322cgq_k$ = function (tag, inlineDescriptor) {
+    return this.decodeTaggedInline_b4mn6q_k$((!(tag == null) ? typeof tag === 'string' : false) ? tag : THROW_CCE(), inlineDescriptor);
+  };
   AbstractJsonTreeDecoder.$metadata$ = {
     simpleName: 'AbstractJsonTreeDecoder',
     kind: 'class',
@@ -25315,7 +27934,7 @@ exports.debug = debug; // for test
         }
         var enumValue_2 = tmp_2;
         var enumIndex_4 = getJsonNameIndex(tmp1_tryCoerceValue_0, tmp0_tryCoerceValue_0, enumValue_2);
-        Companion_getInstance_9();
+        Companion_getInstance_13();
         if (enumIndex_4 === -3) {
           var tmp$ret$3;
           $l$block_3: {
@@ -25335,16 +27954,16 @@ exports.debug = debug; // for test
     $this._forceNull = (!$this._get_json__0_k$()._configuration._explicitNulls_0 ? !descriptor.isElementOptional_ha5a7z_k$(index) : false) ? descriptor.getElementDescriptor_ha5a7z_k$(index)._get_isNullable__0_k$() : false;
     return $this._forceNull;
   }
-  function _no_name_provided__79($boundThis) {
+  function _no_name_provided__80($boundThis) {
     this._$boundThis_1 = $boundThis;
   }
-  _no_name_provided__79.prototype.invoke_0_k$ = function () {
+  _no_name_provided__80.prototype.invoke_0_k$ = function () {
     return buildAlternativeNamesMap(this._$boundThis_1);
   };
-  _no_name_provided__79.prototype._get_name__0_k$ = function () {
+  _no_name_provided__80.prototype._get_name__0_k$ = function () {
     return 'buildAlternativeNamesMap';
   };
-  _no_name_provided__79.$metadata$ = {
+  _no_name_provided__80.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -25399,7 +28018,7 @@ exports.debug = debug; // for test
       } else {
       }
     }
-    Companion_getInstance_9();
+    Companion_getInstance_13();
     return -1;
   };
   JsonTreeDecoder.prototype.decodeNotNullMark_0_k$ = function () {
@@ -25513,7 +28132,7 @@ exports.debug = debug; // for test
       Unit_getInstance();
       return this._currentIndex_0;
     }
-    Companion_getInstance_9();
+    Companion_getInstance_13();
     return -1;
   };
   JsonTreeListDecoder.$metadata$ = {
@@ -25543,7 +28162,7 @@ exports.debug = debug; // for test
       Unit_getInstance();
       return this._position_8;
     }
-    Companion_getInstance_9();
+    Companion_getInstance_13();
     return -1;
   };
   JsonTreeMapDecoder.prototype.currentElement_6wfw3l_k$ = function (tag) {
@@ -25560,7 +28179,7 @@ exports.debug = debug; // for test
     return (new JsonTreeDecoder(_this_, element, discriminator, deserializer._get_descriptor__0_k$())).decodeSerializableValue_f8566k_k$(deserializer);
   }
   function _no_name_provided_$factory_69($boundThis) {
-    var i = new _no_name_provided__79($boundThis);
+    var i = new _no_name_provided__80($boundThis);
     var l = function () {
       return i.invoke_0_k$();
     };
@@ -25571,6 +28190,9 @@ exports.debug = debug; // for test
   var WriteMode_LIST_instance;
   var WriteMode_MAP_instance;
   var WriteMode_POLY_OBJ_instance;
+  function values() {
+    return [WriteMode_OBJ_getInstance(), WriteMode_LIST_getInstance(), WriteMode_MAP_getInstance(), WriteMode_POLY_OBJ_getInstance()];
+  }
   var WriteMode_entriesInitialized;
   function WriteMode_initEntries() {
     if (WriteMode_entriesInitialized)
@@ -26223,7 +28845,7 @@ exports.debug = debug; // for test
       tmp_1 = accumulator;
     } else {
       var tmp_2 = accumulator;
-      Companion_getInstance_8();
+      Companion_getInstance_12();
       if (!tmp_2.equals(new Long(0, -2147483648))) {
         tmp_1 = accumulator.unaryMinus_0_k$();
       } else {
@@ -26504,6 +29126,34 @@ exports.debug = debug; // for test
   function _get_schemaCache_(_this_) {
     return _this_.__schemaCache;
   }
+  function JsonStringBuilder() {
+    this._sb_0 = StringBuilder_init_$Create$(128);
+  }
+  JsonStringBuilder.prototype.append_kdfck9_k$ = function (value) {
+    this._sb_0.append_wi7j7l_k$(value);
+    Unit_getInstance();
+  };
+  JsonStringBuilder.prototype.append_9o0tv_k$ = function (ch) {
+    this._sb_0.append_wi8o78_k$(ch);
+    Unit_getInstance();
+  };
+  JsonStringBuilder.prototype.append_a4enbm_k$ = function (string) {
+    this._sb_0.append_uch40_k$(string);
+    Unit_getInstance();
+  };
+  JsonStringBuilder.prototype.appendQuoted_a4enbm_k$ = function (string) {
+    printQuoted(this._sb_0, string);
+  };
+  JsonStringBuilder.prototype.toString = function () {
+    return this._sb_0.toString();
+  };
+  JsonStringBuilder.prototype.release_sv8swh_k$ = function () {
+  };
+  JsonStringBuilder.$metadata$ = {
+    simpleName: 'JsonStringBuilder',
+    kind: 'class',
+    interfaces: []
+  };
   function createMapForCache(initialCapacity) {
     return HashMap_init_$Create$_1(initialCapacity);
   }
@@ -26514,10 +29164,10 @@ exports.debug = debug; // for test
     tmp0_serialDesc.addElement_5xhc52_k$('login', false);
     tmp0_serialDesc.addElement_5xhc52_k$('name', false);
     tmp0_serialDesc.addElement_5xhc52_k$('email', false);
-    this._descriptor_26 = tmp0_serialDesc;
+    this._descriptor_30 = tmp0_serialDesc;
   }
   $serializer.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_26;
+    return this._descriptor_30;
   };
   $serializer.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -26539,7 +29189,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_26;
+    var tmp0_desc = this._descriptor_30;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -26586,6 +29236,18 @@ exports.debug = debug; // for test
     tmp8_input.endStructure_g940c0_k$(tmp0_desc);
     return User_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
+  $serializer.prototype.serialize_njtugr_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_30;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeIntElement_wh7n80_k$(tmp0_desc, 0, value._id_1);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 1, value._login_0);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 2, value._name_0);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 3, value._email);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_njtugr_k$(encoder, value instanceof User ? value : THROW_CCE());
+  };
   $serializer.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -26599,7 +29261,7 @@ exports.debug = debug; // for test
   }
   function User_init_$Init$(seen1, id, login, name, email, serializationConstructorMarker, $this) {
     if (!(15 === (15 & seen1)))
-      throwMissingFieldException(seen1, 15, $serializer_getInstance()._descriptor_26);
+      throwMissingFieldException(seen1, 15, $serializer_getInstance()._descriptor_30);
     $this._id_1 = id;
     $this._login_0 = login;
     $this._name_0 = name;
@@ -26609,29 +29271,29 @@ exports.debug = debug; // for test
   function User_init_$Create$(seen1, id, login, name, email, serializationConstructorMarker) {
     return User_init_$Init$(seen1, id, login, name, email, serializationConstructorMarker, Object.create(User.prototype));
   }
-  function Companion_16() {
-    Companion_instance_15 = this;
+  function Companion_20() {
+    Companion_instance_19 = this;
   }
-  Companion_16.$metadata$ = {
+  Companion_20.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_15;
-  function Companion_getInstance_15() {
-    if (Companion_instance_15 == null)
-      new Companion_16();
-    return Companion_instance_15;
+  var Companion_instance_19;
+  function Companion_getInstance_19() {
+    if (Companion_instance_19 == null)
+      new Companion_20();
+    return Companion_instance_19;
   }
   function $serializer_0() {
     $serializer_instance_0 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('github.Github.Organization', this, 2);
     tmp0_serialDesc.addElement_5xhc52_k$('id', false);
     tmp0_serialDesc.addElement_5xhc52_k$('name', false);
-    this._descriptor_27 = tmp0_serialDesc;
+    this._descriptor_31 = tmp0_serialDesc;
   }
   $serializer_0.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_27;
+    return this._descriptor_31;
   };
   $serializer_0.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -26653,7 +29315,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer_0.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_27;
+    var tmp0_desc = this._descriptor_31;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -26686,6 +29348,16 @@ exports.debug = debug; // for test
     tmp6_input.endStructure_g940c0_k$(tmp0_desc);
     return Organization_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, null);
   };
+  $serializer_0.prototype.serialize_ti96vx_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_31;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeIntElement_wh7n80_k$(tmp0_desc, 0, value._id_2);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 1, value._name_1);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_0.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_ti96vx_k$(encoder, value instanceof Organization ? value : THROW_CCE());
+  };
   $serializer_0.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -26699,7 +29371,7 @@ exports.debug = debug; // for test
   }
   function Organization_init_$Init$(seen1, id, name, serializationConstructorMarker, $this) {
     if (!(3 === (3 & seen1)))
-      throwMissingFieldException(seen1, 3, $serializer_getInstance_0()._descriptor_27);
+      throwMissingFieldException(seen1, 3, $serializer_getInstance_0()._descriptor_31);
     $this._id_2 = id;
     $this._name_1 = name;
     return $this;
@@ -26707,19 +29379,19 @@ exports.debug = debug; // for test
   function Organization_init_$Create$(seen1, id, name, serializationConstructorMarker) {
     return Organization_init_$Init$(seen1, id, name, serializationConstructorMarker, Object.create(Organization.prototype));
   }
-  function Companion_17() {
-    Companion_instance_16 = this;
+  function Companion_21() {
+    Companion_instance_20 = this;
   }
-  Companion_17.$metadata$ = {
+  Companion_21.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_16;
-  function Companion_getInstance_16() {
-    if (Companion_instance_16 == null)
-      new Companion_17();
-    return Companion_instance_16;
+  var Companion_instance_20;
+  function Companion_getInstance_20() {
+    if (Companion_instance_20 == null)
+      new Companion_21();
+    return Companion_instance_20;
   }
   function $serializer_1() {
     $serializer_instance_1 = this;
@@ -26728,10 +29400,10 @@ exports.debug = debug; // for test
     tmp0_serialDesc.addElement_5xhc52_k$('name', false);
     tmp0_serialDesc.addElement_5xhc52_k$('slug', false);
     tmp0_serialDesc.addElement_5xhc52_k$('permission', false);
-    this._descriptor_28 = tmp0_serialDesc;
+    this._descriptor_32 = tmp0_serialDesc;
   }
   $serializer_1.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_28;
+    return this._descriptor_32;
   };
   $serializer_1.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -26753,7 +29425,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer_1.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_28;
+    var tmp0_desc = this._descriptor_32;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -26800,6 +29472,18 @@ exports.debug = debug; // for test
     tmp8_input.endStructure_g940c0_k$(tmp0_desc);
     return Team_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
+  $serializer_1.prototype.serialize_x7c1rn_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_32;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeIntElement_wh7n80_k$(tmp0_desc, 0, value._id_3);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 1, value._name_2);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 2, value._slug);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 3, value._permission);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_1.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_x7c1rn_k$(encoder, value instanceof Team ? value : THROW_CCE());
+  };
   $serializer_1.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -26813,7 +29497,7 @@ exports.debug = debug; // for test
   }
   function Team_init_$Init$(seen1, id, name, slug, permission, serializationConstructorMarker, $this) {
     if (!(15 === (15 & seen1)))
-      throwMissingFieldException(seen1, 15, $serializer_getInstance_1()._descriptor_28);
+      throwMissingFieldException(seen1, 15, $serializer_getInstance_1()._descriptor_32);
     $this._id_3 = id;
     $this._name_2 = name;
     $this._slug = slug;
@@ -26831,10 +29515,10 @@ exports.debug = debug; // for test
     tmp0_serialDesc.addElement_5xhc52_k$('size_in_bytes', false);
     tmp0_serialDesc.addElement_5xhc52_k$('expired', false);
     tmp0_serialDesc.addElement_5xhc52_k$('created_at', false);
-    this._descriptor_29 = tmp0_serialDesc;
+    this._descriptor_33 = tmp0_serialDesc;
   }
   $serializer_2.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_29;
+    return this._descriptor_33;
   };
   $serializer_2.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -26856,7 +29540,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer_2.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_29;
+    var tmp0_desc = this._descriptor_33;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -26910,6 +29594,19 @@ exports.debug = debug; // for test
     tmp9_input.endStructure_g940c0_k$(tmp0_desc);
     return Artifact_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, null);
   };
+  $serializer_2.prototype.serialize_45eqde_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_33;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeIntElement_wh7n80_k$(tmp0_desc, 0, value._id_4);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 1, value._name_3);
+    tmp1_output.encodeLongElement_j1ap1j_k$(tmp0_desc, 2, value._sizeInBytes);
+    tmp1_output.encodeBooleanElement_9280p5_k$(tmp0_desc, 3, value._isExpired);
+    tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 4, new InstantSerializer(), value._createdAt);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_2.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_45eqde_k$(encoder, value instanceof Artifact ? value : THROW_CCE());
+  };
   $serializer_2.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -26923,7 +29620,7 @@ exports.debug = debug; // for test
   }
   function Artifact_init_$Init$(seen1, id, name, sizeInBytes, isExpired, createdAt, serializationConstructorMarker, $this) {
     if (!(31 === (31 & seen1)))
-      throwMissingFieldException(seen1, 31, $serializer_getInstance_2()._descriptor_29);
+      throwMissingFieldException(seen1, 31, $serializer_getInstance_2()._descriptor_33);
     $this._id_4 = id;
     $this._name_3 = name;
     $this._sizeInBytes = sizeInBytes;
@@ -26940,10 +29637,10 @@ exports.debug = debug; // for test
     tmp0_serialDesc.addElement_5xhc52_k$('admin', false);
     tmp0_serialDesc.addElement_5xhc52_k$('push', false);
     tmp0_serialDesc.addElement_5xhc52_k$('pull', false);
-    this._descriptor_30 = tmp0_serialDesc;
+    this._descriptor_34 = tmp0_serialDesc;
   }
   $serializer_3.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_30;
+    return this._descriptor_34;
   };
   $serializer_3.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -26965,7 +29662,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer_3.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_30;
+    var tmp0_desc = this._descriptor_34;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -27005,6 +29702,17 @@ exports.debug = debug; // for test
     tmp7_input.endStructure_g940c0_k$(tmp0_desc);
     return Permissions_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
   };
+  $serializer_3.prototype.serialize_678gry_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_34;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeBooleanElement_9280p5_k$(tmp0_desc, 0, value._admin);
+    tmp1_output.encodeBooleanElement_9280p5_k$(tmp0_desc, 1, value._push);
+    tmp1_output.encodeBooleanElement_9280p5_k$(tmp0_desc, 2, value._pull);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_3.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_678gry_k$(encoder, value instanceof Permissions ? value : THROW_CCE());
+  };
   $serializer_3.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -27018,7 +29726,7 @@ exports.debug = debug; // for test
   }
   function Permissions_init_$Init$(seen1, admin, push, pull, serializationConstructorMarker, $this) {
     if (!(7 === (7 & seen1)))
-      throwMissingFieldException(seen1, 7, $serializer_getInstance_3()._descriptor_30);
+      throwMissingFieldException(seen1, 7, $serializer_getInstance_3()._descriptor_34);
     $this._admin = admin;
     $this._push = push;
     $this._pull = pull;
@@ -27033,10 +29741,10 @@ exports.debug = debug; // for test
     tmp0_serialDesc.addElement_5xhc52_k$('id', false);
     tmp0_serialDesc.addElement_5xhc52_k$('login', false);
     tmp0_serialDesc.addElement_5xhc52_k$('type', false);
-    this._descriptor_31 = tmp0_serialDesc;
+    this._descriptor_35 = tmp0_serialDesc;
   }
   $serializer_4.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_31;
+    return this._descriptor_35;
   };
   $serializer_4.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -27058,7 +29766,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer_4.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_31;
+    var tmp0_desc = this._descriptor_35;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -27098,6 +29806,17 @@ exports.debug = debug; // for test
     tmp7_input.endStructure_g940c0_k$(tmp0_desc);
     return Owner_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
   };
+  $serializer_4.prototype.serialize_2la4jj_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_35;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeIntElement_wh7n80_k$(tmp0_desc, 0, value._id);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 1, value._login);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 2, value._type_0);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_4.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_2la4jj_k$(encoder, value instanceof Owner ? value : THROW_CCE());
+  };
   $serializer_4.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -27111,7 +29830,7 @@ exports.debug = debug; // for test
   }
   function Owner_init_$Init$(seen1, id, login, type, serializationConstructorMarker, $this) {
     if (!(7 === (7 & seen1)))
-      throwMissingFieldException(seen1, 7, $serializer_getInstance_4()._descriptor_31);
+      throwMissingFieldException(seen1, 7, $serializer_getInstance_4()._descriptor_35);
     $this._id = id;
     $this._login = login;
     $this._type_0 = type;
@@ -27186,19 +29905,19 @@ exports.debug = debug; // for test
     interfaces: [],
     associatedObjects: {0: $serializer_getInstance_4}
   };
-  function Companion_18() {
-    Companion_instance_17 = this;
+  function Companion_22() {
+    Companion_instance_21 = this;
   }
-  Companion_18.$metadata$ = {
+  Companion_22.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_17;
-  function Companion_getInstance_17() {
-    if (Companion_instance_17 == null)
-      new Companion_18();
-    return Companion_instance_17;
+  var Companion_instance_21;
+  function Companion_getInstance_21() {
+    if (Companion_instance_21 == null)
+      new Companion_22();
+    return Companion_instance_21;
   }
   function $serializer_5() {
     $serializer_instance_5 = this;
@@ -27213,10 +29932,10 @@ exports.debug = debug; // for test
     tmp0_serialDesc.addElement_5xhc52_k$('permissions', false);
     tmp0_serialDesc.addElement_5xhc52_k$('owner', false);
     tmp0_serialDesc.addElement_5xhc52_k$('default_branch', false);
-    this._descriptor_32 = tmp0_serialDesc;
+    this._descriptor_36 = tmp0_serialDesc;
   }
   $serializer_5.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_32;
+    return this._descriptor_36;
   };
   $serializer_5.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -27238,7 +29957,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer_5.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_32;
+    var tmp0_desc = this._descriptor_36;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -27327,6 +30046,24 @@ exports.debug = debug; // for test
     tmp14_input.endStructure_g940c0_k$(tmp0_desc);
     return Repository_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, tmp8_local4, tmp9_local5, tmp10_local6, tmp11_local7, tmp12_local8, tmp13_local9, null);
   };
+  $serializer_5.prototype.serialize_ge2eo6_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_36;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeIntElement_wh7n80_k$(tmp0_desc, 0, value._id_5);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 1, value._name_4);
+    tmp1_output.encodeBooleanElement_9280p5_k$(tmp0_desc, 2, value._isPrivate);
+    tmp1_output.encodeBooleanElement_9280p5_k$(tmp0_desc, 3, value._isArchived);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 4, value._visibility);
+    tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 5, new LinkedHashSetSerializer(StringSerializer_getInstance()), value._topics);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 6, value._url);
+    tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 7, $serializer_getInstance_3(), value._permissions);
+    tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 8, $serializer_getInstance_4(), value._owner_0);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 9, value._defaultBranch);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_5.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_ge2eo6_k$(encoder, value instanceof Repository ? value : THROW_CCE());
+  };
   $serializer_5.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -27340,7 +30077,7 @@ exports.debug = debug; // for test
   }
   function Repository_init_$Init$(seen1, id, name, isPrivate, isArchived, visibility, topics, url, permissions, owner, defaultBranch, serializationConstructorMarker, $this) {
     if (!(1023 === (1023 & seen1)))
-      throwMissingFieldException(seen1, 1023, $serializer_getInstance_5()._descriptor_32);
+      throwMissingFieldException(seen1, 1023, $serializer_getInstance_5()._descriptor_36);
     $this._id_5 = id;
     $this._name_4 = name;
     $this._isPrivate = isPrivate;
@@ -27361,10 +30098,10 @@ exports.debug = debug; // for test
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('github.Github.Environment.ProtectionRule', this, 2);
     tmp0_serialDesc.addElement_5xhc52_k$('id', false);
     tmp0_serialDesc.addElement_5xhc52_k$('type', false);
-    this._descriptor_33 = tmp0_serialDesc;
+    this._descriptor_37 = tmp0_serialDesc;
   }
   $serializer_6.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_33;
+    return this._descriptor_37;
   };
   $serializer_6.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -27386,7 +30123,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer_6.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_33;
+    var tmp0_desc = this._descriptor_37;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -27419,6 +30156,16 @@ exports.debug = debug; // for test
     tmp6_input.endStructure_g940c0_k$(tmp0_desc);
     return ProtectionRule_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, null);
   };
+  $serializer_6.prototype.serialize_j1pa8r_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_37;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeIntElement_wh7n80_k$(tmp0_desc, 0, value._id_0);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 1, value._type_1);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_6.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_j1pa8r_k$(encoder, value instanceof ProtectionRule ? value : THROW_CCE());
+  };
   $serializer_6.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -27432,7 +30179,7 @@ exports.debug = debug; // for test
   }
   function ProtectionRule_init_$Init$(seen1, id, type, serializationConstructorMarker, $this) {
     if (!(3 === (3 & seen1)))
-      throwMissingFieldException(seen1, 3, $serializer_getInstance_6()._descriptor_33);
+      throwMissingFieldException(seen1, 3, $serializer_getInstance_6()._descriptor_37);
     $this._id_0 = id;
     $this._type_1 = type;
     return $this;
@@ -27444,10 +30191,10 @@ exports.debug = debug; // for test
     $serializer_instance_7 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('github.Github.Environment.DeploymentBranchPolicy', this, 1);
     tmp0_serialDesc.addElement_5xhc52_k$('protected_branches', false);
-    this._descriptor_34 = tmp0_serialDesc;
+    this._descriptor_38 = tmp0_serialDesc;
   }
   $serializer_7.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_34;
+    return this._descriptor_38;
   };
   $serializer_7.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -27469,7 +30216,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer_7.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_34;
+    var tmp0_desc = this._descriptor_38;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -27495,6 +30242,15 @@ exports.debug = debug; // for test
     tmp5_input.endStructure_g940c0_k$(tmp0_desc);
     return DeploymentBranchPolicy_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
   };
+  $serializer_7.prototype.serialize_dokek7_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_38;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeBooleanElement_9280p5_k$(tmp0_desc, 0, value._protectedBranches);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_7.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_dokek7_k$(encoder, value instanceof DeploymentBranchPolicy ? value : THROW_CCE());
+  };
   $serializer_7.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -27508,7 +30264,7 @@ exports.debug = debug; // for test
   }
   function DeploymentBranchPolicy_init_$Init$(seen1, protectedBranches, serializationConstructorMarker, $this) {
     if (!(1 === (1 & seen1)))
-      throwMissingFieldException(seen1, 1, $serializer_getInstance_7()._descriptor_34);
+      throwMissingFieldException(seen1, 1, $serializer_getInstance_7()._descriptor_38);
     $this._protectedBranches = protectedBranches;
     return $this;
   }
@@ -27578,10 +30334,10 @@ exports.debug = debug; // for test
     tmp0_serialDesc.addElement_5xhc52_k$('name', false);
     tmp0_serialDesc.addElement_5xhc52_k$('protection_rules', false);
     tmp0_serialDesc.addElement_5xhc52_k$('deployment_branch_policy', true);
-    this._descriptor_35 = tmp0_serialDesc;
+    this._descriptor_39 = tmp0_serialDesc;
   }
   $serializer_8.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_35;
+    return this._descriptor_39;
   };
   $serializer_8.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -27603,7 +30359,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer_8.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_35;
+    var tmp0_desc = this._descriptor_39;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -27650,6 +30406,19 @@ exports.debug = debug; // for test
     tmp8_input.endStructure_g940c0_k$(tmp0_desc);
     return Environment_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, tmp7_local3, null);
   };
+  $serializer_8.prototype.serialize_dy0fvj_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_39;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeIntElement_wh7n80_k$(tmp0_desc, 0, value._id_6);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 1, value._name_5);
+    tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 2, new ArrayListSerializer($serializer_getInstance_6()), value._protectionRules);
+    if (tmp1_output.shouldEncodeElementDefault_5vyt7k_k$(tmp0_desc, 3) ? true : !(value._deploymentBranchPolicy == null))
+      tmp1_output.encodeNullableSerializableElement_6l2lkq_k$(tmp0_desc, 3, $serializer_getInstance_7(), value._deploymentBranchPolicy);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_8.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_dy0fvj_k$(encoder, value instanceof Environment ? value : THROW_CCE());
+  };
   $serializer_8.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -27663,7 +30432,7 @@ exports.debug = debug; // for test
   }
   function Environment_init_$Init$(seen1, id, name, protectionRules, deploymentBranchPolicy, serializationConstructorMarker, $this) {
     if (!(7 === (7 & seen1)))
-      throwMissingFieldException(seen1, 7, $serializer_getInstance_8()._descriptor_35);
+      throwMissingFieldException(seen1, 7, $serializer_getInstance_8()._descriptor_39);
     $this._id_6 = id;
     $this._name_5 = name;
     $this._protectionRules = protectionRules;
@@ -27681,10 +30450,10 @@ exports.debug = debug; // for test
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('github.Github.Branch', this, 2);
     tmp0_serialDesc.addElement_5xhc52_k$('name', false);
     tmp0_serialDesc.addElement_5xhc52_k$('protected', false);
-    this._descriptor_36 = tmp0_serialDesc;
+    this._descriptor_40 = tmp0_serialDesc;
   }
   $serializer_9.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_36;
+    return this._descriptor_40;
   };
   $serializer_9.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -27706,7 +30475,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer_9.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_36;
+    var tmp0_desc = this._descriptor_40;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -27739,6 +30508,16 @@ exports.debug = debug; // for test
     tmp6_input.endStructure_g940c0_k$(tmp0_desc);
     return Branch_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, null);
   };
+  $serializer_9.prototype.serialize_l11tri_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_40;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 0, value._name_6);
+    tmp1_output.encodeBooleanElement_9280p5_k$(tmp0_desc, 1, value._isProtected);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_9.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_l11tri_k$(encoder, value instanceof Branch ? value : THROW_CCE());
+  };
   $serializer_9.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -27752,7 +30531,7 @@ exports.debug = debug; // for test
   }
   function Branch_init_$Init$(seen1, name, isProtected, serializationConstructorMarker, $this) {
     if (!(3 === (3 & seen1)))
-      throwMissingFieldException(seen1, 3, $serializer_getInstance_9()._descriptor_36);
+      throwMissingFieldException(seen1, 3, $serializer_getInstance_9()._descriptor_40);
     $this._name_6 = name;
     $this._isProtected = isProtected;
     return $this;
@@ -27760,29 +30539,29 @@ exports.debug = debug; // for test
   function Branch_init_$Create$(seen1, name, isProtected, serializationConstructorMarker) {
     return Branch_init_$Init$(seen1, name, isProtected, serializationConstructorMarker, Object.create(Branch.prototype));
   }
-  function Companion_19() {
-    Companion_instance_18 = this;
+  function Companion_23() {
+    Companion_instance_22 = this;
   }
-  Companion_19.$metadata$ = {
+  Companion_23.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_18;
-  function Companion_getInstance_18() {
-    if (Companion_instance_18 == null)
-      new Companion_19();
-    return Companion_instance_18;
+  var Companion_instance_22;
+  function Companion_getInstance_22() {
+    if (Companion_instance_22 == null)
+      new Companion_23();
+    return Companion_instance_22;
   }
   function $serializer_10() {
     $serializer_instance_10 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('github.Github.Error', this, 2);
     tmp0_serialDesc.addElement_5xhc52_k$('message', false);
     tmp0_serialDesc.addElement_5xhc52_k$('documentation_url', true);
-    this._descriptor_37 = tmp0_serialDesc;
+    this._descriptor_41 = tmp0_serialDesc;
   }
   $serializer_10.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_37;
+    return this._descriptor_41;
   };
   $serializer_10.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
@@ -27804,7 +30583,7 @@ exports.debug = debug; // for test
     return tmp$ret$2;
   };
   $serializer_10.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_37;
+    var tmp0_desc = this._descriptor_41;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -27837,6 +30616,17 @@ exports.debug = debug; // for test
     tmp6_input.endStructure_g940c0_k$(tmp0_desc);
     return Error_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, null);
   };
+  $serializer_10.prototype.serialize_beo8x6_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_41;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 0, value._message_0);
+    if (tmp1_output.shouldEncodeElementDefault_5vyt7k_k$(tmp0_desc, 1) ? true : !(value._documentationUrl == null))
+      tmp1_output.encodeNullableSerializableElement_6l2lkq_k$(tmp0_desc, 1, StringSerializer_getInstance(), value._documentationUrl);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_10.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_beo8x6_k$(encoder, value instanceof Error_1 ? value : THROW_CCE());
+  };
   $serializer_10.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
@@ -27850,7 +30640,7 @@ exports.debug = debug; // for test
   }
   function Error_init_$Init$_1(seen1, message, documentationUrl, serializationConstructorMarker, $this) {
     if (!(1 === (1 & seen1)))
-      throwMissingFieldException(seen1, 1, $serializer_getInstance_10()._descriptor_37);
+      throwMissingFieldException(seen1, 1, $serializer_getInstance_10()._descriptor_41);
     $this._message_0 = message;
     if (0 === (seen1 & 2))
       $this._documentationUrl = null;
@@ -27861,6 +30651,104 @@ exports.debug = debug; // for test
   function Error_init_$Create$(seen1, message, documentationUrl, serializationConstructorMarker) {
     return Error_init_$Init$_1(seen1, message, documentationUrl, serializationConstructorMarker, Object.create(Error_1.prototype));
   }
+  function Companion_24() {
+    Companion_instance_23 = this;
+  }
+  Companion_24.$metadata$ = {
+    simpleName: 'Companion',
+    kind: 'object',
+    interfaces: []
+  };
+  var Companion_instance_23;
+  function Companion_getInstance_23() {
+    if (Companion_instance_23 == null)
+      new Companion_24();
+    return Companion_instance_23;
+  }
+  function $serializer_11() {
+    $serializer_instance_11 = this;
+    var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('github.Github.RepoTeamPutPermissionBody', this, 1);
+    tmp0_serialDesc.addElement_5xhc52_k$('permission', false);
+    this._descriptor_42 = tmp0_serialDesc;
+  }
+  $serializer_11.prototype._get_descriptor__0_k$ = function () {
+    return this._descriptor_42;
+  };
+  $serializer_11.prototype.childSerializers_0_k$ = function () {
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp0_arrayOf_0 = [StringSerializer_getInstance()];
+      var tmp$ret$1;
+      $l$block_0: {
+        var tmp$ret$0;
+        $l$block: {
+          tmp$ret$0 = tmp0_arrayOf_0;
+          break $l$block;
+        }
+        tmp$ret$1 = tmp$ret$0;
+        break $l$block_0;
+      }
+      tmp$ret$2 = tmp$ret$1;
+      break $l$block_1;
+    }
+    return tmp$ret$2;
+  };
+  $serializer_11.prototype.deserialize_u9oizh_k$ = function (decoder) {
+    var tmp0_desc = this._descriptor_42;
+    var tmp1_flag = true;
+    var tmp2_index = 0;
+    var tmp3_bitMask0 = 0;
+    var tmp4_local0 = null;
+    var tmp5_input = decoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    if (tmp5_input.decodeSequentially_0_k$()) {
+      tmp4_local0 = tmp5_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 0);
+      tmp3_bitMask0 = tmp3_bitMask0 | 1;
+    } else
+      while (tmp1_flag) {
+        tmp2_index = tmp5_input.decodeElementIndex_6qhf5t_k$(tmp0_desc);
+        switch (tmp2_index) {
+          case -1:
+            tmp1_flag = false;
+            break;
+          case 0:
+            tmp4_local0 = tmp5_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 0);
+            tmp3_bitMask0 = tmp3_bitMask0 | 1;
+            break;
+          default:throw UnknownFieldException_init_$Create$(tmp2_index);
+        }
+      }
+    tmp5_input.endStructure_g940c0_k$(tmp0_desc);
+    return RepoTeamPutPermissionBody_init_$Create$(tmp3_bitMask0, tmp4_local0, null);
+  };
+  $serializer_11.prototype.serialize_8g2rc1_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_42;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 0, value._permission_0);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_11.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_8g2rc1_k$(encoder, value instanceof RepoTeamPutPermissionBody ? value : THROW_CCE());
+  };
+  $serializer_11.$metadata$ = {
+    simpleName: '$serializer',
+    kind: 'object',
+    interfaces: [GeneratedSerializer]
+  };
+  var $serializer_instance_11;
+  function $serializer_getInstance_11() {
+    if ($serializer_instance_11 == null)
+      new $serializer_11();
+    return $serializer_instance_11;
+  }
+  function RepoTeamPutPermissionBody_init_$Init$(seen1, permission, serializationConstructorMarker, $this) {
+    if (!(1 === (1 & seen1)))
+      throwMissingFieldException(seen1, 1, $serializer_getInstance_11()._descriptor_42);
+    $this._permission_0 = permission;
+    return $this;
+  }
+  function RepoTeamPutPermissionBody_init_$Create$(seen1, permission, serializationConstructorMarker) {
+    return RepoTeamPutPermissionBody_init_$Init$(seen1, permission, serializationConstructorMarker, Object.create(RepoTeamPutPermissionBody.prototype));
+  }
   function Github_init_$Init$(backend, defaultPageSize, $mask0, $marker, $this) {
     if (!(($mask0 & 2) === 0))
       defaultPageSize = 30;
@@ -27870,8 +30758,80 @@ exports.debug = debug; // for test
   function Github_init_$Create$(backend, defaultPageSize, $mask0, $marker) {
     return Github_init_$Init$(backend, defaultPageSize, $mask0, $marker, Object.create(Github.prototype));
   }
+  function verifySuccessful($this, path, response, accept204) {
+    if (response._status === 200) {
+    } else {
+      if (response._status === 204 ? accept204 : false) {
+      } else {
+        var tmp;
+        if (!(response._contentType == null)) {
+          var tmp$ret$1;
+          $l$block_0: {
+            var tmp0_lowercase_0 = response._contentType;
+            var tmp$ret$0;
+            $l$block: {
+              tmp$ret$0 = tmp0_lowercase_0;
+              break $l$block;
+            }
+            tmp$ret$1 = tmp$ret$0.toLowerCase();
+            break $l$block_0;
+          }
+          var tmp_0 = tmp$ret$1;
+          tmp = startsWith$default(tmp_0, 'application/json', false, 2, null);
+        } else {
+          tmp = false;
+        }
+        if (tmp) {
+          var tmp$ret$4;
+          $l$block_3: {
+            var tmp1_decodeFromString_0 = $this._jsonFormat;
+            var tmp2_decodeFromString_0 = response._text;
+            var tmp$ret$3;
+            $l$block_2: {
+              var tmp1_serializer_0_1 = tmp1_decodeFromString_0._get_serializersModule__0_k$();
+              var tmp$ret$2;
+              $l$block_1: {
+                var tmp0_cast_0_2 = serializer(tmp1_serializer_0_1, createKType_0(getKClass_0(Error_1), [], false));
+                tmp$ret$2 = isInterface(tmp0_cast_0_2, KSerializer) ? tmp0_cast_0_2 : THROW_CCE();
+                break $l$block_1;
+              }
+              tmp$ret$3 = tmp$ret$2;
+              break $l$block_2;
+            }
+            tmp$ret$4 = tmp1_decodeFromString_0.decodeFromString_ed5pl9_k$(tmp$ret$3, tmp2_decodeFromString_0);
+            break $l$block_3;
+          }
+          throw new GithubException(path, response._status, tmp$ret$4);
+        } else {
+          {
+            {
+              var tmp3_error_0 = '' + path + ': HTTP error ' + response._status;
+              throw IllegalStateException_init_$Create$(toString_1(tmp3_error_0));
+            }
+          }
+        }
+      }
+    }
+  }
+  function verifySuccessful$default($this, path, response, accept204, $mask0, $handler) {
+    if (!(($mask0 & 8) === 0))
+      accept204 = false;
+    return verifySuccessful($this, path, response, accept204);
+  }
   function fetch($this, deserializer, path, $cont) {
     var tmp = new $fetchCOROUTINE$0($this, deserializer, path, $cont);
+    tmp._result_1 = Unit_getInstance();
+    tmp._exception_0 = null;
+    return tmp.doResume_0_k$();
+  }
+  function delete_0($this, path, $cont) {
+    var tmp = new $deleteCOROUTINE$1($this, path, $cont);
+    tmp._result_1 = Unit_getInstance();
+    tmp._exception_0 = null;
+    return tmp.doResume_0_k$();
+  }
+  function put($this, path, body, serializer_15, $cont) {
+    var tmp = new $putCOROUTINE$2($this, path, body, serializer_15, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
@@ -27920,7 +30880,7 @@ exports.debug = debug; // for test
     associatedObjects: {0: $serializer_getInstance}
   };
   function Organization(id, name) {
-    Companion_getInstance_15();
+    Companion_getInstance_19();
     this._id_2 = id;
     this._name_1 = name;
   }
@@ -27953,7 +30913,7 @@ exports.debug = debug; // for test
     associatedObjects: {0: $serializer_getInstance_0}
   };
   function Team(id, name, slug, permission) {
-    Companion_getInstance_16();
+    Companion_getInstance_20();
     this._id_3 = id;
     this._name_2 = name;
     this._slug = slug;
@@ -28033,7 +30993,7 @@ exports.debug = debug; // for test
     associatedObjects: {0: $serializer_getInstance_2}
   };
   function Repository(id, name, isPrivate, isArchived, visibility, topics, url, permissions, owner, defaultBranch) {
-    Companion_getInstance_17();
+    Companion_getInstance_21();
     this._id_5 = id;
     this._name_4 = name;
     this._isPrivate = isPrivate;
@@ -28164,7 +31124,7 @@ exports.debug = debug; // for test
     associatedObjects: {0: $serializer_getInstance_9}
   };
   function Error_1(message, documentationUrl) {
-    Companion_getInstance_18();
+    Companion_getInstance_22();
     this._message_0 = message;
     this._documentationUrl = documentationUrl;
   }
@@ -28196,37 +31156,65 @@ exports.debug = debug; // for test
     interfaces: [],
     associatedObjects: {0: $serializer_getInstance_10}
   };
-  function _no_name_provided__80() {
+  function RepoTeamPutPermissionBody(permission) {
+    Companion_getInstance_23();
+    this._permission_0 = permission;
   }
-  _no_name_provided__80.prototype.invoke_rrujww_k$ = function ($this$Json) {
+  RepoTeamPutPermissionBody.prototype.toString = function () {
+    return '' + 'RepoTeamPutPermissionBody(permission=' + this._permission_0 + ')';
+  };
+  RepoTeamPutPermissionBody.prototype.hashCode = function () {
+    return getStringHashCode(this._permission_0);
+  };
+  RepoTeamPutPermissionBody.prototype.equals = function (other) {
+    if (this === other)
+      return true;
+    if (!(other instanceof RepoTeamPutPermissionBody))
+      return false;
+    else {
+    }
+    var tmp0_other_with_cast = other instanceof RepoTeamPutPermissionBody ? other : THROW_CCE();
+    if (!(this._permission_0 === tmp0_other_with_cast._permission_0))
+      return false;
+    return true;
+  };
+  RepoTeamPutPermissionBody.$metadata$ = {
+    simpleName: 'RepoTeamPutPermissionBody',
+    kind: 'class',
+    interfaces: [],
+    associatedObjects: {0: $serializer_getInstance_11}
+  };
+  function _no_name_provided__81() {
+  }
+  _no_name_provided__81.prototype.invoke_rrujww_k$ = function ($this$Json) {
     $this$Json._ignoreUnknownKeys = true;
   };
-  _no_name_provided__80.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__81.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_rrujww_k$(p1 instanceof JsonBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__80.$metadata$ = {
+  _no_name_provided__81.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__81(this$0, $deserializer, $path, $pageSize, resultContinuation) {
+  function _no_name_provided__82(this$0, $deserializer, $path, $pageSize, resultContinuation) {
     this._this$0_24 = this$0;
     this._$deserializer_1 = $deserializer;
     this._$path = $path;
     this._$pageSize = $pageSize;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__81.prototype.invoke_l0hod5_k$ = function ($this$flow, $cont) {
+  _no_name_provided__82.prototype.invoke_l0hod5_k$ = function ($this$flow, $cont) {
     var tmp = this.create_4vn1xa_k$($this$flow, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__81.prototype.invoke_20e8_k$ = function (p1, $cont) {
+  _no_name_provided__82.prototype.invoke_20e8_k$ = function (p1, $cont) {
     this.invoke_l0hod5_k$((!(p1 == null) ? isInterface(p1, FlowCollector) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__81.prototype.doResume_0_k$ = function () {
+  _no_name_provided__82.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -28306,30 +31294,30 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  _no_name_provided__81.prototype.create_4vn1xa_k$ = function ($this$flow, completion) {
-    var i = new _no_name_provided__81(this._this$0_24, this._$deserializer_1, this._$path, this._$pageSize, completion);
+  _no_name_provided__82.prototype.create_4vn1xa_k$ = function ($this$flow, completion) {
+    var i = new _no_name_provided__82(this._this$0_24, this._$deserializer_1, this._$path, this._$pageSize, completion);
     i._$this$flow_0 = $this$flow;
     return i;
   };
-  _no_name_provided__81.$metadata$ = {
+  _no_name_provided__82.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [1]
   };
-  function _no_name_provided__82(resultContinuation) {
+  function _no_name_provided__83(resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__82.prototype.invoke_ctcsrb_k$ = function ($this$transformWhile, page, $cont) {
+  _no_name_provided__83.prototype.invoke_ctcsrb_k$ = function ($this$transformWhile, page, $cont) {
     var tmp = this.create_mcormz_k$($this$transformWhile, page, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__82.prototype.invoke_osx4an_k$ = function (p1, p2, $cont) {
+  _no_name_provided__83.prototype.invoke_osx4an_k$ = function (p1, p2, $cont) {
     var tmp = (!(p1 == null) ? isInterface(p1, FlowCollector) : false) ? p1 : THROW_CCE();
     return this.invoke_ctcsrb_k$(tmp, (!(p2 == null) ? isInterface(p2, Collection) : false) ? p2 : THROW_CCE(), $cont);
   };
-  _no_name_provided__82.prototype.doResume_0_k$ = function () {
+  _no_name_provided__83.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -28369,13 +31357,13 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  _no_name_provided__82.prototype.create_mcormz_k$ = function ($this$transformWhile, page, completion) {
-    var i = new _no_name_provided__82(completion);
+  _no_name_provided__83.prototype.create_mcormz_k$ = function ($this$transformWhile, page, completion) {
+    var i = new _no_name_provided__83(completion);
     i._$this$transformWhile = $this$transformWhile;
     i._page = page;
     return i;
   };
-  _no_name_provided__82.$metadata$ = {
+  _no_name_provided__83.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [2]
@@ -28402,33 +31390,8 @@ exports.debug = debug; // for test
             continue $sm;
           case 1:
             var response = suspendResult;
-            var tmp_0;
-            if (response._status === 200) {
-              tmp_0 = this.__this__5._jsonFormat.decodeFromString_ed5pl9_k$(this._deserializer, response._text);
-            } else {
-              var tmp_1;
-              if (!(response._contentType == null)) {
-                var tmp0_lowercase_0 = response._contentType;
-                var tmp_2 = tmp0_lowercase_0.toLowerCase();
-                tmp_1 = startsWith$default(tmp_2, 'application/json', false, 2, null);
-              } else {
-                tmp_1 = false;
-              }
-              if (tmp_1) {
-                var tmp1_decodeFromString_0 = this.__this__5._jsonFormat;
-                var tmp2_decodeFromString_0 = response._text;
-                var tmp1_serializer_0_1 = tmp1_decodeFromString_0._get_serializersModule__0_k$();
-                var tmp0_cast_0_2 = serializer(tmp1_serializer_0_1, createKType_0(getKClass_0(Error_1), [], false));
-                throw new GithubException(this._path, response._status, tmp1_decodeFromString_0.decodeFromString_ed5pl9_k$(isInterface(tmp0_cast_0_2, KSerializer) ? tmp0_cast_0_2 : THROW_CCE(), tmp2_decodeFromString_0));
-              } else {
-                {
-                  var tmp3_error_0 = '' + this._path + ': HTTP error ' + response._status;
-                  throw IllegalStateException_init_$Create$(toString_1(tmp3_error_0));
-                }
-              }
-            }
-
-            return tmp_0;
+            verifySuccessful$default(this.__this__5, this._path, response, false, 8, null);
+            return this.__this__5._jsonFormat.decodeFromString_ed5pl9_k$(this._deserializer, response._text);
           case 2:
             throw this._exception_0;
         }
@@ -28444,6 +31407,140 @@ exports.debug = debug; // for test
   };
   $fetchCOROUTINE$0.$metadata$ = {
     simpleName: '$fetchCOROUTINE$0',
+    kind: 'class',
+    interfaces: []
+  };
+  function $deleteCOROUTINE$1(_this_, path, resultContinuation) {
+    CoroutineImpl_0.call(this, resultContinuation);
+    this.__this__6 = _this_;
+    this._path_0 = path;
+  }
+  $deleteCOROUTINE$1.prototype.doResume_0_k$ = function () {
+    var suspendResult = this._result_1;
+    $sm: do
+      try {
+        var tmp = this._state_1;
+        switch (tmp) {
+          case 0:
+            this._exceptionState = 2;
+            this._state_1 = 1;
+            suspendResult = this.__this__6._backend.requestForText_qjh9wi_k$('DELETE', this._path_0, null, this);
+            if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
+              return suspendResult;
+            }
+            continue $sm;
+          case 1:
+            var response = suspendResult;
+            verifySuccessful(this.__this__6, this._path_0, response, true);
+            return Unit_getInstance();
+          case 2:
+            throw this._exception_0;
+        }
+      } catch ($p) {
+        if (this._exceptionState === 2) {
+          throw $p;
+        } else {
+          this._state_1 = this._exceptionState;
+          this._exception_0 = $p;
+        }
+      }
+     while (true);
+  };
+  $deleteCOROUTINE$1.$metadata$ = {
+    simpleName: '$deleteCOROUTINE$1',
+    kind: 'class',
+    interfaces: []
+  };
+  function $putCOROUTINE$2(_this_, path, body, serializer_15, resultContinuation) {
+    CoroutineImpl_0.call(this, resultContinuation);
+    this.__this__7 = _this_;
+    this._path_1 = path;
+    this._body = body;
+    this._serializer_2 = serializer_15;
+  }
+  $putCOROUTINE$2.prototype.doResume_0_k$ = function () {
+    var suspendResult = this._result_1;
+    $sm: do
+      try {
+        var tmp = this._state_1;
+        switch (tmp) {
+          case 0:
+            this._exceptionState = 2;
+            this._state_1 = 1;
+            suspendResult = this.__this__7._backend.requestForText_qjh9wi_k$('PUT', this._path_1, this.__this__7._jsonFormat.encodeToString_onvojc_k$(this._serializer_2, this._body), this);
+            if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
+              return suspendResult;
+            }
+            continue $sm;
+          case 1:
+            var response = suspendResult;
+            verifySuccessful(this.__this__7, this._path_1, response, true);
+            return Unit_getInstance();
+          case 2:
+            throw this._exception_0;
+        }
+      } catch ($p) {
+        if (this._exceptionState === 2) {
+          throw $p;
+        } else {
+          this._state_1 = this._exceptionState;
+          this._exception_0 = $p;
+        }
+      }
+     while (true);
+  };
+  $putCOROUTINE$2.$metadata$ = {
+    simpleName: '$putCOROUTINE$2',
+    kind: 'class',
+    interfaces: []
+  };
+  function $updateRepoTeamPermissionCOROUTINE$3(_this_, orgName, teamSlug, ownerName, repoName, permission, resultContinuation) {
+    CoroutineImpl_0.call(this, resultContinuation);
+    this.__this__8 = _this_;
+    this._orgName = orgName;
+    this._teamSlug = teamSlug;
+    this._ownerName = ownerName;
+    this._repoName = repoName;
+    this._permission_1 = permission;
+  }
+  $updateRepoTeamPermissionCOROUTINE$3.prototype.doResume_0_k$ = function () {
+    var suspendResult = this._result_1;
+    $sm: do
+      try {
+        var tmp = this._state_1;
+        switch (tmp) {
+          case 0:
+            this._exceptionState = 2;
+            var tmp_0 = this;
+            tmp_0._tmp0_put_00 = '' + '/orgs/' + this._orgName + '/teams/' + this._teamSlug + '/repos/' + this._ownerName + '/' + this._repoName;
+            var tmp_1 = this;
+            tmp_1._tmp1_put_01 = new RepoTeamPutPermissionBody(this._permission_1);
+            this._state_1 = 1;
+            var tmp_2 = this;
+            tmp_2._tmp0_cast_0_1_12 = serializer_0(createKType_0(getKClass_0(RepoTeamPutPermissionBody), [], false));
+            var tmp_3 = this._tmp0_cast_0_1_12;
+            suspendResult = put(this.__this__8, this._tmp0_put_00, this._tmp1_put_01, isInterface(tmp_3, KSerializer) ? tmp_3 : THROW_CCE(), this);
+            if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
+              return suspendResult;
+            }
+            continue $sm;
+          case 1:
+            return Unit_getInstance();
+          case 2:
+            throw this._exception_0;
+        }
+      } catch ($p) {
+        if (this._exceptionState === 2) {
+          throw $p;
+        } else {
+          this._state_1 = this._exceptionState;
+          this._exception_0 = $p;
+        }
+      }
+     while (true);
+  };
+  $updateRepoTeamPermissionCOROUTINE$3.$metadata$ = {
+    simpleName: '$updateRepoTeamPermissionCOROUTINE$3',
     kind: 'class',
     interfaces: []
   };
@@ -28533,13 +31630,37 @@ exports.debug = debug; // for test
       pageSize = this._defaultPageSize;
     return this.getRepoTeams_o2uoph_k$(repo, pageSize);
   };
+  Github.prototype.deleteRepoTeamPermission_k23ahh_k$ = function (orgName, teamSlug, ownerName, repoName, $cont) {
+    return delete_0(this, '' + '/orgs/' + orgName + '/teams/' + teamSlug + '/repos/' + ownerName + '/' + repoName, $cont);
+  };
+  Github.prototype.deleteRepoTeamPermission_t4m8ub_k$ = function (orgName, teamSlug, repo, $cont) {
+    return this.deleteRepoTeamPermission_k23ahh_k$(orgName, teamSlug, repo._owner_0._login, repo._name_4, $cont);
+  };
+  Github.prototype.deleteRepoTeamPermission_18s8ml_k$ = function (org, team, repo, $cont) {
+    return this.deleteRepoTeamPermission_t4m8ub_k$(org._name_1, team._slug, repo, $cont);
+  };
+  Github.prototype.updateRepoTeamPermission_yq4il2_k$ = function (orgName, teamSlug, ownerName, repoName, permission, $cont) {
+    var tmp = new $updateRepoTeamPermissionCOROUTINE$3(this, orgName, teamSlug, ownerName, repoName, permission, $cont);
+    tmp._result_1 = Unit_getInstance();
+    tmp._exception_0 = null;
+    return tmp.doResume_0_k$();
+  };
+  Github.prototype.updateRepoTeamPermission_4b7ta6_k$ = function (orgName, teamSlug, repo, permission, $cont) {
+    return this.updateRepoTeamPermission_yq4il2_k$(orgName, teamSlug, repo._owner_0._login, repo._name_4, permission, $cont);
+  };
+  Github.prototype.updateRepoTeamPermission_ws66ms_k$ = function (orgName, team, repo, permission, $cont) {
+    return this.updateRepoTeamPermission_4b7ta6_k$(orgName, team._slug, repo, permission, $cont);
+  };
+  Github.prototype.updateRepoTeamPermission_h2nyfo_k$ = function (org, team, repo, permission, $cont) {
+    return this.updateRepoTeamPermission_ws66ms_k$(org._name_1, team, repo, permission, $cont);
+  };
   Github.$metadata$ = {
     simpleName: 'Github',
     kind: 'class',
     interfaces: []
   };
   function useGithub(githubToken, block, $cont) {
-    var tmp = new $useGithubCOROUTINE$2(githubToken, block, $cont);
+    var tmp = new $useGithubCOROUTINE$4(githubToken, block, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
@@ -28600,7 +31721,7 @@ exports.debug = debug; // for test
   };
   function GithubException(path, statusCode, error_3) {
     RuntimeException_init_$Init$_0(!(error_3._documentationUrl == null) ? '' + path + ': [HTTP ' + statusCode + '] ' + error_3._message_0 + ' (' + error_3._documentationUrl + ')' : '' + path + ': [HTTP ' + statusCode + '] ' + error_3._message_0, this);
-    this._path_0 = path;
+    this._path_2 = path;
     this._statusCode = statusCode;
     this._error = error_3;
     captureStack(this, GithubException);
@@ -28618,6 +31739,12 @@ exports.debug = debug; // for test
   InstantSerializer.prototype.deserialize_u9oizh_k$ = function (decoder) {
     return parseISOInstant(decoder.decodeString_0_k$());
   };
+  InstantSerializer.prototype.serialize_2m8ivz_k$ = function (encoder, value) {
+    return encoder.encodeString_a4enbm_k$(value.toISOString());
+  };
+  InstantSerializer.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_2m8ivz_k$(encoder, value instanceof Date ? value : THROW_CCE());
+  };
   InstantSerializer.$metadata$ = {
     simpleName: 'InstantSerializer',
     kind: 'class',
@@ -28632,21 +31759,21 @@ exports.debug = debug; // for test
     }
     return tmp$ret$0;
   }
-  function _no_name_provided__83($backend, resultContinuation) {
+  function _no_name_provided__84($backend, resultContinuation) {
     this._$backend = $backend;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__83.prototype.invoke_2i3g7c_k$ = function ($this$withContext, $cont) {
+  _no_name_provided__84.prototype.invoke_2i3g7c_k$ = function ($this$withContext, $cont) {
     var tmp = this.create_y6imfn_k$($this$withContext, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__83.prototype.invoke_20e8_k$ = function (p1, $cont) {
+  _no_name_provided__84.prototype.invoke_20e8_k$ = function (p1, $cont) {
     this.invoke_2i3g7c_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__83.prototype.doResume_0_k$ = function () {
+  _no_name_provided__84.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -28675,22 +31802,22 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  _no_name_provided__83.prototype.create_y6imfn_k$ = function ($this$withContext, completion) {
-    var i = new _no_name_provided__83(this._$backend, completion);
+  _no_name_provided__84.prototype.create_y6imfn_k$ = function ($this$withContext, completion) {
+    var i = new _no_name_provided__84(this._$backend, completion);
     i._$this$withContext = $this$withContext;
     return i;
   };
-  _no_name_provided__83.$metadata$ = {
+  _no_name_provided__84.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [1]
   };
-  function $useGithubCOROUTINE$2(githubToken, block, resultContinuation) {
+  function $useGithubCOROUTINE$4(githubToken, block, resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
     this._githubToken = githubToken;
     this._block_1 = block;
   }
-  $useGithubCOROUTINE$2.prototype.doResume_0_k$ = function () {
+  $useGithubCOROUTINE$4.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -28750,20 +31877,20 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  $useGithubCOROUTINE$2.$metadata$ = {
-    simpleName: '$useGithubCOROUTINE$2',
+  $useGithubCOROUTINE$4.$metadata$ = {
+    simpleName: '$useGithubCOROUTINE$4',
     kind: 'class',
     interfaces: []
   };
   function _no_name_provided_$factory_70() {
-    var i = new _no_name_provided__80();
+    var i = new _no_name_provided__81();
     return function (p1) {
       i.invoke_rrujww_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_71(this$0, $deserializer, $path, $pageSize, resultContinuation) {
-    var i = new _no_name_provided__81(this$0, $deserializer, $path, $pageSize, resultContinuation);
+    var i = new _no_name_provided__82(this$0, $deserializer, $path, $pageSize, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_l0hod5_k$(p1, $cont);
     };
@@ -28771,7 +31898,7 @@ exports.debug = debug; // for test
     return l;
   }
   function _no_name_provided_$factory_72(resultContinuation) {
-    var i = new _no_name_provided__82(resultContinuation);
+    var i = new _no_name_provided__83(resultContinuation);
     var l = function (p1, p2, $cont) {
       return i.invoke_ctcsrb_k$(p1, p2, $cont);
     };
@@ -28779,7 +31906,7 @@ exports.debug = debug; // for test
     return l;
   }
   function _no_name_provided_$factory_73($backend, resultContinuation) {
-    var i = new _no_name_provided__83($backend, resultContinuation);
+    var i = new _no_name_provided__84($backend, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_2i3g7c_k$(p1, $cont);
     };
@@ -28787,7 +31914,7 @@ exports.debug = debug; // for test
     return l;
   }
   function _no_name_provided_$factory_74($backend, resultContinuation) {
-    var i = new _no_name_provided__83($backend, resultContinuation);
+    var i = new _no_name_provided__84($backend, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_2i3g7c_k$(p1, $cont);
     };
@@ -28809,39 +31936,39 @@ exports.debug = debug; // for test
     }
     return tmp$ret$0;
   }
-  function _no_name_provided__84(this$0) {
+  function _no_name_provided__85(this$0) {
     this._this$0_25 = this$0;
   }
-  _no_name_provided__84.prototype.invoke_0_k$ = function () {
+  _no_name_provided__85.prototype.invoke_0_k$ = function () {
     var base64input = '' + ':' + this._this$0_25._token;
     var base64output = Buffer.from(base64input).toString('base64');
     return '' + 'Basic ' + base64output;
-  };
-  _no_name_provided__84.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
-  function _no_name_provided__85($boundThis) {
-    this._$boundThis_2 = $boundThis;
-  }
-  _no_name_provided__85.prototype.invoke_rajhr8_k$ = function (p0) {
-    return resume(this._$boundThis_2, p0);
-  };
-  _no_name_provided__85.prototype.invoke_20e8_k$ = function (p1) {
-    this.invoke_rajhr8_k$((!(p1 == null) ? isObject(p1) : false) ? p1 : THROW_CCE());
-    return Unit_getInstance();
-  };
-  _no_name_provided__85.prototype._get_name__0_k$ = function () {
-    return 'resume';
   };
   _no_name_provided__85.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__86($cancellable_2_2) {
+  function _no_name_provided__86($boundThis) {
+    this._$boundThis_2 = $boundThis;
+  }
+  _no_name_provided__86.prototype.invoke_rajhr8_k$ = function (p0) {
+    return resume(this._$boundThis_2, p0);
+  };
+  _no_name_provided__86.prototype.invoke_20e8_k$ = function (p1) {
+    this.invoke_rajhr8_k$((!(p1 == null) ? isObject(p1) : false) ? p1 : THROW_CCE());
+    return Unit_getInstance();
+  };
+  _no_name_provided__86.prototype._get_name__0_k$ = function () {
+    return 'resume';
+  };
+  _no_name_provided__86.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__87($cancellable_2_2) {
     this._$cancellable_2_2 = $cancellable_2_2;
   }
-  _no_name_provided__86.prototype.invoke_qi8yb4_k$ = function (ex) {
+  _no_name_provided__87.prototype.invoke_qi8yb4_k$ = function (ex) {
     var tmp$ret$3;
     $l$block_2: {
       var tmp$ret$1;
@@ -28865,18 +31992,18 @@ exports.debug = debug; // for test
       break $l$block_2;
     }
   };
-  _no_name_provided__86.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__87.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_qi8yb4_k$((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__86.$metadata$ = {
+  _no_name_provided__87.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__87($req_4) {
+  function _no_name_provided__88($req_4) {
     this._$req_4 = $req_4;
   }
-  _no_name_provided__87.prototype.invoke_houul8_k$ = function (ex) {
+  _no_name_provided__88.prototype.invoke_houul8_k$ = function (ex) {
     var tmp$ret$1;
     $l$block_0: {
       var tmp$ret$0;
@@ -28889,18 +32016,18 @@ exports.debug = debug; // for test
     }
     this._$req_4.destroy(tmp$ret$1);
   };
-  _no_name_provided__87.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__88.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_houul8_k$((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__87.$metadata$ = {
+  _no_name_provided__88.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__88($chunks_4) {
+  function _no_name_provided__89($chunks_4) {
     this._$chunks_4 = $chunks_4;
   }
-  _no_name_provided__88.prototype.invoke_qi8yb4_k$ = function (chunk) {
+  _no_name_provided__89.prototype.invoke_qi8yb4_k$ = function (chunk) {
     {
       var tmp$ret$1;
       $l$block_0: {
@@ -28917,18 +32044,18 @@ exports.debug = debug; // for test
       Unit_getInstance();
     }
   };
-  _no_name_provided__88.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__89.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_qi8yb4_k$((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__88.$metadata$ = {
+  _no_name_provided__89.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__89($cancellable_2_2) {
+  function _no_name_provided__90($cancellable_2_2) {
     this._$cancellable_2_2_0 = $cancellable_2_2;
   }
-  _no_name_provided__89.prototype.invoke_qi8yb4_k$ = function (err) {
+  _no_name_provided__90.prototype.invoke_qi8yb4_k$ = function (err) {
     var tmp$ret$3;
     $l$block_2: {
       var tmp$ret$1;
@@ -28952,19 +32079,19 @@ exports.debug = debug; // for test
       break $l$block_2;
     }
   };
-  _no_name_provided__89.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__90.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_qi8yb4_k$((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__89.$metadata$ = {
+  _no_name_provided__90.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__90($chunks_4, $cancellable_2_2) {
+  function _no_name_provided__91($chunks_4, $cancellable_2_2) {
     this._$chunks_4_0 = $chunks_4;
     this._$cancellable_2_2_1 = $cancellable_2_2;
   }
-  _no_name_provided__90.prototype.invoke_qi8yb4_k$ = function (it) {
+  _no_name_provided__91.prototype.invoke_qi8yb4_k$ = function (it) {
     var tmp$ret$2;
     $l$block_1: {
       var tmp0_subject_12 = this._$chunks_4_0._get_size__0_k$();
@@ -28997,18 +32124,18 @@ exports.debug = debug; // for test
       break $l$block_1;
     }
   };
-  _no_name_provided__90.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__91.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_qi8yb4_k$((p1 == null ? true : isObject(p1)) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__90.$metadata$ = {
+  _no_name_provided__91.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__91($res) {
+  function _no_name_provided__92($res) {
     this._$res = $res;
   }
-  _no_name_provided__91.prototype.invoke_houul8_k$ = function (ex) {
+  _no_name_provided__92.prototype.invoke_houul8_k$ = function (ex) {
     var tmp$ret$1;
     $l$block_0: {
       var tmp$ret$0;
@@ -29021,22 +32148,22 @@ exports.debug = debug; // for test
     }
     this._$res.destroy(tmp$ret$1);
   };
-  _no_name_provided__91.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__92.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_houul8_k$((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__91.$metadata$ = {
+  _no_name_provided__92.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function $requestForTextCOROUTINE$3(_this_, method, path, body, resultContinuation) {
+  function $requestForTextCOROUTINE$5(_this_, method, path, body, resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
-    this.__this__6 = _this_;
+    this.__this__9 = _this_;
     this._method = method;
-    this._path_1 = path;
-    this._body = body;
+    this._path_3 = path;
+    this._body_0 = body;
   }
-  $requestForTextCOROUTINE$3.prototype.doResume_0_k$ = function () {
+  $requestForTextCOROUTINE$5.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -29045,9 +32172,9 @@ exports.debug = debug; // for test
           case 0:
             this._exceptionState = 3;
             var tmp_0 = this;
-            tmp_0._tmp0_require_00 = startsWith$default(this._path_1, '/', false, 2, null);
+            tmp_0._tmp0_require_00 = startsWith$default(this._path_3, '/', false, 2, null);
             if (!this._tmp0_require_00) {
-              var message_1 = '' + "path should start with '/': " + this._path_1;
+              var message_1 = '' + "path should start with '/': " + this._path_3;
               throw IllegalArgumentException_init_$Create$_0(toString_1(message_1));
             }
             var tmp_1 = this;
@@ -29059,7 +32186,7 @@ exports.debug = debug; // for test
             tmp_3._tmp1_apply_0_22 = tmp0_unsafeCast_0_3;
             this._tmp1_apply_0_22['User-Agent'] = 'github-repo-access/0.0';
             this._tmp1_apply_0_22['Accept'] = 'application/vnd.github.v3+json';
-            this._tmp1_apply_0_22['Authorization'] = _get_authorizationHeader_(this.__this__6);
+            this._tmp1_apply_0_22['Authorization'] = _get_authorizationHeader_(this.__this__9);
             this._tmp2_apply_01.headers = this._tmp1_apply_0_22;
             this._tmp2_apply_01.method = this._method;
             tmp_1._requestOptions3 = this._tmp2_apply_01;
@@ -29070,12 +32197,12 @@ exports.debug = debug; // for test
             this._cancellable_2_25.initCancellability_sv8swh_k$();
             var tmp_5 = this;
             var tmp_6 = Https;
-            var tmp_7 = '' + 'https://api.github.com' + this._path_1;
+            var tmp_7 = '' + 'https://api.github.com' + this._path_3;
             tmp_5._req_46 = tmp_6.request(tmp_7, this._requestOptions3, _no_name_provided_$factory_76(this._cancellable_2_25));
             this._req_46.on('error', _no_name_provided_$factory_77(this._cancellable_2_25));
             this._cancellable_2_25.invokeOnCancellation_aip8gd_k$(_no_name_provided_$factory_78(this._req_46));
-            if (!(this._body == null)) {
-              this._req_46.end(this._body, 'utf-8');
+            if (!(this._body_0 == null)) {
+              this._req_46.end(this._body_0, 'utf-8');
             } else {
               this._req_46.end();
             }
@@ -29123,8 +32250,8 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  $requestForTextCOROUTINE$3.$metadata$ = {
-    simpleName: '$requestForTextCOROUTINE$3',
+  $requestForTextCOROUTINE$5.$metadata$ = {
+    simpleName: '$requestForTextCOROUTINE$5',
     kind: 'class',
     interfaces: []
   };
@@ -29158,7 +32285,7 @@ exports.debug = debug; // for test
     tmp_0._authorizationHeader$delegate = lazy_0(_no_name_provided_$factory_75(this));
   }
   GithubJS.prototype.requestForText_qjh9wi_k$ = function (method, path, body, $cont) {
-    var tmp = new $requestForTextCOROUTINE$3(this, method, path, body, $cont);
+    var tmp = new $requestForTextCOROUTINE$5(this, method, path, body, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
@@ -29177,13 +32304,13 @@ exports.debug = debug; // for test
     }, null);
   }
   function _no_name_provided_$factory_75(this$0) {
-    var i = new _no_name_provided__84(this$0);
+    var i = new _no_name_provided__85(this$0);
     return function () {
       return i.invoke_0_k$();
     };
   }
   function _no_name_provided_$factory_76($boundThis) {
-    var i = new _no_name_provided__85($boundThis);
+    var i = new _no_name_provided__86($boundThis);
     var l = function (p1) {
       i.invoke_rajhr8_k$(p1);
       return Unit_getInstance();
@@ -29192,42 +32319,42 @@ exports.debug = debug; // for test
     return l;
   }
   function _no_name_provided_$factory_77($cancellable_2_2) {
-    var i = new _no_name_provided__86($cancellable_2_2);
+    var i = new _no_name_provided__87($cancellable_2_2);
     return function (p1) {
       i.invoke_qi8yb4_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_78($req_4) {
-    var i = new _no_name_provided__87($req_4);
+    var i = new _no_name_provided__88($req_4);
     return function (p1) {
       i.invoke_houul8_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_79($chunks_4) {
-    var i = new _no_name_provided__88($chunks_4);
+    var i = new _no_name_provided__89($chunks_4);
     return function (p1) {
       i.invoke_qi8yb4_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_80($cancellable_2_2) {
-    var i = new _no_name_provided__89($cancellable_2_2);
+    var i = new _no_name_provided__90($cancellable_2_2);
     return function (p1) {
       i.invoke_qi8yb4_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_81($chunks_4, $cancellable_2_2) {
-    var i = new _no_name_provided__90($chunks_4, $cancellable_2_2);
+    var i = new _no_name_provided__91($chunks_4, $cancellable_2_2);
     return function (p1) {
       i.invoke_qi8yb4_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_82($res) {
-    var i = new _no_name_provided__91($res);
+    var i = new _no_name_provided__92($res);
     return function (p1) {
       i.invoke_houul8_k$(p1);
       return Unit_getInstance();
@@ -29325,7 +32452,7 @@ exports.debug = debug; // for test
     var job = Job$default(null, 1, null);
     job.invokeOnCompletion_wjzpsu_k$(_no_name_provided_$factory_83(context));
     Unit_getInstance();
-    var completion = new _no_name_provided__93(context, job);
+    var completion = new _no_name_provided__94(context, job);
     startCoroutine(block, CoroutineScope_0(completion._context_1), completion);
   }
   function runAction$default(context, block, $mask0, $handler) {
@@ -29350,10 +32477,10 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: [Runnable]
   };
-  function _no_name_provided__92($context) {
+  function _no_name_provided__93($context) {
     this._$context = $context;
   }
-  _no_name_provided__92.prototype.invoke_houul8_k$ = function (ex) {
+  _no_name_provided__93.prototype.invoke_houul8_k$ = function (ex) {
     var tmp = Dispatchers_getInstance()._Default;
     var tmp$ret$0;
     $l$block: {
@@ -29362,23 +32489,23 @@ exports.debug = debug; // for test
     }
     tmp.dispatch_7n0ou3_k$(this._$context, tmp$ret$0);
   };
-  _no_name_provided__92.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__93.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_houul8_k$((p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__92.$metadata$ = {
+  _no_name_provided__93.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__93($context, $job) {
+  function _no_name_provided__94($context, $job) {
     this._$context_0 = $context;
     this._$job = $job;
     this._context_1 = this._$context_0.plus_d7pszg_k$(this._$job);
   }
-  _no_name_provided__93.prototype._get_context__0_k$ = function () {
+  _no_name_provided__94.prototype._get_context__0_k$ = function () {
     return this._context_1;
   };
-  _no_name_provided__93.prototype.resumeWith_6zvzl9_k$ = function (result) {
+  _no_name_provided__94.prototype.resumeWith_6zvzl9_k$ = function (result) {
     var tmp$ret$2;
     $l$block_1: {
       {
@@ -29407,15 +32534,15 @@ exports.debug = debug; // for test
     }
     Unit_getInstance();
   };
-  _no_name_provided__93.prototype.resumeWith_bnunh2_k$ = function (result) {
+  _no_name_provided__94.prototype.resumeWith_bnunh2_k$ = function (result) {
     return this.resumeWith_6zvzl9_k$(result);
   };
-  _no_name_provided__93.$metadata$ = {
+  _no_name_provided__94.$metadata$ = {
     kind: 'class',
     interfaces: [Continuation]
   };
   function _no_name_provided_$factory_83($context) {
-    var i = new _no_name_provided__92($context);
+    var i = new _no_name_provided__93($context);
     return function (p1) {
       i.invoke_houul8_k$(p1);
       return Unit_getInstance();
@@ -29423,32 +32550,32 @@ exports.debug = debug; // for test
   }
   var jsonFormat;
   var accessTypeNames;
-  function Companion_20() {
-    Companion_instance_19 = this;
+  function Companion_25() {
+    Companion_instance_24 = this;
   }
-  Companion_20.$metadata$ = {
+  Companion_25.$metadata$ = {
     simpleName: 'Companion',
     kind: 'object',
     interfaces: []
   };
-  var Companion_instance_19;
-  function Companion_getInstance_19() {
-    if (Companion_instance_19 == null)
-      new Companion_20();
-    return Companion_instance_19;
+  var Companion_instance_24;
+  function Companion_getInstance_24() {
+    if (Companion_instance_24 == null)
+      new Companion_25();
+    return Companion_instance_24;
   }
-  function $serializer_11() {
-    $serializer_instance_11 = this;
+  function $serializer_12() {
+    $serializer_instance_12 = this;
     var tmp0_serialDesc = new PluginGeneratedSerialDescriptor('action.RepositoryGroup', this, 3);
     tmp0_serialDesc.addElement_5xhc52_k$('description', false);
     tmp0_serialDesc.addElement_5xhc52_k$('teams', false);
     tmp0_serialDesc.addElement_5xhc52_k$('repos', false);
-    this._descriptor_38 = tmp0_serialDesc;
+    this._descriptor_43 = tmp0_serialDesc;
   }
-  $serializer_11.prototype._get_descriptor__0_k$ = function () {
-    return this._descriptor_38;
+  $serializer_12.prototype._get_descriptor__0_k$ = function () {
+    return this._descriptor_43;
   };
-  $serializer_11.prototype.childSerializers_0_k$ = function () {
+  $serializer_12.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
     $l$block_1: {
       var tmp0_arrayOf_0 = [StringSerializer_getInstance(), new LinkedHashMapSerializer(StringSerializer_getInstance(), StringSerializer_getInstance()), new LinkedHashSetSerializer(StringSerializer_getInstance())];
@@ -29467,8 +32594,8 @@ exports.debug = debug; // for test
     }
     return tmp$ret$2;
   };
-  $serializer_11.prototype.deserialize_u9oizh_k$ = function (decoder) {
-    var tmp0_desc = this._descriptor_38;
+  $serializer_12.prototype.deserialize_u9oizh_k$ = function (decoder) {
+    var tmp0_desc = this._descriptor_43;
     var tmp1_flag = true;
     var tmp2_index = 0;
     var tmp3_bitMask0 = 0;
@@ -29508,20 +32635,31 @@ exports.debug = debug; // for test
     tmp7_input.endStructure_g940c0_k$(tmp0_desc);
     return RepositoryGroup_init_$Create$(tmp3_bitMask0, tmp4_local0, tmp5_local1, tmp6_local2, null);
   };
-  $serializer_11.$metadata$ = {
+  $serializer_12.prototype.serialize_42dkmu_k$ = function (encoder, value) {
+    var tmp0_desc = this._descriptor_43;
+    var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 0, value._description);
+    tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 1, new LinkedHashMapSerializer(StringSerializer_getInstance(), StringSerializer_getInstance()), value._teams);
+    tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 2, new LinkedHashSetSerializer(StringSerializer_getInstance()), value._repos);
+    tmp1_output.endStructure_g940c0_k$(tmp0_desc);
+  };
+  $serializer_12.prototype.serialize_whawnb_k$ = function (encoder, value) {
+    return this.serialize_42dkmu_k$(encoder, value instanceof RepositoryGroup ? value : THROW_CCE());
+  };
+  $serializer_12.$metadata$ = {
     simpleName: '$serializer',
     kind: 'object',
     interfaces: [GeneratedSerializer]
   };
-  var $serializer_instance_11;
-  function $serializer_getInstance_11() {
-    if ($serializer_instance_11 == null)
-      new $serializer_11();
-    return $serializer_instance_11;
+  var $serializer_instance_12;
+  function $serializer_getInstance_12() {
+    if ($serializer_instance_12 == null)
+      new $serializer_12();
+    return $serializer_instance_12;
   }
   function RepositoryGroup_init_$Init$(seen1, description, teams, repos, serializationConstructorMarker, $this) {
     if (!(7 === (7 & seen1)))
-      throwMissingFieldException(seen1, 7, $serializer_getInstance_11()._descriptor_38);
+      throwMissingFieldException(seen1, 7, $serializer_getInstance_12()._descriptor_43);
     $this._description = description;
     $this._teams = teams;
     $this._repos = repos;
@@ -29531,7 +32669,7 @@ exports.debug = debug; // for test
     return RepositoryGroup_init_$Init$(seen1, description, teams, repos, serializationConstructorMarker, Object.create(RepositoryGroup.prototype));
   }
   function RepositoryGroup(description, teams, repos) {
-    Companion_getInstance_19();
+    Companion_getInstance_24();
     this._description = description;
     this._teams = teams;
     this._repos = repos;
@@ -29565,7 +32703,7 @@ exports.debug = debug; // for test
     simpleName: 'RepositoryGroup',
     kind: 'class',
     interfaces: [],
-    associatedObjects: {0: $serializer_getInstance_11}
+    associatedObjects: {0: $serializer_getInstance_12}
   };
   function readAccessConfigFile(filename, $cont) {
     var tmp = new $readAccessConfigFileCOROUTINE$0(filename, $cont);
@@ -29730,23 +32868,23 @@ exports.debug = debug; // for test
     }
     return tmp$ret$10;
   }
-  function _no_name_provided__94() {
+  function _no_name_provided__95() {
   }
-  _no_name_provided__94.prototype.invoke_rrujww_k$ = function ($this$Json) {
+  _no_name_provided__95.prototype.invoke_rrujww_k$ = function ($this$Json) {
     $this$Json._ignoreUnknownKeys = true;
   };
-  _no_name_provided__94.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__95.prototype.invoke_20e8_k$ = function (p1) {
     this.invoke_rrujww_k$(p1 instanceof JsonBuilder ? p1 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__94.$metadata$ = {
+  _no_name_provided__95.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__95($safe_2_2) {
+  function _no_name_provided__96($safe_2_2) {
     this._$safe_2_2 = $safe_2_2;
   }
-  _no_name_provided__95.prototype.invoke_p2ze0y_k$ = function (ex, data) {
+  _no_name_provided__96.prototype.invoke_p2ze0y_k$ = function (ex, data) {
     if (!(ex == null)) {
       var tmp$ret$1;
       $l$block_0: {
@@ -29784,12 +32922,12 @@ exports.debug = debug; // for test
       }
     }
   };
-  _no_name_provided__95.prototype.invoke_osx4an_k$ = function (p1, p2) {
+  _no_name_provided__96.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (p1 == null ? true : p1 instanceof Error) ? p1 : THROW_CCE();
     this.invoke_p2ze0y_k$(tmp, (p2 == null ? true : typeof p2 === 'string') ? p2 : THROW_CCE());
     return Unit_getInstance();
   };
-  _no_name_provided__95.$metadata$ = {
+  _no_name_provided__96.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -29853,14 +32991,14 @@ exports.debug = debug; // for test
     interfaces: []
   };
   function _no_name_provided_$factory_84() {
-    var i = new _no_name_provided__94();
+    var i = new _no_name_provided__95();
     return function (p1) {
       i.invoke_rrujww_k$(p1);
       return Unit_getInstance();
     };
   }
   function _no_name_provided_$factory_85($safe_2_2) {
-    var i = new _no_name_provided__95($safe_2_2);
+    var i = new _no_name_provided__96($safe_2_2);
     return function (p1, p2) {
       i.invoke_p2ze0y_k$(p1, p2);
       return Unit_getInstance();
@@ -29869,9 +33007,9 @@ exports.debug = debug; // for test
   function composeMessage($this, parts) {
     return joinToString$default(parts, ': ', null, null, 0, null, _no_name_provided_$factory_86(), 30, null);
   }
-  function _no_name_provided__96() {
+  function _no_name_provided__97() {
   }
-  _no_name_provided__96.prototype.invoke_ha5g5e_k$ = function (it) {
+  _no_name_provided__97.prototype.invoke_ha5g5e_k$ = function (it) {
     var tmp0_subject = it;
     var tmp;
     if (tmp0_subject instanceof Repository) {
@@ -29907,10 +33045,10 @@ exports.debug = debug; // for test
     }
     return tmp;
   };
-  _no_name_provided__96.prototype.invoke_20e8_k$ = function (p1) {
+  _no_name_provided__97.prototype.invoke_20e8_k$ = function (p1) {
     return this.invoke_ha5g5e_k$(isObject(p1) ? p1 : THROW_CCE());
   };
-  _no_name_provided__96.$metadata$ = {
+  _no_name_provided__97.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
@@ -29941,7 +33079,7 @@ exports.debug = debug; // for test
     return GithubMessages_instance;
   }
   function _no_name_provided_$factory_86() {
-    var i = new _no_name_provided__96();
+    var i = new _no_name_provided__97();
     return function (p1) {
       return i.invoke_ha5g5e_k$(p1);
     };
@@ -30016,21 +33154,21 @@ exports.debug = debug; // for test
   function syncRepoAccess(orgTeams, repo, repoTeams, mainTeam, repoAccessConfig) {
     return sequence(_no_name_provided_$factory_88(repoTeams, mainTeam, repoAccessConfig, orgTeams, repo, null));
   }
-  function _no_name_provided__97($collector, resultContinuation) {
+  function _no_name_provided__98($collector, resultContinuation) {
     this._$collector = $collector;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__97.prototype.invoke_velxtx_k$ = function (value, $cont) {
+  _no_name_provided__98.prototype.invoke_velxtx_k$ = function (value, $cont) {
     var tmp = this.create_8jh7qi_k$(value, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__97.prototype.invoke_20e8_k$ = function (p1, $cont) {
+  _no_name_provided__98.prototype.invoke_20e8_k$ = function (p1, $cont) {
     this.invoke_velxtx_k$(p1 instanceof Repository ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__97.prototype.doResume_0_k$ = function () {
+  _no_name_provided__98.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -30078,19 +33216,19 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  _no_name_provided__97.prototype.create_8jh7qi_k$ = function (value, completion) {
-    var i = new _no_name_provided__97(this._$collector, completion);
+  _no_name_provided__98.prototype.create_8jh7qi_k$ = function (value, completion) {
+    var i = new _no_name_provided__98(this._$collector, completion);
     i._value_15 = value;
     return i;
   };
-  _no_name_provided__97.$metadata$ = {
+  _no_name_provided__98.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [1]
   };
   function $collect_2_2_2COROUTINE$1(_this_, collector, resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
-    this.__this__7 = _this_;
+    this.__this__10 = _this_;
     this._collector_2 = collector;
   }
   $collect_2_2_2COROUTINE$1.prototype.doResume_0_k$ = function () {
@@ -30103,7 +33241,7 @@ exports.debug = debug; // for test
             this._exceptionState = 2;
             this._state_1 = 1;
             var tmp_0 = _no_name_provided_$factory_89(this._collector_2, null);
-            suspendResult = this.__this__7._$tmp1_filter_0.collect_l0hod5_k$(new sam$kotlinx_coroutines_flow_FlowCollector$0_0(tmp_0), this);
+            suspendResult = this.__this__10._$tmp1_filter_0.collect_l0hod5_k$(new sam$kotlinx_coroutines_flow_FlowCollector$0_0(tmp_0), this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
             }
@@ -30128,21 +33266,21 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__98($collector, resultContinuation) {
+  function _no_name_provided__99($collector, resultContinuation) {
     this._$collector_0 = $collector;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__98.prototype.invoke_velxtx_k$ = function (value, $cont) {
+  _no_name_provided__99.prototype.invoke_velxtx_k$ = function (value, $cont) {
     var tmp = this.create_8jh7qi_k$(value, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__98.prototype.invoke_20e8_k$ = function (p1, $cont) {
+  _no_name_provided__99.prototype.invoke_20e8_k$ = function (p1, $cont) {
     this.invoke_velxtx_k$(p1 instanceof Repository ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__98.prototype.doResume_0_k$ = function () {
+  _no_name_provided__99.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -30190,19 +33328,19 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  _no_name_provided__98.prototype.create_8jh7qi_k$ = function (value, completion) {
-    var i = new _no_name_provided__98(this._$collector_0, completion);
+  _no_name_provided__99.prototype.create_8jh7qi_k$ = function (value, completion) {
+    var i = new _no_name_provided__99(this._$collector_0, completion);
     i._value_16 = value;
     return i;
   };
-  _no_name_provided__98.$metadata$ = {
+  _no_name_provided__99.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [1]
   };
   function $collect_2_2_2COROUTINE$2(_this_, collector, resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
-    this.__this__8 = _this_;
+    this.__this__11 = _this_;
     this._collector_3 = collector;
   }
   $collect_2_2_2COROUTINE$2.prototype.doResume_0_k$ = function () {
@@ -30215,7 +33353,7 @@ exports.debug = debug; // for test
             this._exceptionState = 2;
             this._state_1 = 1;
             var tmp_0 = _no_name_provided_$factory_90(this._collector_3, null);
-            suspendResult = this.__this__8._$tmp2_filterNot_0.collect_l0hod5_k$(new sam$kotlinx_coroutines_flow_FlowCollector$0_0(tmp_0), this);
+            suspendResult = this.__this__11._$tmp2_filterNot_0.collect_l0hod5_k$(new sam$kotlinx_coroutines_flow_FlowCollector$0_0(tmp_0), this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
             }
@@ -30280,33 +33418,34 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: [Flow]
   };
-  function _no_name_provided__99($seenRepos, $resolvedAccessConfig, $github, $teams, $mainTeam, $errorsSeen, resultContinuation) {
+  function _no_name_provided__100($seenRepos, $resolvedAccessConfig, $github, $teams, $mainTeam, $org, $errorsSeen, resultContinuation) {
     this._$seenRepos = $seenRepos;
     this._$resolvedAccessConfig = $resolvedAccessConfig;
     this._$github = $github;
     this._$teams = $teams;
     this._$mainTeam = $mainTeam;
+    this._$org = $org;
     this._$errorsSeen = $errorsSeen;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__99.prototype.invoke_velxtx_k$ = function (repo, $cont) {
+  _no_name_provided__100.prototype.invoke_velxtx_k$ = function (repo, $cont) {
     var tmp = this.create_8jh7qi_k$(repo, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__99.prototype.invoke_20e8_k$ = function (p1, $cont) {
+  _no_name_provided__100.prototype.invoke_20e8_k$ = function (p1, $cont) {
     this.invoke_velxtx_k$(p1 instanceof Repository ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__99.prototype.doResume_0_k$ = function () {
+  _no_name_provided__100.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
         var tmp = this._state_1;
         switch (tmp) {
           case 0:
-            this._exceptionState = 4;
+            this._exceptionState = 9;
             var tmp_0 = this;
             tmp_0._tmp0_plusAssign_00 = this._repo._name_4;
             this._$seenRepos.add_2bq_k$(this._tmp0_plusAssign_00);
@@ -30317,7 +33456,7 @@ exports.debug = debug; // for test
               return Unit_getInstance();
             }
             GithubMessages_getInstance().debug_xlqz3p_k$([this._repo, '' + 'accessConfig=' + this._repoAccessConfig1]);
-            this._exceptionState = 2;
+            this._exceptionState = 7;
             this._state_1 = 1;
             var tmp_1 = this._$github.getRepoTeams$default_1efauv_k$(this._repo, 0, 2, null);
             suspendResult = toList$default(tmp_1, null, 1, null, this);
@@ -30326,31 +33465,76 @@ exports.debug = debug; // for test
             }
             continue $sm;
           case 1:
-            var repoTeams = suspendResult;
-            var tmp0_iterator = syncRepoAccess(this._$teams, this._repo, repoTeams, this._$mainTeam, this._repoAccessConfig1).iterator_0_k$();
-            while (tmp0_iterator.hasNext_0_k$()) {
-              var command = tmp0_iterator.next_0_k$();
-              var tmp1_subject = command;
-              if (tmp1_subject instanceof RemoveTeam)
-                GithubMessages_getInstance().warning_xlqz3p_k$([this._repo, command._team, 'TODO: Revoking team access from repo']);
-              else {
-                if (tmp1_subject instanceof SetTeamPermission)
-                  GithubMessages_getInstance().warning_xlqz3p_k$([this._repo, command._team_0, '' + 'TODO: Setting access to ' + command._accessType]);
-                else {
+            this._repoTeams2 = suspendResult;
+            this._tmp0_iterator3 = syncRepoAccess(this._$teams, this._repo, this._repoTeams2, this._$mainTeam, this._repoAccessConfig1).iterator_0_k$();
+            this._state_1 = 2;
+            continue $sm;
+          case 2:
+            if (!this._tmp0_iterator3.hasNext_0_k$()) {
+              this._state_1 = 6;
+              continue $sm;
+            }
+            this._command4 = this._tmp0_iterator3.next_0_k$();
+            this._tmp1_subject5 = this._command4;
+            var tmp_2 = this._tmp1_subject5;
+            if (tmp_2 instanceof RemoveTeam) {
+              GithubMessages_getInstance().info_xlqz3p_k$([this._repo, this._command4._team, 'Removing permission']);
+              this._state_1 = 4;
+              suspendResult = this._$github.deleteRepoTeamPermission_18s8ml_k$(this._$org, this._command4._team, this._repo, this);
+              if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
+                return suspendResult;
+              }continue $sm;
+            } else {
+              {
+                var tmp_3 = this._tmp1_subject5;
+                if (tmp_3 instanceof SetTeamPermission) {
+                  GithubMessages_getInstance().info_xlqz3p_k$([this._repo, this._command4._team_0, '' + 'Updating permission to ' + this._command4._accessType]);
+                  this._state_1 = 3;
+                  var tmp2_subject = this._command4._accessType;
+                  var tmp_4;
+                  if (tmp2_subject.equals(AccessType_PULL_getInstance())) {
+                    tmp_4 = 'pull';
+                  } else if (tmp2_subject.equals(AccessType_PUSH_getInstance())) {
+                    tmp_4 = 'push';
+                  } else if (tmp2_subject.equals(AccessType_ADMIN_getInstance())) {
+                    tmp_4 = 'admin';
+                  } else {
+                    noWhenBranchMatchedException();
+                  }
+                  suspendResult = this._$github.updateRepoTeamPermission_h2nyfo_k$(this._$org, this._command4._team_0, this._repo, tmp_4, this);
+                  if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
+                    return suspendResult;
+                  }continue $sm;
+                } else {
+                  {
+                    this._state_1 = 5;
+                    continue $sm;
+                  }
                 }
               }
             }
 
-            this._exceptionState = 4;
-            this._state_1 = 3;
+            break;
+          case 3:
+            this._state_1 = 5;
             continue $sm;
-          case 2:
-            this._exceptionState = 4;
-            var tmp_2 = this._exception_0;
-            if (tmp_2 instanceof Error) {
+          case 4:
+            this._state_1 = 5;
+            continue $sm;
+          case 5:
+            this._state_1 = 2;
+            continue $sm;
+          case 6:
+            this._exceptionState = 9;
+            this._state_1 = 8;
+            continue $sm;
+          case 7:
+            this._exceptionState = 9;
+            var tmp_5 = this._exception_0;
+            if (tmp_5 instanceof Error) {
               var ex = this._exception_0;
               invoke$contributeError(this._$errorsSeen, [this._repo, ex.toString()]);
-              this._state_1 = 3;
+              this._state_1 = 8;
               continue $sm;
             } else {
               {
@@ -30359,14 +33543,14 @@ exports.debug = debug; // for test
             }
 
             break;
-          case 3:
-            this._exceptionState = 4;
+          case 8:
+            this._exceptionState = 9;
             return Unit_getInstance();
-          case 4:
+          case 9:
             throw this._exception_0;
         }
       } catch ($p) {
-        if (this._exceptionState === 4) {
+        if (this._exceptionState === 9) {
           throw $p;
         } else {
           this._state_1 = this._exceptionState;
@@ -30375,12 +33559,12 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  _no_name_provided__99.prototype.create_8jh7qi_k$ = function (repo, completion) {
-    var i = new _no_name_provided__99(this._$seenRepos, this._$resolvedAccessConfig, this._$github, this._$teams, this._$mainTeam, this._$errorsSeen, completion);
+  _no_name_provided__100.prototype.create_8jh7qi_k$ = function (repo, completion) {
+    var i = new _no_name_provided__100(this._$seenRepos, this._$resolvedAccessConfig, this._$github, this._$teams, this._$mainTeam, this._$org, this._$errorsSeen, completion);
     i._repo = repo;
     return i;
   };
-  _no_name_provided__99.$metadata$ = {
+  _no_name_provided__100.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [1]
@@ -30396,23 +33580,23 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: [FlowCollector]
   };
-  function _no_name_provided__100($orgName, $mainTeamName, $accessConfig, resultContinuation) {
+  function _no_name_provided__101($orgName, $mainTeamName, $accessConfig, resultContinuation) {
     this._$orgName = $orgName;
     this._$mainTeamName = $mainTeamName;
     this._$accessConfig = $accessConfig;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__100.prototype.invoke_8fpe5e_k$ = function (github, $cont) {
+  _no_name_provided__101.prototype.invoke_8fpe5e_k$ = function (github, $cont) {
     var tmp = this.create_zf46gz_k$(github, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__100.prototype.invoke_20e8_k$ = function (p1, $cont) {
+  _no_name_provided__101.prototype.invoke_20e8_k$ = function (p1, $cont) {
     this.invoke_8fpe5e_k$(p1 instanceof Github ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__100.prototype.doResume_0_k$ = function () {
+  _no_name_provided__101.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -30562,7 +33746,7 @@ exports.debug = debug; // for test
             var tmp1_filter_0 = this._github.getOrgTeamRepos$default_9275h3_k$(this._org0, this._mainTeam2, 0, 4, null);
             tmp_11._tmp2_filterNot_08 = new _no_name_provided__1_1_1(tmp1_filter_0);
             var tmp_12 = new _no_name_provided__1_1_1_0(this._tmp2_filterNot_08);
-            var tmp_13 = _no_name_provided_$factory_91(this._seenRepos6, this._resolvedAccessConfig5, this._github, this._teams1, this._mainTeam2, this._errorsSeen7, null);
+            var tmp_13 = _no_name_provided_$factory_91(this._seenRepos6, this._resolvedAccessConfig5, this._github, this._teams1, this._mainTeam2, this._org0, this._errorsSeen7, null);
             suspendResult = tmp_12.collect_l0hod5_k$(new sam$kotlinx_coroutines_flow_FlowCollector$0_0(tmp_13), this);
             if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
               return suspendResult;
@@ -30594,30 +33778,30 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  _no_name_provided__100.prototype.create_zf46gz_k$ = function (github, completion) {
-    var i = new _no_name_provided__100(this._$orgName, this._$mainTeamName, this._$accessConfig, completion);
+  _no_name_provided__101.prototype.create_zf46gz_k$ = function (github, completion) {
+    var i = new _no_name_provided__101(this._$orgName, this._$mainTeamName, this._$accessConfig, completion);
     i._github = github;
     return i;
   };
-  _no_name_provided__100.$metadata$ = {
+  _no_name_provided__101.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [1]
   };
-  function _no_name_provided__101(resultContinuation) {
+  function _no_name_provided__102(resultContinuation) {
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__101.prototype.invoke_2i3g7c_k$ = function ($this$runAction, $cont) {
+  _no_name_provided__102.prototype.invoke_2i3g7c_k$ = function ($this$runAction, $cont) {
     var tmp = this.create_y6imfn_k$($this$runAction, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__101.prototype.invoke_20e8_k$ = function (p1, $cont) {
+  _no_name_provided__102.prototype.invoke_20e8_k$ = function (p1, $cont) {
     this.invoke_2i3g7c_k$((!(p1 == null) ? isInterface(p1, CoroutineScope) : false) ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__101.prototype.doResume_0_k$ = function () {
+  _no_name_provided__102.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -30661,17 +33845,17 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  _no_name_provided__101.prototype.create_y6imfn_k$ = function ($this$runAction, completion) {
-    var i = new _no_name_provided__101(completion);
+  _no_name_provided__102.prototype.create_y6imfn_k$ = function ($this$runAction, completion) {
+    var i = new _no_name_provided__102(completion);
     i._$this$runAction = $this$runAction;
     return i;
   };
-  _no_name_provided__101.$metadata$ = {
+  _no_name_provided__102.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [1]
   };
-  function _no_name_provided__102($repoTeams, $mainTeam, $repoAccessConfig, $orgTeams, $repo, resultContinuation) {
+  function _no_name_provided__103($repoTeams, $mainTeam, $repoAccessConfig, $orgTeams, $repo, resultContinuation) {
     this._$repoTeams = $repoTeams;
     this._$mainTeam_0 = $mainTeam;
     this._$repoAccessConfig = $repoAccessConfig;
@@ -30679,17 +33863,17 @@ exports.debug = debug; // for test
     this._$repo = $repo;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__102.prototype.invoke_ypbpdl_k$ = function ($this$sequence, $cont) {
+  _no_name_provided__103.prototype.invoke_ypbpdl_k$ = function ($this$sequence, $cont) {
     var tmp = this.create_bll82m_k$($this$sequence, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__102.prototype.invoke_20e8_k$ = function (p1, $cont) {
+  _no_name_provided__103.prototype.invoke_20e8_k$ = function (p1, $cont) {
     this.invoke_ypbpdl_k$(p1 instanceof SequenceScope ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__102.prototype.doResume_0_k$ = function () {
+  _no_name_provided__103.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -30805,18 +33989,18 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  _no_name_provided__102.prototype.create_bll82m_k$ = function ($this$sequence, completion) {
-    var i = new _no_name_provided__102(this._$repoTeams, this._$mainTeam_0, this._$repoAccessConfig, this._$orgTeams, this._$repo, completion);
+  _no_name_provided__103.prototype.create_bll82m_k$ = function ($this$sequence, completion) {
+    var i = new _no_name_provided__103(this._$repoTeams, this._$mainTeam_0, this._$repoAccessConfig, this._$orgTeams, this._$repo, completion);
     i._$this$sequence = $this$sequence;
     return i;
   };
-  _no_name_provided__102.$metadata$ = {
+  _no_name_provided__103.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [1]
   };
   function _no_name_provided_$factory_87(resultContinuation) {
-    var i = new _no_name_provided__101(resultContinuation);
+    var i = new _no_name_provided__102(resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_2i3g7c_k$(p1, $cont);
     };
@@ -30824,7 +34008,7 @@ exports.debug = debug; // for test
     return l;
   }
   function _no_name_provided_$factory_88($repoTeams, $mainTeam, $repoAccessConfig, $orgTeams, $repo, resultContinuation) {
-    var i = new _no_name_provided__102($repoTeams, $mainTeam, $repoAccessConfig, $orgTeams, $repo, resultContinuation);
+    var i = new _no_name_provided__103($repoTeams, $mainTeam, $repoAccessConfig, $orgTeams, $repo, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_ypbpdl_k$(p1, $cont);
     };
@@ -30832,14 +34016,6 @@ exports.debug = debug; // for test
     return l;
   }
   function _no_name_provided_$factory_89($collector, resultContinuation) {
-    var i = new _no_name_provided__97($collector, resultContinuation);
-    var l = function (p1, $cont) {
-      return i.invoke_velxtx_k$(p1, $cont);
-    };
-    l.$arity = 1;
-    return l;
-  }
-  function _no_name_provided_$factory_90($collector, resultContinuation) {
     var i = new _no_name_provided__98($collector, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_velxtx_k$(p1, $cont);
@@ -30847,8 +34023,16 @@ exports.debug = debug; // for test
     l.$arity = 1;
     return l;
   }
-  function _no_name_provided_$factory_91($seenRepos, $resolvedAccessConfig, $github, $teams, $mainTeam, $errorsSeen, resultContinuation) {
-    var i = new _no_name_provided__99($seenRepos, $resolvedAccessConfig, $github, $teams, $mainTeam, $errorsSeen, resultContinuation);
+  function _no_name_provided_$factory_90($collector, resultContinuation) {
+    var i = new _no_name_provided__99($collector, resultContinuation);
+    var l = function (p1, $cont) {
+      return i.invoke_velxtx_k$(p1, $cont);
+    };
+    l.$arity = 1;
+    return l;
+  }
+  function _no_name_provided_$factory_91($seenRepos, $resolvedAccessConfig, $github, $teams, $mainTeam, $org, $errorsSeen, resultContinuation) {
+    var i = new _no_name_provided__100($seenRepos, $resolvedAccessConfig, $github, $teams, $mainTeam, $org, $errorsSeen, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_velxtx_k$(p1, $cont);
     };
@@ -30856,7 +34040,7 @@ exports.debug = debug; // for test
     return l;
   }
   function _no_name_provided_$factory_92($orgName, $mainTeamName, $accessConfig, resultContinuation) {
-    var i = new _no_name_provided__100($orgName, $mainTeamName, $accessConfig, resultContinuation);
+    var i = new _no_name_provided__101($orgName, $mainTeamName, $accessConfig, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_8fpe5e_k$(p1, $cont);
     };
@@ -31005,38 +34189,9 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: [Comparator]
   };
-  function _no_name_provided__103() {
-  }
-  _no_name_provided__103.prototype.invoke_yigfs0_k$ = function (a, b) {
-    var tmp$ret$2;
-    $l$block_1: {
-      var tmp$ret$0;
-      $l$block: {
-        tmp$ret$0 = a._get_key__0_k$();
-        break $l$block;
-      }
-      var tmp = tmp$ret$0;
-      var tmp$ret$1;
-      $l$block_0: {
-        tmp$ret$1 = b._get_key__0_k$();
-        break $l$block_0;
-      }
-      tmp$ret$2 = compareValues(tmp, tmp$ret$1);
-      break $l$block_1;
-    }
-    return tmp$ret$2;
-  };
-  _no_name_provided__103.prototype.invoke_osx4an_k$ = function (p1, p2) {
-    var tmp = (!(p1 == null) ? isInterface(p1, Entry) : false) ? p1 : THROW_CCE();
-    return this.invoke_yigfs0_k$(tmp, (!(p2 == null) ? isInterface(p2, Entry) : false) ? p2 : THROW_CCE());
-  };
-  _no_name_provided__103.$metadata$ = {
-    kind: 'class',
-    interfaces: []
-  };
   function _no_name_provided__104() {
   }
-  _no_name_provided__104.prototype.invoke_1lnc3k_k$ = function (a, b) {
+  _no_name_provided__104.prototype.invoke_yigfs0_k$ = function (a, b) {
     var tmp$ret$2;
     $l$block_1: {
       var tmp$ret$0;
@@ -31057,28 +34212,57 @@ exports.debug = debug; // for test
   };
   _no_name_provided__104.prototype.invoke_osx4an_k$ = function (p1, p2) {
     var tmp = (!(p1 == null) ? isInterface(p1, Entry) : false) ? p1 : THROW_CCE();
-    return this.invoke_1lnc3k_k$(tmp, (!(p2 == null) ? isInterface(p2, Entry) : false) ? p2 : THROW_CCE());
+    return this.invoke_yigfs0_k$(tmp, (!(p2 == null) ? isInterface(p2, Entry) : false) ? p2 : THROW_CCE());
   };
   _no_name_provided__104.$metadata$ = {
     kind: 'class',
     interfaces: []
   };
-  function _no_name_provided__105($left, $right, resultContinuation) {
+  function _no_name_provided__105() {
+  }
+  _no_name_provided__105.prototype.invoke_1lnc3k_k$ = function (a, b) {
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp$ret$0;
+      $l$block: {
+        tmp$ret$0 = a._get_key__0_k$();
+        break $l$block;
+      }
+      var tmp = tmp$ret$0;
+      var tmp$ret$1;
+      $l$block_0: {
+        tmp$ret$1 = b._get_key__0_k$();
+        break $l$block_0;
+      }
+      tmp$ret$2 = compareValues(tmp, tmp$ret$1);
+      break $l$block_1;
+    }
+    return tmp$ret$2;
+  };
+  _no_name_provided__105.prototype.invoke_osx4an_k$ = function (p1, p2) {
+    var tmp = (!(p1 == null) ? isInterface(p1, Entry) : false) ? p1 : THROW_CCE();
+    return this.invoke_1lnc3k_k$(tmp, (!(p2 == null) ? isInterface(p2, Entry) : false) ? p2 : THROW_CCE());
+  };
+  _no_name_provided__105.$metadata$ = {
+    kind: 'class',
+    interfaces: []
+  };
+  function _no_name_provided__106($left, $right, resultContinuation) {
     this._$left = $left;
     this._$right = $right;
     CoroutineImpl_0.call(this, resultContinuation);
   }
-  _no_name_provided__105.prototype.invoke_u3xax9_k$ = function ($this$sequence, $cont) {
+  _no_name_provided__106.prototype.invoke_u3xax9_k$ = function ($this$sequence, $cont) {
     var tmp = this.create_n5izag_k$($this$sequence, $cont);
     tmp._result_1 = Unit_getInstance();
     tmp._exception_0 = null;
     return tmp.doResume_0_k$();
   };
-  _no_name_provided__105.prototype.invoke_20e8_k$ = function (p1, $cont) {
+  _no_name_provided__106.prototype.invoke_20e8_k$ = function (p1, $cont) {
     this.invoke_u3xax9_k$(p1 instanceof SequenceScope ? p1 : THROW_CCE(), $cont);
     return Unit_getInstance();
   };
-  _no_name_provided__105.prototype.doResume_0_k$ = function () {
+  _no_name_provided__106.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
     $sm: do
       try {
@@ -31198,18 +34382,18 @@ exports.debug = debug; // for test
       }
      while (true);
   };
-  _no_name_provided__105.prototype.create_n5izag_k$ = function ($this$sequence, completion) {
-    var i = new _no_name_provided__105(this._$left, this._$right, completion);
+  _no_name_provided__106.prototype.create_n5izag_k$ = function ($this$sequence, completion) {
+    var i = new _no_name_provided__106(this._$left, this._$right, completion);
     i._$this$sequence_0 = $this$sequence;
     return i;
   };
-  _no_name_provided__105.$metadata$ = {
+  _no_name_provided__106.$metadata$ = {
     kind: 'class',
     interfaces: [],
     suspendArity: [1]
   };
   function _no_name_provided_$factory_93($left, $right, resultContinuation) {
-    var i = new _no_name_provided__105($left, $right, resultContinuation);
+    var i = new _no_name_provided__106($left, $right, resultContinuation);
     var l = function (p1, $cont) {
       return i.invoke_u3xax9_k$(p1, $cont);
     };
@@ -31217,13 +34401,13 @@ exports.debug = debug; // for test
     return l;
   }
   function _no_name_provided_$factory_94() {
-    var i = new _no_name_provided__103();
+    var i = new _no_name_provided__104();
     return function (p1, p2) {
       return i.invoke_yigfs0_k$(p1, p2);
     };
   }
   function _no_name_provided_$factory_95() {
-    var i = new _no_name_provided__104();
+    var i = new _no_name_provided__105();
     return function (p1, p2) {
       return i.invoke_1lnc3k_k$(p1, p2);
     };
@@ -31315,6 +34499,11 @@ exports.debug = debug; // for test
   AbstractDecoder.prototype.decodeSerializableValue_f8566k_k$ = Decoder.prototype.decodeSerializableValue_f8566k_k$;
   AbstractDecoder.prototype.decodeSequentially_0_k$ = CompositeDecoder.prototype.decodeSequentially_0_k$;
   AbstractDecoder.prototype.decodeCollectionSize_6qhf5t_k$ = CompositeDecoder.prototype.decodeCollectionSize_6qhf5t_k$;
+  AbstractEncoder.prototype.encodeNotNullMark_sv8swh_k$ = Encoder.prototype.encodeNotNullMark_sv8swh_k$;
+  AbstractEncoder.prototype.beginCollection_5vyt7k_k$ = Encoder.prototype.beginCollection_5vyt7k_k$;
+  AbstractEncoder.prototype.encodeSerializableValue_79s409_k$ = Encoder.prototype.encodeSerializableValue_79s409_k$;
+  AbstractEncoder.prototype.encodeNullableSerializableValue_99f6e2_k$ = Encoder.prototype.encodeNullableSerializableValue_99f6e2_k$;
+  AbstractEncoder.prototype.shouldEncodeElementDefault_5vyt7k_k$ = CompositeEncoder.prototype.shouldEncodeElementDefault_5vyt7k_k$;
   ListLikeDescriptor.prototype._get_isNullable__0_k$ = SerialDescriptor.prototype._get_isNullable__0_k$;
   ListLikeDescriptor.prototype._get_isInline__0_k$ = SerialDescriptor.prototype._get_isInline__0_k$;
   ListLikeDescriptor.prototype._get_annotations__0_k$ = SerialDescriptor.prototype._get_annotations__0_k$;
@@ -31344,6 +34533,8 @@ exports.debug = debug; // for test
   ArrayClassDesc.prototype._get_annotations__0_k$ = SerialDescriptor.prototype._get_annotations__0_k$;
   PluginGeneratedSerialDescriptor.prototype._get_isNullable__0_k$ = SerialDescriptor.prototype._get_isNullable__0_k$;
   PluginGeneratedSerialDescriptor.prototype._get_isInline__0_k$ = SerialDescriptor.prototype._get_isInline__0_k$;
+  InlineClassDescriptor.prototype._get_isNullable__0_k$ = SerialDescriptor.prototype._get_isNullable__0_k$;
+  _no_name_provided__55.prototype.typeParametersSerializers_0_k$ = GeneratedSerializer.prototype.typeParametersSerializers_0_k$;
   PrimitiveSerialDescriptor_0.prototype._get_isNullable__0_k$ = SerialDescriptor.prototype._get_isNullable__0_k$;
   PrimitiveSerialDescriptor_0.prototype._get_isInline__0_k$ = SerialDescriptor.prototype._get_isInline__0_k$;
   PrimitiveSerialDescriptor_0.prototype._get_annotations__0_k$ = SerialDescriptor.prototype._get_annotations__0_k$;
@@ -31355,13 +34546,20 @@ exports.debug = debug; // for test
   NamedValueDecoder.prototype.decodeSerializableElement$default_51un9o_k$ = CompositeDecoder.prototype.decodeSerializableElement$default_51un9o_k$;
   NamedValueDecoder.prototype.decodeSequentially_0_k$ = CompositeDecoder.prototype.decodeSequentially_0_k$;
   NamedValueDecoder.prototype.decodeCollectionSize_6qhf5t_k$ = CompositeDecoder.prototype.decodeCollectionSize_6qhf5t_k$;
-  _no_name_provided__75.prototype._get_isNullable__0_k$ = SerialDescriptor.prototype._get_isNullable__0_k$;
-  _no_name_provided__75.prototype._get_isInline__0_k$ = SerialDescriptor.prototype._get_isInline__0_k$;
-  _no_name_provided__75.prototype._get_annotations__0_k$ = SerialDescriptor.prototype._get_annotations__0_k$;
+  _no_name_provided__76.prototype._get_isNullable__0_k$ = SerialDescriptor.prototype._get_isNullable__0_k$;
+  _no_name_provided__76.prototype._get_isInline__0_k$ = SerialDescriptor.prototype._get_isInline__0_k$;
+  _no_name_provided__76.prototype._get_annotations__0_k$ = SerialDescriptor.prototype._get_annotations__0_k$;
   PolymorphismValidator.prototype.contextual_4gjxmy_k$ = SerializersModuleCollector.prototype.contextual_4gjxmy_k$;
   StreamingJsonDecoder.prototype.decodeSequentially_0_k$ = CompositeDecoder.prototype.decodeSequentially_0_k$;
   StreamingJsonDecoder.prototype.decodeCollectionSize_6qhf5t_k$ = CompositeDecoder.prototype.decodeCollectionSize_6qhf5t_k$;
   StreamingJsonDecoder.prototype.decodeSerializableElement$default_51un9o_k$ = CompositeDecoder.prototype.decodeSerializableElement$default_51un9o_k$;
+  JsonDecoderForUnsignedTypes.prototype.decodeSerializableValue_f8566k_k$ = Decoder.prototype.decodeSerializableValue_f8566k_k$;
+  JsonDecoderForUnsignedTypes.prototype.decodeSerializableElement$default_51un9o_k$ = CompositeDecoder.prototype.decodeSerializableElement$default_51un9o_k$;
+  JsonDecoderForUnsignedTypes.prototype.decodeSequentially_0_k$ = CompositeDecoder.prototype.decodeSequentially_0_k$;
+  JsonDecoderForUnsignedTypes.prototype.decodeCollectionSize_6qhf5t_k$ = CompositeDecoder.prototype.decodeCollectionSize_6qhf5t_k$;
+  StreamingJsonEncoder.prototype.encodeNotNullMark_sv8swh_k$ = Encoder.prototype.encodeNotNullMark_sv8swh_k$;
+  StreamingJsonEncoder.prototype.beginCollection_5vyt7k_k$ = Encoder.prototype.beginCollection_5vyt7k_k$;
+  StreamingJsonEncoder.prototype.encodeNullableSerializableValue_99f6e2_k$ = Encoder.prototype.encodeNullableSerializableValue_99f6e2_k$;
   AbstractJsonTreeDecoder.prototype.decodeSerializableElement$default_51un9o_k$ = CompositeDecoder.prototype.decodeSerializableElement$default_51un9o_k$;
   AbstractJsonTreeDecoder.prototype.decodeSequentially_0_k$ = CompositeDecoder.prototype.decodeSequentially_0_k$;
   AbstractJsonTreeDecoder.prototype.decodeCollectionSize_6qhf5t_k$ = CompositeDecoder.prototype.decodeCollectionSize_6qhf5t_k$;
@@ -31387,6 +34585,7 @@ exports.debug = debug; // for test
   $serializer_9.prototype.typeParametersSerializers_0_k$ = GeneratedSerializer.prototype.typeParametersSerializers_0_k$;
   $serializer_10.prototype.typeParametersSerializers_0_k$ = GeneratedSerializer.prototype.typeParametersSerializers_0_k$;
   $serializer_11.prototype.typeParametersSerializers_0_k$ = GeneratedSerializer.prototype.typeParametersSerializers_0_k$;
+  $serializer_12.prototype.typeParametersSerializers_0_k$ = GeneratedSerializer.prototype.typeParametersSerializers_0_k$;
   UNDEFINED_RESULT = UNDEFINED_RESULT$init$();
   _stableSortingIsSupported = null;
   functionClasses = functionClasses$init$();
@@ -31415,10 +34614,11 @@ exports.debug = debug; // for test
   DEBUG = false;
   EMPTY_DESCRIPTOR_ARRAY = EMPTY_DESCRIPTOR_ARRAY$init$();
   EMPTY_SERIALIZER_ARRAY = EMPTY_SERIALIZER_ARRAY$init$();
-  BUILTIN_SERIALIZERS = mapOf([to(PrimitiveClasses_getInstance()._get_stringClass__0_k$(), serializer_1(StringCompanionObject_getInstance())), to(getKClass_0(Char), serializer_2(Companion_getInstance_6())), to(PrimitiveClasses_getInstance()._get_charArrayClass__0_k$(), CharArraySerializer()), to(PrimitiveClasses_getInstance()._get_doubleClass__0_k$(), serializer_3(DoubleCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_doubleArrayClass__0_k$(), DoubleArraySerializer()), to(PrimitiveClasses_getInstance()._get_floatClass__0_k$(), serializer_4(FloatCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_floatArrayClass__0_k$(), FloatArraySerializer()), to(getKClass_0(Long), serializer_5(Companion_getInstance_8())), to(PrimitiveClasses_getInstance()._get_longArrayClass__0_k$(), LongArraySerializer()), to(PrimitiveClasses_getInstance()._get_intClass__0_k$(), serializer_6(IntCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_intArrayClass__0_k$(), IntArraySerializer()), to(PrimitiveClasses_getInstance()._get_shortClass__0_k$(), serializer_7(ShortCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_shortArrayClass__0_k$(), ShortArraySerializer()), to(PrimitiveClasses_getInstance()._get_byteClass__0_k$(), serializer_8(ByteCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_byteArrayClass__0_k$(), ByteArraySerializer()), to(PrimitiveClasses_getInstance()._get_booleanClass__0_k$(), serializer_9(BooleanCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_booleanArrayClass__0_k$(), BooleanArraySerializer()), to(getKClass_0(Unit), serializer_10(Unit_getInstance()))]);
+  BUILTIN_SERIALIZERS = mapOf([to(PrimitiveClasses_getInstance()._get_stringClass__0_k$(), serializer_1(StringCompanionObject_getInstance())), to(getKClass_0(Char), serializer_2(Companion_getInstance_10())), to(PrimitiveClasses_getInstance()._get_charArrayClass__0_k$(), CharArraySerializer()), to(PrimitiveClasses_getInstance()._get_doubleClass__0_k$(), serializer_3(DoubleCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_doubleArrayClass__0_k$(), DoubleArraySerializer()), to(PrimitiveClasses_getInstance()._get_floatClass__0_k$(), serializer_4(FloatCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_floatArrayClass__0_k$(), FloatArraySerializer()), to(getKClass_0(Long), serializer_5(Companion_getInstance_12())), to(PrimitiveClasses_getInstance()._get_longArrayClass__0_k$(), LongArraySerializer()), to(PrimitiveClasses_getInstance()._get_intClass__0_k$(), serializer_6(IntCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_intArrayClass__0_k$(), IntArraySerializer()), to(PrimitiveClasses_getInstance()._get_shortClass__0_k$(), serializer_7(ShortCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_shortArrayClass__0_k$(), ShortArraySerializer()), to(PrimitiveClasses_getInstance()._get_byteClass__0_k$(), serializer_8(ByteCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_byteArrayClass__0_k$(), ByteArraySerializer()), to(PrimitiveClasses_getInstance()._get_booleanClass__0_k$(), serializer_9(BooleanCompanionObject_getInstance())), to(PrimitiveClasses_getInstance()._get_booleanArrayClass__0_k$(), BooleanArraySerializer()), to(getKClass_0(Unit), serializer_10(Unit_getInstance()))]);
   NULL = new Object();
   EmptySerializersModule = new SerialModuleImpl(emptyMap(), emptyMap(), emptyMap(), emptyMap(), emptyMap());
   JsonAlternativeNamesKey = new Key_5();
+  unsignedNumberDescriptors = setOf([serializer_11(Companion_getInstance_5())._get_descriptor__0_k$(), serializer_12(Companion_getInstance_6())._get_descriptor__0_k$(), serializer_13(Companion_getInstance_4())._get_descriptor__0_k$(), serializer_14(Companion_getInstance_7())._get_descriptor__0_k$()]);
   ESCAPE_STRINGS = ESCAPE_STRINGS$init$();
   GITHUB_WORKFLOW$delegate = ExpectedEnvironment_getInstance();
   GITHUB_RUN_ID$delegate = ExpectedEnvironment_getInstance();

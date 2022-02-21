@@ -49,10 +49,18 @@ fun main() {
                         val repoTeams = github.getRepoTeams(repo).toList()
                         for (command in syncRepoAccess(teams, repo, repoTeams, mainTeam, repoAccessConfig)) {
                             when (command) {
-                                is RepoCommand.RemoveTeam ->
-                                    GithubMessages.warning(repo, command.team, "TODO: Revoking team access from repo")
-                                is RepoCommand.SetTeamPermission ->
-                                    GithubMessages.warning(repo, command.team, "TODO: Setting access to ${command.accessType}")
+                                is RepoCommand.RemoveTeam -> {
+                                    GithubMessages.info(repo, command.team, "Removing permission")
+                                    github.deleteRepoTeamPermission(org, command.team, repo)
+                                }
+                                is RepoCommand.SetTeamPermission -> {
+                                    GithubMessages.info(repo, command.team, "Updating permission to ${command.accessType}")
+                                    github.updateRepoTeamPermission(org, command.team, repo, when (command.accessType) {
+                                        AccessType.PULL -> "pull"
+                                        AccessType.PUSH -> "push"
+                                        AccessType.ADMIN -> "admin"
+                                    })
+                                }
                             }
                         }
                     } catch (ex: Throwable) {
@@ -71,7 +79,7 @@ fun main() {
             }
 
             if (errorsSeen > 0) {
-                kotlin.error("Encountered $errorsSeen error(s), see above")
+                error("Encountered $errorsSeen error(s), see above")
             }
         }
     }

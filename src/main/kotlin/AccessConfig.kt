@@ -58,12 +58,12 @@ fun invertAccessConfig(accessConfig: AccessConfig): Map<String, RepoAccessConfig
         for (level in accessConfig) {
             for (repo in level.repos) {
                 if (!seenRepos.add(repo)) {
-                    kotlin.error("Repo \"$repo\" listed twice")
+                    error("Repo \"$repo\" listed twice")
                 }
 
                 put(repo, RepoAccessConfig(teams = level.teams.mapValues { (team, accessTypeString) ->
                     accessTypeNames[accessTypeString]
-                        ?: kotlin.error("Unrecognised access type \"$accessTypeString\" for \"$team\" in \"${level.description}\"")
+                        ?: error("Unrecognised access type \"$accessTypeString\" for \"$team\" in \"${level.description}\"")
                 }))
             }
         }
