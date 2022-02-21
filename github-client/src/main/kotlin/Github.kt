@@ -102,8 +102,8 @@ class Github(private val backend: GithubBackend, private val defaultPageSize: In
         path: String,
         pageSize: Int
     ): Flow<T> = fetchPages(deserializer, path, pageSize).transformWhile { page ->
-        if (page.isNotEmpty()) emitAll(page.asFlow())
-        page.isNotEmpty()
+        emitAll(page.asFlow())
+        page.size == pageSize
     }
 
     private fun <T> fetchCollectionViaListWithCount(

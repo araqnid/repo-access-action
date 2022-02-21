@@ -30837,7 +30837,7 @@ exports.debug = debug; // for test
   }
   function fetchCollection($this, deserializer, path, pageSize) {
     var tmp = fetchPages($this, deserializer, path, pageSize);
-    return transformWhile(tmp, _no_name_provided_$factory_72(null));
+    return transformWhile(tmp, _no_name_provided_$factory_72(pageSize, null));
   }
   function User() {
   }
@@ -31300,7 +31300,8 @@ exports.debug = debug; // for test
     interfaces: [],
     suspendArity: [1]
   };
-  function _no_name_provided__83(resultContinuation) {
+  function _no_name_provided__83($pageSize, resultContinuation) {
+    this._$pageSize_0 = $pageSize;
     CoroutineImpl_0.call(this, resultContinuation);
   }
   _no_name_provided__83.prototype.invoke_ctcsrb_k$ = function ($this$transformWhile, page, $cont) {
@@ -31320,31 +31321,20 @@ exports.debug = debug; // for test
         var tmp = this._state_1;
         switch (tmp) {
           case 0:
-            this._exceptionState = 3;
-            if (!this._page.isEmpty_0_k$()) {
-              this._state_1 = 1;
-              suspendResult = emitAll(this._$this$transformWhile, asFlow(this._page), this);
-              if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
-                return suspendResult;
-              }continue $sm;
-            } else {
-              {
-                this._state_1 = 2;
-                continue $sm;
-              }
+            this._exceptionState = 2;
+            this._state_1 = 1;
+            suspendResult = emitAll(this._$this$transformWhile, asFlow(this._page), this);
+            if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
+              return suspendResult;
             }
-
-            break;
-          case 1:
-            this._state_1 = 2;
             continue $sm;
+          case 1:
+            return this._page._get_size__0_k$() === this._$pageSize_0;
           case 2:
-            return !this._page.isEmpty_0_k$();
-          case 3:
             throw this._exception_0;
         }
       } catch ($p) {
-        if (this._exceptionState === 3) {
+        if (this._exceptionState === 2) {
           throw $p;
         } else {
           this._state_1 = this._exceptionState;
@@ -31354,7 +31344,7 @@ exports.debug = debug; // for test
      while (true);
   };
   _no_name_provided__83.prototype.create_mcormz_k$ = function ($this$transformWhile, page, completion) {
-    var i = new _no_name_provided__83(completion);
+    var i = new _no_name_provided__83(this._$pageSize_0, completion);
     i._$this$transformWhile = $this$transformWhile;
     i._page = page;
     return i;
@@ -31893,8 +31883,8 @@ exports.debug = debug; // for test
     l.$arity = 1;
     return l;
   }
-  function _no_name_provided_$factory_72(resultContinuation) {
-    var i = new _no_name_provided__83(resultContinuation);
+  function _no_name_provided_$factory_72($pageSize, resultContinuation) {
+    var i = new _no_name_provided__83($pageSize, resultContinuation);
     var l = function (p1, p2, $cont) {
       return i.invoke_ctcsrb_k$(p1, p2, $cont);
     };
