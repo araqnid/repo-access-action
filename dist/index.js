@@ -1559,11 +1559,11 @@ exports.debug = debug; // for test
 /***/ ((module, __unused_webpack_exports, __nccwpck_require__) => {
 
 (function (_, Process, Https, Http, Process_0, Filesystem, $module$_actions_core) {
-  var debug_1 = $module$_actions_core.debug;
-  var info_1 = $module$_actions_core.info;
+  var debug_0 = $module$_actions_core.debug;
+  var info_0 = $module$_actions_core.info;
   var notice_0 = $module$_actions_core.notice;
-  var warning_1 = $module$_actions_core.warning;
-  var error_3 = $module$_actions_core.error;
+  var warning_0 = $module$_actions_core.warning;
+  var error_2 = $module$_actions_core.error;
   var setFailed_0 = $module$_actions_core.setFailed;
   var getInput_1 = $module$_actions_core.getInput;
   'use strict';
@@ -28598,11 +28598,11 @@ exports.debug = debug; // for test
     kind: 'interface',
     interfaces: []
   };
-  function GithubException(path, statusCode, error_4) {
-    RuntimeException_init_$Init$_0(!(error_4._documentationUrl == null) ? '' + path + ': [HTTP ' + statusCode + '] ' + error_4._message_0 + ' (' + error_4._documentationUrl + ')' : '' + path + ': [HTTP ' + statusCode + '] ' + error_4._message_0, this);
+  function GithubException(path, statusCode, error_3) {
+    RuntimeException_init_$Init$_0(!(error_3._documentationUrl == null) ? '' + path + ': [HTTP ' + statusCode + '] ' + error_3._message_0 + ' (' + error_3._documentationUrl + ')' : '' + path + ': [HTTP ' + statusCode + '] ' + error_3._message_0, this);
     this._path_0 = path;
     this._statusCode = statusCode;
-    this._error = error_4;
+    this._error = error_3;
     captureStack(this, GithubException);
   }
   GithubException.$metadata$ = {
@@ -29866,20 +29866,8 @@ exports.debug = debug; // for test
       return Unit_getInstance();
     };
   }
-  function composeMessage(parts) {
+  function composeMessage($this, parts) {
     return joinToString$default(parts, ': ', null, null, 0, null, _no_name_provided_$factory_86(), 30, null);
-  }
-  function debug(parts) {
-    debug_1(composeMessage(parts));
-  }
-  function info(parts) {
-    info_1(composeMessage(parts));
-  }
-  function warning(parts) {
-    warning_1(composeMessage(parts));
-  }
-  function error_1(parts) {
-    error_3(composeMessage(parts));
   }
   function _no_name_provided__96() {
   }
@@ -29926,6 +29914,32 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
+  function GithubMessages() {
+    GithubMessages_instance = this;
+  }
+  GithubMessages.prototype.debug_xlqz3p_k$ = function (parts) {
+    debug_0(composeMessage(this, parts));
+  };
+  GithubMessages.prototype.info_xlqz3p_k$ = function (parts) {
+    info_0(composeMessage(this, parts));
+  };
+  GithubMessages.prototype.warning_xlqz3p_k$ = function (parts) {
+    warning_0(composeMessage(this, parts));
+  };
+  GithubMessages.prototype.error_xlqz3p_k$ = function (parts) {
+    error_2(composeMessage(this, parts));
+  };
+  GithubMessages.$metadata$ = {
+    simpleName: 'GithubMessages',
+    kind: 'object',
+    interfaces: []
+  };
+  var GithubMessages_instance;
+  function GithubMessages_getInstance() {
+    if (GithubMessages_instance == null)
+      new GithubMessages();
+    return GithubMessages_instance;
+  }
   function _no_name_provided_$factory_86() {
     var i = new _no_name_provided__96();
     return function (p1) {
@@ -30230,7 +30244,7 @@ exports.debug = debug; // for test
     errorsSeen._v = errorsSeen._v + 1 | 0;
     errorsSeen._v;
     Unit_getInstance();
-    error_1(parts.slice());
+    GithubMessages_getInstance().error_xlqz3p_k$(parts.slice());
   }
   function _no_name_provided__1_1_1($tmp1_filter_0) {
     this._$tmp1_filter_0 = $tmp1_filter_0;
@@ -30302,7 +30316,7 @@ exports.debug = debug; // for test
               invoke$contributeError(this._$errorsSeen, [this._repo, 'Team has admin access to repo, but there is no config for it']);
               return Unit_getInstance();
             }
-            debug([this._repo, '' + 'accessConfig=' + this._repoAccessConfig1]);
+            GithubMessages_getInstance().debug_xlqz3p_k$([this._repo, '' + 'accessConfig=' + this._repoAccessConfig1]);
             this._exceptionState = 2;
             this._state_1 = 1;
             var tmp_1 = this._$github.getRepoTeams$default_1efauv_k$(this._repo, 0, 2, null);
@@ -30318,10 +30332,10 @@ exports.debug = debug; // for test
               var command = tmp0_iterator.next_0_k$();
               var tmp1_subject = command;
               if (tmp1_subject instanceof RemoveTeam)
-                warning([this._repo, command._team, 'TODO: Revoking team access from repo']);
+                GithubMessages_getInstance().warning_xlqz3p_k$([this._repo, command._team, 'TODO: Revoking team access from repo']);
               else {
                 if (tmp1_subject instanceof SetTeamPermission)
-                  warning([this._repo, command._team_0, '' + 'TODO: Setting access to ' + command._accessType]);
+                  GithubMessages_getInstance().warning_xlqz3p_k$([this._repo, command._team_0, '' + 'TODO: Setting access to ' + command._accessType]);
                 else {
                 }
               }
@@ -30741,12 +30755,12 @@ exports.debug = debug; // for test
             var tmp_4 = this._single_19;
             tmp_3._team11 = (tmp_4 == null ? true : isObject(tmp_4)) ? tmp_4 : THROW_CCE();
             if (equals_1(this._wantedAccess8, AccessType_ADMIN_getInstance())) {
-              warning([this._$repo, this._team11, 'Additional team has admin access- resolve by completing transfer']);
+              GithubMessages_getInstance().warning_xlqz3p_k$([this._$repo, this._team11, 'Additional team has admin access- resolve by completing transfer']);
               this._state_1 = 4;
               continue $sm;
             } else {
               if (equals_1(this._currentAccess7, this._wantedAccess8)) {
-                info([this._$repo, this._team11, '' + this._currentAccess7 + ' permission unchanged']);
+                GithubMessages_getInstance().info_xlqz3p_k$([this._$repo, this._team11, '' + this._currentAccess7 + ' permission unchanged']);
                 this._state_1 = 4;
                 continue $sm;
               } else {

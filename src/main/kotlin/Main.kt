@@ -4,7 +4,6 @@ import actions.kotlin.getInput
 import actions.kotlin.runAction
 import github.Github
 import github.useGithub
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.filterNot
 import kotlinx.coroutines.flow.toList
@@ -19,12 +18,12 @@ fun main() {
             val org = github.getOrganization(orgName)
             val teams = github.getOrgTeams(org).toList()
             val mainTeam = teams.find { it.slug == mainTeamName } ?: teams.find { it.name == mainTeamName }
-            ?: kotlin.error("Main team \"$mainTeamName\" not found in org \"$orgName\"")
+            ?: error("Main team \"$mainTeamName\" not found in org \"$orgName\"")
 
             val resolvedAccessConfig = accessConfig.mapValues { (repoName, repoAccessConfig) ->
                 repoAccessConfig.teams.mapKeys { (teamName, _) ->
                     val team = teams.find { it.slug == teamName } ?: teams.find { it.name == teamName }
-                    ?: kotlin.error("Team \"$teamName\" for repo \"$repoName\" not found in org \"$orgName\"")
+                    ?: error("Team \"$teamName\" for repo \"$repoName\" not found in org \"$orgName\"")
                     team.slug
                 }
             }
@@ -33,7 +32,7 @@ fun main() {
             var errorsSeen = 0
             fun contributeError(vararg parts: Any) {
                 ++errorsSeen
-                error(*parts)
+                GithubMessages.error(*parts)
             }
             github.getOrgTeamRepos(org, mainTeam)
                 .filter { it.permissions.admin }
@@ -45,15 +44,15 @@ fun main() {
                         contributeError(repo, "Team has admin access to repo, but there is no config for it")
                         return@collect
                     }
-                    debug(repo, "accessConfig=$repoAccessConfig")
+                    GithubMessages.debug(repo, "accessConfig=$repoAccessConfig")
                     try {
                         val repoTeams = github.getRepoTeams(repo).toList()
                         for (command in syncRepoAccess(teams, repo, repoTeams, mainTeam, repoAccessConfig)) {
                             when (command) {
                                 is RepoCommand.RemoveTeam ->
-                                    warning(repo, command.team, "TODO: Revoking team access from repo")
+                                    GithubMessages.warning(repo, command.team, "TODO: Revoking team access from repo")
                                 is RepoCommand.SetTeamPermission ->
-                                    warning(repo, command.team, "TODO: Setting access to ${command.accessType}")
+                                    GithubMessages.warning(repo, command.team, "TODO: Setting access to ${command.accessType}")
                             }
                         }
                     } catch (ex: Throwable) {
@@ -98,9 +97,9 @@ private fun syncRepoAccess(
 
             when {
                 wantedAccess == AccessType.ADMIN ->
-                    warning(repo, team, "Additional team has admin access- resolve by completing transfer")
+                    GithubMessages.warning(repo, team, "Additional team has admin access- resolve by completing transfer")
                 currentAccess == wantedAccess ->
-                    info(repo, team, "$currentAccess permission unchanged")
+                    GithubMessages.info(repo, team, "$currentAccess permission unchanged")
                 wantedAccess == null ->
                     yield(RepoCommand.RemoveTeam(team))
                 else ->
