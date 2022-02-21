@@ -4,8 +4,15 @@ import actions.kotlin.getInput
 import actions.kotlin.runAction
 import github.Github
 import github.useGithub
+import kotlinx.coroutines.FlowPreview
+import kotlinx.coroutines.flow.Flow
+import kotlinx.coroutines.flow.FlowCollector
+import kotlinx.coroutines.flow.collect
+import kotlinx.coroutines.flow.emptyFlow
 import kotlinx.coroutines.flow.filter
 import kotlinx.coroutines.flow.filterNot
+import kotlinx.coroutines.flow.flatMapMerge
+import kotlinx.coroutines.flow.flow
 import kotlinx.coroutines.flow.toList
 
 fun main() {
@@ -36,18 +43,18 @@ fun main() {
             }
             github.getOrgTeamRepos(org, mainTeam)
                 .filter { it.permissions.admin }
-                .collect { repo ->
+                .collectConcurrently(4) { repo ->
                     seenRepos += repo.name
                     val repoAccessConfig = resolvedAccessConfig[repo.name]
                     if (repo.isArchived) {
                         if (repoAccessConfig != null) {
                             GithubMessages.warning(repo, "Archived repo is still configured")
                         }
-                        return@collect
+                        return@collectConcurrently
                     }
                     if (repoAccessConfig == null) {
                         contributeError(repo, "Team has admin access to repo, but there is no config for it")
-                        return@collect
+                        return@collectConcurrently
                     }
                     GithubMessages.debug(repo, "accessConfig=$repoAccessConfig")
                     try {
@@ -88,6 +95,15 @@ fun main() {
             }
         }
     }
+}
+
+@OptIn(FlowPreview::class)
+private suspend fun <T> Flow<T>.collectConcurrently(concurrency: Int, target: suspend (T) -> Unit) {
+    flatMapMerge(concurrency = concurrency) { item ->
+        flow<Nothing> {
+            target(item)
+        }
+    }.collect()
 }
 
 private sealed interface RepoCommand {
