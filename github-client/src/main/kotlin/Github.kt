@@ -241,7 +241,7 @@ class Github(private val backend: GithubBackend, private val defaultPageSize: In
     data class Organization(val id: Int, val name: String)
 
     @Serializable
-    data class Team(val id: Int, val name: String, val slug: String, val permission: String)
+    data class Team(val id: Int, val name: String, val slug: String, val permissions: Map<String, Boolean>? = null)
 
     @Serializable
     data class Artifact(

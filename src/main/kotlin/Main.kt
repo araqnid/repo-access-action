@@ -56,9 +56,9 @@ fun main() {
                         contributeError(repo, "Team has admin access to repo, but there is no config for it")
                         return@collectConcurrently
                     }
-                    GithubMessages.debug(repo, "accessConfig=$repoAccessConfig")
                     try {
                         val repoTeams = github.getRepoTeams(repo).toList()
+                        GithubMessages.debug(repo, "accessConfig=$repoAccessConfig repoTeams=$repoTeams")
                         for (command in syncRepoAccess(teams, repo, repoTeams, mainTeam, repoAccessConfig)) {
                             when (command) {
                                 is RepoCommand.RemoveTeam -> {
@@ -116,7 +116,9 @@ private fun syncRepoAccess(
 ): Sequence<RepoCommand> {
     return sequence {
         val currentPermissionByTeam = repoTeams.filterNot { it.slug == mainTeam.slug }
-            .associate { team -> team.slug to team.permission.toAccessType() }
+            .associate { team -> team.slug to team.toAccessType() }
+            .filterValuesNotNull()
+
         for ((teamName, currentAccess, wantedAccess) in mergeMaps(currentPermissionByTeam, repoAccessConfig)) {
             val team = orgTeams.single { it.slug == teamName }
 
@@ -129,6 +131,29 @@ private fun syncRepoAccess(
                     yield(RepoCommand.RemoveTeam(team))
                 else ->
                     yield(RepoCommand.SetTeamPermission(team, wantedAccess))
+            }
+        }
+    }
+}
+
+private val rankedAccessTypes = listOf(AccessType.ADMIN, AccessType.PUSH, AccessType.MAINTAIN, AccessType.TRIAGE, AccessType.PULL)
+
+private fun Github.Team.toAccessType(): AccessType? {
+    val populatedPermissions = permissions
+    require(populatedPermissions != null) { "Team must have permissions populated" }
+    for (accessType in rankedAccessTypes) {
+        if (populatedPermissions[accessType.githubName] == true) {
+            return accessType
+        }
+    }
+    return null
+}
+
+private fun <K : Any, V : Any> Map<K, V?>.filterValuesNotNull(): Map<K, V> {
+    return buildMap {
+        for ((key, value) in this@filterValuesNotNull) {
+            if (value != null) {
+                put(key, value)
             }
         }
     }

@@ -2055,7 +2055,7 @@ exports.debug = debug; // for test
       case 0:
         return emptyList();
       case 1:
-        return listOf(_this_[0]);
+        return listOf_0(_this_[0]);
       default:return toMutableList(_this_);
     }
   }
@@ -2344,7 +2344,7 @@ exports.debug = debug; // for test
             }
           }
 
-          tmp = listOf(tmp_0);
+          tmp = listOf_0(tmp_0);
           break;
         default:tmp = toMutableList_1(_this_);
           break;
@@ -3064,13 +3064,16 @@ exports.debug = debug; // for test
   function emptyList() {
     return EmptyList_getInstance();
   }
+  function listOf(elements) {
+    return elements.length > 0 ? asList(elements) : emptyList();
+  }
   function optimizeReadOnlyList(_this_) {
     var tmp0_subject = _this_._get_size__0_k$();
     switch (tmp0_subject) {
       case 0:
         return emptyList();
       case 1:
-        return listOf(_this_.get_ha5a7z_k$(0));
+        return listOf_0(_this_.get_ha5a7z_k$(0));
       default:return _this_;
     }
   }
@@ -7101,7 +7104,7 @@ exports.debug = debug; // for test
   function sortWith(_this_, comparator) {
     collectionsSort(_this_, comparator);
   }
-  function listOf(element) {
+  function listOf_0(element) {
     return arrayListOf([element]);
   }
   function arrayCopy_0(source, destination, destinationOffset, startIndex, endIndex) {
@@ -33965,7 +33968,7 @@ exports.debug = debug; // for test
     tmp0_serialDesc.addElement_5xhc52_k$('id', false);
     tmp0_serialDesc.addElement_5xhc52_k$('name', false);
     tmp0_serialDesc.addElement_5xhc52_k$('slug', false);
-    tmp0_serialDesc.addElement_5xhc52_k$('permission', false);
+    tmp0_serialDesc.addElement_5xhc52_k$('permissions', true);
     this._descriptor_32 = tmp0_serialDesc;
   }
   $serializer_1.prototype._get_descriptor__0_k$ = function () {
@@ -33974,7 +33977,7 @@ exports.debug = debug; // for test
   $serializer_1.prototype.childSerializers_0_k$ = function () {
     var tmp$ret$2;
     $l$block_1: {
-      var tmp0_arrayOf_0 = [IntSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance()];
+      var tmp0_arrayOf_0 = [IntSerializer_getInstance(), StringSerializer_getInstance(), StringSerializer_getInstance(), _get_nullable_(new LinkedHashMapSerializer(StringSerializer_getInstance(), BooleanSerializer_getInstance()))];
       var tmp$ret$1;
       $l$block_0: {
         var tmp$ret$0;
@@ -34007,7 +34010,7 @@ exports.debug = debug; // for test
       tmp3_bitMask0 = tmp3_bitMask0 | 2;
       tmp6_local2 = tmp8_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 2);
       tmp3_bitMask0 = tmp3_bitMask0 | 4;
-      tmp7_local3 = tmp8_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 3);
+      tmp7_local3 = tmp8_input.decodeNullableSerializableElement_hmkm73_k$(tmp0_desc, 3, new LinkedHashMapSerializer(StringSerializer_getInstance(), BooleanSerializer_getInstance()), tmp7_local3);
       tmp3_bitMask0 = tmp3_bitMask0 | 8;
     } else
       while (tmp1_flag) {
@@ -34029,7 +34032,7 @@ exports.debug = debug; // for test
             tmp3_bitMask0 = tmp3_bitMask0 | 4;
             break;
           case 3:
-            tmp7_local3 = tmp8_input.decodeStringElement_5vyt7k_k$(tmp0_desc, 3);
+            tmp7_local3 = tmp8_input.decodeNullableSerializableElement_hmkm73_k$(tmp0_desc, 3, new LinkedHashMapSerializer(StringSerializer_getInstance(), BooleanSerializer_getInstance()), tmp7_local3);
             tmp3_bitMask0 = tmp3_bitMask0 | 8;
             break;
           default:throw UnknownFieldException_init_$Create$(tmp2_index);
@@ -34044,7 +34047,8 @@ exports.debug = debug; // for test
     tmp1_output.encodeIntElement_wh7n80_k$(tmp0_desc, 0, value._id_4);
     tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 1, value._name_2);
     tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 2, value._slug);
-    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 3, value._permission);
+    if (tmp1_output.shouldEncodeElementDefault_5vyt7k_k$(tmp0_desc, 3) ? true : !(value._permissions == null))
+      tmp1_output.encodeNullableSerializableElement_6l2lkq_k$(tmp0_desc, 3, new LinkedHashMapSerializer(StringSerializer_getInstance(), BooleanSerializer_getInstance()), value._permissions);
     tmp1_output.endStructure_g940c0_k$(tmp0_desc);
   };
   $serializer_1.prototype.serialize_whawnb_k$ = function (encoder, value) {
@@ -34061,17 +34065,20 @@ exports.debug = debug; // for test
       new $serializer_1();
     return $serializer_instance_1;
   }
-  function Team_init_$Init$(seen1, id, name, slug, permission, serializationConstructorMarker, $this) {
-    if (!(15 === (15 & seen1)))
-      throwMissingFieldException(seen1, 15, $serializer_getInstance_1()._descriptor_32);
+  function Team_init_$Init$(seen1, id, name, slug, permissions, serializationConstructorMarker, $this) {
+    if (!(7 === (7 & seen1)))
+      throwMissingFieldException(seen1, 7, $serializer_getInstance_1()._descriptor_32);
     $this._id_4 = id;
     $this._name_2 = name;
     $this._slug = slug;
-    $this._permission = permission;
+    if (0 === (seen1 & 8))
+      $this._permissions = null;
+    else
+      $this._permissions = permissions;
     return $this;
   }
-  function Team_init_$Create$(seen1, id, name, slug, permission, serializationConstructorMarker) {
-    return Team_init_$Init$(seen1, id, name, slug, permission, serializationConstructorMarker, Object.create(Team.prototype));
+  function Team_init_$Create$(seen1, id, name, slug, permissions, serializationConstructorMarker) {
+    return Team_init_$Init$(seen1, id, name, slug, permissions, serializationConstructorMarker, Object.create(Team.prototype));
   }
   function $serializer_2() {
     $serializer_instance_2 = this;
@@ -34622,7 +34629,7 @@ exports.debug = debug; // for test
     tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 4, value._visibility);
     tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 5, new LinkedHashSetSerializer(StringSerializer_getInstance()), value._topics);
     tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 6, value._url);
-    tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 7, $serializer_getInstance_3(), value._permissions);
+    tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 7, $serializer_getInstance_3(), value._permissions_0);
     tmp1_output.encodeSerializableElement_r6n13r_k$(tmp0_desc, 8, $serializer_getInstance_4(), value._owner_0);
     tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 9, value._defaultBranch);
     tmp1_output.endStructure_g940c0_k$(tmp0_desc);
@@ -34651,7 +34658,7 @@ exports.debug = debug; // for test
     $this._visibility = visibility;
     $this._topics = topics;
     $this._url = url;
-    $this._permissions = permissions;
+    $this._permissions_0 = permissions;
     $this._owner_0 = owner;
     $this._defaultBranch = defaultBranch;
     return $this;
@@ -35289,7 +35296,7 @@ exports.debug = debug; // for test
   $serializer_11.prototype.serialize_8g2rc1_k$ = function (encoder, value) {
     var tmp0_desc = this._descriptor_42;
     var tmp1_output = encoder.beginStructure_6qhf5t_k$(tmp0_desc);
-    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 0, value._permission_0);
+    tmp1_output.encodeStringElement_mom8tu_k$(tmp0_desc, 0, value._permission);
     tmp1_output.endStructure_g940c0_k$(tmp0_desc);
   };
   $serializer_11.prototype.serialize_whawnb_k$ = function (encoder, value) {
@@ -35309,7 +35316,7 @@ exports.debug = debug; // for test
   function RepoTeamPutPermissionBody_init_$Init$(seen1, permission, serializationConstructorMarker, $this) {
     if (!(1 === (1 & seen1)))
       throwMissingFieldException(seen1, 1, $serializer_getInstance_11()._descriptor_42);
-    $this._permission_0 = permission;
+    $this._permission = permission;
     return $this;
   }
   function RepoTeamPutPermissionBody_init_$Create$(seen1, permission, serializationConstructorMarker) {
@@ -35478,21 +35485,21 @@ exports.debug = debug; // for test
     interfaces: [],
     associatedObjects: {0: $serializer_getInstance_0}
   };
-  function Team(id, name, slug, permission) {
+  function Team(id, name, slug, permissions) {
     Companion_getInstance_21();
     this._id_4 = id;
     this._name_2 = name;
     this._slug = slug;
-    this._permission = permission;
+    this._permissions = permissions;
   }
   Team.prototype.toString = function () {
-    return '' + 'Team(id=' + this._id_4 + ', name=' + this._name_2 + ', slug=' + this._slug + ', permission=' + this._permission + ')';
+    return '' + 'Team(id=' + this._id_4 + ', name=' + this._name_2 + ', slug=' + this._slug + ', permissions=' + this._permissions + ')';
   };
   Team.prototype.hashCode = function () {
     var result = this._id_4;
     result = imul(result, 31) + getStringHashCode(this._name_2) | 0;
     result = imul(result, 31) + getStringHashCode(this._slug) | 0;
-    result = imul(result, 31) + getStringHashCode(this._permission) | 0;
+    result = imul(result, 31) + (this._permissions == null ? 0 : hashCode(this._permissions)) | 0;
     return result;
   };
   Team.prototype.equals = function (other) {
@@ -35509,7 +35516,7 @@ exports.debug = debug; // for test
       return false;
     if (!(this._slug === tmp0_other_with_cast._slug))
       return false;
-    if (!(this._permission === tmp0_other_with_cast._permission))
+    if (!equals_1(this._permissions, tmp0_other_with_cast._permissions))
       return false;
     return true;
   };
@@ -35567,12 +35574,12 @@ exports.debug = debug; // for test
     this._visibility = visibility;
     this._topics = topics;
     this._url = url;
-    this._permissions = permissions;
+    this._permissions_0 = permissions;
     this._owner_0 = owner;
     this._defaultBranch = defaultBranch;
   }
   Repository.prototype.toString = function () {
-    return '' + 'Repository(id=' + this._id_6 + ', name=' + this._name_4 + ', isPrivate=' + this._isPrivate + ', isArchived=' + this._isArchived + ', visibility=' + this._visibility + ', topics=' + this._topics + ', url=' + this._url + ', permissions=' + this._permissions + ', owner=' + this._owner_0 + ', defaultBranch=' + this._defaultBranch + ')';
+    return '' + 'Repository(id=' + this._id_6 + ', name=' + this._name_4 + ', isPrivate=' + this._isPrivate + ', isArchived=' + this._isArchived + ', visibility=' + this._visibility + ', topics=' + this._topics + ', url=' + this._url + ', permissions=' + this._permissions_0 + ', owner=' + this._owner_0 + ', defaultBranch=' + this._defaultBranch + ')';
   };
   Repository.prototype.hashCode = function () {
     var result = this._id_6;
@@ -35582,7 +35589,7 @@ exports.debug = debug; // for test
     result = imul(result, 31) + getStringHashCode(this._visibility) | 0;
     result = imul(result, 31) + hashCode(this._topics) | 0;
     result = imul(result, 31) + getStringHashCode(this._url) | 0;
-    result = imul(result, 31) + this._permissions.hashCode() | 0;
+    result = imul(result, 31) + this._permissions_0.hashCode() | 0;
     result = imul(result, 31) + this._owner_0.hashCode() | 0;
     result = imul(result, 31) + getStringHashCode(this._defaultBranch) | 0;
     return result;
@@ -35609,7 +35616,7 @@ exports.debug = debug; // for test
       return false;
     if (!(this._url === tmp0_other_with_cast._url))
       return false;
-    if (!this._permissions.equals(tmp0_other_with_cast._permissions))
+    if (!this._permissions_0.equals(tmp0_other_with_cast._permissions_0))
       return false;
     if (!this._owner_0.equals(tmp0_other_with_cast._owner_0))
       return false;
@@ -35724,13 +35731,13 @@ exports.debug = debug; // for test
   };
   function RepoTeamPutPermissionBody(permission) {
     Companion_getInstance_24();
-    this._permission_0 = permission;
+    this._permission = permission;
   }
   RepoTeamPutPermissionBody.prototype.toString = function () {
-    return '' + 'RepoTeamPutPermissionBody(permission=' + this._permission_0 + ')';
+    return '' + 'RepoTeamPutPermissionBody(permission=' + this._permission + ')';
   };
   RepoTeamPutPermissionBody.prototype.hashCode = function () {
-    return getStringHashCode(this._permission_0);
+    return getStringHashCode(this._permission);
   };
   RepoTeamPutPermissionBody.prototype.equals = function (other) {
     if (this === other)
@@ -35740,7 +35747,7 @@ exports.debug = debug; // for test
     else {
     }
     var tmp0_other_with_cast = other instanceof RepoTeamPutPermissionBody ? other : THROW_CCE();
-    if (!(this._permission_0 === tmp0_other_with_cast._permission_0))
+    if (!(this._permission === tmp0_other_with_cast._permission))
       return false;
     return true;
   };
@@ -36057,7 +36064,7 @@ exports.debug = debug; // for test
     this._teamSlug = teamSlug;
     this._ownerName = ownerName;
     this._repoName = repoName;
-    this._permission_1 = permission;
+    this._permission_0 = permission;
   }
   $updateRepoTeamPermissionCOROUTINE$3.prototype.doResume_0_k$ = function () {
     var suspendResult = this._result_1;
@@ -36070,7 +36077,7 @@ exports.debug = debug; // for test
             var tmp_0 = this;
             tmp_0._tmp0_put_00 = '' + '/orgs/' + this._orgName + '/teams/' + this._teamSlug + '/repos/' + this._ownerName + '/' + this._repoName;
             var tmp_1 = this;
-            tmp_1._tmp1_put_01 = new RepoTeamPutPermissionBody(this._permission_1);
+            tmp_1._tmp1_put_01 = new RepoTeamPutPermissionBody(this._permission_0);
             this._state_1 = 1;
             var tmp_2 = this;
             tmp_2._tmp0_cast_0_1_12 = serializer_0(createKType_0(getKClass_0(RepoTeamPutPermissionBody), [], false));
@@ -37334,16 +37341,6 @@ exports.debug = debug; // for test
     kind: 'class',
     interfaces: []
   };
-  function toAccessType(_this_) {
-    var tmp0_elvis_lhs = accessTypeNames.get_2bw_k$(_this_);
-    var tmp;
-    if (tmp0_elvis_lhs == null) {
-      throw IllegalArgumentException_init_$Create$_0('' + 'Unknown access type: ' + _this_);
-    } else {
-      tmp = tmp0_elvis_lhs;
-    }
-    return tmp;
-  }
   function invertAccessConfig(accessConfig) {
     var tmp$ret$10;
     $l$block_9: {
@@ -37702,6 +37699,7 @@ exports.debug = debug; // for test
       return i.invoke_ha5g5e_k$(p1);
     };
   }
+  var rankedAccessTypes;
   function main() {
     runAction$default(null, _no_name_provided_$factory_95(null), 1, null);
   }
@@ -37775,6 +37773,78 @@ exports.debug = debug; // for test
   function syncRepoAccess(orgTeams, repo, repoTeams, mainTeam, repoAccessConfig) {
     return sequence(_no_name_provided_$factory_97(repoTeams, mainTeam, repoAccessConfig, orgTeams, repo, null));
   }
+  function toAccessType(_this_) {
+    var populatedPermissions = _this_._permissions;
+    {
+      var tmp0_require_0 = !(populatedPermissions == null);
+      {
+      }
+      if (!tmp0_require_0) {
+        var tmp$ret$0;
+        $l$block: {
+          tmp$ret$0 = 'Team must have permissions populated';
+          break $l$block;
+        }
+        var message_1 = tmp$ret$0;
+        throw IllegalArgumentException_init_$Create$_0(toString_1(message_1));
+      }}
+    var tmp0_iterator = rankedAccessTypes.iterator_0_k$();
+    while (tmp0_iterator.hasNext_0_k$()) {
+      var accessType = tmp0_iterator.next_0_k$();
+      if (populatedPermissions.get_2bw_k$(accessType._get_githubName__0_k$()) === true) {
+        return accessType;
+      }}
+    return null;
+  }
+  function filterValuesNotNull(_this_) {
+    var tmp$ret$5;
+    $l$block_4: {
+      {
+      }
+      var tmp$ret$4;
+      $l$block_3: {
+        var tmp$ret$3;
+        $l$block_2: {
+          var tmp0_apply_0_1 = LinkedHashMap_init_$Create$();
+          {
+          }
+          {
+            var tmp$ret$0;
+            $l$block: {
+              tmp$ret$0 = _this_._get_entries__0_k$().iterator_0_k$();
+              break $l$block;
+            }
+            var tmp0_iterator_3 = tmp$ret$0;
+            while (tmp0_iterator_3.hasNext_0_k$()) {
+              var tmp1_loop_parameter_4 = tmp0_iterator_3.next_0_k$();
+              var tmp$ret$1;
+              $l$block_0: {
+                tmp$ret$1 = tmp1_loop_parameter_4._get_key__0_k$();
+                break $l$block_0;
+              }
+              var key_5 = tmp$ret$1;
+              var tmp$ret$2;
+              $l$block_1: {
+                tmp$ret$2 = tmp1_loop_parameter_4._get_value__0_k$();
+                break $l$block_1;
+              }
+              var value_6 = tmp$ret$2;
+              if (!(value_6 == null)) {
+                tmp0_apply_0_1.put_1q9pf_k$(key_5, value_6);
+                Unit_getInstance();
+              }}
+          }
+          tmp$ret$3 = tmp0_apply_0_1;
+          break $l$block_2;
+        }
+        tmp$ret$4 = tmp$ret$3.build_0_k$();
+        break $l$block_3;
+      }
+      tmp$ret$5 = tmp$ret$4;
+      break $l$block_4;
+    }
+    return tmp$ret$5;
+  }
   function _no_name_provided__106($collector, resultContinuation) {
     this._$collector_4 = $collector;
     CoroutineImpl_0.call(this, resultContinuation);
@@ -37800,7 +37870,7 @@ exports.debug = debug; // for test
             this._state_1 = 1;
             continue $sm;
           case 1:
-            if (this._value_18._permissions._admin) {
+            if (this._value_18._permissions_0._admin) {
               this._state_1 = 3;
               suspendResult = this._$collector_4.emit_iav7o_k$(this._value_18, this);
               if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
@@ -37937,7 +38007,7 @@ exports.debug = debug; // for test
         var tmp = this._state_1;
         switch (tmp) {
           case 0:
-            this._exceptionState = 9;
+            this._exceptionState = 8;
             var tmp_0 = this;
             tmp_0._tmp0_plusAssign_00 = this._repo._name_4;
             this._$seenRepos.add_2bq_k$(this._tmp0_plusAssign_00);
@@ -37952,7 +38022,6 @@ exports.debug = debug; // for test
               invoke$contributeError(this._$errorsSeen, [this._repo, 'Team has admin access to repo, but there is no config for it']);
               return Unit_getInstance();
             }
-            GithubMessages_getInstance().debug_xlqz3p_k$([this._repo, '' + 'accessConfig=' + this._repoAccessConfig1]);
             this._exceptionState = 7;
             this._state_1 = 1;
             var tmp_1 = this._$github.getRepoTeams$default_1efauv_k$(this._repo, 0, 2, null);
@@ -37963,6 +38032,7 @@ exports.debug = debug; // for test
             continue $sm;
           case 1:
             this._repoTeams2 = suspendResult;
+            GithubMessages_getInstance().debug_xlqz3p_k$([this._repo, '' + 'accessConfig=' + this._repoAccessConfig1 + ' repoTeams=' + this._repoTeams2]);
             this._tmp0_iterator3 = syncRepoAccess(this._$teams, this._repo, this._repoTeams2, this._$mainTeam, this._repoAccessConfig1).iterator_0_k$();
             this._state_1 = 2;
             continue $sm;
@@ -38011,16 +38081,16 @@ exports.debug = debug; // for test
             this._state_1 = 2;
             continue $sm;
           case 6:
-            this._exceptionState = 9;
-            this._state_1 = 8;
+            this._exceptionState = 8;
+            this._state_1 = 9;
             continue $sm;
           case 7:
-            this._exceptionState = 9;
+            this._exceptionState = 8;
             var tmp_4 = this._exception_0;
             if (tmp_4 instanceof Error) {
               var ex = this._exception_0;
               invoke$contributeError(this._$errorsSeen, [this._repo, ex.toString()]);
-              this._state_1 = 8;
+              this._state_1 = 9;
               continue $sm;
             } else {
               {
@@ -38030,13 +38100,13 @@ exports.debug = debug; // for test
 
             break;
           case 8:
-            this._exceptionState = 9;
-            return Unit_getInstance();
-          case 9:
             throw this._exception_0;
+          case 9:
+            this._exceptionState = 8;
+            return Unit_getInstance();
         }
       } catch ($p) {
-        if (this._exceptionState === 9) {
+        if (this._exceptionState === 8) {
           throw $p;
         } else {
           this._state_1 = this._exceptionState;
@@ -38477,12 +38547,12 @@ exports.debug = debug; // for test
             var tmp0_iterator_1_3 = this._tmp0_associate_00.iterator_0_k$();
             while (tmp0_iterator_1_3.hasNext_0_k$()) {
               var element_2_4 = tmp0_iterator_1_3.next_0_k$();
-              var tmp0_plusAssign_0_5 = to(element_2_4._slug, toAccessType(element_2_4._permission));
+              var tmp0_plusAssign_0_5 = to(element_2_4._slug, toAccessType(element_2_4));
               this._tmp1_associateTo_0_22.put_1q9pf_k$(tmp0_plusAssign_0_5._first, tmp0_plusAssign_0_5._second);
               Unit_getInstance();
             }
 
-            tmp_0._currentPermissionByTeam3 = this._tmp1_associateTo_0_22;
+            tmp_0._currentPermissionByTeam3 = filterValuesNotNull(this._tmp1_associateTo_0_22);
             this._tmp0_iterator4 = mergeMaps(this._currentPermissionByTeam3, this._$repoAccessConfig).iterator_0_k$();
             this._state_1 = 1;
             continue $sm;
@@ -39275,6 +39345,7 @@ exports.debug = debug; // for test
   RUNNER_TOOL_CACHE$delegate = ExpectedEnvironment_getInstance();
   jsonFormat = Json$default(null, _no_name_provided_$factory_92(), 1, null);
   accessTypeNames = accessTypeNames$init$();
+  rankedAccessTypes = listOf([AccessType_ADMIN_getInstance(), AccessType_PUSH_getInstance(), AccessType_MAINTAIN_getInstance(), AccessType_TRIAGE_getInstance(), AccessType_PULL_getInstance()]);
   var $kotlinx = _.kotlinx || (_.kotlinx = {});
   var $kotlinx$atomicfu = $kotlinx.atomicfu || ($kotlinx.atomicfu = {});
   $kotlinx$atomicfu.atomic$ref$ = atomic_3;
