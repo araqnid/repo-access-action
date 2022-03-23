@@ -67,13 +67,7 @@ fun main() {
                                 }
                                 is RepoCommand.SetTeamPermission -> {
                                     GithubMessages.notice(repo, command.team, "Updating permission to ${command.accessType}")
-                                    github.updateRepoTeamPermission(org, command.team, repo, when (command.accessType) {
-                                        AccessType.PULL -> "pull"
-                                        AccessType.PUSH -> "push"
-                                        AccessType.TRIAGE -> "triage"
-                                        AccessType.MAINTAIN -> "maintain"
-                                        AccessType.ADMIN -> "admin"
-                                    })
+                                    github.updateRepoTeamPermission(org, command.team, repo, command.accessType.githubName)
                                 }
                             }
                         }

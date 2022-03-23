@@ -38,18 +38,15 @@ suspend fun readAccessConfigFile(filename: String): AccessConfig {
 }
 
 enum class AccessType {
-    ADMIN, MAINTAIN, TRIAGE, PUSH, PULL
+    ADMIN, MAINTAIN, TRIAGE, PUSH, PULL;
+
+    val githubName: String
+        get() = name.lowercase()
 }
 
 data class RepoAccessConfig(val teams: Map<String, AccessType>)
 
-private val accessTypeNames = mapOf(
-    "admin" to AccessType.ADMIN,
-    "maintain" to AccessType.MAINTAIN,
-    "triage" to AccessType.TRIAGE,
-    "push" to AccessType.PUSH,
-    "pull" to AccessType.PULL
-)
+private val accessTypeNames = AccessType.values().associateBy { it.githubName }
 
 fun String.toAccessType() = accessTypeNames[this] ?: throw IllegalArgumentException("Unknown access type: $this")
 

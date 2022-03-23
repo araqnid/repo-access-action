@@ -3153,8 +3153,8 @@ exports.debug = debug; // for test
   function arrayListOf(elements) {
     return elements.length === 0 ? ArrayList_init_$Create$() : ArrayList_init_$Create$_1(new ArrayAsCollection(elements, true));
   }
-  function ArrayAsCollection(values_0, isVarargs) {
-    this._values = values_0;
+  function ArrayAsCollection(values_1, isVarargs) {
+    this._values = values_1;
     this._isVarargs = isVarargs;
   }
   ArrayAsCollection.prototype._get_size__0_k$ = function () {
@@ -10547,6 +10547,9 @@ exports.debug = debug; // for test
     this._name = name;
     this._ordinal = ordinal;
   }
+  Enum.prototype._get_name__0_k$ = function () {
+    return this._name;
+  };
   Enum.prototype._get_ordinal__0_k$ = function () {
     return this._ordinal;
   };
@@ -37269,6 +37272,9 @@ exports.debug = debug; // for test
   var AccessType_TRIAGE_instance;
   var AccessType_PUSH_instance;
   var AccessType_PULL_instance;
+  function values_0() {
+    return [AccessType_ADMIN_getInstance(), AccessType_MAINTAIN_getInstance(), AccessType_TRIAGE_getInstance(), AccessType_PUSH_getInstance(), AccessType_PULL_getInstance()];
+  }
   var AccessType_entriesInitialized;
   function AccessType_initEntries() {
     if (AccessType_entriesInitialized)
@@ -37283,6 +37289,20 @@ exports.debug = debug; // for test
   function AccessType(name, ordinal) {
     Enum.call(this, name, ordinal);
   }
+  AccessType.prototype._get_githubName__0_k$ = function () {
+    var tmp$ret$1;
+    $l$block_0: {
+      var tmp0_lowercase_0 = this._get_name__0_k$();
+      var tmp$ret$0;
+      $l$block: {
+        tmp$ret$0 = tmp0_lowercase_0;
+        break $l$block;
+      }
+      tmp$ret$1 = tmp$ret$0.toLowerCase();
+      break $l$block_0;
+    }
+    return tmp$ret$1;
+  };
   AccessType.$metadata$ = {
     simpleName: 'AccessType',
     kind: 'class',
@@ -37568,6 +37588,36 @@ exports.debug = debug; // for test
       i.invoke_p2ze0y_k$(p1, p2);
       return Unit_getInstance();
     };
+  }
+  function accessTypeNames$init$() {
+    var tmp$ret$2;
+    $l$block_1: {
+      var tmp0_associateBy_0 = values_0();
+      var capacity_1 = coerceAtLeast(mapCapacity(tmp0_associateBy_0.length), 16);
+      var tmp$ret$1;
+      $l$block_0: {
+        var tmp0_associateByTo_0_2 = LinkedHashMap_init_$Create$_1(capacity_1);
+        var indexedObject = tmp0_associateBy_0;
+        var inductionVariable = 0;
+        var last_0 = indexedObject.length;
+        while (inductionVariable < last_0) {
+          var element_2_4 = indexedObject[inductionVariable];
+          inductionVariable = inductionVariable + 1 | 0;
+          var tmp$ret$0;
+          $l$block: {
+            tmp$ret$0 = element_2_4._get_githubName__0_k$();
+            break $l$block;
+          }
+          tmp0_associateByTo_0_2.put_1q9pf_k$(tmp$ret$0, element_2_4);
+          Unit_getInstance();
+        }
+        tmp$ret$1 = tmp0_associateByTo_0_2;
+        break $l$block_0;
+      }
+      tmp$ret$2 = tmp$ret$1;
+      break $l$block_1;
+    }
+    return tmp$ret$2;
   }
   function composeMessage($this, parts) {
     return joinToString$default(parts, ': ', null, null, 0, null, _no_name_provided_$factory_94(), 30, null);
@@ -37937,22 +37987,7 @@ exports.debug = debug; // for test
                 if (tmp_3 instanceof SetTeamPermission) {
                   GithubMessages_getInstance().notice_xlqz3p_k$([this._repo, this._command4._team_0, '' + 'Updating permission to ' + this._command4._accessType]);
                   this._state_1 = 3;
-                  var tmp2_subject = this._command4._accessType;
-                  var tmp_4;
-                  if (tmp2_subject.equals(AccessType_PULL_getInstance())) {
-                    tmp_4 = 'pull';
-                  } else if (tmp2_subject.equals(AccessType_PUSH_getInstance())) {
-                    tmp_4 = 'push';
-                  } else if (tmp2_subject.equals(AccessType_TRIAGE_getInstance())) {
-                    tmp_4 = 'triage';
-                  } else if (tmp2_subject.equals(AccessType_MAINTAIN_getInstance())) {
-                    tmp_4 = 'maintain';
-                  } else if (tmp2_subject.equals(AccessType_ADMIN_getInstance())) {
-                    tmp_4 = 'admin';
-                  } else {
-                    noWhenBranchMatchedException();
-                  }
-                  suspendResult = this._$github.updateRepoTeamPermission_h2nyfo_k$(this._$org, this._command4._team_0, this._repo, tmp_4, this);
+                  suspendResult = this._$github.updateRepoTeamPermission_h2nyfo_k$(this._$org, this._command4._team_0, this._repo, this._command4._accessType._get_githubName__0_k$(), this);
                   if (suspendResult === _get_COROUTINE_SUSPENDED_()) {
                     return suspendResult;
                   }continue $sm;
@@ -37981,8 +38016,8 @@ exports.debug = debug; // for test
             continue $sm;
           case 7:
             this._exceptionState = 9;
-            var tmp_5 = this._exception_0;
-            if (tmp_5 instanceof Error) {
+            var tmp_4 = this._exception_0;
+            if (tmp_4 instanceof Error) {
               var ex = this._exception_0;
               invoke$contributeError(this._$errorsSeen, [this._repo, ex.toString()]);
               this._state_1 = 8;
@@ -39239,7 +39274,7 @@ exports.debug = debug; // for test
   RUNNER_TEMP$delegate = ExpectedEnvironment_getInstance();
   RUNNER_TOOL_CACHE$delegate = ExpectedEnvironment_getInstance();
   jsonFormat = Json$default(null, _no_name_provided_$factory_92(), 1, null);
-  accessTypeNames = mapOf([to('admin', AccessType_ADMIN_getInstance()), to('maintain', AccessType_MAINTAIN_getInstance()), to('triage', AccessType_TRIAGE_getInstance()), to('push', AccessType_PUSH_getInstance()), to('pull', AccessType_PULL_getInstance())]);
+  accessTypeNames = accessTypeNames$init$();
   var $kotlinx = _.kotlinx || (_.kotlinx = {});
   var $kotlinx$atomicfu = $kotlinx.atomicfu || ($kotlinx.atomicfu = {});
   $kotlinx$atomicfu.atomic$ref$ = atomic_3;
