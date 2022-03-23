@@ -70,6 +70,8 @@ fun main() {
                                     github.updateRepoTeamPermission(org, command.team, repo, when (command.accessType) {
                                         AccessType.PULL -> "pull"
                                         AccessType.PUSH -> "push"
+                                        AccessType.TRIAGE -> "triage"
+                                        AccessType.MAINTAIN -> "maintain"
                                         AccessType.ADMIN -> "admin"
                                     })
                                 }

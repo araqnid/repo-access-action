@@ -37265,6 +37265,8 @@ exports.debug = debug; // for test
     return tmp.doResume_0_k$();
   }
   var AccessType_ADMIN_instance;
+  var AccessType_MAINTAIN_instance;
+  var AccessType_TRIAGE_instance;
   var AccessType_PUSH_instance;
   var AccessType_PULL_instance;
   var AccessType_entriesInitialized;
@@ -37273,8 +37275,10 @@ exports.debug = debug; // for test
       return Unit_getInstance();
     AccessType_entriesInitialized = true;
     AccessType_ADMIN_instance = new AccessType('ADMIN', 0);
-    AccessType_PUSH_instance = new AccessType('PUSH', 1);
-    AccessType_PULL_instance = new AccessType('PULL', 2);
+    AccessType_MAINTAIN_instance = new AccessType('MAINTAIN', 1);
+    AccessType_TRIAGE_instance = new AccessType('TRIAGE', 2);
+    AccessType_PUSH_instance = new AccessType('PUSH', 3);
+    AccessType_PULL_instance = new AccessType('PULL', 4);
   }
   function AccessType(name, ordinal) {
     Enum.call(this, name, ordinal);
@@ -37487,6 +37491,14 @@ exports.debug = debug; // for test
   function AccessType_ADMIN_getInstance() {
     AccessType_initEntries();
     return AccessType_ADMIN_instance;
+  }
+  function AccessType_MAINTAIN_getInstance() {
+    AccessType_initEntries();
+    return AccessType_MAINTAIN_instance;
+  }
+  function AccessType_TRIAGE_getInstance() {
+    AccessType_initEntries();
+    return AccessType_TRIAGE_instance;
   }
   function AccessType_PUSH_getInstance() {
     AccessType_initEntries();
@@ -37931,6 +37943,10 @@ exports.debug = debug; // for test
                     tmp_4 = 'pull';
                   } else if (tmp2_subject.equals(AccessType_PUSH_getInstance())) {
                     tmp_4 = 'push';
+                  } else if (tmp2_subject.equals(AccessType_TRIAGE_getInstance())) {
+                    tmp_4 = 'triage';
+                  } else if (tmp2_subject.equals(AccessType_MAINTAIN_getInstance())) {
+                    tmp_4 = 'maintain';
                   } else if (tmp2_subject.equals(AccessType_ADMIN_getInstance())) {
                     tmp_4 = 'admin';
                   } else {
@@ -39223,7 +39239,7 @@ exports.debug = debug; // for test
   RUNNER_TEMP$delegate = ExpectedEnvironment_getInstance();
   RUNNER_TOOL_CACHE$delegate = ExpectedEnvironment_getInstance();
   jsonFormat = Json$default(null, _no_name_provided_$factory_92(), 1, null);
-  accessTypeNames = mapOf([to('admin', AccessType_ADMIN_getInstance()), to('push', AccessType_PUSH_getInstance()), to('pull', AccessType_PULL_getInstance())]);
+  accessTypeNames = mapOf([to('admin', AccessType_ADMIN_getInstance()), to('maintain', AccessType_MAINTAIN_getInstance()), to('triage', AccessType_TRIAGE_getInstance()), to('push', AccessType_PUSH_getInstance()), to('pull', AccessType_PULL_getInstance())]);
   var $kotlinx = _.kotlinx || (_.kotlinx = {});
   var $kotlinx$atomicfu = $kotlinx.atomicfu || ($kotlinx.atomicfu = {});
   $kotlinx$atomicfu.atomic$ref$ = atomic_3;

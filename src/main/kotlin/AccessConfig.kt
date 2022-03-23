@@ -38,13 +38,15 @@ suspend fun readAccessConfigFile(filename: String): AccessConfig {
 }
 
 enum class AccessType {
-    ADMIN, PUSH, PULL
+    ADMIN, MAINTAIN, TRIAGE, PUSH, PULL
 }
 
 data class RepoAccessConfig(val teams: Map<String, AccessType>)
 
 private val accessTypeNames = mapOf(
     "admin" to AccessType.ADMIN,
+    "maintain" to AccessType.MAINTAIN,
+    "triage" to AccessType.TRIAGE,
     "push" to AccessType.PUSH,
     "pull" to AccessType.PULL
 )
