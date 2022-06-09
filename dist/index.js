@@ -21888,6 +21888,7 @@ exports.debug = debug; // for test
   function bindCancellationFun$lambda($this_bindCancellationFun, $element, $context) {
     return function (_anonymous_parameter_0__2695192052) {
       callUndeliveredElement($this_bindCancellationFun, $element, $context);
+      return Unit_getInstance();
     };
   }
   function ScopeCoroutine(context, uCont) {
@@ -22604,6 +22605,7 @@ exports.debug = debug; // for test
   function SemaphoreImpl$onCancellationRelease$lambda(this$0) {
     return function (_anonymous_parameter_0__2695192052) {
       this$0.release_wtm6d2_k$();
+      return Unit_getInstance();
     };
   }
   function SemaphoreImpl(permits, acquiredPermits) {
@@ -23042,6 +23044,7 @@ exports.debug = debug; // for test
   function SetTimeoutBasedDispatcher$ScheduledMessageQueue$processQueue$lambda(this$0) {
     return function () {
       this$0.process_mza50i_k$();
+      return Unit_getInstance();
     };
   }
   function ScheduledMessageQueue($outer) {
@@ -23147,11 +23150,13 @@ exports.debug = debug; // for test
         event.stopPropagation();
         tmp = this$0.process_mza50i_k$();
       }
+      return Unit_getInstance();
     };
   }
   function WindowMessageQueue$schedule$lambda(this$0) {
     return function (it) {
       this$0.process_mza50i_k$();
+      return Unit_getInstance();
     };
   }
   function WindowMessageQueue(window_0) {
@@ -23529,10 +23534,10 @@ exports.debug = debug; // for test
   //region block: imports
   var imul = Math.imul;
   var StringCompanionObject_getInstance = kotlin_kotlin.$crossModule$.StringCompanionObject_getInstance;
+  var Unit_getInstance = kotlin_kotlin.$crossModule$.Unit_getInstance;
   var emptyList = kotlin_kotlin.$crossModule$.emptyList;
   var LazyThreadSafetyMode_PUBLICATION_getInstance = kotlin_kotlin.$crossModule$.LazyThreadSafetyMode_PUBLICATION_getInstance;
   var lazy = kotlin_kotlin.$crossModule$.lazy;
-  var Unit_getInstance = kotlin_kotlin.$crossModule$.Unit_getInstance;
   var getKClassFromExpression = kotlin_kotlin.$crossModule$.getKClassFromExpression;
   var KProperty1 = kotlin_kotlin.$crossModule$.KProperty1;
   var getPropertyCallableRef = kotlin_kotlin.$crossModule$.getPropertyCallableRef;
@@ -23879,6 +23884,7 @@ exports.debug = debug; // for test
       var tmp_2 = buildSerialDescriptor$default(tmp_0, tmp_1, [], null, 12, null);
       $this$buildSerialDescriptor.element$default_m7h690_k$('value', tmp_2, null, false, 12, null);
       $this$buildSerialDescriptor._set_annotations__74516833_7ksc49_k$(this$0._annotations_1);
+      return Unit_getInstance();
     };
   }
   function PolymorphicSerializer$descriptor$delegate$lambda(this$0) {
@@ -26963,6 +26969,7 @@ exports.debug = debug; // for test
   function ObjectSerializer$descriptor$delegate$lambda$lambda(this$0) {
     return function ($this$buildSerialDescriptor) {
       $this$buildSerialDescriptor._set_annotations__74516833_7ksc49_k$(this$0._annotations_1);
+      return Unit_getInstance();
     };
   }
   function ObjectSerializer$descriptor$delegate$lambda($serialName, this$0) {
@@ -28813,6 +28820,7 @@ exports.debug = debug; // for test
       $this$buildSerialDescriptor.element$default_m7h690_k$('key', tmp, null, false, 12, null);
       var tmp_0 = $valueSerializer._get_descriptor__684124924_bbb664_k$();
       $this$buildSerialDescriptor.element$default_m7h690_k$('value', tmp_0, null, false, 12, null);
+      return Unit_getInstance();
     };
   }
   function MapEntrySerializer_0(keySerializer, valueSerializer) {
@@ -28850,6 +28858,7 @@ exports.debug = debug; // for test
       $this$buildClassSerialDescriptor.element$default_m7h690_k$('first', tmp, null, false, 12, null);
       var tmp_0 = $valueSerializer._get_descriptor__684124924_bbb664_k$();
       $this$buildClassSerialDescriptor.element$default_m7h690_k$('second', tmp_0, null, false, 12, null);
+      return Unit_getInstance();
     };
   }
   function PairSerializer_0(keySerializer, valueSerializer) {
@@ -28923,6 +28932,7 @@ exports.debug = debug; // for test
       $this$buildClassSerialDescriptor.element$default_m7h690_k$('second', tmp_0, null, false, 12, null);
       var tmp_1 = this$0.cSerializer_1._get_descriptor__684124924_bbb664_k$();
       $this$buildClassSerialDescriptor.element$default_m7h690_k$('third', tmp_1, null, false, 12, null);
+      return Unit_getInstance();
     };
   }
   function TripleSerializer_0(aSerializer, bSerializer, cSerializer) {
@@ -30441,6 +30451,7 @@ exports.debug = debug; // for test
       $this$buildSerialDescriptor.element$default_m7h690_k$('JsonObject', tmp_2, null, false, 12, null);
       var tmp_3 = defer(JsonElementSerializer$descriptor$lambda$lambda_3());
       $this$buildSerialDescriptor.element$default_m7h690_k$('JsonArray', tmp_3, null, false, 12, null);
+      return Unit_getInstance();
     };
   }
   function JsonElementSerializer() {
@@ -34932,6 +34943,7 @@ exports.debug = debug; // for test
         break $l$block;
       }
       tmp.dispatch_o98ux7_k$($context, tmp$ret$0);
+      return Unit_getInstance();
     };
   }
   function runAction$completion$1($context, $job) {
@@ -37175,6 +37187,7 @@ exports.debug = debug; // for test
   function Github$jsonFormat$lambda() {
     return function ($this$Json) {
       $this$Json._set_ignoreUnknownKeys__1171269657_vwghbk_k$(true);
+      return Unit_getInstance();
     };
   }
   function Github$fetchPages$slambda(this$0, $deserializer, $path, $pageSize, resultContinuation) {
@@ -37946,6 +37959,7 @@ exports.debug = debug; // for test
         tmp$ret$3 = $cancellable_2_2.resumeWith_s3a3yh_k$(tmp$ret$2);
         break $l$block_2;
       }
+      return Unit_getInstance();
     };
   }
   function GithubJS$requestForText$lambda_0($req_4) {
@@ -37961,6 +37975,7 @@ exports.debug = debug; // for test
         break $l$block_0;
       }
       $req_4.destroy(tmp$ret$1);
+      return Unit_getInstance();
     };
   }
   function GithubJS$requestForText$lambda_1($chunks_4) {
@@ -37978,6 +37993,7 @@ exports.debug = debug; // for test
       var tmp0_plusAssign_0_6 = tmp$ret$1;
       $chunks_4.add_1j60pz_k$(tmp0_plusAssign_0_6);
       Unit_getInstance();
+      return Unit_getInstance();
     };
   }
   function GithubJS$requestForText$lambda_2($cancellable_2_2) {
@@ -38004,6 +38020,7 @@ exports.debug = debug; // for test
         tmp$ret$3 = $cancellable_2_2.resumeWith_s3a3yh_k$(tmp$ret$2);
         break $l$block_2;
       }
+      return Unit_getInstance();
     };
   }
   function GithubJS$requestForText$lambda_3($chunks_4, $cancellable_2_2) {
@@ -38040,6 +38057,7 @@ exports.debug = debug; // for test
         tmp$ret$2 = $cancellable_2_2.resumeWith_s3a3yh_k$(tmp$ret$1);
         break $l$block_1;
       }
+      return Unit_getInstance();
     };
   }
   function GithubJS$requestForText$lambda_4($res) {
@@ -38055,6 +38073,7 @@ exports.debug = debug; // for test
         break $l$block_0;
       }
       $res.destroy(tmp$ret$1);
+      return Unit_getInstance();
     };
   }
   function $requestForTextCOROUTINE$5(_this__1828080292, method, path, body, resultContinuation) {
@@ -38702,6 +38721,7 @@ exports.debug = debug; // for test
   function jsonFormat$lambda() {
     return function ($this$Json) {
       $this$Json._set_ignoreUnknownKeys__1171269657_vwghbk_k$(true);
+      return Unit_getInstance();
     };
   }
   function readAccessConfigFile$lambda($safe_2_2) {
@@ -38745,6 +38765,7 @@ exports.debug = debug; // for test
         }
         tmp = tmp$ret$5;
       }
+      return Unit_getInstance();
     };
   }
   function AccessType_ADMIN_getInstance() {

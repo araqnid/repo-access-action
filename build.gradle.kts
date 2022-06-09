@@ -36,7 +36,7 @@ dependencies {
 }
 
 actionPackaging {
-    nodeVersion.set("12.22.8")
+    nodeVersion.set("16.15.1")
     minify.set(false)
     v8cache.set(false)
 }
