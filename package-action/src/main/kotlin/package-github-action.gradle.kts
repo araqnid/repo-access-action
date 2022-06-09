@@ -48,16 +48,20 @@ repositories {
 val os: OperatingSystem = DefaultNativePlatform.getCurrentOperatingSystem()
 val arch: ArchitectureInternal = DefaultNativePlatform.getCurrentArchitecture()
 
-val nodeOs = when {
-    os.isLinux -> "linux"
-    os.isMacOsX -> "darwin"
-    else -> error("Unhandled OS variant: ${os.name}")
+val nodeOs by lazy {
+    when {
+        os.isLinux -> "linux"
+        os.isMacOsX -> "darwin"
+        else -> error("Unhandled OS variant: ${os.name}")
+    }
 }
-val nodeArch = when {
-    arch.isAmd64 -> "x64"
-    arch.isI386 -> "x86"
-    arch.isArm -> "arm64"
-    else -> error("Unahandled arch variant: ${arch.name}")
+val nodeArch by lazy {
+    when {
+        arch.isAmd64 -> "x64"
+        arch.isI386 -> "x86"
+        arch.isArm || arch.name.startsWith("arm-") -> "arm64"
+        else -> error("Unhandled arch variant: ${arch.name}")
+    }
 }
 
 afterEvaluate {
