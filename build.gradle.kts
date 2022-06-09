@@ -16,7 +16,7 @@ kotlin {
         compilations["main"].packageJson {
         }
         compilations.all {
-            compileKotlinTask.kotlinOptions.freeCompilerArgs += listOf("-Xopt-in=kotlin.RequiresOptIn")
+            compileKotlinTask.kotlinOptions.freeCompilerArgs += listOf("-opt-in=kotlin.RequiresOptIn")
         }
     }
 }
