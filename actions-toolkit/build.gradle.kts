@@ -20,7 +20,7 @@ dependencies {
     api(kotlin("stdlib-js"))
     implementation(npm("@actions/core", "latest"))
     implementation(npm("@actions/cache", "latest"))
-    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.1"))
+    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.3"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
 
     testImplementation(kotlin("test-js"))
