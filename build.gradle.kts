@@ -1,6 +1,6 @@
 plugins {
-    kotlin("js") version "1.7.0"
-    kotlin("plugin.serialization") version "1.7.0"
+    kotlin("js") version "1.7.10"
+    kotlin("plugin.serialization") version "1.7.10"
     id("package-github-action")
 }
 
@@ -25,9 +25,9 @@ dependencies {
     api(kotlin("stdlib-js"))
     implementation(project(":github-client"))
     implementation(project(":actions-toolkit"))
-    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.1"))
+    implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.4"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
-    implementation(platform("org.jetbrains.kotlinx:kotlinx-serialization-bom:1.3.3"))
+    implementation(platform("org.jetbrains.kotlinx:kotlinx-serialization-bom:1.4.0"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json")
 
     testImplementation(kotlin("test-js"))
@@ -36,7 +36,7 @@ dependencies {
 }
 
 actionPackaging {
-    nodeVersion.set("16.15.1")
+    nodeVersion.set("16.17.0")
     minify.set(false)
     v8cache.set(false)
 }
