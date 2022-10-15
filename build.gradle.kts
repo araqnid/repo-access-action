@@ -27,7 +27,7 @@ dependencies {
     implementation(project(":actions-toolkit"))
     implementation(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.4"))
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core")
-    implementation(platform("org.jetbrains.kotlinx:kotlinx-serialization-bom:1.4.0"))
+    implementation(platform("org.jetbrains.kotlinx:kotlinx-serialization-bom:1.4.1"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json")
 
     testImplementation(kotlin("test-js"))
