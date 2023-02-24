@@ -3,6 +3,7 @@
 package action
 
 import kotlinx.coroutines.DelicateCoroutinesApi
+import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.test.runTest
 import org.araqnid.kotlin.assertthat.assertThat
 import org.araqnid.kotlin.assertthat.containsSubstring
@@ -13,6 +14,7 @@ import kotlin.test.assertFails
 // CWD: $project/build/js/packages/repo-access-action-=test
 private const val EXAMPLE_FILE_NAME = "../../../../src/test/resources/example_access.json"
 
+@OptIn(ExperimentalCoroutinesApi::class)
 class AccessConfigTest {
     @Test
     fun reads_example_file() = runTest {
