@@ -32,8 +32,10 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
 }
 
-actionPackaging {
-    nodeVersion.set("16.17.0")
-    minify.set(false)
-    v8cache.set(false)
+node {
+    val nodejsVersion = properties["nodejs.version"]
+    if (nodejsVersion is String) {
+        download.set(true)
+        version.set(nodejsVersion)
+    }
 }
