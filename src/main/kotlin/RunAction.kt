@@ -1,4 +1,4 @@
-package actions.kotlin
+package action
 
 import actions.core.setFailed
 import kotlinx.coroutines.CoroutineScope
@@ -27,7 +27,7 @@ fun runAction(
     job.invokeOnCompletion { ex ->
         Dispatchers.Default.dispatch(context, Runnable {
             if (ex != null) {
-                setFailed(ex)
+                setFailed(ex.unsafeCast<Error>())
             }
         })
     }

@@ -1,4 +1,4 @@
 rootProject.name = "repo-access-action"
 
-include("actions-toolkit", "github-client")
+include("github-client")
 includeBuild("package-action")

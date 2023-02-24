@@ -1,19 +1,9 @@
 package action
 
-import actions.kotlin.getInput
-import actions.kotlin.runAction
 import github.Github
 import github.useGithub
 import kotlinx.coroutines.FlowPreview
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.FlowCollector
-import kotlinx.coroutines.flow.collect
-import kotlinx.coroutines.flow.emptyFlow
-import kotlinx.coroutines.flow.filter
-import kotlinx.coroutines.flow.filterNot
-import kotlinx.coroutines.flow.flatMapMerge
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.toList
+import kotlinx.coroutines.flow.*
 
 fun main() {
     runAction {
