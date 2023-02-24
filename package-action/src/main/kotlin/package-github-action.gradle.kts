@@ -155,10 +155,10 @@ val packageWithNccTask = tasks.register("packageDistributableWithNCC") {
 
     val toolDir = buildDir.resolve(installNccTask.name)
     val distDir = file("dist")
-    val jsBuildOutput = buildDir.resolve("js")
-    val jsBuildFile = jsBuildOutput.resolve("packages/$actionModule/kotlin/$actionModule.js")
+    val jsModulesDir = buildDir.resolve("js/packages/$actionModule/kotlin")
+    val jsBuildFile = jsModulesDir.resolve("$actionModule.js")
 
-    inputs.file(jsBuildFile)
+    inputs.dir(jsModulesDir)
     inputs.property("minify", extension.minify)
     inputs.property("v8cache", extension.v8cache)
     inputs.property("target", extension.target.orElse(""))
