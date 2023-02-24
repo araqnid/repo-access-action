@@ -13,11 +13,6 @@ kotlin {
         nodejs()
         useCommonJs()
         binaries.executable()
-        compilations["main"].packageJson {
-        }
-        compilations.all {
-            compileKotlinTask.kotlinOptions.freeCompilerArgs += listOf("-opt-in=kotlin.RequiresOptIn")
-        }
     }
 }
 
