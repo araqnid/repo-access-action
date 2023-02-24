@@ -35810,7 +35810,21 @@ if (typeof Math.imul === 'undefined') {
     tmp$ret$2 = tmp1_arrayOf;
     tmp$ret$3 = tmp$ret$2;
     tmp$ret$4 = tmp$ret$3;
-    tmp.l25_1 = new HttpClient('github-repo-access/0.0', tmp$ret$4);
+    var tmp_0 = tmp$ret$4;
+    var tmp$ret$7;
+    // Inline function 'js.core.jso' call
+    var tmp$ret$6;
+    // Inline function 'kotlin.apply' call
+    var tmp$ret$5;
+    // Inline function 'js.core.jso' call
+    tmp$ret$5 = {};
+    var tmp0_apply = tmp$ret$5;
+    // Inline function 'kotlin.contracts.contract' call
+    // Inline function 'github.GithubActionsHttpClient.client.<anonymous>' call
+    tmp0_apply.keepAlive = true;
+    tmp$ret$6 = tmp0_apply;
+    tmp$ret$7 = tmp$ret$6;
+    tmp.l25_1 = new HttpClient('github-repo-access/0.0', tmp_0, tmp$ret$7);
   }
   GithubActionsHttpClient.prototype.o22 = function (method, path, body, $cont) {
     var tmp = new $requestForTextCOROUTINE$5(this, method, path, body, $cont);
