@@ -29,8 +29,8 @@ jobs:
         with:
           node-version: '16'
 
-      - name: Clear gradle.properties
-        run: rm -fv gradle.properties
+      - name: Fix gradle.properties
+        run: perl -lpe 'print unless /nodejs\.version/'
 
       - name: Generate dist
         uses: gradle/gradle-build-action@v2
