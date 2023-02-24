@@ -1,0 +1,32 @@
+name: Verify dist
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  verify-dist:
+    name: Verify that 'dist' has been regenerated
+    if: github.actor != 'dependabot[bot]'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+
+      - name: Set up JDK
+        uses: actions/setup-java@v3
+        with:
+          java-version: '17'
+          distribution: 'zulu'
+
+      - name: Generate dist
+        uses: gradle/gradle-command-action@v2
+        with:
+          arguments: package
+
+      - name: Compare dist with repo
+        run: |
+          git diff --exit-code dist
