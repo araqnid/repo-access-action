@@ -32,6 +32,13 @@ dependencies {
     testImplementation("org.jetbrains.kotlinx:kotlinx-coroutines-test")
 }
 
+actionPackaging {
+    val nccVersionValue = properties["ncc.version"]
+    if (nccVersionValue is String) {
+        nccVersion.set(nccVersionValue)
+    }
+}
+
 node {
     val nodejsVersion = properties["nodejs.version"]
     if (nodejsVersion is String) {

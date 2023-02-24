@@ -42,10 +42,11 @@ val installNccTask = tasks.register<NpmTask>("installNCC") {
 
     // every run of @vercel/ncc touches the v8 cache files, so we can't simply `outputs.dir(toolDir)` here
     outputs.file(nccScript)
+    inputs.property("nccVersion", actionPackagingExtension.nccVersion)
 
     workingDir.set(toolDir)
     npmCommand.set(listOf("install"))
-    args.set(listOf("@vercel/ncc"))
+    args.add(actionPackagingExtension.nccVersion.map { "@vercel/ncc@$it" })
 
     doFirst {
         delete(toolDir)
@@ -73,6 +74,7 @@ val packageWithNccTask = tasks.register<NodeTask>("packageDistributableWithNCC")
     inputs.property("minify", actionPackagingExtension.minify)
     inputs.property("v8cache", actionPackagingExtension.v8cache)
     inputs.property("target", actionPackagingExtension.target.orElse(""))
+    inputs.property("nccVersion", actionPackagingExtension.nccVersion)
     outputs.dir(distDir)
 
     doFirst {
