@@ -24,6 +24,14 @@ jobs:
           java-version: '17'
           distribution: 'zulu'
 
+      - name: Set up Node
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+
+      - name: Clear gradle.properties
+        run: rm -fv gradle.properties
+
       - name: Generate dist
         uses: gradle/gradle-build-action@v2
         with:
