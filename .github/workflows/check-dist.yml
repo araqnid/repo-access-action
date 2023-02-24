@@ -25,7 +25,7 @@ jobs:
           distribution: 'zulu'
 
       - name: Generate dist
-        uses: gradle/gradle-command-action@v2
+        uses: gradle/gradle-build-action@v2
         with:
           arguments: package
 
