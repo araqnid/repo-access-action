@@ -3,9 +3,7 @@ package action
 import kotlinx.serialization.Serializable
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
-import kotlin.coroutines.resume
-import kotlin.coroutines.resumeWithException
-import kotlin.coroutines.suspendCoroutine
+import node.buffer.BufferEncoding
 
 @Serializable
 data class RepositoryGroup(
@@ -18,23 +16,10 @@ private val jsonFormat = Json {
     ignoreUnknownKeys = true
 }
 
-@JsModule("fs")
-private external object Filesystem {
-    fun readFile(filename: String, encoding: String, callback: (Throwable?, String?) -> Unit)
-}
-
 typealias AccessConfig = List<RepositoryGroup>
 
 suspend fun readAccessConfigFile(filename: String): AccessConfig {
-    val fileText = suspendCoroutine<String> { cont ->
-        Filesystem.readFile(filename, "utf-8") { ex, data ->
-            if (ex != null)
-                cont.resumeWithException(ex)
-            else
-                cont.resume(data.unsafeCast<String>())
-        }
-    }
-    return jsonFormat.decodeFromString(fileText)
+    return jsonFormat.decodeFromString(node.fs.readFile(filename, BufferEncoding.utf8))
 }
 
 enum class AccessType {

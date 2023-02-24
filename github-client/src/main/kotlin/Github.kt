@@ -1,27 +1,18 @@
 package github
 
+import js.core.get
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.NonCancellable
-import kotlinx.coroutines.flow.Flow
-import kotlinx.coroutines.flow.asFlow
-import kotlinx.coroutines.flow.emitAll
-import kotlinx.coroutines.flow.flow
-import kotlinx.coroutines.flow.takeWhile
-import kotlinx.coroutines.flow.transformWhile
+import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.withContext
-import kotlinx.serialization.DeserializationStrategy
-import kotlinx.serialization.KSerializer
-import kotlinx.serialization.SerialName
-import kotlinx.serialization.Serializable
-import kotlinx.serialization.SerializationStrategy
-import kotlinx.serialization.decodeFromString
+import kotlinx.serialization.*
 import kotlinx.serialization.descriptors.PrimitiveKind
 import kotlinx.serialization.descriptors.PrimitiveSerialDescriptor
 import kotlinx.serialization.descriptors.SerialDescriptor
 import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 import kotlinx.serialization.json.Json
-import kotlinx.serialization.serializer
+import node.process.process
 
 interface GithubBackend {
     suspend fun requestForText(method: String, path: String, body: String?): TextResponse
@@ -345,13 +336,8 @@ class InstantSerializer : KSerializer<Instant> {
     }
 }
 
-@JsModule("process")
-private external object Process {
-    val env: dynamic
-}
-
 private val defaultGithubToken: String?
-    get() = Process.env["GITHUB_TOKEN"].unsafeCast<String?>()
+    get() = process.env["GITHUB_TOKEN"].unsafeCast<String?>()
 
 /**
  * Use a GitHub client, providing it to the given block and disposing of it after the block is complete.
