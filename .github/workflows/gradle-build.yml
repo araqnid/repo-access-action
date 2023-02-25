@@ -28,3 +28,8 @@ jobs:
         uses: gradle/gradle-build-action@v2
         with:
           arguments: build
+
+      - name: Compare dist with repo
+        if: github.ref == 'refs/heads/main'
+        run: |
+          git diff --exit-code dist
