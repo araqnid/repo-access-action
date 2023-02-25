@@ -40,9 +40,6 @@ actionPackaging {
 }
 
 node {
-    val nodejsVersion = properties["nodejs.version"]
-    if (nodejsVersion is String) {
-        download.set(true)
-        version.set(nodejsVersion)
-    }
+    version.set(rootProject.projectDir.resolve(".nvmrc").readText().trim())
+    download.set(true)
 }

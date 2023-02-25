@@ -27,10 +27,10 @@ jobs:
       - name: Set up Node
         uses: actions/setup-node@v3
         with:
-          node-version: '16'
+          node-version-file: '.nvmrc'
 
-      - name: Fix gradle.properties
-        run: perl -lpe 'print unless /nodejs\.version/'
+      - name: Remove .nvmrc
+        run: rm -fv .nvmrc
 
       - name: Generate dist
         uses: gradle/gradle-build-action@v2
