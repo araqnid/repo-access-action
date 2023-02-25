@@ -1,7 +1,6 @@
 package github
 
 import js.core.get
-import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.NonCancellable
 import kotlinx.coroutines.flow.*
 import kotlinx.coroutines.withContext
@@ -70,7 +69,7 @@ class Github(private val backend: GithubBackend, private val defaultPageSize: In
         = put(path, body, serializer())
 
     private fun <T> fetchPages(
-        deserializer: DeserializationStrategy<out T>,
+        deserializer: DeserializationStrategy<T>,
         path: String,
         pageSize: Int
     ): Flow<T> = flow {
@@ -87,9 +86,8 @@ class Github(private val backend: GithubBackend, private val defaultPageSize: In
         }
     }
 
-    @OptIn(ExperimentalCoroutinesApi::class)
     private fun <T> fetchCollection(
-        deserializer: DeserializationStrategy<out Collection<T>>,
+        deserializer: DeserializationStrategy<Collection<T>>,
         path: String,
         pageSize: Int
     ): Flow<T> = fetchPages(deserializer, path, pageSize).transformWhile { page ->
@@ -98,7 +96,7 @@ class Github(private val backend: GithubBackend, private val defaultPageSize: In
     }
 
     private fun <T> fetchCollectionViaListWithCount(
-        deserializer: DeserializationStrategy<out ListWithCount<T>>,
+        deserializer: DeserializationStrategy<ListWithCount<T>>,
         path: String,
         pageSize: Int,
     ): Flow<T> = fetchPages(deserializer, path, pageSize).let { upstream ->
