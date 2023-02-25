@@ -40,6 +40,9 @@ actionPackaging {
 }
 
 node {
-    version.set(rootProject.projectDir.resolve(".nvmrc").readText().trim())
-    download.set(true)
+    val nodeVersionFile = rootProject.projectDir.resolve(".nvmrc")
+    if (nodeVersionFile.exists()) {
+        version.set(nodeVersionFile.readText().trim())
+        download.set(true)
+    }
 }
