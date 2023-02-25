@@ -17,12 +17,11 @@ import kotlin.coroutines.startCoroutine
  * context.
  *
  * @param context Coroutine context (a [Job] will be added)
- * @param block Body of action
+ * @param body Body of action
  */
-fun runAction(
-    context: CoroutineContext = EmptyCoroutineContext, block: suspend CoroutineScope.() -> Unit
-) {
-    val job = Job()
+fun runAction(context: CoroutineContext = EmptyCoroutineContext, body: suspend CoroutineScope.() -> Unit) {
+    val job = Job(parent = context[Job])
+    val scope = CoroutineScope(context + job)
 
     job.invokeOnCompletion { ex ->
         Dispatchers.Default.dispatch(context, Runnable {
@@ -32,17 +31,11 @@ fun runAction(
         })
     }
 
-    val completion = object : Continuation<Unit> {
-        override val context = context + job
-
-        override fun resumeWith(result: Result<Unit>) {
-            result.fold({
-                job.complete()
-            }, { ex ->
-                job.completeExceptionally(ex)
-            })
-        }
-    }
-
-    block.startCoroutine(CoroutineScope(completion.context), completion)
+    body.startCoroutine(scope, Continuation(scope.coroutineContext) { result ->
+        result.fold({
+            job.complete()
+        }, { ex ->
+            job.completeExceptionally(ex)
+        })
+    })
 }
