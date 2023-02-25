@@ -11,9 +11,6 @@ kotlin {
     js(IR) {
         nodejs()
         useCommonJs()
-        compilations.all {
-            compileKotlinTask.kotlinOptions.freeCompilerArgs += listOf("-opt-in=kotlin.RequiresOptIn")
-        }
     }
 }
 
