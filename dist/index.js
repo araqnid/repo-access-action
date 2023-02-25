@@ -36098,38 +36098,31 @@ if (typeof Math.imul === 'undefined') {
   };
   function GithubActionsHttpClient(token) {
     var tmp = this;
-    var tmp$ret$4;
+    var tmp$ret$2;
     // Inline function 'kotlin.arrayOf' call
+    var tmp0_arrayOf = [new BearerCredentialHandler(token)];
     var tmp$ret$1;
     // Inline function 'kotlin.js.unsafeCast' call
-    var tmp0_unsafeCast = new BearerCredentialHandler(token);
     var tmp$ret$0;
     // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$0 = tmp0_unsafeCast;
+    tmp$ret$0 = tmp0_arrayOf;
     tmp$ret$1 = tmp$ret$0;
-    var tmp1_arrayOf = [tmp$ret$1];
-    var tmp$ret$3;
-    // Inline function 'kotlin.js.unsafeCast' call
-    var tmp$ret$2;
-    // Inline function 'kotlin.js.asDynamic' call
-    tmp$ret$2 = tmp1_arrayOf;
-    tmp$ret$3 = tmp$ret$2;
-    tmp$ret$4 = tmp$ret$3;
-    var tmp_0 = tmp$ret$4;
-    var tmp$ret$7;
-    // Inline function 'js.core.jso' call
-    var tmp$ret$6;
-    // Inline function 'kotlin.apply' call
+    tmp$ret$2 = tmp$ret$1;
+    var tmp_0 = tmp$ret$2;
     var tmp$ret$5;
     // Inline function 'js.core.jso' call
-    tmp$ret$5 = {};
-    var tmp0_apply = tmp$ret$5;
+    var tmp$ret$4;
+    // Inline function 'kotlin.apply' call
+    var tmp$ret$3;
+    // Inline function 'js.core.jso' call
+    tmp$ret$3 = {};
+    var tmp0_apply = tmp$ret$3;
     // Inline function 'kotlin.contracts.contract' call
     // Inline function 'github.GithubActionsHttpClient.client.<anonymous>' call
     tmp0_apply.keepAlive = true;
-    tmp$ret$6 = tmp0_apply;
-    tmp$ret$7 = tmp$ret$6;
-    tmp.x25_1 = new HttpClient('github-repo-access/0.0', tmp_0, tmp$ret$7);
+    tmp$ret$4 = tmp0_apply;
+    tmp$ret$5 = tmp$ret$4;
+    tmp.x25_1 = new HttpClient('github-repo-access/0.0', tmp_0, tmp$ret$5);
   }
   GithubActionsHttpClient.prototype.a23 = function (method, path, body, $cont) {
     var tmp = new $requestForTextCOROUTINE$5(this, method, path, body, $cont);

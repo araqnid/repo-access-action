@@ -16,7 +16,7 @@ private class GithubActionsHttpClient(token: String) : GithubBackend {
     private val client = actions.http.client.HttpClient(
         userAgent = "github-repo-access/0.0",
         handlers = arrayOf(
-            github.BearerCredentialHandler(token).unsafeCast<BearerCredentialHandler>()
+            BearerCredentialHandler(token)
         ),
         requestOptions = jso {
             keepAlive = true
