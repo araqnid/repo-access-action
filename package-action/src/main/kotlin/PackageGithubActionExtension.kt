@@ -9,7 +9,6 @@ abstract class PackageGithubActionExtension {
     abstract val v8cache: Property<Boolean>
     abstract val target: Property<String>
     abstract val sourceMap: Property<Boolean>
-    abstract val moduleName: Property<String>
     abstract val externalModules: SetProperty<String>
 
     init {

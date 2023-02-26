@@ -10,7 +10,14 @@ plugins {
 
 val actionPackagingExtension = extensions.create<PackageGithubActionExtension>("actionPackaging")
 
-val moduleNameProvider = actionPackagingExtension.moduleName.convention(providers.provider { project.name })
+// hax to avoid depending on Kotlin plugin directly
+@Suppress("UNCHECKED_CAST")
+val Task.moduleName: Provider<String> /* should be a KotlineCompile2JsTask */
+    get() = javaClass.getMethod("getModuleName").invoke(this)!! as Provider<String>
+
+val moduleNameProvider by lazy {
+    tasks.named("compileProductionExecutableKotlinJs").flatMap { it.moduleName }
+}
 
 val packageExplodedTask = tasks.register("packageDistributableExploded") {
     group = "package"
