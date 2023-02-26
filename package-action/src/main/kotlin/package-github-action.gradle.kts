@@ -12,7 +12,7 @@ val actionPackagingExtension = extensions.create<PackageGithubActionExtension>("
 
 // hax to avoid depending on Kotlin plugin directly
 @Suppress("UNCHECKED_CAST")
-val Task.moduleName: Provider<String> /* should be a KotlineCompile2JsTask */
+val Task.moduleName: Provider<String> /* should be a KotlinCompile2JsTask */
     get() = javaClass.getMethod("getModuleName").invoke(this)!! as Provider<String>
 
 val moduleNameProvider by lazy {
