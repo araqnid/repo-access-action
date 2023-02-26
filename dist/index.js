@@ -35883,7 +35883,7 @@ if (typeof Math.imul === 'undefined') {
     return PrimitiveSerialDescriptor('instant', STRING_getInstance());
   };
   InstantSerializer.prototype.ef = function (decoder) {
-    return parseISOInstant(decoder.sh());
+    return new Date(decoder.sh());
   };
   InstantSerializer.prototype.w24 = function (encoder, value) {
     return encoder.aj(value.toISOString());
@@ -36034,9 +36034,6 @@ if (typeof Math.imul === 'undefined') {
   };
   function createGithubBackend(githubToken) {
     return new GithubActionsHttpClient(githubToken);
-  }
-  function parseISOInstant(input) {
-    return new Date(input);
   }
   function $requestForTextCOROUTINE$5(_this__u8e3s4, method, path, body, resultContinuation) {
     CoroutineImpl.call(this, resultContinuation);

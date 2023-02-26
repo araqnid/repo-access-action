@@ -4,13 +4,8 @@ import actions.http.client.BearerCredentialHandler
 import js.core.get
 import js.core.jso
 import kotlinx.coroutines.await
-import kotlin.js.Date
 
 fun createGithubBackend(githubToken: String): GithubBackend = GithubActionsHttpClient(githubToken)
-
-internal typealias Instant = Date
-
-internal fun parseISOInstant(input: String): Instant = Date(input)
 
 private class GithubActionsHttpClient(token: String) : GithubBackend {
     private val client = actions.http.client.HttpClient(

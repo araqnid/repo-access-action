@@ -12,6 +12,7 @@ import kotlinx.serialization.encoding.Decoder
 import kotlinx.serialization.encoding.Encoder
 import kotlinx.serialization.json.Json
 import node.process.process
+import kotlin.js.Date
 
 interface GithubBackend {
     suspend fun requestForText(method: String, path: String, body: String?): TextResponse
@@ -238,7 +239,7 @@ class Github(private val backend: GithubBackend, private val defaultPageSize: In
         val name: String,
         @SerialName("size_in_bytes") val sizeInBytes: Long,
         @SerialName("expired") val isExpired: Boolean,
-        @SerialName("created_at") @Serializable(with = InstantSerializer::class) val createdAt: Instant,
+        @SerialName("created_at") @Serializable(with = InstantSerializer::class) val createdAt: Date,
     )
 
     private interface ListWithCount<out E> {
@@ -321,15 +322,15 @@ class Github(private val backend: GithubBackend, private val defaultPageSize: In
     private data class RepoTeamPutPermissionBody(val permission: String)
 }
 
-class InstantSerializer : KSerializer<Instant> {
+class InstantSerializer : KSerializer<Date> {
     override val descriptor: SerialDescriptor
         get() = PrimitiveSerialDescriptor(serialName = "instant", kind = PrimitiveKind.STRING)
 
-    override fun deserialize(decoder: Decoder): Instant {
-        return parseISOInstant(decoder.decodeString())
+    override fun deserialize(decoder: Decoder): Date {
+        return Date(decoder.decodeString())
     }
 
-    override fun serialize(encoder: Encoder, value: Instant) {
+    override fun serialize(encoder: Encoder, value: Date) {
         return encoder.encodeString(value.toISOString())
     }
 }
