@@ -33,10 +33,7 @@ dependencies {
 }
 
 actionPackaging {
-    val nccVersionValue = properties["ncc.version"]
-    if (nccVersionValue is String) {
-        nccVersion.set(nccVersionValue)
-    }
+    nccVersion.set(providers.gradleProperty("ncc.version").orElse("latest"))
 }
 
 node {
