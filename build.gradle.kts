@@ -37,7 +37,7 @@ actionPackaging {
 }
 
 node {
-    val nvmrc = providers.fileContents(layout.projectDirectory.file(".nvmrc")).asText.orElse("")
+    val nvmrc = providers.fileContents(layout.projectDirectory.file(".nvmrc")).asText.map { it.trim() }.orElse("")
     version.set(nvmrc)
     download.set(nvmrc.map { it.isNotEmpty() })
 }
