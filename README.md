@@ -1,5 +1,8 @@
 # repo-access-action
 
+[![Kotlin](https://img.shields.io/badge/kotlin-1.8.10-blue.svg)](http://kotlinlang.org)
+[![Gradle Build](https://github.com/araqnid/repo-access-action/actions/workflows/gradle-build.yml/badge.svg)](https://github.com/araqnid/repo-access-action/actions/workflows/gradle-build.yml)
+
 GitHub action to synchronise access permissions of an org team's repositories. It reads a configuration JSON file
 listing a team's repositories and ensures that other teams are given the specified access permissions.
 
