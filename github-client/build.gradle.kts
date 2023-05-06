@@ -16,7 +16,7 @@ kotlin {
 
 dependencies {
     api(kotlin("stdlib-js"))
-    api(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.6.1"))
+    api(platform("org.jetbrains.kotlinx:kotlinx-coroutines-bom:1.7.0"))
     api("org.jetbrains.kotlinx:kotlinx-coroutines-core")
     implementation(platform("org.jetbrains.kotlinx:kotlinx-serialization-bom:1.5.0"))
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json")
